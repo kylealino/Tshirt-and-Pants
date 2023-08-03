@@ -1,0 +1,192 @@
+CRITICAL - 2022-12-07 14:21:31 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:34 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:37 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:39 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:44 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:45 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:46 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:46 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:46 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:47 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:47 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:48 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:21:48 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:22:08 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:22:10 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:22:11 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:22:41 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:25:37 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:31:10 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:31:16 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:31:30 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:31:51 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:32:47 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-07 14:34:21 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

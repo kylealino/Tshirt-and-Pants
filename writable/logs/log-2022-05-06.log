@@ -1,0 +1,119 @@
+CRITICAL - 2022-05-06 13:56:56 --> Undefined variable $mylibzsys
+#0 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(151): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(35): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-06 14:26:34 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): CodeIgniter\Model->__call()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-06 14:34:40 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): CodeIgniter\Model->__call()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-06 14:36:01 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): CodeIgniter\Model->__call()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-06 14:36:10 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): CodeIgniter\Model->__call()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-06 14:37:08 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(693): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Models/MyMDCustomerModel.php(18): CodeIgniter\Model->__get()
+#3 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): App\Models\MyMDCustomerModel->cust_entry_save()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-06 14:38:50 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(693): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Models/MyMDCustomerModel.php(18): CodeIgniter\Model->__get()
+#3 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): App\Models\MyMDCustomerModel->cust_entry_save()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-06 14:40:52 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(693): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Models/MyMDCustomerModel.php(18): CodeIgniter\Model->__get()
+#3 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): App\Models\MyMDCustomerModel->cust_entry_save()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-06 14:43:03 --> Undefined variable $mcustgnder
+#0 /medata/webapps/mynrc/app/Models/MyMDCustomerModel.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): App\Models\MyMDCustomerModel->cust_entry_save()
+#2 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-05-06 14:44:22 --> Unknown column 'CUST_ACCTNO' in 'field list'
+CRITICAL - 2022-05-06 14:44:56 --> Undefined variable $mpw_tkn
+#0 /medata/webapps/mynrc/app/Models/MyMDCustomerModel.php(162): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): App\Models\MyMDCustomerModel->cust_entry_save()
+#2 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-05-06 14:47:52 --> Undefined variable $mpw_tkn
+#0 /medata/webapps/mynrc/app/Models/MyMDCustomerModel.php(162): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): App\Models\MyMDCustomerModel->cust_entry_save()
+#2 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-05-06 14:51:05 --> Unknown column 'recid' in 'field list'
+ERROR - 2022-05-06 17:34:40 --> Unknown column 'ee.Correspondence Code' in 'on clause'
+CRITICAL - 2022-05-06 18:03:03 --> Undefined array key "recid"
+#0 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile-recs.php(93): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(168): view()
+#5 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#6 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#8 /medata/webapps/mynrc/app/Controllers/Md_customer.php(35): view()
+#9 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#10 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#11 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#12 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}

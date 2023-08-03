@@ -1,0 +1,415 @@
+CRITICAL - 2022-10-17 08:10:09 --> unlink(/medata/appdevs/mynlinksc/writable/debugbar/debugbar_1665718810.326532.json): No such file or directory
+in SYSTEMPATH/Debug/Toolbar/Collectors/History.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Debug/Toolbar/Collectors/History.php(76): unlink()
+ 3 SYSTEMPATH/Debug/Toolbar.php(501): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+ 4 SYSTEMPATH/Debug/Toolbar.php(478): CodeIgniter\Debug\Toolbar->format()
+ 5 APPPATH/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(317): CodeIgniter\Events\Events::trigger()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 13:04:28 --> Undefined constant "App\Models\_XMYAPP_PATH_"
+in APPPATH/Models/MyWarehouseinvModel.php on line 753.
+ 1 APPPATH/Controllers/Warehouse_inv.php(106): App\Models\MyWarehouseinvModel->generate_report_in()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 13:04:48 --> Undefined constant "App\Models\_XMYAPP_PATH_"
+in APPPATH/Models/MyWarehouseinvModel.php on line 753.
+ 1 APPPATH/Controllers/Warehouse_inv.php(106): App\Models\MyWarehouseinvModel->generate_report_in()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 14:10:19 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(273): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-17 14:11:19 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/public/downloads/me/STOCKCODELIST_20221017woaygt7s2pq6659.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(494): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-17 14:11:23 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/public/downloads/me/STOCKCODELIST_20221017lzc3idh9rndnewa.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(494): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-17 14:11:39 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/public/downloads/me/STOCKCODELIST_20221017xaqskfw00mso0z4.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(494): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-10-17 14:15:50 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(273): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 14:17:20 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(273): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-17 14:18:23 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/WAREHOUSE_IN_20221017lipzmxrc3ydy7h6.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(825): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(106): App\Models\MyWarehouseinvModel->generate_report_in()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-17 14:18:28 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/WAREHOUSE_IN_20221017mmh44cpc032svy2.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(825): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(106): App\Models\MyWarehouseinvModel->generate_report_in()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-17 14:36:33 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/STOCKCODELIST_20221017e1sum7mehrtk6du.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(494): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-17 14:36:59 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/STOCKCODELIST_20221017qn4l30qkgwq6ktf.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(494): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-10-17 14:52:04 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(273): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-17 15:18:31 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/WAREHOUSE_IN_20221017fimogdd1fnkdgwz.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(825): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(106): App\Models\MyWarehouseinvModel->generate_report_in()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-17 15:18:33 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/WAREHOUSE_IN_20221017rbngpsoanogd05t.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(825): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(106): App\Models\MyWarehouseinvModel->generate_report_in()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-17 15:18:42 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/WAREHOUSE_IN_20221017a2d29ll3piozuli.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(825): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(106): App\Models\MyWarehouseinvModel->generate_report_in()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-10-17 15:18:54 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(273): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-17 16:04:11 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/WAREHOUSE_IN_20221017hcbk9adwru8gr9c.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(825): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(106): App\Models\MyWarehouseinvModel->generate_report_in()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-17 16:04:21 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/STOCKCODELIST_20221017a5j57ro0qlchz5z.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(494): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-10-17 16:24:33 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:26:27 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:27:02 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:28:55 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:30:33 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Warehouse_inv.php on line 113.
+ 1 APPPATH/Controllers/Warehouse_inv.php(113): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:30:38 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Warehouse_inv.php on line 113.
+ 1 APPPATH/Controllers/Warehouse_inv.php(113): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:31:30 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Warehouse_inv.php on line 113.
+ 1 APPPATH/Controllers/Warehouse_inv.php(113): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-17 16:32:29 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/STOCKCODELIST_20221017zyayhougf1b6c79.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(494): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-17 16:32:40 --> mysqli_sql_exception: Can't create/write to file '/medata/appdevs/mynlinksc/downloads/me/STOCKCODELIST_20221017r73szbfa3mtxekg.csv' (Errcode: 2 "No such file or directory") in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(494): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-10-17 16:32:43 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:33:03 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:37:12 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:37:13 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Warehouse_inv.php on line 113.
+ 1 APPPATH/Controllers/Warehouse_inv.php(113): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:37:37 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Warehouse_inv.php on line 113.
+ 1 APPPATH/Controllers/Warehouse_inv.php(113): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:37:53 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Warehouse_inv.php on line 113.
+ 1 APPPATH/Controllers/Warehouse_inv.php(113): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:38:58 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Warehouse_inv.php on line 113.
+ 1 APPPATH/Controllers/Warehouse_inv.php(113): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:39:41 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:42:19 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 16:47:32 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-17 17:02:36 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

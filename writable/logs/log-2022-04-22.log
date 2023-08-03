@@ -1,0 +1,193 @@
+CRITICAL - 2022-04-22 10:46:37 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::resultArray()
+#0 /mdevz/mynlinksys/app/Controllers/My_search.php(134): App\Models\MyUserModel->ua_brnch()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->companybranch_v()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 10:51:18 --> Undefined property: App\Controllers\My_search::$input
+#0 /mdevz/mynlinksys/app/Controllers/My_search.php(149): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->companybranch_v()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 10:52:04 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::resultArray()
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->companybranch_v()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-22 10:52:07 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::resultArray()
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->companybranch_v()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-22 11:25:07 --> Undefined property: App\Controllers\My_search::$mylibz
+#0 /mdevz/mynlinksys/app/Controllers/My_search.php(337): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->companybranch_tap()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 11:25:22 --> Undefined property: App\Controllers\My_search::$mylibz
+#0 /mdevz/mynlinksys/app/Controllers/My_search.php(337): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->companybranch_tap()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-04-22 11:55:47 --> Unknown column 'MAT_CAT4_DESC' in 'field list'
+CRITICAL - 2022-04-22 11:55:47 --> Unknown column 'MAT_CAT4_DESC' in 'field list'
+#0 /mdevz/mynlinksys/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mdevz/mynlinksys/system/Database/BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mdevz/mynlinksys/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mdevz/mynlinksys/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /mdevz/mynlinksys/app/Controllers/My_search.php(416): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->catg_4_vw()
+#6 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-22 11:55:50 --> Unknown column 'MAT_CAT4_DESC' in 'field list'
+CRITICAL - 2022-04-22 11:55:50 --> Unknown column 'MAT_CAT4_DESC' in 'field list'
+#0 /mdevz/mynlinksys/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mdevz/mynlinksys/system/Database/BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mdevz/mynlinksys/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mdevz/mynlinksys/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /mdevz/mynlinksys/app/Controllers/My_search.php(416): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->catg_4_vw()
+#6 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-22 11:56:18 --> Unknown column 'MAT_CAT4_DESC' in 'where clause'
+CRITICAL - 2022-04-22 11:56:18 --> Unknown column 'MAT_CAT4_DESC' in 'where clause'
+#0 /mdevz/mynlinksys/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mdevz/mynlinksys/system/Database/BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mdevz/mynlinksys/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mdevz/mynlinksys/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /mdevz/mynlinksys/app/Controllers/My_search.php(416): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->catg_4_vw()
+#6 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-22 11:56:21 --> Unknown column 'MAT_CAT4_DESC' in 'where clause'
+CRITICAL - 2022-04-22 11:56:21 --> Unknown column 'MAT_CAT4_DESC' in 'where clause'
+#0 /mdevz/mynlinksys/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mdevz/mynlinksys/system/Database/BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mdevz/mynlinksys/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mdevz/mynlinksys/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /mdevz/mynlinksys/app/Controllers/My_search.php(416): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\My_search->catg_4_vw()
+#6 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-22 12:39:26 --> syntax error, unexpected 'My_search' (T_STRING), expecting ')'
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#2 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-22 14:19:13 --> Class 'App\Controllers\MySalesOutModel' not found
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(809): App\Controllers\Mysales->__construct()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-22 14:20:32 --> Undefined property: App\Controllers\Mysales::$mylibz
+#0 /mdevz/mynlinksys/app/Controllers/Mysales.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 14:20:37 --> Undefined property: App\Controllers\Mysales::$mylibz
+#0 /mdevz/mynlinksys/app/Controllers/Mysales.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 14:22:05 --> Class 'App\Controllers\MyLibzSysModel' not found
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(809): App\Controllers\Mysales->__construct()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-22 14:22:42 --> Undefined property: App\Controllers\Mysales::$input
+#0 /mdevz/mynlinksys/app/Controllers/Mysales.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 14:28:10 --> Undefined property: App\Controllers\Mysales::$input
+#0 /mdevz/mynlinksys/app/Controllers/Mysales.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 14:29:01 --> Undefined property: App\Controllers\Mysales::$input
+#0 /mdevz/mynlinksys/app/Controllers/Mysales.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 14:29:09 --> Undefined property: App\Controllers\Mysales::$input
+#0 /mdevz/mynlinksys/app/Controllers/Mysales.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 14:30:06 --> Undefined variable: txtsearchedrec
+#0 /mdevz/mynlinksys/app/Controllers/Mysales.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 14:30:58 --> You must set the database table to be used with your query.
+#0 /mdevz/mynlinksys/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevz/mynlinksys/system/Model.php(693): CodeIgniter\Model->builder()
+#2 /mdevz/mynlinksys/app/Models/MySalesOutModel.php(22): CodeIgniter\Model->__get()
+#3 /mdevz/mynlinksys/app/Controllers/Mysales.php(48): App\Models\MySalesOutModel->sales_out_details_daily_rec()
+#4 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-22 14:39:18 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::num_rows()
+#0 /mdevz/mynlinksys/app/Controllers/Mysales.php(48): App\Models\MySalesOutModel->sales_out_details_daily_rec()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-22 14:47:48 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevz/mynlinksys/app/Views/sales/sales-out-details-tab-daily-rec.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/View/View.php(210): include('/mdevz/mynlinks...')
+#2 /mdevz/mynlinksys/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevz/mynlinksys/app/Controllers/Mysales.php(49): view()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#6 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-22 14:47:52 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevz/mynlinksys/app/Views/sales/sales-out-details-tab-daily-rec.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/View/View.php(210): include('/mdevz/mynlinks...')
+#2 /mdevz/mynlinksys/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevz/mynlinksys/app/Controllers/Mysales.php(49): view()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily_proc()
+#6 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

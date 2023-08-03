@@ -1,0 +1,79 @@
+
+                    <html xmlns:x="urn:schemas-microsoft-com:office:excel">
+                        <head>
+                        <meta http-equiv=Content-Type content="text/csv; charset=utf-8">
+                        </head>
+                        <body>
+                    <table class="table table-sm table-bordered table-hover" id="testTable_dr">
+                       
+                          <tr class="header-tr-addr">
+                            <th class="noborder" colspan="9">GR Breakdown of the month</th>
+                          </tr>
+                          <tr class="header-tr-addr">
+                            <th class="noborder" colspan="9">2023-01-20 - 2023-01-20</th>
+                          </tr>
+                          <tr class="header-tr-addr">
+                            <th class="noborder" colspan="9">&nbsp;</th>
+                          </tr>
+                          <tr class ="header-theme-purple text-white">
+                            <th class="noborder">No</th>
+                            <th class="noborder">GR No</th>
+                            <th class="noborder">GR Date</th>
+                            <th class="noborder">Warehouse</th>
+                            <th class="noborder">Warehouse Group</th>
+                            <th class="noborder">Warehouse Bin</th>
+                            <th class="noborder">ITEM QUANTITY</th>
+                            <th class="noborder">AMOUNT</th>
+                            <th class="noborder">COST</th>
+                            </tr>
+                          <tr class="data-nm">
+                                <td>1</td>
+                                <td>CWGR20230000000021</td>
+                                <td>2023-01-20 00:00:00</td>
+                                <td>W1-G1</td>
+                                <td>ANGELES</td>
+                                <td>ANGELES</td>
+                                <td>2.00</td>
+                                <td>2280.00</td>
+                                <td>1320.00</td>
+                               </tr>
+                             <tr class="data-nm">
+                                <td>2</td>
+                                <td>CWGR20230000000022</td>
+                                <td>2023-01-20 00:00:00</td>
+                                <td>W1-G1</td>
+                                <td>ANGELES</td>
+                                <td>ANGELES</td>
+                                <td>4.00</td>
+                                <td>4560.00</td>
+                                <td>2640.00</td>
+                               </tr>
+                             <tr class="data-nm">
+                                <td>3</td>
+                                <td>CWGR20230000000023</td>
+                                <td>2023-01-20 00:00:00</td>
+                                <td>W1-G1</td>
+                                <td>MARIKINA</td>
+                                <td>MARIKINA</td>
+                                <td>5.00</td>
+                                <td>17280.00</td>
+                                <td>10854.00</td>
+                               </tr>
+                           <tr></tr>
+                          <tr class="header-tr">
+                            <th align="right" class="noborder" colspan="6">Total</th>
+                            <th align="center" class="noborder" colspan="1">11</th>
+                            <th align="center" class="noborder" colspan="1">24120.00</th>
+                            <th align="center" class="noborder" colspan="1">14814.00</th>
+                          </tr>
+                         
+                          <tr></tr>
+                          <tr></tr>
+                          <tr></tr>
+                          <tr class="header-tr">
+                            <th align="left" class="noborder" colspan="2">PREPARED BY:</th>
+                            <th align="center" class="noborder" colspan="2">KYLE ALINO</th>
+                            <th align="left" class="noborder" colspan="2">CHECKED BY:</th>
+                            <th align="center" class="noborder" colspan="2"></th>
+                          </tr>
+                           

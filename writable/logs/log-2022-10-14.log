@@ -1,0 +1,26 @@
+ERROR - 2022-10-14 13:37:01 --> mysqli_sql_exception: Unknown column 'a.mkg_tag' in 'field list' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/Mytrx_whcrossing_model.php(86): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/WhCrossing.php(76): App\Models\Mytrx_whcrossing_model->view_ent_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_ent_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-14 13:40:02 --> mysqli_sql_exception: Unknown column 'a.mkg_tag' in 'field list' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/Mytrx_whcrossing_model.php(86): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/WhCrossing.php(76): App\Models\Mytrx_whcrossing_model->view_ent_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_ent_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}

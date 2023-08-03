@@ -1,0 +1,108 @@
+CRITICAL - 2022-05-12 09:31:49 --> Call to undefined method CodeIgniter\HTTP\IncomingRequest::getQuery()
+#0 /medata/webapps/mynrc/system/View/View.php(210): include()
+#1 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): view()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-05-12 09:32:27 --> Unknown column 'aa.Correspondence Code' in 'field list'
+ERROR - 2022-05-12 09:32:33 --> Unknown column 'aa.Correspondence Code' in 'field list'
+ERROR - 2022-05-12 09:35:44 --> Unknown column 'aa.Correspondence Code' in 'field list'
+ERROR - 2022-05-12 09:35:45 --> Unknown column 'aa.Correspondence Code' in 'field list'
+ERROR - 2022-05-12 09:35:45 --> Unknown column 'aa.Correspondence Code' in 'field list'
+ERROR - 2022-05-12 09:35:46 --> Unknown column 'aa.Correspondence Code' in 'field list'
+ERROR - 2022-05-12 09:35:53 --> Unknown column 'aa.Correspondence Code' in 'field list'
+ERROR - 2022-05-12 09:41:40 --> Unknown column 'aa.Correspondence Code' in 'field list'
+ERROR - 2022-05-12 09:49:07 --> Unknown column 'aa.Correspondence Code' in 'field list'
+ERROR - 2022-05-12 09:58:28 --> FUNCTION ap8.aha2 does not exist
+CRITICAL - 2022-05-12 10:29:56 --> Undefined array key "Name"
+#0 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(132): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-12 10:30:05 --> Undefined array key "Name"
+#0 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(132): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-12 10:30:13 --> Undefined array key "Name"
+#0 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(132): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-12 10:37:13 --> Undefined array key "Name"
+#0 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(132): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-12 10:41:20 --> Undefined array key "Name"
+#0 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(132): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-12 10:49:04 --> Undefined variable $reg_name
+#0 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(268): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-12 10:49:21 --> Undefined variable $reg_name
+#0 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(268): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-12 11:11:35 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''2022-05-12 limit 1' at line 21
+CRITICAL - 2022-05-12 18:10:42 --> substr(): Passing null to parameter #1 ($string) of type string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/app/Models/MyLibzSysModel.php(39): substr()
+#2 /medata/webapps/mynrc/app/Models/MyMDCustomerModel.php(130): App\Models\MyLibzSysModel->mydate_yyyymmdd()
+#3 /medata/webapps/mynrc/app/Controllers/Md_customer.php(45): App\Models\MyMDCustomerModel->cust_entry_save()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->cust_entry_save()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

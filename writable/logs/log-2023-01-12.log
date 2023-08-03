@@ -1,0 +1,68 @@
+CRITICAL - 2023-01-12 08:06:09 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/Warehouse_inv.php(272): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_items_api2()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 08:08:44 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/Warehouse_inv.php(272): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_items_api2()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 08:13:56 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/Warehouse_inv.php(272): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_items_api2()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 08:16:50 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/Warehouse_inv.php(272): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_items_api2()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 09:39:30 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyWarehouseinvModel.php on line 2218.
+ 1 APPPATH/Models/MyWarehouseinvModel.php(2218): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Warehouse_inv.php(272): App\Models\MyWarehouseinvModel->view_ent_itm_recs_v2()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_items_api2()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 09:39:45 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyWarehouseinvModel.php on line 2218.
+ 1 APPPATH/Models/MyWarehouseinvModel.php(2218): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Warehouse_inv.php(272): App\Models\MyWarehouseinvModel->view_ent_itm_recs_v2()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_items_api2()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 09:42:48 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyWarehouseinvModel.php on line 2218.
+ 1 APPPATH/Models/MyWarehouseinvModel.php(2218): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Warehouse_inv.php(272): App\Models\MyWarehouseinvModel->view_ent_itm_recs_v2()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_items_api2()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-12 11:43:48 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyWarehouseinvModel.php on line 1794.
+ 1 APPPATH/Models/MyWarehouseinvModel.php(1794): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Warehouse_inv.php(241): App\Models\MyWarehouseinvModel->rack_transfer_upld()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_upload_recs()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

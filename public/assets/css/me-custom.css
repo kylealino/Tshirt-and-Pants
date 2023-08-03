@@ -1,0 +1,72 @@
+.metblhead-bg {
+  background-color: #A5D0EA;
+}
+
+.metxt-right {
+  text-align: right;
+}
+
+.metbl-th-pad6 {
+  padding-left: 6px;
+}
+
+.metblentry-font {
+	font-family:'Roboto', sans-serif;;font-size: 12px;
+}
+
+.me-form-font {
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+    color: #012970;
+    /* font-weight: 800; */
+}
+
+.mebtnpt1 {
+  padding-top: 1px !important;
+}
+
+.ui-widget {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 12px;
+}
+.ui-autocomplete.ui-widget {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 12px;
+}
+
+/* *** Add this for visible Scrolling ;) */
+.ui-autocomplete {
+	max-height: 350px;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+	/* add padding to account for vertical scrollbar */
+	z-index:1000000000 !important;   
+}
+
+.ui-widget-content {
+	border: 1px solid #dfd9c3;
+	 background: #ffffff;
+	color: #312e25;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: 1px solid #d4ccb0;
+	background: #008000;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+	height: 100px;
+}
+
+

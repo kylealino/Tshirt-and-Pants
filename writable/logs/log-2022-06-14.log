@@ -1,0 +1,221 @@
+CRITICAL - 2022-06-14 08:00:13 --> unlink(/mdevs/mynrc/writable/debugbar/debugbar_1655106630.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar/Collectors/History.php(74): unlink()
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(487): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#4 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#5 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-06-14 10:50:40 --> Trying to access array offset on value of type null
+#0 /mdevs/mynrc/app/Views/masterdata/md-customer-profile.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_customer.php(40): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 13:24:10 --> Argument 1 passed to CodeIgniter\View\Table::_prepArgs() must be of the type array, float given, called in /mdevs/mynrc/system/View/Table.php on line 429
+#0 /mdevs/mynrc/system/View/Table.php(429): CodeIgniter\View\Table->_prepArgs()
+#1 /mdevs/mynrc/system/View/Table.php(271): CodeIgniter\View\Table->_setFromArray()
+#2 /mdevs/mynrc/app/Views/mdcardno/md-tagcardslost.php(119): CodeIgniter\View\Table->generate()
+#3 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#4 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#6 /mdevs/mynrc/app/Controllers/Md_cards.php(29): view()
+#7 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardslost()
+#8 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#9 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#10 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-06-14 13:24:21 --> Argument 1 passed to CodeIgniter\View\Table::_prepArgs() must be of the type array, float given, called in /mdevs/mynrc/system/View/Table.php on line 425
+#0 /mdevs/mynrc/system/View/Table.php(425): CodeIgniter\View\Table->_prepArgs()
+#1 /mdevs/mynrc/system/View/Table.php(271): CodeIgniter\View\Table->_setFromArray()
+#2 /mdevs/mynrc/app/Views/mdcardno/md-tagcardslost.php(114): CodeIgniter\View\Table->generate()
+#3 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#4 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#6 /mdevs/mynrc/app/Controllers/Md_cards.php(29): view()
+#7 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardslost()
+#8 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#9 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#10 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-06-14 13:38:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 13:38:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 13:38:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 13:38:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 13:38:07 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 13:39:07 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 13:53:00 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 13:53:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 13:53:49 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 14:00:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 14:00:51 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 14:00:58 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+ERROR - 2022-06-14 14:02:14 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 10
+CRITICAL - 2022-06-14 14:02:24 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-14 16:01:31 --> Undefined variable: meType
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:20 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:21 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:21 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:22 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:22 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:22 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:22 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:23 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:23 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:40 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:42 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:02:50 --> Undefined property: CodeIgniter\View\View::$request
+#0 /mdevs/mynrc/app/Views/mdcardno/md-cards-upld.php(8): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/Md_cards.php(57): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_cards->md_tagcardsupld_vw()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-14 16:05:12 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

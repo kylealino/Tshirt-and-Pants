@@ -1,0 +1,401 @@
+CRITICAL - 2022-09-15 08:52:08 --> Call to a member function move() on null
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(46): App\Models\MyWarehousercvModel->whrcvng_upld()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-15 08:56:51 --> Undefined variable: type
+#0 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(250): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(46): App\Models\MyWarehousercvModel->whrcvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-09-15 08:57:44 --> Unknown column 'witbBarcode' in 'field list'
+ERROR - 2022-09-15 09:04:19 --> Unknown column 'witbBarcode' in 'field list'
+ERROR - 2022-09-15 09:19:48 --> Table 'ap2.whrcvngcd_upld_temp_5t8uio09qwbbq3c' doesn't exist
+ERROR - 2022-09-15 09:19:57 --> Table 'ap2.whrcvngcd_upld_temp_5t8uio09qwbbq3c' doesn't exist
+ERROR - 2022-09-15 09:20:14 --> Table 'ap2.whrcvngcd_upld_temp_5t8uio09qwbbq3c' doesn't exist
+CRITICAL - 2022-09-15 09:21:33 --> Array to string conversion
+#0 /mdevs/mynlinksc/app/Views/warehouse_rcvng/warehouse_rcvng_main.php(67): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-15 09:44:20 --> Undefined variable: active_plnt_id
+#0 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(307): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(46): App\Models\MyWarehousercvModel->whrcvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-15 09:48:33 --> You must set the database table to be used with your query.
+#0 /mdevs/mynlinksc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevs/mynlinksc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(91): CodeIgniter\Model->__call()
+#3 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(46): App\Models\MyWarehousercvModel->whrcvng_upld()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-15 09:48:50 --> You must set the database table to be used with your query.
+#0 /mdevs/mynlinksc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevs/mynlinksc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(91): CodeIgniter\Model->__call()
+#3 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(46): App\Models\MyWarehousercvModel->whrcvng_upld()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-15 09:50:08 --> You must set the database table to be used with your query.
+#0 /mdevs/mynlinksc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevs/mynlinksc/system/Model.php(693): CodeIgniter\Model->builder()
+#2 /mdevs/mynlinksc/app/Models/Mymelibsys_model.php(937): CodeIgniter\Model->__get()
+#3 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(91): App\Models\mymelibsys_model->getCDPlantWarehouse_data_bytkn()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(46): App\Models\MyWarehousercvModel->whrcvng_upld()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-09-15 09:51:50 --> Table 'ap8.mst_wshe' doesn't exist
+CRITICAL - 2022-09-15 09:53:10 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::num_rows()
+#0 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(91): App\Models\mymelibsys_model->getCDPlantWarehouse_data_bytkn()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(46): App\Models\MyWarehousercvModel->whrcvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-09-15 10:29:33 --> Unknown column 'plntID' in 'field list'
+ERROR - 2022-09-15 10:35:05 --> Unknown column 'b.witbBarcode' in 'where clause'
+CRITICAL - 2022-09-15 10:36:33 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::num_rows()
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(46): App\Models\MyWarehousercvModel->whrcvng_upld()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-15 10:47:56 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-15 10:47:59 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-15 10:48:13 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-15 10:48:27 --> Undefined index: response
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-15 10:50:37 --> Undefined property: App\Controllers\Warehouse_rcvng::$load
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(49): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-15 10:51:09 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(49): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-15 10:51:36 --> Undefined property: CodeIgniter\View\View::$mylibz
+#0 /mdevs/mynlinksc/app/Views/warehouse_rcvng/tbl_item_scanned.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(49): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-15 10:52:31 --> Undefined property: CodeIgniter\View\View::$mylibzdb
+#0 /mdevs/mynlinksc/app/Views/warehouse_rcvng/tbl_item_scanned.php(9): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(49): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-15 10:58:40 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 10:59:09 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:00:29 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:04:21 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:09:56 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:17:48 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:22:57 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:27:14 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:52:33 --> syntax error, unexpected '$red' (T_VARIABLE)
+#0 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(49): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:52:41 --> syntax error, unexpected '$red' (T_VARIABLE)
+#0 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(49): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:54:45 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 11:55:08 --> Array to string conversion
+#0 /mdevs/mynlinksc/app/Views/warehouse_rcvng/tbl_item_scanned.php(155): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(49): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-15 11:55:13 --> Array to string conversion
+#0 /mdevs/mynlinksc/app/Views/warehouse_rcvng/tbl_item_scanned.php(155): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(49): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-15 13:55:33 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 13:55:35 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 13:57:02 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 14:01:18 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 14:02:29 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 14:08:50 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 14:11:05 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 14:12:12 --> You must set the database table to be used with your query.
+#0 /mdevs/mynlinksc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevs/mynlinksc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(62): CodeIgniter\Model->__call()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_save()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-15 14:13:46 --> You must set the database table to be used with your query.
+#0 /mdevs/mynlinksc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevs/mynlinksc/system/Model.php(693): CodeIgniter\Model->builder()
+#2 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(324): CodeIgniter\Model->__get()
+#3 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(62): App\Models\MyWarehousercvModel->mywhrcvng_save()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_save()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-15 14:15:31 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::escape_str()
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(62): App\Models\MyWarehousercvModel->mywhrcvng_save()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_save()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-15 14:16:19 --> Undefined index: irb_barcde
+#0 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(361): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(62): App\Models\MyWarehousercvModel->mywhrcvng_save()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_save()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-09-15 14:20:19 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+                        '19032510000000007',
+                        '190325...' at line 33
+ERROR - 2022-09-15 14:23:54 --> Unknown column 'frm_plnt_id' in 'field list'
+CRITICAL - 2022-09-15 14:27:33 --> Undefined variable: price
+#0 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(687): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(62): App\Models\MyWarehousercvModel->mywhrcvng_save()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_save()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-15 14:32:20 --> Undefined variable: price
+#0 /mdevs/mynlinksc/app/Models/MyWarehousercvModel.php(687): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(62): App\Models\MyWarehousercvModel->mywhrcvng_save()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_save()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-15 16:25:31 --> Undefined variable: barcode_filter
+#0 /mdevs/mynlinksc/app/Views/warehouse_rcvng/tbl_item_scanned.php(73): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_rcvng.php(49): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_rcvng->wshe_rvng_upld()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

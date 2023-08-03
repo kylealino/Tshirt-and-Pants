@@ -1,0 +1,280 @@
+CRITICAL - 2022-05-16 11:14:27 --> syntax error, unexpected token ";", expecting ")"
+#0 /medata/webapps/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /medata/webapps/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(797): class_exists()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 11:15:22 --> syntax error, unexpected token ";", expecting ")"
+#0 /medata/webapps/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /medata/webapps/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(797): class_exists()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 11:16:23 --> Invalid file: masterdata/md-new-appcust-recs.php
+#0 /medata/webapps/mynrc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /medata/webapps/mynrc/app/Views/mdapp/md-new-appcust.php(323): view()
+#3 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#4 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#6 /medata/webapps/mynrc/app/Controllers/Md_customer.php(62): view()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->newapp_profile()
+#8 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#9 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#10 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-05-16 11:16:35 --> Invalid file: masterdata/md-new-appcust-recs.php
+#0 /medata/webapps/mynrc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /medata/webapps/mynrc/app/Views/mdapp/md-new-appcust.php(323): view()
+#3 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#4 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#6 /medata/webapps/mynrc/app/Controllers/Md_customer.php(62): view()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->newapp_profile()
+#8 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#9 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#10 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-05-16 11:37:35 --> syntax error, unexpected token ";"
+#0 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /medata/webapps/mynrc/app/Views/masterdata/md-customer-profile.php(323): view()
+#3 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#4 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#6 /medata/webapps/mynrc/app/Controllers/Md_customer.php(40): view()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->profile()
+#8 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#9 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#10 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-05-16 13:16:27 --> Unclosed '{' on line 8
+#0 /medata/webapps/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /medata/webapps/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(797): class_exists()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 13:17:05 --> Undefined variable $CUST_ACCTNO
+#0 /medata/webapps/mynrc/app/Views/mdptsinq/md-ptsinq.php(34): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_inquiry.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_inquiry->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:14:36 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:18:27 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:25:22 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:25:23 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:25:23 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:25:23 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:25:23 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:27:40 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:34:40 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:35:58 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:35:59 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:35:59 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:35:59 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:36:00 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_reports.php(22): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->index()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:39:05 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(71): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->totpurch_rpts()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:39:32 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(71): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->totpurch_rpts()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:40:23 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(71): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->totpurch_rpts()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-16 14:40:43 --> Undefined variable $npage_curr
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-purch-recs.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Controllers/Md_customer.php(71): view()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_customer->totpurch_rpts()
+#6 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-16 15:23:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-1,1' at line 54
+ERROR - 2022-05-16 15:23:56 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-1,1' at line 54
+ERROR - 2022-05-16 15:34:25 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-1,1' at line 54
+ERROR - 2022-05-16 15:35:44 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-1,1' at line 54
+ERROR - 2022-05-16 17:18:03 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-1,1' at line 54

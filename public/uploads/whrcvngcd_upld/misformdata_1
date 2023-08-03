@@ -1,0 +1,24 @@
+request_code
+proj_title
+proj_manager
+requestor_name
+request_date
+department_name
+required_date
+rqst_type
+module_name
+issue_type
+rqst_no
+item_change
+rqst_ref
+priority_name
+rqst_desc
+rqst_constraints
+
+
+$promo_trxno =  $this->mydataz->get_ctr_new_dr('RN','',$this->db_erp,'');//PROMO TRANSACTION NO
+
+$('#txt_promotrxno').val('{$promo_trxno}');
+
+
+action-request_code,proj_title,requestor_name, rqst_type,module_name ,is_evaluated encd_date

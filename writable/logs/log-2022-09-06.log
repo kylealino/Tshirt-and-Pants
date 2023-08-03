@@ -1,0 +1,1799 @@
+CRITICAL - 2022-09-06 08:05:41 --> unlink(/mdevs/mynrc/writable/debugbar/debugbar_1662362997.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar/Collectors/History.php(74): unlink()
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(487): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#4 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#5 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:18:06 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:06 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:07 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:07 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:07 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:07 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:07 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:07 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:08 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:08 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:08 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:08 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:08 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:08 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:09 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:09 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:09 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:09 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:09 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:10 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:10 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:10 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:10 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:10 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:10 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:11 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:11 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:11 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:11 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:11 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:12 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:12 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:12 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:12 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:12 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:12 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:13 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:13 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:13 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:13 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:13 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:14 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:14 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:14 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:14 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:14 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:15 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:15 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:18:15 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:19:06 --> syntax error, unexpected '/'
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(797): class_exists()
+#5 /mdevs/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:19:07 --> syntax error, unexpected '/'
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(797): class_exists()
+#5 /mdevs/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:19:07 --> syntax error, unexpected '/'
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(797): class_exists()
+#5 /mdevs/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:19:08 --> syntax error, unexpected '/'
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(797): class_exists()
+#5 /mdevs/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:19:08 --> syntax error, unexpected '/'
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(797): class_exists()
+#5 /mdevs/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:19:08 --> syntax error, unexpected '/'
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(797): class_exists()
+#5 /mdevs/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:19:08 --> syntax error, unexpected '/'
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(797): class_exists()
+#5 /mdevs/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:19:08 --> syntax error, unexpected '/'
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(797): class_exists()
+#5 /mdevs/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:19:15 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:19:15 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:19:15 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:21:50 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:21:50 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:21:50 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:21:51 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:21:51 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:21:51 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:21:51 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:21:51 --> Class 'App\Libraries\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:22:43 --> Class 'App\Libraries\Fpdf\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:22:44 --> Class 'App\Libraries\Fpdf\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:22:44 --> Class 'App\Libraries\Fpdf\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:22:44 --> Class 'App\Libraries\Fpdf\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:22:53 --> Class 'App\Libraries\Mypdf' not found
+#0 /mdevs/mynrc/system/View/View.php(210): include()
+#1 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(180): view()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_print()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:24:18 --> Class 'App\Libraries\Mypdf' not found
+#0 /mdevs/mynrc/system/View/View.php(210): include()
+#1 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(180): view()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_print()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:24:22 --> Class 'App\Controllers\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:24:23 --> Class 'App\Controllers\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:24:23 --> Class 'App\Controllers\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:24:23 --> Class 'App\Controllers\Fpdf' not found
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 08:24:37 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:25:01 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/FpdfFpdf/Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:25:11 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf/Fpdf/Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:01 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:02 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:02 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:02 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:02 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:03 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:03 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:03 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:03 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:04 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:26:13 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:26:50 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf./Fpdf/Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:27:02 --> CodeIgniter\Autoloader\Autoloader::main(): Failed opening required '/mdevs/mynrc/app/Libraries/Fpdf/Fpdf/Fpdf.php' (include_path='.:/usr/share/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-06 08:27:22 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:17 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:18 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:18 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:18 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:18 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:18 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:18 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:19 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:19 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:19 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:19 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:19 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:20 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:20 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:20 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:20 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:21 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:21 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:21 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:21 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:21 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:22 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:22 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:22 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:22 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:22 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:23 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:26 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:26 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:27 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:27 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:27 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:28 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:28 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:28 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:28 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:28 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:28 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:29 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:29 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:29 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:29 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:29 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:30 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:30 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:30 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:30 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:30 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:31 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:31 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:31 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:31 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:31 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:32 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:32 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:32 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:32 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:32 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:32 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:33 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:33 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:33 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:33 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:33 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:34 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:34 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:34 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:34 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:34 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:35 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:35 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:47 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:47 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:47 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:47 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:28:48 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:30:33 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:30:34 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:30:34 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:30:34 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:30:35 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:30:35 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:30:35 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:30:35 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:30:38 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:34:21 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:35:20 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:35:21 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:35:21 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:35:25 --> syntax error, unexpected '/', expecting identifier (T_STRING) or namespace (T_NAMESPACE) or \\ (T_NS_SEPARATOR)
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:35:26 --> syntax error, unexpected '/', expecting identifier (T_STRING) or namespace (T_NAMESPACE) or \\ (T_NS_SEPARATOR)
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:35:26 --> syntax error, unexpected '/', expecting identifier (T_STRING) or namespace (T_NAMESPACE) or \\ (T_NS_SEPARATOR)
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:35:26 --> syntax error, unexpected '/', expecting identifier (T_STRING) or namespace (T_NAMESPACE) or \\ (T_NS_SEPARATOR)
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:35:26 --> syntax error, unexpected '/', expecting identifier (T_STRING) or namespace (T_NAMESPACE) or \\ (T_NS_SEPARATOR)
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:35:30 --> Class 'Fpdf' not found
+#0 /mdevs/mynrc/system/Autoloader/Autoloader.php(264): include_once()
+#1 /mdevs/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#2 /mdevs/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(225): spl_autoload_call()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-06 08:39:10 --> Class 'App\Libraries\Mypdf' not found
+#0 /mdevs/mynrc/system/View/View.php(210): include()
+#1 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(180): view()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_print()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:39:12 --> Class 'App\Libraries\Mypdf' not found
+#0 /mdevs/mynrc/system/View/View.php(210): include()
+#1 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(180): view()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_print()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:39:13 --> Class 'App\Libraries\Mypdf' not found
+#0 /mdevs/mynrc/system/View/View.php(210): include()
+#1 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(180): view()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_print()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:39:14 --> Class 'App\Libraries\Mypdf' not found
+#0 /mdevs/mynrc/system/View/View.php(210): include()
+#1 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(180): view()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_print()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:39:14 --> Class 'App\Libraries\Mypdf' not found
+#0 /mdevs/mynrc/system/View/View.php(210): include()
+#1 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(180): view()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_print()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:39:15 --> Class 'App\Libraries\Mypdf' not found
+#0 /mdevs/mynrc/system/View/View.php(210): include()
+#1 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(180): view()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_print()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:39:15 --> Class 'App\Libraries\Mypdf' not found
+#0 /mdevs/mynrc/system/View/View.php(210): include()
+#1 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#3 /mdevs/mynrc/app/Controllers/WhCrossing.php(180): view()
+#4 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_print()
+#5 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#6 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-06 08:40:32 --> Call to undefined method App\Libraries\Fpdf\Mypdf::SetWidths()
+#0 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->pdf()
+#1 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-06 09:12:38 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-06 10:16:44 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-06 11:14:47 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-06 11:14:49 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-06 13:42:09 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-06 14:59:07 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-06 14:59:07 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-06 14:59:08 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-06 14:59:09 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-06 15:22:02 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

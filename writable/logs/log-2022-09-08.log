@@ -1,0 +1,75 @@
+CRITICAL - 2022-09-08 08:17:27 --> unlink(/mdevs/mynrc/writable/debugbar/debugbar_1662538968.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar/Collectors/History.php(74): unlink()
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(487): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#4 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#5 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#7 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-08 14:43:35 --> syntax error, unexpected 'C' (T_STRING), expecting ')'
+#0 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#3 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#4 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-09-08 15:29:48 --> Table 'ap8.diQt_Branch' doesn't exist
+ERROR - 2022-09-08 15:31:49 --> Table 'ap8.diQt_Branch' doesn't exist
+ERROR - 2022-09-08 15:31:52 --> Table 'ap8.diQt_Branch' doesn't exist
+ERROR - 2022-09-08 15:31:53 --> Table 'ap8.diQt_Branch' doesn't exist
+ERROR - 2022-09-08 15:31:56 --> Table 'ap8.diQt_Branch' doesn't exist
+CRITICAL - 2022-09-08 15:36:55 --> Cannot redeclare App\Controllers\WhCrossing::whcrossing_sd()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-08 15:36:55 --> Cannot redeclare App\Controllers\WhCrossing::whcrossing_sd()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-09-08 16:17:29 --> Invalid file: Whcrossing/whcrossing_outpl_recs.php
+#0 /mdevs/mynrc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynrc/app/Controllers/WhCrossing.php(116): view()
+#3 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->whcrossing_outpl_recs()
+#4 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-08 16:17:50 --> Invalid file: Whcrossing/whcrossing_outpl_recs.php
+#0 /mdevs/mynrc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynrc/app/Controllers/WhCrossing.php(116): view()
+#3 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->whcrossing_outpl_recs()
+#4 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-08 16:18:22 --> Invalid file: Whcrossing/whcrossing_outpl_recs.php
+#0 /mdevs/mynrc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynrc/app/Controllers/WhCrossing.php(116): view()
+#3 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->whcrossing_outpl_recs()
+#4 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-08 16:22:34 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-08 16:35:40 --> Undefined variable: totalTime
+#0 /mdevs/mynrc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/Debug/Toolbar.php(501): include('/mdevs/mynrc/sy...')
+#2 /mdevs/mynrc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynrc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynrc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynrc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

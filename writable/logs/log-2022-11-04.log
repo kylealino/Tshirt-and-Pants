@@ -1,0 +1,248 @@
+ERROR - 2022-11-04 10:55:55 --> mysqli_sql_exception: Table 'd_ap2.warehouse_rack_transfer_hd' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1692): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(154): App\Models\MyWarehouseinvModel->view_rack_transfer_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-04 10:56:17 --> mysqli_sql_exception: Table 'd_ap2.warehouse_rack_transfer_hd' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1692): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(154): App\Models\MyWarehouseinvModel->view_rack_transfer_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-04 11:21:23 --> Invalid file: warehouse_inv/warehouse_inv_incoming.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Warehouse_inv.php(132): view()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_incoming()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 11:21:24 --> Invalid file: warehouse_inv/warehouse_inv_outbound.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Warehouse_inv.php(138): view()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_outbound()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 11:22:00 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Mysearchdata.php on line 286.
+ 1 APPPATH/Controllers/Mysearchdata.php(286): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 11:22:00 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Mysearchdata.php on line 286.
+ 1 APPPATH/Controllers/Mysearchdata.php(286): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 11:22:02 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Mysearchdata.php on line 286.
+ 1 APPPATH/Controllers/Mysearchdata.php(286): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 11:22:04 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Mysearchdata.php on line 286.
+ 1 APPPATH/Controllers/Mysearchdata.php(286): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 11:22:10 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Mysearchdata.php on line 286.
+ 1 APPPATH/Controllers/Mysearchdata.php(286): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 11:23:41 --> Trying to access array offset on value of type null
+in APPPATH/Controllers/Mysearchdata.php on line 286.
+ 1 APPPATH/Controllers/Mysearchdata.php(286): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 11:26:56 --> Invalid file: warehouse_inv/warehouse_inv_incoming.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Warehouse_inv.php(132): view()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_incoming()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 11:26:56 --> Invalid file: warehouse_inv/warehouse_inv_outbound.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Warehouse_inv.php(138): view()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_outbound()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-04 11:28:31 --> mysqli_sql_exception: Table 'd_ap2.warehouse_rack_transfer_hd' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1692): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(154): App\Models\MyWarehouseinvModel->view_rack_transfer_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-04 11:30:33 --> mysqli_sql_exception: Table 'd_ap2.warehouse_rack_transfer_hd' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1692): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(154): App\Models\MyWarehouseinvModel->view_rack_transfer_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-04 11:57:20 --> mysqli_sql_exception: Table 'd_ap2.warehouse_rack_transfer_hd' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1692): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(154): App\Models\MyWarehouseinvModel->view_rack_transfer_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-04 13:02:40 --> mysqli_sql_exception: Table 'd_ap2.warehouse_rack_transfer_hd' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1692): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(154): App\Models\MyWarehouseinvModel->view_rack_transfer_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-04 13:14:45 --> mysqli_sql_exception: Table 'd_ap2.warehouse_rack_transfer_hd' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1692): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(154): App\Models\MyWarehouseinvModel->view_rack_transfer_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-04 13:17:10 --> mysqli_sql_exception: Table 'd_ap2.warehouse_rack_transfer_hd' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1692): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(154): App\Models\MyWarehouseinvModel->view_rack_transfer_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-04 13:27:23 --> Invalid file: warehouse_inv/warehouse_inv_incoming.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Warehouse_inv.php(132): view()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_incoming()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-04 13:27:23 --> Invalid file: warehouse_inv/warehouse_inv_outbound.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Warehouse_inv.php(138): view()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_outbound()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-04 13:27:29 --> mysqli_sql_exception: Table 'd_ap2.warehouse_rack_transfer_hd' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1692): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(154): App\Models\MyWarehouseinvModel->view_rack_transfer_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_transfer_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-04 15:26:45 --> mysqli_sql_exception: Unknown column 'CTRL_CWT' in 'field list' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyDatumModel.php(94): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1530): App\Models\MyDatumModel->get_ctr()
+#6 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(160): App\Models\MyWarehouseinvModel->save_transfer()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_save_transfer()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#9 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-11-04 15:27:50 --> mysqli_sql_exception: Unknown column 'is_transferred' in 'field list' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1635): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(160): App\Models\MyWarehouseinvModel->save_transfer()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_save_transfer()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-04 16:39:40 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyWarehouseinvModel.php on line 1386.
+ 1 APPPATH/Models/MyWarehouseinvModel.php(1386): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Warehouse_inv.php(156): App\Models\MyWarehouseinvModel->get_wshe_inv_barcode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->get_barcode_inv()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

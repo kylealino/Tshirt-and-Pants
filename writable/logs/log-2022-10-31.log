@@ -1,0 +1,180 @@
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(154): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(81): App\Models\MyWarehouseinvModel->view_ent_itm_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_itm_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(34): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(154): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(81): App\Models\MyWarehouseinvModel->view_ent_itm_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_itm_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/system/Database/BaseBuilder.php(2079): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/system/Session/Handlers/DatabaseHandler.php(212): CodeIgniter\Database\BaseBuilder->update()
+#5 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->write()
+#6 [internal function]: session_write_close()
+#7 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(154): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(81): App\Models\MyWarehouseinvModel->view_ent_itm_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_itm_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(34): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(154): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(81): App\Models\MyWarehouseinvModel->view_ent_itm_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_itm_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(154): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(81): App\Models\MyWarehouseinvModel->view_ent_itm_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_itm_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(34): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(154): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(81): App\Models\MyWarehouseinvModel->view_ent_itm_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_itm_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/system/Database/BaseBuilder.php(2079): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/system/Session/Handlers/DatabaseHandler.php(212): CodeIgniter\Database\BaseBuilder->update()
+#5 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->write()
+#6 [internal function]: session_write_close()
+#7 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/system/Database/BaseBuilder.php(2079): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/system/Session/Handlers/DatabaseHandler.php(212): CodeIgniter\Database\BaseBuilder->update()
+#5 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->write()
+#6 [internal function]: session_write_close()
+#7 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(755): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(107): App\Models\MyWarehouseinvModel->generate_report_in()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(34): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(755): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(107): App\Models\MyWarehouseinvModel->generate_report_in()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/system/Database/BaseBuilder.php(2079): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/system/Session/Handlers/DatabaseHandler.php(212): CodeIgniter\Database\BaseBuilder->update()
+#5 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->write()
+#6 [internal function]: session_write_close()
+#7 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(418): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(34): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(418): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-10-31 03:49:03 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/system/Database/BaseBuilder.php(2079): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/system/Session/Handlers/DatabaseHandler.php(212): CodeIgniter\Database\BaseBuilder->update()
+#5 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->write()
+#6 [internal function]: session_write_close()
+#7 {main}

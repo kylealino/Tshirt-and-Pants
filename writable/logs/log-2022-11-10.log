@@ -1,0 +1,438 @@
+CRITICAL - 2022-11-10 08:04:00 --> unlink(/medata/appdevs/mynlinksc/writable/debugbar/debugbar_1667982846.249722.json): No such file or directory
+in SYSTEMPATH/Debug/Toolbar/Collectors/History.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Debug/Toolbar/Collectors/History.php(76): unlink()
+ 3 SYSTEMPATH/Debug/Toolbar.php(499): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+ 4 SYSTEMPATH/Debug/Toolbar.php(476): CodeIgniter\Debug\Toolbar->format()
+ 5 APPPATH/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(317): CodeIgniter\Events\Events::trigger()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 08:36:18 --> Undefined variable $txtvend_cont_pzersn
+in APPPATH/Models/MyPurchaseModel.php on line 434.
+ 1 APPPATH/Models/MyPurchaseModel.php(434): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(25): App\Models\MyPurchaseModel->purch_entry_save()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_save()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-10 08:42:16 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 57 in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyPurchaseModel.php(453): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Md_purchase.php(25): App\Models\MyPurchaseModel->purch_entry_save()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_save()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-10 08:59:38 --> Undefined array key 21
+in APPPATH/Models/MyPurchaseModel.php on line 478.
+ 1 APPPATH/Models/MyPurchaseModel.php(478): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(25): App\Models\MyPurchaseModel->purch_entry_save()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_save()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 09:03:32 --> Undefined array key 21
+in APPPATH/Models/MyPurchaseModel.php on line 478.
+ 1 APPPATH/Models/MyPurchaseModel.php(478): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(25): App\Models\MyPurchaseModel->purch_entry_save()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_save()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 09:03:48 --> Undefined array key 21
+in APPPATH/Models/MyPurchaseModel.php on line 478.
+ 1 APPPATH/Models/MyPurchaseModel.php(478): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(25): App\Models\MyPurchaseModel->purch_entry_save()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_save()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 09:04:18 --> Call to a member function freeResult() on bool
+in APPPATH/Models/MyPurchaseModel.php on line 510.
+ 1 APPPATH/Controllers/Md_purchase.php(25): App\Models\MyPurchaseModel->purch_entry_save()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_save()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 09:04:48 --> Undefined variable $mcustacctno
+in APPPATH/Models/MyPurchaseModel.php on line 678.
+ 1 APPPATH/Models/MyPurchaseModel.php(678): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(25): App\Models\MyPurchaseModel->purch_entry_save()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_save()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 09:27:01 --> syntax error, unexpected token "="
+in APPPATH/Models/MyPurchaseModel.php on line 462.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 APPPATH/Controllers/Md_purchase.php(13): CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(864): App\Controllers\Md_purchase->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 09:27:40 --> Undefined array key "mtkn_potr"
+in APPPATH/Models/MyPurchaseModel.php on line 462.
+ 1 APPPATH/Models/MyPurchaseModel.php(462): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(25): App\Models\MyPurchaseModel->purch_entry_save()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_save()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:19:21 --> Unmatched '}'
+in APPPATH/Models/MyPurchaseModel.php on line 1079.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 APPPATH/Controllers/Md_purchase.php(13): CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(864): App\Controllers\Md_purchase->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-10 11:24:21 --> mysqli_sql_exception: Unknown column 'd.recid' in 'field list' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyPurchaseModel.php(60): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Views/mtap/trx-purchase-order.php(494): App\Models\MyPurchaseModel->purch_rec_view()
+#6 /medata/appdevs/mynlinksc/system/View/View.php(213): include('...')
+#7 /medata/appdevs/mynlinksc/system/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#8 /medata/appdevs/mynlinksc/system/Common.php(1142): CodeIgniter\View\View->render()
+#9 /medata/appdevs/mynlinksc/app/Controllers/Md_purchase.php(20): view()
+#10 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+#11 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#12 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#13 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#14 {main}
+ERROR - 2022-11-10 11:25:30 --> mysqli_sql_exception: Unknown column 'd.trx' in 'where clause' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyPurchaseModel.php(59): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Views/mtap/trx-purchase-order.php(494): App\Models\MyPurchaseModel->purch_rec_view()
+#6 /medata/appdevs/mynlinksc/system/View/View.php(213): include('...')
+#7 /medata/appdevs/mynlinksc/system/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#8 /medata/appdevs/mynlinksc/system/Common.php(1142): CodeIgniter\View\View->render()
+#9 /medata/appdevs/mynlinksc/app/Controllers/Md_purchase.php(20): view()
+#10 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+#11 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#12 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#13 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-11-10 11:26:16 --> Undefined variable $mtkn_trxno
+in APPPATH/Views/mtap/trx-purchase-order-recs.php on line 89.
+ 1 APPPATH/Views/mtap/trx-purchase-order-recs.php(89): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order-recs.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/mtap/trx-purchase-order.php(495): view()
+ 6 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/Md_purchase.php(20): view()
+10 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+11 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:27:44 --> Undefined variable $mtkn_potr
+in APPPATH/Views/mtap/trx-purchase-order.php on line 78.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(78): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:28:40 --> Undefined array key "mtkn_mntr"
+in APPPATH/Views/mtap/trx-purchase-order.php on line 83.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:31:41 --> Undefined array key "mtkn_trxno"
+in APPPATH/Views/mtap/trx-purchase-order.php on line 83.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:34:01 --> Undefined array key "txt_ponumb"
+in APPPATH/Views/mtap/trx-purchase-order.php on line 88.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(88): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:34:02 --> Undefined array key "txt_ponumb"
+in APPPATH/Views/mtap/trx-purchase-order.php on line 88.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(88): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:39:52 --> Trying to access array offset on value of type null
+in APPPATH/Views/mtap/trx-purchase-order.php on line 84.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(84): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:39:56 --> Trying to access array offset on value of type null
+in APPPATH/Views/mtap/trx-purchase-order.php on line 84.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(84): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:49:41 --> Undefined variable $nconvf
+in APPPATH/Views/mtap/trx-purchase-order.php on line 459.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(459): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:52:33 --> Undefined variable $nconvf
+in APPPATH/Views/mtap/trx-purchase-order.php on line 459.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(459): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:52:33 --> Undefined variable $nconvf
+in APPPATH/Views/mtap/trx-purchase-order.php on line 459.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(459): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:52:34 --> Undefined variable $nconvf
+in APPPATH/Views/mtap/trx-purchase-order.php on line 459.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(459): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:57:14 --> Undefined variable $nprice
+in APPPATH/Views/mtap/trx-purchase-order.php on line 432.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(432): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:57:15 --> Undefined variable $nprice
+in APPPATH/Views/mtap/trx-purchase-order.php on line 432.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(432): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:57:15 --> Undefined variable $nprice
+in APPPATH/Views/mtap/trx-purchase-order.php on line 432.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(432): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 11:57:16 --> Undefined variable $nprice
+in APPPATH/Views/mtap/trx-purchase-order.php on line 432.
+ 1 APPPATH/Views/mtap/trx-purchase-order.php(432): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 14:17:14 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyPurchaseModel.php on line 1092.
+ 1 APPPATH/Models/MyPurchaseModel.php(1092): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(60): App\Models\MyPurchaseModel->po_for_approval()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_save_appr()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-10 15:25:11 --> mysqli_sql_exception: Unknown column 'CTRL_GWSTCKCDE' in 'field list' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyDatumModel.php(222): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Models/MyPurchaseModel.php(843): App\Models\MyDatumModel->get_ctr_new_dr()
+#6 /medata/appdevs/mynlinksc/app/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#9 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-11-10 15:45:56 --> Object of class App\Models\MyPurchaseModel could not be converted to string
+in APPPATH/Models/MyPurchaseModel.php on line 843.
+ 1 APPPATH/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 15:50:31 --> Object of class App\Models\MyPurchaseModel could not be converted to string
+in APPPATH/Models/MyPurchaseModel.php on line 843.
+ 1 APPPATH/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-10 15:53:07 --> mysqli_sql_exception: Unknown column 'a.mat_rid' in 'field list' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyPurchaseModel.php(996): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-10 15:55:40 --> mysqli_sql_exception: Unknown column 'po_hd_id' in 'where clause' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyPurchaseModel.php(996): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-10 15:59:15 --> mysqli_sql_exception: Unknown column 'a.po_hd_id' in 'where clause' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyPurchaseModel.php(996): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-10 16:05:03 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyPurchaseModel.php on line 749.
+ 1 APPPATH/Models/MyPurchaseModel.php(749): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 16:14:05 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyPurchaseModel.php on line 749.
+ 1 APPPATH/Models/MyPurchaseModel.php(749): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 16:15:21 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyPurchaseModel.php on line 749.
+ 1 APPPATH/Models/MyPurchaseModel.php(749): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 16:16:07 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyPurchaseModel.php on line 749.
+ 1 APPPATH/Models/MyPurchaseModel.php(749): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-10 16:17:06 --> Trying to access array offset on value of type null
+in APPPATH/Models/MyPurchaseModel.php on line 749.
+ 1 APPPATH/Models/MyPurchaseModel.php(749): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-10 16:17:57 --> mysqli_sql_exception: Duplicate entry '33332200000000010001' for key 'idx05' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyPurchaseModel.php(963): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Md_purchase.php(57): App\Models\MyPurchaseModel->po_barcde_gnrtion()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Md_purchase->barcde_gnrtion()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}

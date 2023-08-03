@@ -1,0 +1,9 @@
+CRITICAL - 2022-04-18 16:22:46 --> Invalid file: templates/mebod.php
+#0 /mdevz/mynv8links/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevz/mynv8links/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevz/mynv8links/app/Controllers/Mymain.php(10): view()
+#3 /mdevz/mynv8links/system/CodeIgniter.php(832): App\Controllers\Mymain->index()
+#4 /mdevz/mynv8links/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevz/mynv8links/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynv8links/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

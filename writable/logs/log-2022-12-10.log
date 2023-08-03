@@ -1,0 +1,264 @@
+CRITICAL - 2022-12-10 14:11:22 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Views/good_receive/gr_main.php(33): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_main.php')
+ 5 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/Mytrx_gr.php(44): view()
+ 8 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->index()
+ 9 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-10 14:22:29 --> mysqli_sql_exception: Unknown column 'aa.cd_tag' in 'where clause' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/Mytrx_gr_Model.php(74): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Mytrx_gr.php(143): App\Models\Mytrx_gr_Model->view_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_ent_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-12-10 14:26:31 --> mysqli_sql_exception: Unknown column 'aa.cd_tag' in 'where clause' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/Mytrx_gr_Model.php(74): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Mytrx_gr.php(143): App\Models\Mytrx_gr_Model->view_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_ent_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-12-10 14:26:41 --> mysqli_sql_exception: Unknown column 'aa.cd_tag' in 'where clause' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/Mytrx_gr_Model.php(74): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Mytrx_gr.php(143): App\Models\Mytrx_gr_Model->view_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_ent_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-12-10 14:35:53 --> Cannot redeclare App\Controllers\Mysearchdata::mat_article()
+in APPPATH/Controllers/Mysearchdata.php on line 1063.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-10 14:35:55 --> Cannot redeclare App\Controllers\Mysearchdata::mat_article()
+in APPPATH/Controllers/Mysearchdata.php on line 1063.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-10 14:36:45 --> Cannot redeclare App\Controllers\Mysearchdata::mat_article()
+in APPPATH/Controllers/Mysearchdata.php on line 1063.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-10 14:36:45 --> Cannot redeclare App\Controllers\Mysearchdata::mat_article()
+in APPPATH/Controllers/Mysearchdata.php on line 1063.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-10 14:36:55 --> Cannot redeclare App\Controllers\Mysearchdata::mat_article()
+in APPPATH/Controllers/Mysearchdata.php on line 1063.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-10 14:36:55 --> Cannot redeclare App\Controllers\Mysearchdata::mat_article()
+in APPPATH/Controllers/Mysearchdata.php on line 1063.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-10 14:39:10 --> Cannot redeclare App\Controllers\Mysearchdata::mat_article()
+in APPPATH/Controllers/Mysearchdata.php on line 1063.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-12-10 14:45:39 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/Mymelibsys_model.php(20): CodeIgniter\Model->__get()
+ 4 APPPATH/Models/Mytrx_gr_Model.php(134): App\Models\mymelibsys_model->getCompany_data()
+ 5 APPPATH/Controllers/Mytrx_gr.php(127): App\Models\Mytrx_gr_Model->grsave()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_sv()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 15:39:23 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH/Views/good_receive/gr_print.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/good_receive/gr_print.php(79): DateTime->__construct()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_print.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Mytrx_gr.php(164): view()
+ 7 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_print()
+ 8 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 15:43:37 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH/Views/good_receive/gr_print.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/good_receive/gr_print.php(79): DateTime->__construct()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_print.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Mytrx_gr.php(164): view()
+ 7 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_print()
+ 8 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 15:43:37 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH/Views/good_receive/gr_print.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/good_receive/gr_print.php(79): DateTime->__construct()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_print.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Mytrx_gr.php(164): view()
+ 7 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_print()
+ 8 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 15:43:38 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH/Views/good_receive/gr_print.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/good_receive/gr_print.php(79): DateTime->__construct()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_print.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Mytrx_gr.php(164): view()
+ 7 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_print()
+ 8 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 15:43:38 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH/Views/good_receive/gr_print.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/good_receive/gr_print.php(79): DateTime->__construct()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_print.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Mytrx_gr.php(164): view()
+ 7 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_print()
+ 8 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 15:43:40 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH/Views/good_receive/gr_print.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/good_receive/gr_print.php(79): DateTime->__construct()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_print.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Mytrx_gr.php(164): view()
+ 7 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_print()
+ 8 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 15:48:54 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH/Views/good_receive/gr_print.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/good_receive/gr_print.php(79): DateTime->__construct()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_print.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Mytrx_gr.php(164): view()
+ 7 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_print()
+ 8 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 15:57:00 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH/Views/good_receive/gr_print.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/good_receive/gr_print.php(79): DateTime->__construct()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_print.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Mytrx_gr.php(164): view()
+ 7 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_print()
+ 8 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 15:57:01 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH/Views/good_receive/gr_print.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/good_receive/gr_print.php(79): DateTime->__construct()
+ 3 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_print.php')
+ 4 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Mytrx_gr.php(164): view()
+ 7 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_print()
+ 8 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 16:04:19 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/Mytrx_gr_Model.php(2650): CodeIgniter\Model->__call()
+ 4 APPPATH/Controllers/Mytrx_gr.php(217): App\Models\Mytrx_gr_Model->gr_barcde_gnrtion()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_barcode_generation()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-10 16:04:56 --> mysqli_sql_exception: Duplicate entry 'CWGR20220000000008' for key 'idx01' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/Mytrx_gr_Model.php(2622): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Mytrx_gr.php(217): App\Models\Mytrx_gr_Model->gr_barcde_gnrtion()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_barcode_generation()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-12-10 16:06:04 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/Mytrx_gr_Model.php(2650): CodeIgniter\Model->__call()
+ 4 APPPATH/Controllers/Mytrx_gr.php(217): App\Models\Mytrx_gr_Model->gr_barcde_gnrtion()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_barcode_generation()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 16:27:00 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Views/good_receive/gr_main.php(33): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_main.php')
+ 5 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/Mytrx_gr.php(44): view()
+ 8 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->index()
+ 9 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-10 16:27:08 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Views/good_receive/gr_main.php(33): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/good_receive/gr_main.php')
+ 5 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 7 APPPATH/Controllers/Mytrx_gr.php(44): view()
+ 8 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mytrx_gr->index()
+ 9 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-10 16:33:34 --> mysqli_sql_exception: Duplicate entry 'CWGR20220000000008' for key 'idx01' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/Mytrx_gr_Model.php(2622): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Mytrx_gr.php(217): App\Models\Mytrx_gr_Model->gr_barcde_gnrtion()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Mytrx_gr->gr_barcode_generation()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}

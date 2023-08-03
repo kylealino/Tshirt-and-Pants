@@ -1,0 +1,454 @@
+ERROR - 2022-05-18 09:29:48 --> MySQL server has gone away
+ERROR - 2022-05-18 09:29:48 --> MySQL server has gone away
+CRITICAL - 2022-05-18 09:29:48 --> Call to a member function getRow() on bool
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+CRITICAL - 2022-05-18 09:29:48 --> Call to a member function getRow() on bool
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-18 09:36:13 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-18 09:36:13 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-18 09:36:33 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-18 09:36:33 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-18 09:36:41 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-18 09:36:41 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-18 09:36:45 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-18 09:36:45 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-18 09:36:47 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-18 09:36:47 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+CRITICAL - 2022-05-18 10:23:01 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+CRITICAL - 2022-05-18 10:41:34 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+CRITICAL - 2022-05-18 11:36:37 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+CRITICAL - 2022-05-18 11:37:51 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+CRITICAL - 2022-05-18 12:43:19 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+CRITICAL - 2022-05-18 12:43:23 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+ERROR - 2022-05-18 13:47:30 --> Subquery returns more than 1 row
+ERROR - 2022-05-18 13:48:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sha2(concat(aa.`CUST_ID`,'181-1mysyzerpmy'),384) mtkn_mntr 
+        FROM
+    ...' at line 33
+CRITICAL - 2022-05-18 13:58:53 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+CRITICAL - 2022-05-18 13:59:12 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+CRITICAL - 2022-05-18 14:04:16 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+ERROR - 2022-05-18 14:07:45 --> Unknown column 'cc.Correspondence Code' in 'field list'
+ERROR - 2022-05-18 14:07:51 --> Unknown column 'cc.Correspondence Code' in 'field list'
+ERROR - 2022-05-18 14:07:51 --> Unknown column 'cc.Correspondence Code' in 'field list'
+ERROR - 2022-05-18 14:07:52 --> Unknown column 'cc.Correspondence Code' in 'field list'
+ERROR - 2022-05-18 14:07:52 --> Unknown column 'cc.Correspondence Code' in 'field list'
+ERROR - 2022-05-18 14:08:50 --> Unknown column 'cc.Correspondence Code' in 'field list'
+ERROR - 2022-05-18 14:08:57 --> Unknown column 'cc.Correspondence Code' in 'field list'
+ERROR - 2022-05-18 14:10:56 --> Unknown column 'cc.Correspondence Code' in 'field list'
+ERROR - 2022-05-18 14:14:05 --> Unknown column 'cc.Correspondence Code' in 'field list'
+CRITICAL - 2022-05-18 15:04:26 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+CRITICAL - 2022-05-18 15:04:37 --> ini_set(): Session ini settings cannot be changed when a session is active
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/Session/Handlers/BaseHandler.php(162): ini_set()
+#2 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(274): CodeIgniter\Session\Handlers\BaseHandler->fail()
+#3 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(111): CodeIgniter\Session\Handlers\DatabaseHandler->lockSession()
+#4 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->read()
+#5 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#6 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#7 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#11 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#12 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#13 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#14 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#15 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#16 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#17 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}
+ERROR - 2022-05-18 15:34:43 --> Duplicate column name 'CUST_GENDER'
+CRITICAL - 2022-05-18 16:10:12 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Controllers/Md_reports.php(30): CodeIgniter\Model->__call()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->tot_purch_recs()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-18 16:10:15 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Controllers/Md_reports.php(30): CodeIgniter\Model->__call()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->tot_purch_recs()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-18 16:10:19 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Controllers/Md_reports.php(30): CodeIgniter\Model->__call()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->tot_purch_recs()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-18 16:10:55 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Controllers/Md_reports.php(30): CodeIgniter\Model->__call()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->tot_purch_recs()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-05-18 16:13:01 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where (b.`name` like '%ABM8018GA%' or 
+            aa.`stock_no` like '%ABM80...' at line 17
+CRITICAL - 2022-05-18 17:57:47 --> Undefined array key "CUST_ID"
+#0 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-redempt-recs.php(74): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#2 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /medata/webapps/mynrc/app/Views/mdrpts/md-tot-redempt.php(77): view()
+#5 /medata/webapps/mynrc/system/View/View.php(210): include('...')
+#6 /medata/webapps/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 /medata/webapps/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#8 /medata/webapps/mynrc/app/Controllers/Md_reports.php(36): view()
+#9 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->tot_redempt()
+#10 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#11 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#12 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-05-18 17:58:33 --> You must set the database table to be used with your query.
+#0 /medata/webapps/mynrc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /medata/webapps/mynrc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /medata/webapps/mynrc/app/Controllers/Md_reports.php(43): CodeIgniter\Model->__call()
+#3 /medata/webapps/mynrc/system/CodeIgniter.php(832): App\Controllers\Md_reports->tot_redempt_recs()
+#4 /medata/webapps/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:08:08 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away
+ERROR - 2022-05-18 18:14:46 --> MySQL server has gone away

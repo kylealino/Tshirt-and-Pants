@@ -1,0 +1,36 @@
+CRITICAL - 2022-11-24 14:17:18 --> Class "App\Controllers\MyRMPurchaseModel" not found
+in APPPATH/Controllers/Rm_purchase.php on line 13.
+ 1 SYSTEMPATH/CodeIgniter.php(864): App\Controllers\Rm_purchase->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-24 14:18:08 --> Class "App\Controllers\MyRMPurchaseModel" not found
+in APPPATH/Controllers/Rm_purchase.php on line 13.
+ 1 SYSTEMPATH/CodeIgniter.php(864): App\Controllers\Rm_purchase->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-24 14:18:18 --> Class "App\Controllers\MyRMPurchaseModel" not found
+in APPPATH/Controllers/Rm_purchase.php on line 13.
+ 1 SYSTEMPATH/CodeIgniter.php(864): App\Controllers\Rm_purchase->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-24 14:19:15 --> Invalid file: mtap/fgrm/trx-rm-purchase-order.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Rm_purchase.php(20): view()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Rm_purchase->index()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-24 14:40:00 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH/Controllers/Rm_purchase.php(61): CodeIgniter\Model->__call()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Rm_purchase->rmpurchase_save_appr()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

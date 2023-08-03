@@ -1,0 +1,31 @@
+CRITICAL - 2022-11-16 09:12:45 --> Unclosed '{' on line 7
+in APPPATH/Controllers/Fg_packing.php on line 44.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(852): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(444): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-16 10:59:26 --> Undefined array key "plnt_id"
+in APPPATH/Views/Whcrossing/Whcrossing_recs.php on line 98.
+ 1 APPPATH/Views/Whcrossing/Whcrossing_recs.php(98): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/Whcrossing/Whcrossing_recs.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/WhCrossing.php(77): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\WhCrossing->whcrossing_ent_recs()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-16 10:59:55 --> Undefined array key "plnt_id"
+in APPPATH/Views/Whcrossing/Whcrossing_recs.php on line 98.
+ 1 APPPATH/Views/Whcrossing/Whcrossing_recs.php(98): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/Whcrossing/Whcrossing_recs.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/WhCrossing.php(77): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\WhCrossing->whcrossing_ent_recs()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

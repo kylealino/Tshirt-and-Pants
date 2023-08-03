@@ -1,0 +1,90 @@
+ERROR - 2022-05-24 09:39:33 --> Error connecting to the database: Connection timed out
+CRITICAL - 2022-05-24 09:39:33 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection timed out
+#0 /mdevs/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /mdevs/mynrc/system/Session/Session.php(894): session_start()
+#3 /mdevs/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /mdevs/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /mdevs/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /mdevs/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /mdevs/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /mdevs/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /mdevs/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /mdevs/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /mdevs/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /mdevs/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-24 09:41:08 --> Error connecting to the database: Connection timed out
+CRITICAL - 2022-05-24 09:41:08 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection timed out
+#0 /mdevs/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /mdevs/mynrc/system/Session/Session.php(894): session_start()
+#3 /mdevs/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /mdevs/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /mdevs/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /mdevs/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /mdevs/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /mdevs/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /mdevs/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /mdevs/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /mdevs/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /mdevs/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-24 10:22:45 --> Error connecting to the database: Connection timed out
+CRITICAL - 2022-05-24 10:22:45 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection timed out
+#0 /mdevs/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /mdevs/mynrc/system/Session/Session.php(894): session_start()
+#3 /mdevs/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /mdevs/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /mdevs/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /mdevs/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /mdevs/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /mdevs/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /mdevs/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /mdevs/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /mdevs/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /mdevs/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-24 11:05:57 --> Error connecting to the database: Connection timed out
+CRITICAL - 2022-05-24 11:05:57 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection timed out
+#0 /mdevs/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /mdevs/mynrc/system/Session/Session.php(894): session_start()
+#3 /mdevs/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /mdevs/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /mdevs/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /mdevs/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /mdevs/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /mdevs/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /mdevs/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /mdevs/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /mdevs/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /mdevs/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-24 11:22:14 --> SELECT command denied to user 'myerp'@'localhost' for table 'myusers'
+ERROR - 2022-05-24 11:22:14 --> INSERT command denied to user 'myerp'@'localhost' for table 'syslogs'
+ERROR - 2022-05-24 11:25:55 --> SELECT command denied to user 'myerp'@'localhost' for table 'myusers'
+ERROR - 2022-05-24 11:25:55 --> INSERT command denied to user 'myerp'@'localhost' for table 'syslogs'
+ERROR - 2022-05-24 11:27:04 --> SELECT command denied to user 'myerp'@'localhost' for table 'myusers'
+ERROR - 2022-05-24 11:27:04 --> INSERT command denied to user 'myerp'@'localhost' for table 'syslogs'
+ERROR - 2022-05-24 11:27:07 --> SELECT command denied to user 'myerp'@'localhost' for table 'myusers'
+ERROR - 2022-05-24 11:27:07 --> INSERT command denied to user 'myerp'@'localhost' for table 'syslogs'
+ERROR - 2022-05-24 11:27:53 --> Table 'ap8.myusers' doesn't exist
+ERROR - 2022-05-24 11:27:53 --> Table 'ap8.syslogs' doesn't exist
+ERROR - 2022-05-24 11:30:29 --> Table 'ap8.myusers' doesn't exist
+ERROR - 2022-05-24 11:30:29 --> Table 'ap8.syslogs' doesn't exist
+ERROR - 2022-05-24 11:38:56 --> Table 'ap8.myusers' doesn't exist
+ERROR - 2022-05-24 11:38:56 --> Table 'ap8.syslogs' doesn't exist

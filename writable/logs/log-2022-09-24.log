@@ -1,0 +1,121 @@
+ERROR - 2022-09-24 14:26:48 --> mysqli_sql_exception: Table 'ap2.trx_agpo_hd_print' doesn't exist in /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/mdevz/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /var/mdevz/mynlinksc/app/Models/Mytrx_whcrossing_model.php(77): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /var/mdevz/mynlinksc/app/Controllers/WhCrossing.php(60): App\Models\Mytrx_whcrossing_model->view_ent_recs()
+#6 /var/mdevz/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_ent_recs()
+#7 /var/mdevz/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /var/mdevz/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/mdevz/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-24 14:26:48 --> mysqli_sql_exception: Unknown column 'a.agpo_print' in 'where clause' in /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/mdevz/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /var/mdevz/mynlinksc/app/Models/Mytrx_whcrossing_model.php(141): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /var/mdevz/mynlinksc/app/Controllers/WhCrossing.php(50): App\Models\Mytrx_whcrossing_model->add_poprint_recs()
+#6 /var/mdevz/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_pl_recs()
+#7 /var/mdevz/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /var/mdevz/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/mdevz/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-24 14:26:51 --> mysqli_sql_exception: Table 'ap2.trx_agpo_hd_print' doesn't exist in /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/mdevz/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /var/mdevz/mynlinksc/app/Models/Mytrx_whcrossing_model.php(77): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /var/mdevz/mynlinksc/app/Controllers/WhCrossing.php(60): App\Models\Mytrx_whcrossing_model->view_ent_recs()
+#6 /var/mdevz/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_ent_recs()
+#7 /var/mdevz/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /var/mdevz/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/mdevz/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-24 14:26:51 --> mysqli_sql_exception: Unknown column 'a.agpo_print' in 'where clause' in /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/mdevz/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /var/mdevz/mynlinksc/app/Models/Mytrx_whcrossing_model.php(141): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /var/mdevz/mynlinksc/app/Controllers/WhCrossing.php(50): App\Models\Mytrx_whcrossing_model->add_poprint_recs()
+#6 /var/mdevz/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_pl_recs()
+#7 /var/mdevz/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /var/mdevz/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/mdevz/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-24 14:26:52 --> mysqli_sql_exception: Table 'ap2.trx_agpo_hd_print' doesn't exist in /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/mdevz/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /var/mdevz/mynlinksc/app/Models/Mytrx_whcrossing_model.php(77): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /var/mdevz/mynlinksc/app/Controllers/WhCrossing.php(60): App\Models\Mytrx_whcrossing_model->view_ent_recs()
+#6 /var/mdevz/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_ent_recs()
+#7 /var/mdevz/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /var/mdevz/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/mdevz/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-24 14:26:52 --> mysqli_sql_exception: Unknown column 'a.agpo_print' in 'where clause' in /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/mdevz/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /var/mdevz/mynlinksc/app/Models/Mytrx_whcrossing_model.php(141): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /var/mdevz/mynlinksc/app/Controllers/WhCrossing.php(50): App\Models\Mytrx_whcrossing_model->add_poprint_recs()
+#6 /var/mdevz/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_pl_recs()
+#7 /var/mdevz/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /var/mdevz/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/mdevz/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-24 14:26:56 --> mysqli_sql_exception: Unknown column 'aa.is_crossdocking' in 'where clause' in /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/mdevz/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /var/mdevz/mynlinksc/app/Models/Mymelibsys_model.php(585): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /var/mdevz/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(48): App\Models\mymelibsys_model->getCDActivePlantWarehouse()
+#6 /var/mdevz/mynlinksc/system/View/View.php(213): include('/var/mdevz/mynl...')
+#7 /var/mdevz/mynlinksc/system/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#8 /var/mdevz/mynlinksc/system/Common.php(1142): CodeIgniter\View\View->render()
+#9 /var/mdevz/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#10 /var/mdevz/mynlinksc/system/CodeIgniter.php(907): App\Controllers\Warehouse_out->index()
+#11 /var/mdevz/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#12 /var/mdevz/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#13 /var/mdevz/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#14 {main}
+ERROR - 2022-09-24 14:36:03 --> mysqli_sql_exception: Table 'ap2.trx_agpo_hd_print' doesn't exist in /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/mdevz/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /var/mdevz/mynlinksc/app/Models/Mytrx_whcrossing_model.php(77): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /var/mdevz/mynlinksc/app/Controllers/WhCrossing.php(60): App\Models\Mytrx_whcrossing_model->view_ent_recs()
+#6 /var/mdevz/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_ent_recs()
+#7 /var/mdevz/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /var/mdevz/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/mdevz/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-09-24 14:36:03 --> mysqli_sql_exception: Unknown column 'a.agpo_print' in 'where clause' in /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /var/mdevz/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/mdevz/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/mdevz/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /var/mdevz/mynlinksc/app/Models/Mytrx_whcrossing_model.php(141): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /var/mdevz/mynlinksc/app/Controllers/WhCrossing.php(50): App\Models\Mytrx_whcrossing_model->add_poprint_recs()
+#6 /var/mdevz/mynlinksc/system/CodeIgniter.php(907): App\Controllers\WhCrossing->whcrossing_pl_recs()
+#7 /var/mdevz/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /var/mdevz/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/mdevz/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}

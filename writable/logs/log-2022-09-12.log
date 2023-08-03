@@ -1,0 +1,233 @@
+CRITICAL - 2022-09-12 10:58:19 --> syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING)
+#0 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#3 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#4 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-12 10:58:59 --> syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING)
+#0 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#3 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#4 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-12 10:59:32 --> Undefined index: total
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(353): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-09-12 11:02:34 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ART_SKU,
+			po.`asstd_tag`,
+			dt.`po_sysctrlno`
+			FROM trx_agpo_hd_print aa...' at line 9
+CRITICAL - 2022-09-12 11:02:42 --> Undefined index: total
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(354): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-12 11:02:57 --> Undefined index: area
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(357): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-12 11:03:04 --> Undefined index: storbranch
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(358): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-09-12 11:04:20 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 expected,
+			dt.`convf`,
+			'SA' ART_SKU,
+			po.`asstd_tag`,
+			dt.`po_sysc...' at line 7
+ERROR - 2022-09-12 11:04:21 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 expected,
+			dt.`convf`,
+			'SA' ART_SKU,
+			po.`asstd_tag`,
+			dt.`po_sysc...' at line 7
+CRITICAL - 2022-09-12 11:04:55 --> syntax error, unexpected '$ART_DESC' (T_VARIABLE)
+#0 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#3 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#4 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-12 11:04:57 --> syntax error, unexpected '$ART_DESC' (T_VARIABLE)
+#0 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#3 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#4 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-12 11:09:36 --> Use of undefined constant tboxes - assumed 'tboxes' (this will throw an Error in a future version of PHP)
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(366): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-12 11:09:39 --> Undefined variable: grandTotalBox
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(366): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-12 11:09:41 --> Undefined variable: grandTotalBox
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(366): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-12 11:11:26 --> Use of undefined constant convf - assumed 'convf' (this will throw an Error in a future version of PHP)
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(369): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-12 11:23:55 --> Class 'App\Libraries\Fpdf\Exception' not found
+#0 /mdevs/mynrc/app/Libraries/Fpdf/Fpdf.php(1060): App\Libraries\Fpdf\Fpdf->Error()
+#1 /mdevs/mynrc/app/Libraries/Fpdf/Fpdf.php(999): App\Libraries\Fpdf\Fpdf->_checkoutput()
+#2 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(813): App\Libraries\Fpdf\Fpdf->Output()
+#3 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#4 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#6 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#7 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#8 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#9 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#10 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-09-12 11:33:51 --> Undefined variable: gtw1g1
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(383): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-12 14:50:33 --> Undefined index: irr_sysctrlno
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(129): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-09-12 15:42:07 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM ((((((ap2.`trx_po_hd` aa 
+    LEFT JOIN 
+    ap2.`mst_vendor` bb 
+    ON...' at line 18
+ERROR - 2022-09-12 15:42:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM ((((((ap2.`trx_po_hd` aa 
+    LEFT JOIN 
+    ap2.`mst_vendor` bb 
+    ON...' at line 18
+ERROR - 2022-09-12 15:42:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM ((((((ap2.`trx_po_hd` aa 
+    LEFT JOIN 
+    ap2.`mst_vendor` bb 
+    ON...' at line 18
+ERROR - 2022-09-12 15:42:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM ((((((ap2.`trx_po_hd` aa 
+    LEFT JOIN 
+    ap2.`mst_vendor` bb 
+    ON...' at line 18
+CRITICAL - 2022-09-12 15:42:15 --> Undefined index: dr_list
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(89): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-09-12 15:43:41 --> Unknown column 'dd.recid' in 'field list'
+ERROR - 2022-09-12 15:43:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+    WHERE sha2(concat(gg.`agpo_sysctrlno`,'arnelmysyzerpmy'),384) = 'a1d355...' at line 24
+ERROR - 2022-09-12 15:46:03 --> Unknown column 'bb.VEND_NAME' in 'field list'
+ERROR - 2022-09-12 15:46:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM ((ap2.`trx_po_hd` aa 
+    LEFT JOIN 
+    ap2.myusers ff 
+    ON(aa.`muse...' at line 56
+ERROR - 2022-09-12 15:46:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM ((ap2.`trx_po_hd` aa 
+    LEFT JOIN 
+    ap2.myusers ff 
+    ON(aa.`muse...' at line 56
+ERROR - 2022-09-12 15:46:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM ((ap2.`trx_po_hd` aa 
+    LEFT JOIN 
+    ap2.myusers ff 
+    ON(aa.`muse...' at line 56
+ERROR - 2022-09-12 15:51:20 --> Table 'ap2.trx_po_dt dt' doesn't exist
+ERROR - 2022-09-12 15:51:21 --> Table 'ap2.trx_po_dt dt' doesn't exist
+ERROR - 2022-09-12 15:51:22 --> Table 'ap2.trx_po_dt dt' doesn't exist
+ERROR - 2022-09-12 15:51:33 --> Table 'ap2.trx_po_dt dt' doesn't exist
+ERROR - 2022-09-12 15:51:34 --> Table 'ap2.trx_po_dt dt' doesn't exist
+ERROR - 2022-09-12 15:51:36 --> Table 'ap2.trx_po_dt dt' doesn't exist
+CRITICAL - 2022-09-12 16:24:24 --> Undefined variable: po_ref
+#0 /mdevs/mynrc/app/Views/Whcrossing/Whcrossing_irrprint.php(703): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynrc/system/View/View.php(210): include('/mdevs/mynrc/ap...')
+#2 /mdevs/mynrc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynrc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynrc/app/Controllers/WhCrossing.php(89): view()
+#5 /mdevs/mynrc/system/CodeIgniter.php(832): App\Controllers\WhCrossing->mycrossing_irrprint()
+#6 /mdevs/mynrc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

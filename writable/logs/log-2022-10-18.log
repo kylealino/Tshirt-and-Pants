@@ -1,0 +1,58 @@
+CRITICAL - 2022-10-18 08:10:02 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-18 08:10:13 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-18 08:12:58 --> Undefined variable $chtmljs
+in APPPATH/Models/MyWarehouseinvModel.php on line 836.
+ 1 APPPATH/Models/MyWarehouseinvModel.php(836): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Warehouse_inv.php(107): App\Models\MyWarehouseinvModel->generate_report_in()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-18 08:13:48 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-18 08:14:17 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-18 08:47:50 --> You must set the database table to be used with your query.
+in SYSTEMPATH/Database/BaseConnection.php on line 872.
+ 1 SYSTEMPATH/Model.php(587): CodeIgniter\Database\BaseConnection->table()
+ 2 SYSTEMPATH/Model.php(735): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/MyWarehouseinvModel.php(274): CodeIgniter\Model->__get()
+ 4 APPPATH/Controllers/Warehouse_inv.php(104): App\Models\MyWarehouseinvModel->generate_report_stkcode()
+ 5 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+ 6 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

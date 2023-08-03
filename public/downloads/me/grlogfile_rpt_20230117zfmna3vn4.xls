@@ -1,0 +1,75 @@
+
+                        <html xmlns:x="urn:schemas-microsoft-com:office:excel">
+                            <head>
+                            <meta http-equiv=Content-Type content="text/csv; charset=utf-8">
+                            </head>
+                            <body>
+                        <table class="table table-sm table-bordered table-hover" id="testTable_dr">
+                           
+                              <tr class="header-tr-addr">
+                                <th class="noborder" colspan="27">Goods Receipt Logfile</th>
+                              </tr>
+                              <tr class="header-tr-addr">
+                                <th class="noborder" colspan="27">2023-01-17- 2023-01-17</th>
+                              </tr>
+                              <tr class="header-tr-addr">
+                                <th class="noborder" colspan="27">&nbsp;</th>
+                              </tr>
+                              <tr class ="header-theme-purple text-white">
+                                <th class="noborder">No</th>
+                                <th class="noborder">Transaction No</th>
+                                <th class="noborder">Pullout Trx No</th>
+                                <th class="noborder">Company</th>
+                                <th class="noborder">Item Code</th>
+                                <th class="noborder">Item Description</th>
+                                <th class="noborder">Unit Cost</th>
+                                <th class="noborder">Total Unit Cost</th>
+                                <th class="noborder">Unit Price</th>
+                                <th class="noborder">Total Unit Price</th>
+                                <th class="noborder">Box Qty</th>
+                                <th class="noborder">Total Actual Qty</th>
+                                <th class="noborder">Total Actual Cost</th>
+                                <th class="noborder">Total Actual SRP</th>
+                                <th class="noborder">Branch</th>
+                                <th class="noborder">GR Date</th>
+                                <th class="noborder">User</th>
+                                <th class="noborder">Remarks</th>
+                                <th class="noborder">Type</th>
+                                <th class="noborder">Assorted Items</th>
+                                <th class="noborder">Item Qty Pcs (Pullout)</th>
+                                <th class="noborder">Item Qty Pcs(Goods)</th>
+                                <th class="noborder">Item Convf (Goods)</th>
+                                <th class="noborder">Item Qty Pcs (Damage)</th>
+                                <th class="noborder">Item Qty Pcs (Lacking)</th>
+                                <th class="noborder">Approval (Y/N)</th>
+
+                                </tr>
+                              <tr class="data-nm">
+                                            <td>1</td>
+                                            <td>'CWGR20230000000007</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>LBT01504</td>
+                                            <td>#0071 YELLOW SLEEVELESS asstd color</td>
+                                            <td>75.00</td>
+                                            <td>750.00</td>
+                                            <td>99.00</td>
+                                            <td>990.00</td>
+                                            <td>1.00</td>
+                                            <td>1.00</td>
+                                            <td>750.00</td>
+                                            <td>990.00</td>
+                                            <td></td>
+                                            <td>01/17/2023</td>
+                                            <td>IT-KYLE</td>
+                                            <td></td>
+                                            <td>Good Items</td>
+                                            <td>LBT01504</td>
+                                            <td>0.00</td>
+                                            <td>10.00</td>
+                                            <td>10.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>Y</td>
+                                           </tr>
+                                       

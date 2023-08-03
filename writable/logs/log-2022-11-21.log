@@ -1,0 +1,27 @@
+CRITICAL - 2022-11-21 14:17:52 --> Undefined variable $terms
+in APPPATH/Views/mtap/fgpack/trx-fg-pack.php on line 127.
+ 1 APPPATH/Views/mtap/fgpack/trx-fg-pack.php(127): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/fgpack/trx-fg-pack.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Fg_packing.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Fg_packing->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-21 14:18:39 --> mysqli_sql_exception: Unknown column 'a.po_plnt_id' in 'on clause' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Views/mtap/fgpack/trx-fg-pack.php(207): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/system/View/View.php(213): include('...')
+#6 /medata/appdevs/mynlinksc/system/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 /medata/appdevs/mynlinksc/system/Common.php(1142): CodeIgniter\View\View->render()
+#8 /medata/appdevs/mynlinksc/app/Controllers/Fg_packing.php(20): view()
+#9 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Fg_packing->index()
+#10 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#11 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}

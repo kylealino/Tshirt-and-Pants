@@ -1,0 +1,24 @@
+ERROR - 2022-09-21 08:28:30 --> Invalid default value for 'plantID'
+ERROR - 2022-09-21 08:51:38 --> Invalid default value for 'plantID'
+ERROR - 2022-09-21 08:52:37 --> Unknown column 'a.wobBarcode' in 'field list'
+ERROR - 2022-09-21 08:53:01 --> Table 'warehouse_out_logs' already exists
+ERROR - 2022-09-21 08:55:34 --> Unknown column 'sysctrlno' in 'field list'
+ERROR - 2022-09-21 08:55:36 --> Unknown column 'sysctrlno' in 'field list'
+CRITICAL - 2022-09-21 09:50:39 --> Call to a member function move() on null
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(47): App\Models\MyWarehouseoutModel->whrcdout_upld()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-21 09:50:46 --> Call to a member function move() on null
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(47): App\Models\MyWarehouseoutModel->whrcdout_upld()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_upld()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-09-21 16:53:32 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND2a
+                e.`is_approved` ='Y'
+            AND
+                a....' at line 30

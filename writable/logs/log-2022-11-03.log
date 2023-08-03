@@ -1,0 +1,237 @@
+ERROR - 2022-11-03 06:46:13 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(154): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(81): App\Models\MyWarehouseinvModel->view_ent_itm_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_itm_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-03 06:46:13 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(34): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(154): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(81): App\Models\MyWarehouseinvModel->view_ent_itm_recs()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->whcdinv_itm_recs()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-03 06:46:13 --> mysqli_sql_exception: MySQL server has gone away in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/system/Database/BaseBuilder.php(2079): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/system/Session/Handlers/DatabaseHandler.php(212): CodeIgniter\Database\BaseBuilder->update()
+#5 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->write()
+#6 [internal function]: session_write_close()
+#7 {main}
+CRITICAL - 2022-11-03 11:33:16 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:17 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:37 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:40 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 285.
+ 1 APPPATH/Controllers/Mysearchdata.php(285): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:41 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:42 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 285.
+ 1 APPPATH/Controllers/Mysearchdata.php(285): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:43 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:44 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 285.
+ 1 APPPATH/Controllers/Mysearchdata.php(285): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:45 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:46 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 285.
+ 1 APPPATH/Controllers/Mysearchdata.php(285): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:46 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:47 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 285.
+ 1 APPPATH/Controllers/Mysearchdata.php(285): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:47 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:48 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 285.
+ 1 APPPATH/Controllers/Mysearchdata.php(285): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:49 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:49 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 285.
+ 1 APPPATH/Controllers/Mysearchdata.php(285): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:50 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:52 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 285.
+ 1 APPPATH/Controllers/Mysearchdata.php(285): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_bin_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:52 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:33:57 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:36:10 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:37:14 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:37:25 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:37:28 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-03 11:37:42 --> Undefined property: App\Controllers\Mysearchdata::$mymelibzsys
+in APPPATH/Controllers/Mysearchdata.php on line 242.
+ 1 APPPATH/Controllers/Mysearchdata.php(242): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->myget_warehouse_group_list()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-11-03 15:41:50 --> mysqli_sql_exception: Unknown column 'hd.done_date' in 'field list' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1080): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(109): App\Models\MyWarehouseinvModel->generate_report_out()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-11-03 15:41:56 --> mysqli_sql_exception: Unknown column 'hd.done_date' in 'field list' in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(1080): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Warehouse_inv.php(109): App\Models\MyWarehouseinvModel->generate_report_out()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Warehouse_inv->generate_report()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}

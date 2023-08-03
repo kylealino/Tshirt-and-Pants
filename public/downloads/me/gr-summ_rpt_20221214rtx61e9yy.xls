@@ -1,0 +1,57 @@
+
+                    <html xmlns:x="urn:schemas-microsoft-com:office:excel">
+                        <head>
+                        <meta http-equiv=Content-Type content="text/csv; charset=utf-8">
+                        </head>
+                        <body>
+                    <table class="table table-sm table-bordered table-hover" id="testTable_dr">
+                       
+                          <tr class="header-tr-addr">
+                            <th class="noborder" colspan="9">GR Breakdown of the month</th>
+                          </tr>
+                          <tr class="header-tr-addr">
+                            <th class="noborder" colspan="9">2022-12-01 - 2022-12-14</th>
+                          </tr>
+                          <tr class="header-tr-addr">
+                            <th class="noborder" colspan="9">&nbsp;</th>
+                          </tr>
+                          <tr class ="header-theme-purple text-white">
+                            <th class="noborder">No</th>
+                            <th class="noborder">GR No</th>
+                            <th class="noborder">GR Date</th>
+                            <th class="noborder">Warehouse</th>
+                            <th class="noborder">Warehouse Group</th>
+                            <th class="noborder">Warehouse Bin</th>
+                            <th class="noborder">ITEM QUANTITY</th>
+                            <th class="noborder">AMOUNT</th>
+                            <th class="noborder">COST</th>
+                            </tr>
+                          <tr class="data-nm">
+                                <td>1</td>
+                                <td>CWGR20220000000008</td>
+                                <td>2022-12-10 00:00:00</td>
+                                <td>W1-G1</td>
+                                <td>ANGELES</td>
+                                <td>ANGELES</td>
+                                <td>10.00</td>
+                                <td>7500.00</td>
+                                <td>6000.00</td>
+                               </tr>
+                           <tr></tr>
+                          <tr class="header-tr">
+                            <th align="right" class="noborder" colspan="6">Total</th>
+                            <th align="center" class="noborder" colspan="1">10</th>
+                            <th align="center" class="noborder" colspan="1">7500.00</th>
+                            <th align="center" class="noborder" colspan="1">6000.00</th>
+                          </tr>
+                         
+                          <tr></tr>
+                          <tr></tr>
+                          <tr></tr>
+                          <tr class="header-tr">
+                            <th align="left" class="noborder" colspan="2">PREPARED BY:</th>
+                            <th align="center" class="noborder" colspan="2">ARNEL OQUIEN</th>
+                            <th align="left" class="noborder" colspan="2">CHECKED BY:</th>
+                            <th align="center" class="noborder" colspan="2"></th>
+                          </tr>
+                           

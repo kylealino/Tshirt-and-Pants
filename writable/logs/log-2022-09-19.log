@@ -1,0 +1,502 @@
+CRITICAL - 2022-09-19 09:55:02 --> syntax error, unexpected 'SELECT' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST)
+#0 /mdevs/mynlinksc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevs/mynlinksc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /mdevs/mynlinksc/system/Config/Factories.php(136): class_exists()
+#5 /mdevs/mynlinksc/system/Config/Factories.php(106): CodeIgniter\Config\Factories::locateClass()
+#6 /mdevs/mynlinksc/system/Common.php(780): CodeIgniter\Config\Factories::__callStatic()
+#7 /mdevs/mynlinksc/app/Models/MyWarehouseinvModel.php(17): model()
+#8 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(24): App\Models\MyWarehouseinvModel->__construct()
+#9 /mdevs/mynlinksc/system/CodeIgniter.php(809): App\Controllers\Warehouse_inv->__construct()
+#10 /mdevs/mynlinksc/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#11 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#12 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-09-19 10:27:41 --> Undefined variable: mymelibsys
+#0 /mdevs/mynlinksc/app/Views/warehouse_inv/warehouse_inv_main.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 10:30:32 --> Undefined index: 
+#0 /mdevs/mynlinksc/app/Views/warehouse_inv/warehouse_inv_main.php(55): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 10:30:41 --> Undefined index: 
+#0 /mdevs/mynlinksc/app/Views/warehouse_inv/warehouse_inv_main.php(55): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 10:33:26 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 10:48:09 --> Trying to access array offset on value of type null
+#0 /mdevs/mynlinksc/app/Views/warehouse_inv/warehouse_inv_main.php(55): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 10:48:34 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 11:22:57 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 11:26:16 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 11:26:59 --> Undefined property: App\Controllers\Warehouse_inv::$load
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(39): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-19 11:27:09 --> Call to undefined function App\Controllers\iew()
+#0 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-19 11:27:10 --> Invalid file: error_404.php
+#0 /mdevs/mynlinksc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(39): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 11:27:42 --> Invalid file: errors.error_404
+#0 /mdevs/mynlinksc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(39): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 11:27:44 --> Invalid file: errors/error_404.php
+#0 /mdevs/mynlinksc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(39): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 11:27:48 --> Invalid file: errors.cli.error_404
+#0 /mdevs/mynlinksc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(39): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 11:27:49 --> Invalid file: errors.cli.error_404
+#0 /mdevs/mynlinksc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(39): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 11:27:53 --> Undefined variable: code
+#0 /mdevs/mynlinksc/app/Views/errors/cli/error_404.php(5): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_inv.php(39): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_inv->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 11:37:11 --> Invalid file: warehouse_out/warehouse_out_main.php
+#0 /mdevs/mynlinksc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 13:29:26 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 13:29:56 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 13:54:44 --> Undefined variable: mymelibsys
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 13:54:44 --> Undefined variable: mymelibsys
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 13:54:49 --> Undefined variable: mymelibsys
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 13:54:54 --> Undefined variable: mymelibsys
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 13:56:56 --> Invalid file: warehouse_out/warehouse_out_itm_recs.php
+#0 /mdevs/mynlinksc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 13:57:08 --> Invalid file: warehouse_out/warehouse_out_itm_recs.php
+#0 /mdevs/mynlinksc/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 13:57:45 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 13:58:29 --> You must set the database table to be used with your query.
+#0 /mdevs/mynlinksc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevs/mynlinksc/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(78): CodeIgniter\Model->__call()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 14:00:11 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:10:52 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:11:03 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:11:05 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:11:12 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:11:28 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:11:39 --> Undefined variable: result
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:11:49 --> Undefined property: App\Controllers\Warehouse_out::$mywhrcdout
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(78): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-19 14:11:51 --> Undefined property: App\Controllers\Warehouse_out::$mywhrcdout
+#0 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(78): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-19 14:12:01 --> Class 'App\Controllers\MyWarehouseoutModel' not found
+#0 /mdevs/mynlinksc/system/CodeIgniter.php(809): App\Controllers\Warehouse_out->__construct()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-19 14:12:07 --> Class 'App\Models\MyWarehouseoutModel' not found
+#0 /mdevs/mynlinksc/system/CodeIgniter.php(809): App\Controllers\Warehouse_out->__construct()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-19 14:12:19 --> Class 'App\Models\MyWarehouseoutModel' not found
+#0 /mdevs/mynlinksc/system/CodeIgniter.php(809): App\Controllers\Warehouse_out->__construct()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-19 14:12:25 --> Class 'App\Models\MyWarehouseoutModel' not found
+#0 /mdevs/mynlinksc/system/CodeIgniter.php(809): App\Controllers\Warehouse_out->__construct()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#3 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-19 14:12:32 --> Undefined index: mat_rid
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(43): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:13:28 --> Undefined variable: rlist
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(47): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:16:27 --> Undefined index: cbm
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_jo_selected.php(78): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(79): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->whcdout_jo_selected()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-19 14:24:33 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 14:26:02 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 14:42:12 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 14:48:20 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 15:25:50 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 15:28:04 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 15:28:13 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 15:32:20 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-19 16:04:49 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

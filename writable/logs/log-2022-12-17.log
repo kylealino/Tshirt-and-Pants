@@ -1,0 +1,11 @@
+CRITICAL - 2022-12-17 16:41:29 --> Trying to access array offset on value of type null
+in APPPATH/Views/mtap/fgpack/trx-fg-pack.php on line 57.
+ 1 APPPATH/Views/mtap/fgpack/trx-fg-pack.php(57): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/fgpack/trx-fg-pack.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Fg_packing.php(20): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Fg_packing->index()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

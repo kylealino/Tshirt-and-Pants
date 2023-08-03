@@ -1,0 +1,45 @@
+CRITICAL - 2022-04-29 13:31:25 --> syntax error, unexpected identifier "BaseController", expecting "{"
+#0 /mdevz/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevz/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevz/mynrc/system/CodeIgniter.php(797): class_exists()
+#4 /mdevz/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#5 /mdevz/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-29 13:32:46 --> syntax error, unexpected identifier "BaseController", expecting "{"
+#0 /mdevz/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevz/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevz/mynrc/system/CodeIgniter.php(797): class_exists()
+#4 /mdevz/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#5 /mdevz/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-29 13:32:46 --> syntax error, unexpected identifier "BaseController", expecting "{"
+#0 /mdevz/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevz/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevz/mynrc/system/CodeIgniter.php(797): class_exists()
+#4 /mdevz/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#5 /mdevz/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-29 13:32:47 --> syntax error, unexpected identifier "BaseController", expecting "{"
+#0 /mdevz/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevz/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevz/mynrc/system/CodeIgniter.php(797): class_exists()
+#4 /mdevz/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#5 /mdevz/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-29 13:32:48 --> syntax error, unexpected identifier "BaseController", expecting "{"
+#0 /mdevz/mynrc/system/Autoloader/Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /mdevz/mynrc/system/Autoloader/Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /mdevz/mynrc/system/CodeIgniter.php(797): class_exists()
+#4 /mdevz/mynrc/system/CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#5 /mdevz/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

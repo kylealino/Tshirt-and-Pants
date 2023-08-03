@@ -1,0 +1,156 @@
+CRITICAL - 2022-04-21 09:05:38 --> Undefined property: CodeIgniter\View\View::$session
+#0 /mdevz/mynlinksys/app/Views/login/mylogin.php(45): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/View/View.php(210): include('/mdevz/mynlinks...')
+#2 /mdevz/mynlinksys/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevz/mynlinksys/app/Controllers/Mylogin.php(9): view()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mylogin->index()
+#6 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-21 09:56:39 --> Undefined property: App\Controllers\Mylogin::$mylibz
+#0 /mdevz/mynlinksys/app/Controllers/Mylogin.php(64): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mylogin->auth()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-21 09:59:20 --> Undefined property: App\Controllers\Mylogin::$db_erp
+#0 /mdevz/mynlinksys/app/Controllers/Mylogin.php(64): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mylogin->auth()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-21 10:00:59 --> Undefined variable: uname
+#0 /mdevz/mynlinksys/app/Controllers/Mylogin.php(65): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mylogin->auth()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-21 10:01:00 --> Undefined variable: uname
+#0 /mdevz/mynlinksys/app/Controllers/Mylogin.php(65): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mylogin->auth()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-21 10:01:20 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::row_array()
+#0 /mdevz/mynlinksys/app/Controllers/Mylogin.php(65): App\Models\MyLibzDBModel->user_logs_activity_module()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mylogin->auth()
+#2 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-21 10:14:26 --> Class 'Config\Myauthuser' not found
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#2 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-21 10:14:53 --> Class 'Config\Myauthuser' not found
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#2 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-21 10:14:55 --> Class 'Config\Myauthuser' not found
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#2 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-21 10:14:58 --> Class 'Config\Myauthuser' not found
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#2 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-21 10:15:23 --> Class 'Config\Myauthuser' not found
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#2 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-21 10:19:57 --> Class 'Config\Myauthuser' not found
+#0 /mdevz/mynlinksys/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#1 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#2 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+ERROR - 2022-04-21 14:24:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 6
+CRITICAL - 2022-04-21 14:24:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-20,20' at line 6
+#0 /mdevz/mynlinksys/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /mdevz/mynlinksys/system/Database/BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /mdevz/mynlinksys/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /mdevz/mynlinksys/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /mdevz/mynlinksys/app/Models/MyMDArticleModel.php(53): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /mdevz/mynlinksys/app/Controllers/Md_article.php(27): App\Models\MyMDArticleModel->rec_view()
+#6 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Md_article->recs()
+#7 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#8 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#9 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-04-21 15:18:45 --> Invalid file: sales/sales-out-details-tab-daily.php
+#0 /mdevz/mynlinksys/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevz/mynlinksys/app/Controllers/Mysales.php(35): view()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily()
+#4 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-21 15:20:16 --> syntax error, unexpected 'echo' (T_ECHO)
+#0 /mdevz/mynlinksys/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevz/mynlinksys/app/Controllers/Mysales.php(35): view()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily()
+#4 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-21 15:21:16 --> syntax error, unexpected 'echo' (T_ECHO)
+#0 /mdevz/mynlinksys/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevz/mynlinksys/app/Controllers/Mysales.php(35): view()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily()
+#4 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-21 15:21:58 --> syntax error, unexpected 'echo' (T_ECHO)
+#0 /mdevz/mynlinksys/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevz/mynlinksys/app/Controllers/Mysales.php(35): view()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily()
+#4 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-21 15:22:29 --> syntax error, unexpected 'echo' (T_ECHO)
+#0 /mdevz/mynlinksys/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevz/mynlinksys/app/Controllers/Mysales.php(35): view()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily()
+#4 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-21 15:22:57 --> syntax error, unexpected 'var_dump' (T_STRING)
+#0 /mdevz/mynlinksys/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#2 /mdevz/mynlinksys/app/Controllers/Mysales.php(35): view()
+#3 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details_tab_daily()
+#4 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#5 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#6 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-21 17:22:02 --> You must set the database table to be used with your query.
+#0 /mdevz/mynlinksys/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevz/mynlinksys/system/Model.php(722): CodeIgniter\Model->builder()
+#2 /mdevz/mynlinksys/app/Views/sales/sales-out-details.php(49): CodeIgniter\Model->__call()
+#3 /mdevz/mynlinksys/system/View/View.php(210): include('/mdevz/mynlinks...')
+#4 /mdevz/mynlinksys/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /mdevz/mynlinksys/system/Common.php(1089): CodeIgniter\View\View->render()
+#6 /mdevz/mynlinksys/app/Controllers/Mysales.php(28): view()
+#7 /mdevz/mynlinksys/system/CodeIgniter.php(832): App\Controllers\Mysales->sales_out_details()
+#8 /mdevz/mynlinksys/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#9 /mdevz/mynlinksys/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#10 /mdevz/mynlinksys/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}

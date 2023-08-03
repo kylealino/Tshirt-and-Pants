@@ -1,0 +1,24 @@
+CRITICAL - 2022-09-29 08:32:17 --> fopen(https://120.28.137.166/mynlinksc//assets/img/SMC-LOGO.png): failed to open stream: Connection timed out
+in APPPATH/Libraries/Fpdf/Fpdf.php on line 1257.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Libraries/Fpdf/Fpdf.php(1257): fopen()
+ 3 APPPATH/Libraries/Fpdf/Fpdf.php(885): App\Libraries\Fpdf\Fpdf->_parsepng()
+ 4 APPPATH/Views/Whcrossing/Whcrossing_irrprint.php(156): App\Libraries\Fpdf\Fpdf->Image()
+ 5 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/Whcrossing/Whcrossing_irrprint.php')
+ 6 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 8 APPPATH/Controllers/WhCrossing.php(89): view()
+ 9 SYSTEMPATH/CodeIgniter.php(907): App\Controllers\WhCrossing->mycrossing_irrprint()
+10 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-09-29 14:44:58 --> file_get_contents(/var/mdevz/mynlinksc/writable/debugbar/debugbar_1664422450.067354.json): failed to open stream: No such file or directory
+in SYSTEMPATH/Debug/Toolbar/Collectors/History.php on line 82.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Debug/Toolbar/Collectors/History.php(82): file_get_contents()
+ 3 SYSTEMPATH/Debug/Toolbar.php(501): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+ 4 SYSTEMPATH/Debug/Toolbar.php(478): CodeIgniter\Debug\Toolbar->format()
+ 5 APPPATH/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(317): CodeIgniter\Events\Events::trigger()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

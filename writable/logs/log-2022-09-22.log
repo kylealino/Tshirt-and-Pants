@@ -1,0 +1,505 @@
+CRITICAL - 2022-09-22 13:57:03 --> Undefined property: CodeIgniter\View\View::$db_erp
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:06 --> Undefined property: CodeIgniter\View\View::$db_erp
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:11 --> Undefined property: CodeIgniter\View\View::$db_erp
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:13 --> Undefined property: CodeIgniter\View\View::$db_erp
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:14 --> Undefined property: CodeIgniter\View\View::$db_erp
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:18 --> Undefined property: CodeIgniter\View\View::$db_erp
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:30 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:30 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:31 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:31 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:31 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:32 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:32 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:32 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:33 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:48 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:52 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:52 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:54 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:58 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:59 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:59 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:57:59 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:58:00 --> Too few arguments to function App\Models\MyDatumModel::lk_Active_Store_or_Mem_np(), 0 passed in /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php on line 21 and exactly 1 expected
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(21): App\Models\MyDatumModel->lk_Active_Store_or_Mem_np()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:59:13 --> Undefined property: CodeIgniter\View\View::$mylibz
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(103): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:59:17 --> Undefined variable: mylibz
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(103): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:59:26 --> Undefined variable: txtstore_memhd
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(103): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:59:26 --> Undefined variable: txtstore_memhd
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(103): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 13:59:28 --> Undefined variable: txtstore_memhd
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_main.php(103): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(35): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->index()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-09-22 14:04:22 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND2a
+                e.`is_approved` ='Y'
+            AND
+                a....' at line 30
+CRITICAL - 2022-09-22 14:09:17 --> Undefined property: App\Controllers\Mysearchdata::$mylibz
+#0 /mdevs/mynlinksc/app/Controllers/Mysearchdata.php(148): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Mysearchdata->companybranch_v()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-22 14:09:19 --> Undefined property: App\Controllers\Mysearchdata::$mylibz
+#0 /mdevs/mynlinksc/app/Controllers/Mysearchdata.php(148): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Mysearchdata->companybranch_v()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-22 14:09:24 --> Undefined property: App\Controllers\Mysearchdata::$mylibz
+#0 /mdevs/mynlinksc/app/Controllers/Mysearchdata.php(148): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Mysearchdata->companybranch_v()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-22 14:10:19 --> Undefined property: App\Controllers\Mysearchdata::$mydatazua
+#0 /mdevs/mynlinksc/app/Controllers/Mysearchdata.php(160): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Mysearchdata->companybranch_v()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-22 14:10:20 --> Undefined property: App\Controllers\Mysearchdata::$mydatazua
+#0 /mdevs/mynlinksc/app/Controllers/Mysearchdata.php(160): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Mysearchdata->companybranch_v()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-22 14:10:21 --> Undefined property: App\Controllers\Mysearchdata::$mydatazua
+#0 /mdevs/mynlinksc/app/Controllers/Mysearchdata.php(160): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Mysearchdata->companybranch_v()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-22 14:12:08 --> Undefined property: App\Controllers\Mysearchdata::$mylibz
+#0 /mdevs/mynlinksc/app/Controllers/Mysearchdata.php(212): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Mysearchdata->companybranch_v()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#4 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-09-22 15:48:35 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 33
+CRITICAL - 2022-09-22 16:05:33 --> Undefined variable: data_array
+#0 /mdevs/mynlinksc/app/Models/MyWarehouseoutModel.php(613): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(60): App\Models\MyWarehouseoutModel->mywhout_save()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_save()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-22 16:05:48 --> Undefined variable: data_array
+#0 /mdevs/mynlinksc/app/Models/MyWarehouseoutModel.php(613): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(60): App\Models\MyWarehouseoutModel->mywhout_save()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_save()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-09-22 16:06:21 --> Unknown column '20220000000008' in 'field list'
+ERROR - 2022-09-22 16:15:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 44
+CRITICAL - 2022-09-22 16:17:19 --> Undefined variable: refno
+#0 /mdevs/mynlinksc/app/Models/MyWarehouseoutModel.php(559): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(60): App\Models\MyWarehouseoutModel->mywhout_save()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_save()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-22 16:17:27 --> Undefined variable: refno
+#0 /mdevs/mynlinksc/app/Models/MyWarehouseoutModel.php(559): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(60): App\Models\MyWarehouseoutModel->mywhout_save()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_save()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-09-22 16:18:23 --> Duplicate entry '444400011900000176' for key 'idx05'
+CRITICAL - 2022-09-22 16:22:48 --> You must set the database table to be used with your query.
+#0 /mdevs/mynlinksc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevs/mynlinksc/system/Model.php(693): CodeIgniter\Model->builder()
+#2 /mdevs/mynlinksc/app/Models/Mymelibsys_model.php(294): CodeIgniter\Model->__get()
+#3 /mdevs/mynlinksc/app/Models/MyWarehouseoutModel.php(531): App\Models\mymelibsys_model->getCompanyBranch_data_byname()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(60): App\Models\MyWarehouseoutModel->mywhout_save()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_save()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 16:22:53 --> You must set the database table to be used with your query.
+#0 /mdevs/mynlinksc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevs/mynlinksc/system/Model.php(693): CodeIgniter\Model->builder()
+#2 /mdevs/mynlinksc/app/Models/Mymelibsys_model.php(294): CodeIgniter\Model->__get()
+#3 /mdevs/mynlinksc/app/Models/MyWarehouseoutModel.php(531): App\Models\mymelibsys_model->getCompanyBranch_data_byname()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(60): App\Models\MyWarehouseoutModel->mywhout_save()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_save()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 16:23:34 --> You must set the database table to be used with your query.
+#0 /mdevs/mynlinksc/system/Model.php(545): CodeIgniter\Database\BaseConnection->table()
+#1 /mdevs/mynlinksc/system/Model.php(693): CodeIgniter\Model->builder()
+#2 /mdevs/mynlinksc/app/Models/Mymelibsys_model.php(294): CodeIgniter\Model->__get()
+#3 /mdevs/mynlinksc/app/Models/MyWarehouseoutModel.php(531): App\Models\mymelibsys_model->getCompanyBranch_data_byname()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(60): App\Models\MyWarehouseoutModel->mywhout_save()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_save()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 16:24:54 --> Undefined index: recid
+#0 /mdevs/mynlinksc/app/Models/MyWarehouseoutModel.php(532): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(60): App\Models\MyWarehouseoutModel->mywhout_save()
+#2 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_save()
+#3 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#4 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#5 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-09-22 16:30:56 --> Duplicate entry '444400011900000176' for key 'idx05'
+ERROR - 2022-09-22 16:30:59 --> Duplicate entry '444400011900000176' for key 'idx05'
+CRITICAL - 2022-09-22 16:35:13 --> Undefined variable: barcodes_arr
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_item_scanned.php(89): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(50): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_upld()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 16:35:33 --> Undefined variable: barcodes_arr
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_item_scanned.php(89): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(50): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_upld()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 16:36:10 --> Undefined variable: barcodes_arr
+#0 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_item_scanned.php(90): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#4 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(50): view()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_upld()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#8 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-22 16:36:35 --> array_filter() expects parameter 1 to be array, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/app/Views/warehouse_out/warehouse_out_item_scanned.php(90): array_filter()
+#2 /mdevs/mynlinksc/system/View/View.php(210): include('/mdevs/mynlinks...')
+#3 /mdevs/mynlinksc/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 /mdevs/mynlinksc/system/Common.php(1089): CodeIgniter\View\View->render()
+#5 /mdevs/mynlinksc/app/Controllers/Warehouse_out.php(50): view()
+#6 /mdevs/mynlinksc/system/CodeIgniter.php(832): App\Controllers\Warehouse_out->wshe_out_upld()
+#7 /mdevs/mynlinksc/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController()
+#8 /mdevs/mynlinksc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#9 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-09-22 16:40:55 --> Undefined variable: totalTime
+#0 /mdevs/mynlinksc/system/Debug/Toolbar/Views/toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /mdevs/mynlinksc/system/Debug/Toolbar.php(501): include('/mdevs/mynlinks...')
+#2 /mdevs/mynlinksc/system/Debug/Toolbar.php(464): CodeIgniter\Debug\Toolbar->format()
+#3 /mdevs/mynlinksc/app/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 /mdevs/mynlinksc/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 /mdevs/mynlinksc/system/CodeIgniter.php(308): CodeIgniter\Events\Events::trigger()
+#6 /mdevs/mynlinksc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

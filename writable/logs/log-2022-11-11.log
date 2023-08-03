@@ -1,0 +1,137 @@
+CRITICAL - 2022-11-11 08:15:32 --> unlink(/medata/appdevs/mynlinksc/writable/debugbar/debugbar_1668067547.002400.json): No such file or directory
+in SYSTEMPATH/Debug/Toolbar/Collectors/History.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Debug/Toolbar/Collectors/History.php(76): unlink()
+ 3 SYSTEMPATH/Debug/Toolbar.php(499): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+ 4 SYSTEMPATH/Debug/Toolbar.php(476): CodeIgniter\Debug\Toolbar->format()
+ 5 APPPATH/Config/Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(317): CodeIgniter\Events\Events::trigger()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 09:46:22 --> Invalid file: warehouse_out/gw_warehouse_out_main.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Warehouse_out.php(213): view()
+ 4 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Warehouse_out->gw_view_outgoing_sd()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 11:31:51 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 11:31:53 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 11:32:52 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 11:32:57 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 11:32:59 --> urldecode(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH/Controllers/Mysearchdata.php on line 112.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Mysearchdata.php(112): urldecode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Mysearchdata->get_user_cdwrhse_access_dropdown()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 12:02:16 --> Cannot redeclare App\Controllers\Md_purchase::purchase_save_appr()
+in APPPATH/Controllers/Md_purchase.php on line 62.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2022-11-11 12:03:11 --> mysqli_sql_exception: Table 'd_ap2.gw_wshe_gr_barcdng_dt' doesn't exist in /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /medata/appdevs/mynlinksc/system/Database/MySQLi/Connection.php(292): mysqli->query()
+#1 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /medata/appdevs/mynlinksc/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /medata/appdevs/mynlinksc/app/Models/MyLibzDBModel.php(19): CodeIgniter\Database\BaseConnection->query()
+#4 /medata/appdevs/mynlinksc/app/Models/MyPurchaseModel.php(1192): App\Models\MyLibzDBModel->myoa_sql_exec()
+#5 /medata/appdevs/mynlinksc/app/Controllers/Md_purchase.php(65): App\Models\MyPurchaseModel->download_purch_barcode()
+#6 /medata/appdevs/mynlinksc/system/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_barcode_dl_proc()
+#7 /medata/appdevs/mynlinksc/system/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+#8 /medata/appdevs/mynlinksc/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /medata/appdevs/mynlinksc/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-11-11 12:04:04 --> Undefined variable $cseqn
+in APPPATH/Models/MyPurchaseModel.php on line 1193.
+ 1 APPPATH/Models/MyPurchaseModel.php(1193): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(65): App\Models\MyPurchaseModel->download_purch_barcode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_barcode_dl_proc()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 13:03:14 --> Undefined variable $cseqn
+in APPPATH/Models/MyPurchaseModel.php on line 1193.
+ 1 APPPATH/Models/MyPurchaseModel.php(1193): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(65): App\Models\MyPurchaseModel->download_purch_barcode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_barcode_dl_proc()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 13:03:23 --> Undefined variable $cseqn
+in APPPATH/Models/MyPurchaseModel.php on line 1193.
+ 1 APPPATH/Models/MyPurchaseModel.php(1193): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Md_purchase.php(65): App\Models\MyPurchaseModel->download_purch_barcode()
+ 3 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_barcode_dl_proc()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 13:07:01 --> Undefined variable $po_sysctrlno
+in APPPATH/Views/mtap/trx-purchase-order-recs.php on line 121.
+ 1 APPPATH/Views/mtap/trx-purchase-order-recs.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order-recs.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(31): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_vw()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 13:07:26 --> Undefined variable $po_sysctrlno
+in APPPATH/Views/mtap/trx-purchase-order-recs.php on line 121.
+ 1 APPPATH/Views/mtap/trx-purchase-order-recs.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/mtap/trx-purchase-order-recs.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1142): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Md_purchase.php(31): view()
+ 6 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_vw()
+ 7 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 13:23:52 --> syntax error, unexpected token "}"
+in APPPATH/Models/MyPurchaseModel.php on line 1138.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 APPPATH/Controllers/Md_purchase.php(13): CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(864): App\Controllers\Md_purchase->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-11 13:24:32 --> Undefined variable $chtmljs
+in APPPATH/Controllers/Md_purchase.php on line 71.
+ 1 APPPATH/Controllers/Md_purchase.php(71): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(902): App\Controllers\Md_purchase->purchase_print_temp()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

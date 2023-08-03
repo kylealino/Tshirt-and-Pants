@@ -1,0 +1,243 @@
+
+                        <html xmlns:x="urn:schemas-microsoft-com:office:excel">
+                            <head>
+                            <meta http-equiv=Content-Type content="text/csv; charset=utf-8">
+                            </head>
+                            <body>
+                        <table class="table table-sm table-bordered table-hover" id="testTable_dr">
+                           
+                              <tr class="header-tr-addr">
+                                <th class="noborder" colspan="27">Goods Receipt Logfile</th>
+                              </tr>
+                              <tr class="header-tr-addr">
+                                <th class="noborder" colspan="27">2023-01-19- 2023-01-19</th>
+                              </tr>
+                              <tr class="header-tr-addr">
+                                <th class="noborder" colspan="27">&nbsp;</th>
+                              </tr>
+                              <tr class ="header-theme-purple text-white">
+                                <th class="noborder">No</th>
+                                <th class="noborder">Transaction No</th>
+                                <th class="noborder">Pullout Trx No</th>
+                                <th class="noborder">Company</th>
+                                <th class="noborder">Item Code</th>
+                                <th class="noborder">Item Description</th>
+                                <th class="noborder">Unit Cost</th>
+                                <th class="noborder">Total Unit Cost</th>
+                                <th class="noborder">Unit Price</th>
+                                <th class="noborder">Total Unit Price</th>
+                                <th class="noborder">Box Qty</th>
+                                <th class="noborder">Total Actual Qty</th>
+                                <th class="noborder">Total Actual Cost</th>
+                                <th class="noborder">Total Actual SRP</th>
+                                <th class="noborder">Branch</th>
+                                <th class="noborder">GR Date</th>
+                                <th class="noborder">User</th>
+                                <th class="noborder">Remarks</th>
+                                <th class="noborder">Type</th>
+                                <th class="noborder">Assorted Items</th>
+                                <th class="noborder">Item Qty Pcs (Pullout)</th>
+                                <th class="noborder">Item Qty Pcs(Goods)</th>
+                                <th class="noborder">Item Convf (Goods)</th>
+                                <th class="noborder">Item Qty Pcs (Damage)</th>
+                                <th class="noborder">Item Qty Pcs (Lacking)</th>
+                                <th class="noborder">Approval (Y/N)</th>
+
+                                </tr>
+                              <tr class="data-nm">
+                                            <td>1</td>
+                                            <td>'CWGR20230000000012</td>
+                                            <td>'</td>
+                                            <td>ASIA CONSUMER VALUE TRADING, INC.</td>
+                                            <td>KF2KM0368</td>
+                                            <td>#00368 B 7INCH KITCHEN KNIFE</td>
+                                            <td>35.10</td>
+                                            <td>12,636.00</td>
+                                            <td>55.00</td>
+                                            <td>19,800.00</td>
+                                            <td>5.00</td>
+                                            <td>5.00</td>
+                                            <td>12,636.00</td>
+                                            <td>19,800.00</td>
+                                            <td></td>
+                                            <td>01/19/2023</td>
+                                            <td>IT-KYLE</td>
+                                            <td>gr-entry-1</td>
+                                            <td>Change Price</td>
+                                            <td>KF2KM0368</td>
+                                            <td>0.00</td>
+                                            <td>72.00</td>
+                                            <td>72.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>Y</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>2</td>
+                                            <td>'CWGR20230000000016</td>
+                                            <td>'</td>
+                                            <td>ASIA CONSUMER VALUE TRADING, INC.</td>
+                                            <td>SPPHM518190</td>
+                                            <td>#190 KORONASPRAY PAINT CLEAR</td>
+                                            <td>55.00</td>
+                                            <td>2,640.00</td>
+                                            <td>95.00</td>
+                                            <td>4,560.00</td>
+                                            <td>4.00</td>
+                                            <td>4.00</td>
+                                            <td>2,640.00</td>
+                                            <td>4,560.00</td>
+                                            <td></td>
+                                            <td>01/19/2023</td>
+                                            <td>IT-KYLE</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>SPPHM518190</td>
+                                            <td>0.00</td>
+                                            <td>12.00</td>
+                                            <td>12.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>Y</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>3</td>
+                                            <td>'CWGR20230000000014</td>
+                                            <td>'</td>
+                                            <td>BAOFENG REALTY CORPORATION</td>
+                                            <td>ASSTD1040</td>
+                                            <td>ASSORTED 1040</td>
+                                            <td>80.00</td>
+                                            <td>80.00</td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>1.00</td>
+                                            <td>3.00</td>
+                                            <td>819.83</td>
+                                            <td>1,148.75</td>
+                                            <td></td>
+                                            <td>01/19/2023</td>
+                                            <td>IT-KYLE</td>
+                                            <td>mkg-entry</td>
+                                            <td>Good Items</td>
+                                            <td>GCP100</td>
+                                            <td>0.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>Y</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>4</td>
+                                            <td>'CWGR20230000000014</td>
+                                            <td>'</td>
+                                            <td>BAOFENG REALTY CORPORATION</td>
+                                            <td>ASSTD1040</td>
+                                            <td>ASSORTED 1040</td>
+                                            <td>664.83</td>
+                                            <td>664.83</td>
+                                            <td>949.75</td>
+                                            <td>949.75</td>
+                                            <td>1.00</td>
+                                            <td>3.00</td>
+                                            <td>819.83</td>
+                                            <td>1,148.75</td>
+                                            <td></td>
+                                            <td>01/19/2023</td>
+                                            <td>IT-KYLE</td>
+                                            <td>mkg-entry</td>
+                                            <td>Good Items</td>
+                                            <td>HQDRC-115</td>
+                                            <td>0.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>Y</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>5</td>
+                                            <td>'CWGR20230000000014</td>
+                                            <td>'</td>
+                                            <td>BAOFENG REALTY CORPORATION</td>
+                                            <td>ASSTD1040</td>
+                                            <td>ASSORTED 1040</td>
+                                            <td>75.00</td>
+                                            <td>75.00</td>
+                                            <td>99.00</td>
+                                            <td>99.00</td>
+                                            <td>1.00</td>
+                                            <td>3.00</td>
+                                            <td>819.83</td>
+                                            <td>1,148.75</td>
+                                            <td></td>
+                                            <td>01/19/2023</td>
+                                            <td>IT-KYLE</td>
+                                            <td>mkg-entry</td>
+                                            <td>Good Items</td>
+                                            <td>LBT01501</td>
+                                            <td>0.00</td>
+                                            <td>1.00</td>
+                                            <td>20.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>Y</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>6</td>
+                                            <td>'CWGR20230000000015</td>
+                                            <td>'</td>
+                                            <td>ASIA CONSUMER VALUE TRADING, INC.</td>
+                                            <td>SPPHM518141</td>
+                                            <td>#141 KORONASPRAY PAINT ORANGE</td>
+                                            <td>55.00</td>
+                                            <td>1,980.00</td>
+                                            <td>95.00</td>
+                                            <td>3,420.00</td>
+                                            <td>3.00</td>
+                                            <td>3.00</td>
+                                            <td>1,980.00</td>
+                                            <td>3,420.00</td>
+                                            <td></td>
+                                            <td>01/19/2023</td>
+                                            <td>IT-KYLE</td>
+                                            <td></td>
+                                            <td>Good Items</td>
+                                            <td>SPPHM518141</td>
+                                            <td>0.00</td>
+                                            <td>12.00</td>
+                                            <td>12.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>Y</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>7</td>
+                                            <td>'CWGR20230000000013</td>
+                                            <td>'</td>
+                                            <td>ASIA CONSUMER VALUE TRADING, INC.</td>
+                                            <td>GRFF15001</td>
+                                            <td>#08 SKIRT-asstd color</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>69.00</td>
+                                            <td>345.00</td>
+                                            <td>5.00</td>
+                                            <td>5.00</td>
+                                            <td>0.00</td>
+                                            <td>345.00</td>
+                                            <td></td>
+                                            <td>01/19/2023</td>
+                                            <td>IT-KYLE</td>
+                                            <td>gr-entry-transfer</td>
+                                            <td>Return to Mapulang Lupa</td>
+                                            <td>GRFF15001</td>
+                                            <td>0.00</td>
+                                            <td>1.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>-1.00</td>
+                                            <td>Y</td>
+                                           </tr>
+                                       

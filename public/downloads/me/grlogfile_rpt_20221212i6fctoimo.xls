@@ -1,0 +1,355 @@
+
+                        <html xmlns:x="urn:schemas-microsoft-com:office:excel">
+                            <head>
+                            <meta http-equiv=Content-Type content="text/csv; charset=utf-8">
+                            </head>
+                            <body>
+                        <table class="table table-sm table-bordered table-hover" id="testTable_dr">
+                           
+                              <tr class="header-tr-addr">
+                                <th class="noborder" colspan="27">Goods Receipt Logfile</th>
+                              </tr>
+                              <tr class="header-tr-addr">
+                                <th class="noborder" colspan="27">2022-12-01- 2022-12-12</th>
+                              </tr>
+                              <tr class="header-tr-addr">
+                                <th class="noborder" colspan="27">&nbsp;</th>
+                              </tr>
+                              <tr class ="header-theme-purple text-white">
+                                <th class="noborder">No</th>
+                                <th class="noborder">Transaction No</th>
+                                <th class="noborder">Pullout Trx No</th>
+                                <th class="noborder">Company</th>
+                                <th class="noborder">Item Code</th>
+                                <th class="noborder">Item Description</th>
+                                <th class="noborder">Unit Cost</th>
+                                <th class="noborder">Total Unit Cost</th>
+                                <th class="noborder">Unit Price</th>
+                                <th class="noborder">Total Unit Price</th>
+                                <th class="noborder">Box Qty</th>
+                                <th class="noborder">Total Actual Qty</th>
+                                <th class="noborder">Total Actual Cost</th>
+                                <th class="noborder">Total Actual SRP</th>
+                                <th class="noborder">Branch</th>
+                                <th class="noborder">GR Date</th>
+                                <th class="noborder">User</th>
+                                <th class="noborder">Remarks</th>
+                                <th class="noborder">Type</th>
+                                <th class="noborder">Assorted Items</th>
+                                <th class="noborder">Item Qty Pcs (Pullout)</th>
+                                <th class="noborder">Item Qty Pcs(Goods)</th>
+                                <th class="noborder">Item Convf (Goods)</th>
+                                <th class="noborder">Item Qty Pcs (Damage)</th>
+                                <th class="noborder">Item Qty Pcs (Lacking)</th>
+                                <th class="noborder">Approval (Y/N)</th>
+
+                                </tr>
+                              <tr class="data-nm">
+                                            <td>1</td>
+                                            <td>'CWGR20220000000008</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>2222812104</td>
+                                            <td>22228BASICLADIESSANDO1X1 BLUE HEAVEN L</td>
+                                            <td>60.00</td>
+                                            <td>6,000.00</td>
+                                            <td>75.00</td>
+                                            <td>7,500.00</td>
+                                            <td>10.00</td>
+                                            <td>10.00</td>
+                                            <td>6,000.00</td>
+                                            <td>7,500.00</td>
+                                            <td></td>
+                                            <td>12/10/2022</td>
+                                            <td>arnel</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>2222812104</td>
+                                            <td>0.00</td>
+                                            <td>10.00</td>
+                                            <td>20.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>Y</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>2</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>75.00</td>
+                                            <td>300.00</td>
+                                            <td>99.00</td>
+                                            <td>396.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT01501</td>
+                                            <td>0.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>3</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>75.00</td>
+                                            <td>450.00</td>
+                                            <td>99.00</td>
+                                            <td>594.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT01504</td>
+                                            <td>0.00</td>
+                                            <td>3.00</td>
+                                            <td>10.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>4</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>75.00</td>
+                                            <td>1,050.00</td>
+                                            <td>99.00</td>
+                                            <td>1,386.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT01502</td>
+                                            <td>0.00</td>
+                                            <td>7.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>5</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>75.00</td>
+                                            <td>150.00</td>
+                                            <td>99.00</td>
+                                            <td>198.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT01505</td>
+                                            <td>0.00</td>
+                                            <td>1.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>6</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>75.00</td>
+                                            <td>750.00</td>
+                                            <td>99.00</td>
+                                            <td>990.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT01503</td>
+                                            <td>0.00</td>
+                                            <td>5.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>7</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>75.00</td>
+                                            <td>1,350.00</td>
+                                            <td>99.00</td>
+                                            <td>1,782.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT01506</td>
+                                            <td>0.00</td>
+                                            <td>9.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>8</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>75.00</td>
+                                            <td>1,650.00</td>
+                                            <td>99.00</td>
+                                            <td>2,178.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT01507</td>
+                                            <td>0.00</td>
+                                            <td>11.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>9</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>105.30</td>
+                                            <td>1,053.00</td>
+                                            <td>139.00</td>
+                                            <td>1,390.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT0160164</td>
+                                            <td>0.00</td>
+                                            <td>5.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>10</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>105.30</td>
+                                            <td>1,684.80</td>
+                                            <td>139.00</td>
+                                            <td>2,224.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT0160165</td>
+                                            <td>0.00</td>
+                                            <td>8.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                         <tr class="data-nm">
+                                            <td>11</td>
+                                            <td>'CWGR20220000000009</td>
+                                            <td>'</td>
+                                            <td>SMARTLOOK MARKETING CORPORATION</td>
+                                            <td>ASSTD1000</td>
+                                            <td>ASSORTED 1000</td>
+                                            <td>120.45</td>
+                                            <td>963.60</td>
+                                            <td>159.00</td>
+                                            <td>1,272.00</td>
+                                            <td>2.00</td>
+                                            <td>20.00</td>
+                                            <td>9,401.40</td>
+                                            <td>12,410.00</td>
+                                            <td></td>
+                                            <td>12/12/2022</td>
+                                            <td>181-1</td>
+                                            <td></td>
+                                            <td>Change Price</td>
+                                            <td>LBT0160161</td>
+                                            <td>0.00</td>
+                                            <td>4.00</td>
+                                            <td>1.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>N</td>
+                                           </tr>
+                                       

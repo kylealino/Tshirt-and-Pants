@@ -1,0 +1,395 @@
+ERROR - 2022-05-20 11:33:25 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:25 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:31 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:31 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:32 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:32 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:33 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:33 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:34 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:34 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:35 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:35 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:36 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:36 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:36 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:36 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:37 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:37 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:38 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:38 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:39 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:39 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:39 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:39 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:40 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:40 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:41 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:41 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:42 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:42 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:33:43 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:33:43 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:34:36 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:34:36 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:34:37 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:34:37 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:34:37 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:34:37 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 11:34:38 --> Error connecting to the database: Connection refused
+CRITICAL - 2022-05-20 11:34:38 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+#0 /medata/webapps/mynrc/system/Session/Handlers/DatabaseHandler.php(94): CodeIgniter\Database\BaseConnection->initialize()
+#1 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open()
+#2 /medata/webapps/mynrc/system/Session/Session.php(894): session_start()
+#3 /medata/webapps/mynrc/system/Session/Session.php(238): CodeIgniter\Session\Session->startSession()
+#4 /medata/webapps/mynrc/system/Config/Services.php(577): CodeIgniter\Session\Session->start()
+#5 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#6 /medata/webapps/mynrc/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /medata/webapps/mynrc/system/Config/Services.php(563): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /medata/webapps/mynrc/system/Config/BaseService.php(248): CodeIgniter\Config\Services::session()
+#9 /medata/webapps/mynrc/system/Common.php(901): CodeIgniter\Config\BaseService::__callStatic()
+#10 /medata/webapps/mynrc/app/Filters/Myauthuser.php(11): session()
+#11 /medata/webapps/mynrc/system/Filters/Filters.php(173): App\Filters\Myauthuser->before()
+#12 /medata/webapps/mynrc/system/CodeIgniter.php(393): CodeIgniter\Filters\Filters->run()
+#13 /medata/webapps/mynrc/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest()
+#14 /medata/webapps/mynrc/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#15 {main}
+ERROR - 2022-05-20 12:00:51 --> MySQL server has gone away
+ERROR - 2022-05-20 12:00:51 --> MySQL server has gone away
+ERROR - 2022-05-20 12:00:51 --> MySQL server has gone away
+ERROR - 2022-05-20 12:00:51 --> MySQL server has gone away
+ERROR - 2022-05-20 12:00:51 --> MySQL server has gone away
+ERROR - 2022-05-20 12:00:51 --> MySQL server has gone away
+ERROR - 2022-05-20 12:05:29 --> MySQL server has gone away
+ERROR - 2022-05-20 12:05:29 --> MySQL server has gone away
+ERROR - 2022-05-20 12:05:29 --> MySQL server has gone away
+ERROR - 2022-05-20 12:12:20 --> MySQL server has gone away
+ERROR - 2022-05-20 12:12:20 --> MySQL server has gone away
+ERROR - 2022-05-20 12:12:20 --> MySQL server has gone away
+ERROR - 2022-05-20 13:13:32 --> MySQL server has gone away
+ERROR - 2022-05-20 13:13:32 --> MySQL server has gone away
+ERROR - 2022-05-20 13:13:32 --> MySQL server has gone away
