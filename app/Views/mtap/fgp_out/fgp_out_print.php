@@ -227,8 +227,6 @@ $pdf->Cell(17.5,5,'ADDRESS:',0,0,'L');
 $pdf->Cell(99.5,5,$BRNCH_ADDR1.', '.$BRNCH_ADDR2.', '.$BRNCH_ADDR3.' '.$BRNCH_ADDR4,'B',0,'L');
 
 
-
-
 //BARCODE
 $pdf->SetFont('Dot','',12);
 $pdf->Code128(145,10,$crpl_code,65,15);
@@ -274,49 +272,94 @@ $pdf->SetFont('Arial','I',7);
 $pdf->Cell(0,10,'PRE-PRINT - '.$crpl_code,0,0,'C');
 //}
 
-
-$str = "
-	SELECT
-	a.`recid`,
-	a.`fgreq_trxno`,
-	b.`qty_perpack`,
-	c.`ART_SKU`,
-	a.`barcde`,
-	c.`ART_BARCODE1`,
-	a.`stock_code`,
-	c.`ART_DESC`,
-	b.`mat_code`,
-	'1' AS qty_box,
-	b.`qty_perpack`,
-	c.`ART_UPRICE`,
-	b.`qty_perpack` * c.`ART_UPRICE` AS amount,
-	'1' AS qty_box,
-	a.`tpa_trxno`
-	FROM
-	fgp_inv_rcv a
-	JOIN
-	trx_fgpack_req_dt b
-	ON
-	a.`fgreq_trxno` = b.`fgreq_trxno`
-	JOIN
-	mst_article c
-	ON
-	b.`mat_code` = c.`ART_CODE`
-	WHERE a.`fgreq_trxno` = '{$fgreq_trxno}'
-	ORDER BY a.`barcde` ASC
-";
-
-
-$q3 = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-foreach($q3->getResultArray() as $row){
-	$stock_code = $row['stock_code'];
-	$tpa_trxno = $row['tpa_trxno'];
-}
-
 $Y = 61;
 $total_amount = 0;
-$total_qty = 0;
+$TQTY = 0;
 $box_no = 1;
+$xboxno = 0;
+$count = 1;
+$TAMOUNT = 0;
+$item_num =1;
+$str = "
+	SELECT fgreq_trxno FROM fgp_inv_rcv WHERE tpa_trxno = '$tpa_trxno' GROUP BY fgreq_trxno
+";
+
+$q1 = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+$count_item = $q->getNumRows();
+$data_rows = array();
+foreach($q1->getResultArray() as $row){
+	$fgpr = $row['fgreq_trxno'];
+
+	$str="
+		SELECT
+			b.`tpa_trxno`,
+			b.`fgreq_trxno`,
+			(b.`qty_perpack`) AS QTY,
+			c.`ART_UOM` AS UNIT,
+			c.`ART_BARCODE1` AS BARCODE,
+			a.`stock_code` AS STOCK_NUMBER,
+			c.`ART_DESC` AS DESCRIPTION,
+			b.`req_pack` AS BOX_QTY,
+			(b.`qty_perpack`) AS QTY_PER_BOX,
+			c.`ART_UPRICE` AS UNIT_PRICE,
+			(b.`qty_perpack` * c.`ART_UPRICE`) AS AMOUNT,
+			b.`req_pack` AS BOX_QTY2
+		FROM
+			fgp_inv_rcv a
+		JOIN
+			trx_fgpack_req_dt b
+		ON
+			a.`fgreq_trxno` = b.`fgreq_trxno`
+		JOIN
+			mst_article c
+		ON
+			b.`mat_code` = c.`ART_CODE`
+		WHERE
+			a.`tpa_trxno` = '$tpa_trxno' AND b.`fgreq_trxno` = '$fgpr'
+	";
+	$q2 = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+	$count_item2 = $q2->getNumRows();
+	foreach($q2->getResultArray() as $row){
+		
+		$fgreq_trxno = $row['fgreq_trxno'];
+		$QTY = $row['QTY'];
+		$TQTY += $QTY;
+		$UNIT = $row['UNIT'];
+		$BARCODE = $row['BARCODE'];
+		$STOCK_NUMBER = $row['STOCK_NUMBER'];
+		$DESCRIPTION = $row['DESCRIPTION'];
+		$BOX_QTY = $row['BOX_QTY'];
+		$QTY_PER_BOX = $row['QTY_PER_BOX'];
+		$UNIT_PRICE = $row['UNIT_PRICE'];
+		$AMOUNT = $row['AMOUNT'];
+		$BOX_QTY2 = $row['BOX_QTY2'];
+		$TAMOUNT +=$AMOUNT;
+
+		$pdf->SetFont('Dot','',10);
+		$pdf->SetXY(5,$Y);
+		$pdf->Cell(8,5,$count,1,0,'C');
+		$pdf->Cell(12,5,number_format($QTY),1,0,'C');
+		$pdf->Cell(10,5,$UNIT,1,0,'C');
+		$pdf->SetFont('Dot','',7.5);
+		$pdf->Cell(26,5,$BARCODE,1,0,'C');
+		$pdf->SetFont('Dot','',10);
+		$pdf->Cell(27,5,$STOCK_NUMBER,1,0,'C');
+		$pdf->SetFont('Dot','',8);
+		$pdf->Cell(60,5,$DESCRIPTION,1,0,'L');
+		$pdf->SetFont('Dot','',10);
+		$pdf->Cell(11,5,$BOX_QTY,1,0,'C'); 
+		$pdf->Cell(12,5,number_format($QTY_PER_BOX,2),1,0,'C');
+		$pdf->Cell(15,5,$UNIT_PRICE,1,0,'C');
+		$pdf->Cell(15,5,number_format($AMOUNT,2),1,0,'C');
+		$pdf->Cell(11,5,$BOX_QTY2,1,0,'C');
+	
+		$count++;
+		$Y = $Y +5;
+
+
+	}
+
+}
 
 
 //for sku summary
@@ -394,286 +437,6 @@ $total_req_pack =0;
 $data_rows = array();
 $xboxno = 0;
 
-	$str = "
-		SELECT
-		a.`recid`,
-		a.`fgreq_trxno`,
-		b.`qty_perpack`,
-		c.`ART_SKU`,
-		a.`barcde`,
-		c.`ART_BARCODE1`,
-		a.`stock_code`,
-		c.`ART_DESC`,
-		b.`mat_code`,
-		'1' AS qty_box,
-		b.`qty_perpack`,
-		b.`req_pack`,
-		c.`ART_UPRICE`,
-		b.`qty_perpack` * c.`ART_UPRICE` AS amount,
-		'1' AS qty_box
-		FROM
-		fgp_inv_rcv a
-		JOIN
-		trx_fgpack_req_dt b
-		ON
-		a.`fgreq_trxno` = b.`fgreq_trxno`
-		JOIN
-		mst_article c
-		ON
-		b.`mat_code` = c.`ART_CODE`
-		WHERE 
-		a.`tpa_trxno` = '$tpa_trxno'
-	";
-
-
-	$q = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-	
-	$item = array();
-
-	if($q->getNumRows() > 0){
-		$_convf = 0;
-
-		foreach($q->getResultArray() as $row){
-			$qty_perpack = $row['qty_perpack'];
-			$fgreq_trxnoitm = $row['fgreq_trxno'];
-			$ART_SKU      = $row['ART_SKU'];
-			$barcde = $row['barcde'];
-			$ART_BARCODE1 = $row['ART_BARCODE1'];
-			$stock_code    = $row['stock_code'];
-			$ART_DESC      = $row['ART_DESC'];
-			$mat_code = $row['mat_code'];
-			$ART_UPRICE    = $row['ART_UPRICE'];
-			$req_pack    = $row['req_pack'];
-			$amount = $row['amount'];
-			$total_req_pack = $req_pack;
-			$total_qty    += $qty_perpack;
-			$total_amount    += $amount;
-
-			$item_data = $qty_perpack.'x|x'.$ART_SKU.'x|x'.$barcde.'x|x'.$stock_code.'x|x'.$ART_DESC.'x|x'.$mat_code.'x|x'.$ART_UPRICE.'x|x'.$qty_perpack.'x|x'.$amount.'x|x'.$total_amount.'x|x'.$ART_BARCODE1.'x|x'.$fgreq_trxnoitm.'x|x'.$total_qty;
-			array_push($item, $item_data);
-
-		}
-	}
-	else{
-		
-		$item_data = $qty_perpack.'x|x'.$ART_SKU.'x|x'.$barcde.'x|x'.$stock_code.'x|x'.$ART_DESC.'x|x'.$mat_code.'x|x'.$ART_UPRICE.'x|x'.$qty_perpack.'x|x'.$amount.'x|x'.$total_amount.'x|x'.$ART_BARCODE1.'x|x'.$fgreq_trxnoitm.'x|x'.$total_qty;
-		array_push($item, $item_data);
-
-	}
-		$item_no = 1;
-
-		for($i = 0; $i < count($item); $i++){
-			$data = explode('x|x', $item[$i]);
-			$qty_perpack = $data[0];
-			$ART_SKU = $data[1];
-			$barcde = $data[2];
-			$stock_code = $data[3];
-			$ART_DESC = $data[4];
-			$mat_code = $data[5];
-			$ART_UPRICE = $data[6];
-			$qty_perpack = $data[7];
-			$amount = $data[8];
-			$total_amount = $data[9];
-			$ART_BARCODE1 = $data[10];
-			$fgreq_trxnoitm = $data[11];
-			$_recid = $data[11];
-
-			if($_recid !=  $xrecid ) {
-				$border = 'T,R,L';
-			}
-			elseif ($_recid == $xrecid) {
-				$border = 'L,R';
-			}
-			else{
-				$border = 'B';
-			}
-
-			if($item_no == count($item)){
-				$border = 'B,R,L';
-
-				if ($_recid != $xrecid) {
-					$pdf->SetFont('Dot','',10);
-					$pdf->SetXY(5,$Y);
-					$pdf->Cell(8,5,'',$border,0,'C');
-					$pdf->Cell(12,5,number_format($qty_perpack),1,0,'C');
-					$pdf->Cell(10,5,$ART_SKU,1,0,'C');
-					$pdf->SetFont('Dot','',7.5);
-					$pdf->Cell(26,5,$ART_BARCODE1,1,0,'C');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(27,5,$mat_code,1,0,'C');
-					$pdf->SetFont('Dot','',8);
-					$pdf->Cell(60,5,$ART_DESC,1,0,'L');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(11,5,$req_pack,$border,0,'C'); 
-					$pdf->Cell(12,5,number_format($qty_perpack,2),1,0,'C');
-					$pdf->Cell(15,5,$ART_UPRICE,1,0,'C');
-					$pdf->Cell(15,5,number_format($amount,2),1,0,'C');
-					$pdf->Cell(11,5,$item_no,$border,0,'C'); 
-				}else{
-					$pdf->SetFont('Dot','',10);
-					$pdf->SetXY(5,$Y);
-					$pdf->Cell(8,5,'',$border,0,'C');
-					$pdf->Cell(12,5,number_format($qty_perpack),1,0,'C');
-					$pdf->Cell(10,5,$ART_SKU,1,0,'C');
-					$pdf->SetFont('Dot','',7.5);
-					$pdf->Cell(26,5,$ART_BARCODE1,1,0,'C');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(27,5,$mat_code,1,0,'C');
-					$pdf->SetFont('Dot','',8);
-					$pdf->Cell(60,5,$ART_DESC,1,0,'L');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(11,5,'',$border,0,'C'); 
-					$pdf->Cell(12,5,number_format($qty_perpack,2),1,0,'C');
-					$pdf->Cell(15,5,$ART_UPRICE,1,0,'C');
-					$pdf->Cell(15,5,number_format($amount,2),1,0,'C');
-					$pdf->Cell(11,5,'',$border,0,'C'); 
-	
-				}
-				
-				$xrecid = $_recid;
-			}
-			elseif($item_no < count($item)){
-				$border = 'L,R';
-
-				if ($_recid != $xrecid) {
-					$pdf->SetFont('Dot','',10);
-					$pdf->SetXY(5,$Y);
-					$pdf->Cell(8,5,'1',$border,0,'C');
-					$pdf->Cell(12,5,number_format($qty_perpack),1,0,'C');
-					$pdf->Cell(10,5,$ART_SKU,1,0,'C');
-					$pdf->SetFont('Dot','',7.5);
-					$pdf->Cell(26,5,$ART_BARCODE1,1,0,'C');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(27,5,$mat_code,1,0,'C');
-					$pdf->SetFont('Dot','',8);
-					$pdf->Cell(60,5,$ART_DESC,1,0,'L');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(11,5,$req_pack,$border,0,'C'); 
-					$pdf->Cell(12,5,number_format($qty_perpack,2),1,0,'C');
-					$pdf->Cell(15,5,$ART_UPRICE,1,0,'C');
-					$pdf->Cell(15,5,number_format($amount,2),1,0,'C');
-					$pdf->Cell(11,5,$item_no,$border,0,'C'); 
-				}else{
-					$pdf->SetFont('Dot','',10);
-					$pdf->SetXY(5,$Y);
-					$pdf->Cell(8,5,'',$border,0,'C');
-					$pdf->Cell(12,5,number_format($qty_perpack),1,0,'C');
-					$pdf->Cell(10,5,$ART_SKU,1,0,'C');
-					$pdf->SetFont('Dot','',7.5);
-					$pdf->Cell(26,5,$ART_BARCODE1,1,0,'C');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(27,5,$mat_code,1,0,'C');
-					$pdf->SetFont('Dot','',8);
-					$pdf->Cell(60,5,$ART_DESC,1,0,'L');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(11,5,'',$border,0,'C'); 
-					$pdf->Cell(12,5,number_format($qty_perpack,2),1,0,'C');
-					$pdf->Cell(15,5,$ART_UPRICE,1,0,'C');
-					$pdf->Cell(15,5,number_format($amount,2),1,0,'C');
-					$pdf->Cell(11,5,'',$border,0,'C'); 
-	
-				}
-				
-				$xrecid = $_recid;
-			}
-			elseif($item_no == 1){
-				$border = 'T,R,L';
-
-				if ($_recid != $xrecid) {
-					$pdf->SetFont('Dot','',10);
-					$pdf->SetXY(5,$Y);
-					$pdf->Cell(8,5,'',$border,0,'C');
-					$pdf->Cell(12,5,number_format($qty_perpack),1,0,'C');
-					$pdf->Cell(10,5,$ART_SKU,1,0,'C');
-					$pdf->SetFont('Dot','',7.5);
-					$pdf->Cell(26,5,$ART_BARCODE1,1,0,'C');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(27,5,$mat_code,1,0,'C');
-					$pdf->SetFont('Dot','',8);
-					$pdf->Cell(60,5,$ART_DESC,1,0,'L');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(11,5,$req_pack,$border,0,'C'); 
-					$pdf->Cell(12,5,number_format($qty_perpack,2),1,0,'C');
-					$pdf->Cell(15,5,$ART_UPRICE,1,0,'C');
-					$pdf->Cell(15,5,number_format($amount,2),1,0,'C');
-					$pdf->Cell(11,5,$item_no,$border,0,'C'); 
-				}else{
-					$pdf->SetFont('Dot','',10);
-					$pdf->SetXY(5,$Y);
-					$pdf->Cell(8,5,'',$border,0,'C');
-					$pdf->Cell(12,5,number_format($qty_perpack),1,0,'C');
-					$pdf->Cell(10,5,$ART_SKU,1,0,'C');
-					$pdf->SetFont('Dot','',7.5);
-					$pdf->Cell(26,5,$ART_BARCODE1,1,0,'C');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(27,5,$mat_code,1,0,'C');
-					$pdf->SetFont('Dot','',8);
-					$pdf->Cell(60,5,$ART_DESC,1,0,'L');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(11,5,'',$border,0,'C'); 
-					$pdf->Cell(12,5,number_format($qty_perpack,2),1,0,'C');
-					$pdf->Cell(15,5,$ART_UPRICE,1,0,'C');
-					$pdf->Cell(15,5,number_format($amount,2),1,0,'C');
-					$pdf->Cell(11,5,'',$border,0,'C'); 
-	
-				}
-				
-				$xrecid = $_recid;
-			}
-			else{
-				$border = 'B';
-
-				if ($_recid != $xrecid) {
-					$pdf->SetFont('Dot','',10);
-					$pdf->SetXY(5,$Y);
-					$pdf->Cell(8,5,'',$border,0,'C');
-					$pdf->Cell(12,5,number_format($qty_perpack),1,0,'C');
-					$pdf->Cell(10,5,$ART_SKU,1,0,'C');
-					$pdf->SetFont('Dot','',7.5);
-					$pdf->Cell(26,5,$ART_BARCODE1,1,0,'C');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(27,5,$mat_code,1,0,'C');
-					$pdf->SetFont('Dot','',8);
-					$pdf->Cell(60,5,$ART_DESC,1,0,'L');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(11,5,$req_pack,$border,0,'C'); 
-					$pdf->Cell(12,5,number_format($qty_perpack,2),1,0,'C');
-					$pdf->Cell(15,5,$ART_UPRICE,1,0,'C');
-					$pdf->Cell(15,5,number_format($amount,2),1,0,'C');
-					$pdf->Cell(11,5,$item_no,$border,0,'C'); 
-				}else{
-					$pdf->SetFont('Dot','',10);
-					$pdf->SetXY(5,$Y);
-					$pdf->Cell(8,5,'',$border,0,'C');
-					$pdf->Cell(12,5,number_format($qty_perpack),1,0,'C');
-					$pdf->Cell(10,5,$ART_SKU,1,0,'C');
-					$pdf->SetFont('Dot','',7.5);
-					$pdf->Cell(26,5,$ART_BARCODE1,1,0,'C');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(27,5,$mat_code,1,0,'C');
-					$pdf->SetFont('Dot','',8);
-					$pdf->Cell(60,5,$ART_DESC,1,0,'L');
-					$pdf->SetFont('Dot','',10);
-					$pdf->Cell(11,5,'',$border,0,'C'); 
-					$pdf->Cell(12,5,number_format($qty_perpack,2),1,0,'C');
-					$pdf->Cell(15,5,$ART_UPRICE,1,0,'C');
-					$pdf->Cell(15,5,number_format($amount,2),1,0,'C');
-					$pdf->Cell(11,5,'',$border,0,'C'); 
-	
-				}
-				
-				$xrecid = $_recid;
-			}
-
-		
-
-			$Y = $Y + 5;
-			$item_no++;
-		
-		}
-
-
-
 
 $total_break_down_imp = $imp_box+$imp_sack+$imp_roll+$imp_bundle+$imp_plastic+$imp_pcs+$imp_ctns;
 $total_break_down_loc = $loc_box+$loc_sack+$loc_roll+$loc_bundle+$loc_plastic+$loc_pcs+$loc_ctns;
@@ -687,12 +450,12 @@ $total_break_down_loc = $loc_box+$loc_sack+$loc_roll+$loc_bundle+$loc_plastic+$l
 	$pdf->Cell(10,5,'TOTAL: ',0,0,'L');
 	$pdf->SetFont('Dot','',10);
 	$pdf->SetXY(16,$Y);
-	$pdf->Cell(18,5,number_format($total_qty),'B',0,'L');
+	$pdf->Cell(18,5,number_format($TQTY),'B',0,'L');
 
 	$pdf->SetXY(179,$Y);
 	$pdf->Cell(10,5,'TOTAL: ',0,0,'L');
 	$pdf->SetXY(190,$Y);
-	$pdf->Cell(20,5,number_format($total_amount,2),'B',0,'L');
+	$pdf->Cell(20,5,number_format($TAMOUNT,2),'B',0,'L');
 
 	$pdf->SetFont('Dot','',10);
 

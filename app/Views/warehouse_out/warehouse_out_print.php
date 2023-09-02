@@ -856,7 +856,6 @@ for($i = 0; $i < count($data_rows); $i++){
 			$border = 'L,B';
 		}
 
-
 		$pdf->SetFont('Dot','',10);
 		$pdf->SetXY(5,$Y);
 		if($box_no != $xboxno){
