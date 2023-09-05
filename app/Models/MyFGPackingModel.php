@@ -1601,28 +1601,31 @@ class MyFGPackingModel extends Model
         // var_dump($mtkn_dt);
         // die();
         $strqry = "
-            SELECT 
-            a.`fgreq_trxno`,
-            a.`stock_code`,
-            b.`mat_code`,
-            c.`ART_DESC`,
-            c.`ART_UPRICE`,
-            c.`ART_UCOST`,
-            c.`ART_SKU`
+            SELECT
+                b.`fgreq_trxno`,
+                a.`stock_code`,
+                b.`mat_code`,
+                c.`ART_DESC`,
+                c.`ART_UPRICE`,
+                c.`ART_UCOST`,
+                c.`ART_SKU`,
+                c.`ART_UOM` AS UNIT
             FROM
-            fgp_inv_rcv a
-            JOIN 
-            trx_fgpack_req_dt b
-            ON
-            b.`fgreq_trxno` = a.`fgreq_trxno`
+                fgp_inv_rcv a
             JOIN
-            mst_article c
+                trx_fgpack_req_dt b
             ON
-            b.`mat_code` = c.`ART_CODE`
+                a.`fgreq_trxno` = b.`fgreq_trxno`
+            JOIN
+                mst_article c
+            ON
+                b.`mat_code` = c.`ART_CODE`
             WHERE
-            a.`fgreq_trxno` = '$mtkn_dt'
-            GROUP BY wob_barcde
-            ORDER BY rcv_date DESC
+                b.`fgreq_trxno` = '$mtkn_dt' 
+            GROUP BY 
+                b.`mat_code`
+            ORDER BY 
+                b.`fgreq_trxno`
         ";
 
         $str = "

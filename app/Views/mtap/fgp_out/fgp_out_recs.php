@@ -69,7 +69,7 @@ $revert = $mydatazua->get_Active_menus($mydbname->medb(1),$cuser,"myuatrx_id='20
 						
 							<td>
 							<?php if($row['done'] == 1): ?>
-							<button  onclick="window.open('<?= site_url().$fprint ?>?fgreq_trxno=<?=$fgreq_trxno?>')" class="btn btn-dgreen"> <i class="bi bi-printer"></i> Post Print</button>
+							<button  onclick="window.open('<?= site_url().$fprint ?>?fgreq_trxno=<?=$fgreq_trxno?>&tpa_trxno=<?=$tpa_trxno;?>')" class="btn btn-dgreen"> <i class="bi bi-printer"></i> Post Print</button>
 							<?php else: ?>
 								<i class="bi bi-dash-lg text-success"></i>
 							<?php endif; ?>
