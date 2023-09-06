@@ -85,7 +85,7 @@ $pdf->SetFont('Dot','',10);
 //$pdf->Image(site_url().'public/assets/images/SMC-LOGO.png',5,5,40,0,'png');
 $pdf->SetXY(5,10); 
 $pdf->SetFont('Dot','',15);
-$pdf->Cell(112,5,'GOLDENWING EMPIRE MARKETING CORP.',1,0,'L'); 
+$pdf->Cell(112,5,'GOLDENWIN EMPIRE MARKETING CORP.',1,0,'L'); 
 
 $pdf->SetFont('Arial','B',12);
 $pdf->Cell(-20,25,'DEMAND REQUEST',0,0,'C'); 
