@@ -415,7 +415,7 @@ class MyRMOutboundModel extends Model
         $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
         
 
-        echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Processed Successfully! ['$total_item'] . ['$count'] . ['$orig_rm_count']</div>
+        echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Processed Successfully!</div>
         <script type=\"text/javascript\"> 
             function __fg_refresh_data() { 
                 try { 
