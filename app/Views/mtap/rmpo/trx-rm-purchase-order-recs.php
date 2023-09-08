@@ -73,7 +73,7 @@ thead.memetable, th.memetable, td.memetable {
 									$dis = ($row['is_bcodegen'] == '1' || $row['is_bcodegen'] == '2' || $row['is_approved'] == '2' || $row['is_approved'] == '0' ? "disabled" : '');
 									$dis2 = ($row['is_bcodegen'] == '0' || $row['is_bcodegen'] == '2' || $row['is_approved'] == '2' || $row['is_approved'] == '0' ? "disabled" : '');
 									$mtkn_wshe = $row['wshe_id'];
-									
+									$po_sysctrlno = $row['po_sysctrlno'];
 								?>
 								<tr bgcolor="<?=$bgcolor;?>" <?=$on_mouse;?>>
 									<td class="text-center" nowrap>
@@ -93,7 +93,7 @@ thead.memetable, th.memetable, td.memetable {
 									if($row['is_approved']==1){
 									}
 									else{
-										echo("<button onclick=\"window.open('me-rm-purchase-print?mtkn_potr=$mtkn_potr')\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-print\"></i> Print list</button>");
+										echo("<button onclick=\"window.open('me-rm-purchase-print?mtkn_potr=$mtkn_potr&mtkn_pono=$po_sysctrlno')\" class=\"btn btn-primary btn-sm\"><i class=\"fa fa-print\"></i> Print list</button>");
 									}
 
 									?>	

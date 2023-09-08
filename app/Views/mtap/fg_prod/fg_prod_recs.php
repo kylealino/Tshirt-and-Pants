@@ -87,7 +87,7 @@ else{
 									<td nowrap="nowrap"><?=$row['tpa_trxno'];?></td>
 									<td nowrap="nowrap"><?=$row['plnt_id'];?></td>
 									<td nowrap="nowrap"><?=$row['branch_name'];?></td>
-									<td nowrap="nowrap"><?=$mylibzsys->mydate_mmddyyyy($row['req_date']);?></td>
+									<td nowrap="nowrap"><?=$row['req_date'];?></td>
 									<td nowrap="nowrap">
 									<?php if($pack_qty != $processed_pack ):?>
 											

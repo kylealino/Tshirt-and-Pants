@@ -280,6 +280,7 @@ $routes->post('rm-out-vw-produce','Rm_outbound::rm_out_vw_produce',['filter' => 
 $routes->post('rm-out-vw-lacking','Rm_outbound::rm_out_vw_lacking',['filter' => 'myauthuser']);
 $routes->post('rm-out-req-save','Rm_outbound::rm_out_req_save',['filter' => 'myauthuser']);
 $routes->add('rm-out-print', 'Rm_outbound::rm_out_print',['filter' => 'myauthuser']);
+$routes->add('fg-out-print', 'Rm_outbound::fg_out_print',['filter' => 'myauthuser']);
 
 // $routes->add('/rm-out-print', 'Rm_outbound::rm_print',['filter' => 'myauthuser']);
 // $routes->add('/rm-out-fprint', 'Rm_outbound::rm_fprint',['filter' => 'myauthuser']);

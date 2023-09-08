@@ -158,11 +158,17 @@ class MyRMProductionModel extends Model
                         
                         $xdata = $adatar1[$xx];
                         $mitemc = $xdata[0];
-                        $mrelease = $xdata[1];
-                        $mreqqty = $xdata[2];
+                        $mreqqty = $xdata[1];
+                        $mrelease = $xdata[2];
+                        $minv = $xdata[3];
 
                         if ($mrelease > $mreqqty) {
                             echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Release Qty cannot be greater than Request Qty! </div>";
+                            die();
+                        }
+
+                        if ($mrelease > $minv) {
+                            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks Unavailable! </div>";
                             die();
                         }
 

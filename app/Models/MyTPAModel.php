@@ -551,9 +551,17 @@ class MyTPAModel extends Model
           a.`branch_name`,
           a.`req_date`,
           (SELECT SUM(`demand_qty`) FROM trx_tpa_dt WHERE `tpa_trxno` = a.`tpa_trxno`) AS total_qty,
-          a.`is_processed`
+          a.`is_processed`,
+          b.`prod_plan_trxno`
         FROM
-        `trx_tpa_hd` a
+            `trx_tpa_hd` a
+        JOIN
+            `trx_tpa_dt` b
+        ON 
+            a.`tpa_trxno` = b.`tpa_trxno`   
+        GROUP BY a.`tpa_trxno`
+        
+        
 
         ";
         

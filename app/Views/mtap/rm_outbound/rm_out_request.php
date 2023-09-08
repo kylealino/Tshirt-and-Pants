@@ -59,10 +59,10 @@ thead.memetable, th.memetable, td.memetable {
 						?>
 						<tr bgcolor="<?=$bgcolor;?>" <?=$on_mouse;?>>
 							<td nowrap><?=$nporecs;?></td>
-							<td nowrap><input type="text" name="rmap_trxno" id="rmap_trxno" class="text-center" value="<?=$row['rmap_trxno'];?>"></td>
+							<td nowrap><input type="hidden" name="rmap_trxno" id="rmap_trxno" class="text-center" value="<?=$row['rmap_trxno'];?>"><?=$row['rmap_trxno'];?></td>
 							<td nowrap><?=$row['plnt_id'];?></td>
 							<td nowrap><?=$row['request_date'];?></td>
-							<td nowrap><input type="text" name="rmap_trxno" id="rmap_trxno" size="5" class="text-center" value="<?=$row['total_qty'];;?>"></td>
+							<td nowrap><input type="hidden" name="rmap_trxno" id="rmap_trxno" size="5" class="text-center" value="<?=$row['total_qty'];;?>"><?=$row['total_qty'];?></td>
               <td nowrap>
               <?php if($is_processed == '0'):?>
                 <button class="btn btn-success btn-xs btn_process"  data-rmapno= "<?=$row['rmap_trxno'];?>" value="<?=$rmap_trxno?>"  type="button">Process</button>
@@ -74,11 +74,7 @@ thead.memetable, th.memetable, td.memetable {
 						<?php 
 						$nn++;
 						endforeach;
-					else:
 						?>
-						<tr>
-							<td colspan="18">No data was found.</td>
-						</tr>
 					<?php 
 					endif; ?>
 				</tbody>
@@ -91,30 +87,32 @@ thead.memetable, th.memetable, td.memetable {
 <script type="text/javascript"> 
 
 $(document).ready(function(){
- $.extend(true, $.fn.dataTable.defaults,{
-      language: {
-          search: ""
-      }
-  });
-	$('#tbl_rmap_request').DataTable({
-		           
-       'order':[3,'DESC'],
-       'columnDefs': [{
-           "targets":[0],
-           "orderable": false
-       },
-		{
-		targets:'_all',
-		className: 'dt-head-center'
-		},
-       ]
-	});
+  $.extend(true, $.fn.dataTable.defaults, {
+        language: {
+            search: ""
+        }
+    });
 
-   $('#tbl_rmap_request_filter.dataTables_filter [type=search]').each(function () {
+    $('#tbl_rmap_request').DataTable({
+        'order': [0],
+        'columnDefs': [{
+            "targets": [1], // Enable searching for the first column (index 0)
+            "orderable": false
+        },
+        {
+            targets: '_all',
+            className: 'dt-head-center'
+        }]
+    });
+
+
+
+    $('#tbl_rmap_request_filter.dataTables_filter [type=search]').each(function () {
         $(this).attr(`placeholder`, `Search...`);
         $(this).before('<span class="bi bi-search text-dgreen"></span>');
     });
-
+    var firstCellValue = $('#tbl_rmap_request').DataTable().cell(1, 1).data();
+    console.log("Value of cell in the first column, row 2:", firstCellValue);
 });
 
 $(".btn_process").click(function(e){
@@ -127,8 +125,8 @@ $(".btn_process").click(function(e){
 
           for(aa = 1; aa < rowCount1; aa++) { 
                 var clonedRow = jQuery('#tbl_rmap_request tr:eq(' + aa + ')').clone(); 
-                var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val();
-                var mqty = jQuery(clonedRow).find('input[type=text]').eq(1).val();
+                var mitemc = jQuery(clonedRow).find('input[type=hidden]').eq(0).val();
+                var mqty = jQuery(clonedRow).find('input[type=hidden]').eq(1).val();
   
                 mdata = mitemc + 'x|x' + mqty;
                 adata1.push(mdata);

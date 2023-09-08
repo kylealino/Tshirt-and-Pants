@@ -102,4 +102,11 @@ class Rm_outbound extends BaseController
 
 	} //end rm_out_print
 
+	public function fg_out_print(){
+	
+		$this->response->setHeader('Content-Type', 'application/pdf');
+		return view('mtap/rm_outbound/rm_out_print_fg');
+
+	} //end rm_out_print
+
 }  

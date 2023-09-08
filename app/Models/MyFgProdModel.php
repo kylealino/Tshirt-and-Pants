@@ -94,195 +94,89 @@ class MyFgProdModel extends Model
             echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> PROCESS PACK QUANTITY CANNOT BE NULL!!! </div>";
             die();
         }
-        if ($txt_rmng_pack == $txt_req_pack) {
+
+        if(count($adata1) > 0) { 
+            $ame = array();
+            $adatar1 = array();
+
+            for($aa = 0; $aa < count($adata1); $aa++) { 
+                $medata = explode("x|x",$adata1[$aa]);
+                $mitemc = trim($medata[0]);
+                $mdmd = $medata[1];
+                $inv = $medata[4];
+                $amatnr = array();
+
+                if(!empty($mitemc)) { 
+                    $str = "select aa.recid,aa.ART_CODE from {$this->db_erp}.`mst_article` aa where ART_CODE = '$mitemc' ";
+                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                    $rw = $q->getRowArray(); 
+                    array_push($adatar1,$medata);
+
+                }
+            }  
+            
+            if(count($adatar1) > 0) { 
+                for($xx = 0; $xx < count($adatar1); $xx++) { 
+                    
+                    $xdata = $adatar1[$xx];
+                    $mitemc = $xdata[0];
+                    $mdmd = $medata[1];
+                    $total_processed = $xdata[3];
+                    $inv = $medata[4];
+
+                    if ($mdmd > $inv) {
+                        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks unavailable! </div>";
+                        die();
+                    }
+
+                    $str="
+                    UPDATE fg_inv_rcv SET po_qty = po_qty - '$total_processed' WHERE mat_code = '$mitemc' 
+                    
+                    ";
+                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+    
+                    $strY = "
+                        SELECT `total_pack`,`total_processed` FROM trx_fgpack_req_dt WHERE `fgreq_trxno` = '$fgreq_trxno' 
+                        ";
+                        $qP = $this->mylibzdb->myoa_sql_exec($strY,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                        $rw = $qP->getResultArray();
+                        foreach ($rw as $data) {
+                            $total_pack = $data['total_pack'];
+                            $total_processed = $data['total_processed'];
+                        
+
+                        if ($total_pack != $total_processed) {
+                            
+
+                            $strU = "
+                            UPDATE trx_fgpack_req_dt SET total_processed = `total_processed` - '$total_processed' WHERE mat_code = '{$mitemc}' AND fgreq_trxno = '$fgreq_trxno'
+                            ";
+                            $qP = $this->mylibzdb->myoa_sql_exec($strU,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+                        }else{
+
+                            $strP = "
+                            UPDATE trx_fgpack_req_dt SET is_packed = '1' WHERE mat_code = '{$mitemc}' AND fgreq_trxno = '$fgreq_trxno'
+                            ";
+                            $qP = $this->mylibzdb->myoa_sql_exec($strP,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+    
+                            $strU = "
+                            UPDATE trx_fgpack_req_dt SET total_processed = `total_processed` - '$total_processed' WHERE mat_code = '{$mitemc}' AND fgreq_trxno = '$fgreq_trxno'
+                            ";
+                            $qP = $this->mylibzdb->myoa_sql_exec($strU,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                        }
+                    }
+                }
+                
+            } 
+                    
             $strU = "
             UPDATE trx_fgpack_req_hd SET `processed_pack` = '$txt_process_pack', `rmng_pack` = `rmng_pack` - '$txt_process_pack' WHERE fgreq_trxno = '$fgreq_trxno'
             ";
             $q = $this->mylibzdb->myoa_sql_exec($strU,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
-            if(count($adata1) > 0) { 
-                $ame = array();
-                $adatar1 = array();
-    
-                for($aa = 0; $aa < count($adata1); $aa++) { 
-                    $medata = explode("x|x",$adata1[$aa]);
-                    $mitemc = trim($medata[0]);
-                    $mdmd = $medata[1];
-                    $inv = $medata[4];
-                    $amatnr = array();
-    
-                    if ($mdmd > $inv) {
-                        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks unavailable. Please proceed to FG Po entry. </div>";
-                        exit();
-                        die();
-                        break;
-                    }
-
-                    if(!empty($mitemc)) { 
-                        $str = "select aa.recid,aa.ART_CODE from {$this->db_erp}.`mst_article` aa where ART_CODE = '$mitemc' ";
-                        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                        $rw = $q->getRowArray(); 
-                        array_push($adatar1,$medata);
-    
-                    }
-                }  
-               
-                if(count($adatar1) > 0) { 
-                    for($xx = 0; $xx < count($adatar1); $xx++) { 
-                        
-                        $xdata = $adatar1[$xx];
-                        $mitemc = $xdata[0];
-                        $mdmd = $medata[1];
-                        $total_processed = $xdata[3];
-                        $inv = $medata[4];
-
-                        if ($mdmd > $inv) {
-                            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks unavailable. Please proceed to FG Po entry. </div>";
-                            exit();
-                            die();
-                            break;
-                        }
-
-                        $str="
-                        UPDATE fg_inv_rcv SET po_qty = po_qty - '$total_processed' WHERE mat_code = '$mitemc' 
-                        
-                        ";
-                        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-        
-                        $strY = "
-                            SELECT `total_pack`,`total_processed` FROM trx_fgpack_req_dt WHERE `fgreq_trxno` = '$fgreq_trxno' 
-                            ";
-                            $qP = $this->mylibzdb->myoa_sql_exec($strY,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                            $rw = $qP->getResultArray();
-                            foreach ($rw as $data) {
-                                $total_pack = $data['total_pack'];
-                                $total_processed = $data['total_processed'];
-                            
-    
-                            if ($total_pack != $total_processed) {
-                                
-    
-                                $strU = "
-                                UPDATE trx_fgpack_req_dt SET total_processed = `total_processed` - '$total_processed' WHERE mat_code = '{$mitemc}' AND fgreq_trxno = '$fgreq_trxno'
-                                ";
-                                $qP = $this->mylibzdb->myoa_sql_exec($strU,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-    
-                            }else{
-    
-                                $strP = "
-                                UPDATE trx_fgpack_req_dt SET is_packed = '1' WHERE mat_code = '{$mitemc}' AND fgreq_trxno = '$fgreq_trxno'
-                                ";
-                                $qP = $this->mylibzdb->myoa_sql_exec($strP,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-        
-                                $strU = "
-                                UPDATE trx_fgpack_req_dt SET total_processed = `total_processed` - '$total_processed' WHERE mat_code = '{$mitemc}' AND fgreq_trxno = '$fgreq_trxno'
-                                ";
-                                $qP = $this->mylibzdb->myoa_sql_exec($strU,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                            }
-                            }
-                    }
-                    
-                    } 
-                    
-                } 
-
-        }else{
-            $strU = "
-            UPDATE trx_fgpack_req_hd SET `processed_pack` = processed_pack + '$txt_process_pack', `rmng_pack` = `rmng_pack` - '$txt_process_pack' WHERE fgreq_trxno = '$fgreq_trxno'
-            ";
-            $q = $this->mylibzdb->myoa_sql_exec($strU,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-
-            if(count($adata1) > 0) { 
-                $ame = array();
-                $adatar1 = array();
-    
-                for($aa = 0; $aa < count($adata1); $aa++) { 
-                    $medata = explode("x|x",$adata1[$aa]);
-                    $mitemc = trim($medata[0]);
-                    $mdmd = $medata[1];
-                    $inv = $medata[4];
-                    $amatnr = array();
-
-                    if ($mdmd > $inv) {
-                        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks unavailable. Please proceed to FG Po entry. </div>";
-                        exit();
-                        die();
-                        break;
-                    }
-    
-                    if(!empty($mitemc)) { 
-                        $str = "select aa.recid,aa.ART_CODE from {$this->db_erp}.`mst_article` aa where ART_CODE = '$mitemc' ";
-                        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                        $rw = $q->getRowArray(); 
-                        array_push($adatar1,$medata);
-    
-                    }
-                }  
-               
-                if(count($adatar1) > 0) { 
-                    for($xx = 0; $xx < count($adatar1); $xx++) { 
-                        
-                        $xdata = $adatar1[$xx];
-                        $mitemc = $xdata[0];
-                        $mdmd = $medata[1];
-                        $total_processed = $xdata[3];
-                        $inv = $medata[4];
-
-                        if ($mdmd > $inv) {
-                            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks unavailable. Please proceed to FG Po entry. </div>";
-                            
-
-                        }
-    
-                        $str="
-                        UPDATE fg_inv_rcv SET po_qty = po_qty - '$total_processed' WHERE mat_code = '$mitemc' 
-                        
-                        ";
-                        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-        
-                        $strY = "
-                            SELECT `total_pack`,`total_processed` FROM trx_fgpack_req_dt WHERE `fgreq_trxno` = '$fgreq_trxno' 
-                            ";
-                            $qP = $this->mylibzdb->myoa_sql_exec($strY,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                            $rw = $qP->getResultArray();
-                            foreach ($rw as $data) {
-                                $total_pack = $data['total_pack'];
-                                $total_processed = $data['total_processed'];
-                            
-    
-                            if ($total_pack != $total_processed) {
-                                
-    
-                                $strU = "
-                                UPDATE trx_fgpack_req_dt SET total_processed = `total_processed` - '$total_processed' WHERE mat_code = '{$mitemc}' AND fgreq_trxno = '$fgreq_trxno'
-                                ";
-                                $qP = $this->mylibzdb->myoa_sql_exec($strU,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-    
-                            }else{
-    
-                                $strP = "
-                                UPDATE trx_fgpack_req_dt SET is_packed = '1' WHERE mat_code = '{$mitemc}' AND fgreq_trxno = '$fgreq_trxno'
-                                ";
-                                $qP = $this->mylibzdb->myoa_sql_exec($strP,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-        
-                                $strU = "
-                                UPDATE trx_fgpack_req_dt SET total_processed = `total_processed` - '$total_processed' WHERE mat_code = '{$mitemc}' AND fgreq_trxno = '$fgreq_trxno'
-                                ";
-                                $qP = $this->mylibzdb->myoa_sql_exec($strU,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                            }
-                            }
-                    }
-                    
-                    } 
-                    
-                } 
-        }
-
-
 
         
-
-
             echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Recorded Successfully!!! </div>
             <script type=\"text/javascript\"> 
                 function __fg_refresh_data() { 
@@ -304,7 +198,8 @@ class MyFgProdModel extends Model
             ";
             die();
 
-    } //end fg_prod_entry_save
+        } //end fg_prod_entry_save
+    }
 
     public function fg_prod_barcde_gnrtion() {
         $cuser = $this->mylibzdb->mysys_user();

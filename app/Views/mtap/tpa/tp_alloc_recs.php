@@ -39,6 +39,7 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 									$on_mouse = " onmouseover=\"this.style.backgroundColor='#97CBFF';\" onmouseout=\"this.style.backgroundColor='" . $bgcolor  . "';\"";	
 									$tpa_trxno = $row['tpa_trxno'];
 									$is_processed = $row['is_processed'];
+									$prod_plan_trxno = $row['prod_plan_trxno'];
 									
 								?>
 								<tr bgcolor="<?=$bgcolor;?>" <?=$on_mouse;?>>
@@ -48,7 +49,7 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 									</td>
 									<?php else:?>
 										<td class="text-center" nowrap>
-										<?=anchor('me-tp-alloc-vw/?tpa_trxno=' . $tpa_trxno, '<i class="bi bi bi-eye"></i> Edit ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
+										<?=anchor('me-tp-alloc-vw/?prod_plan_trxno=' . $prod_plan_trxno, '<i class="bi bi bi-eye"></i> Edit ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
 									<?php endif;?>
 									</td>
 									<td nowrap><?=$row['tpa_trxno'];?></td>

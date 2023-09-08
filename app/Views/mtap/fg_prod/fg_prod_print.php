@@ -25,57 +25,22 @@ $tmp_date = new DateTime($tmp_time);
 $print_time = $tmp_date->format('m/d/Y g:i:s A');
 $fgreq_trxno = $request->getVar('fgreq_trxno');
 
-$str = "                        
-SELECT 
-b.`mat_code`,
-c.`ART_DESC`,
-(SELECT `demand_qty` FROM trx_tpa_dt WHERE mat_code = b.`mat_code` AND tpa_trxno = b.`tpa_trxno`) AS demand_qty,
-b.`qty_perpack`,
-b.`total_pack`,
-(SELECT SUM(po_qty) FROM fg_inv_rcv WHERE mat_code = c.`ART_CODE`) AS po_qty,
-a.`req_date`,
-a.`pack_qty`
-
-FROM
-trx_fgpack_req_hd a
-JOIN
-trx_fgpack_req_dt b
-ON 
-a.`fgreq_trxno` = b.`fgreq_trxno`
-JOIN
-mst_article c
-ON
-b.`mat_code` = c.`ART_CODE`
-LEFT JOIN 
-fg_inv_rcv e
-ON 
-e.`mat_code` = c.`ART_CODE`
-JOIN
-trx_tpa_dt d
-ON
-a.`tpa_trxno` = d.`tpa_trxno`
-WHERE
-b.`fgreq_trxno` = '{$fgreq_trxno}'
-GROUP BY b.`mat_code`
+$str="
+	SELECT
+		`pack_qty`,
+		`req_date`
+	FROM
+		trx_fgpack_req_hd
+	WHERE
+		fgreq_trxno = '$fgreq_trxno'
 ";
-//AND !(a.`flag` = 'C' ) AND !(a.`df_tag`='D') AND !(a.`post_tag`='N') 
-// var_dump($str); 
-// die();
-
-$q3 = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-if($q3->getNumRows() == 0){ 
-	$data = array('message'=>"No Data Found! <br/> Note: Maybe data already downloaded.");
-	echo view('errors/html/error_404',$data);
-	die();
-}
-
+$q = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+$rw = $q->getRowArray();
+$pack_qty = $rw['pack_qty'];
+$req_date = $rw['req_date'];
 
 $date = date("F j, Y, g:i A");
-$r = $q3->getResultArray();
-foreach($q3->getResult() as $row){
-	$req_date = $row->req_date;
-	$pack_qty = $row->pack_qty;
-}
+
 
 $pdf = new Mypdf();
 $pdf->AliasNbPages();
@@ -97,7 +62,7 @@ $pdf->SetFont('Dot','',10);
 //$pdf->Image(site_url().'public/assets/images/SMC-LOGO.png',5,5,40,0,'png');
 $pdf->SetXY(5,10); 
 $pdf->SetFont('Dot','',15);
-$pdf->Cell(112,5,'SMARTLOOK MARKETING CORPORATION',1,0,'L'); 
+$pdf->Cell(112,5,'GOLDEN WIN EMPIRE MARKETING CORPORATION',1,0,'L'); 
 $pdf->SetXY(5,10); 
 $pdf->SetFont('Dot','',10);
 $pdf->Cell(5,15,'1002-B Apolonia St. Mapulang Lupa, Valenzuela City',0,0,'L'); 
@@ -178,13 +143,34 @@ $ntamt = 0;
 $ntcost = 0;
 $ntucost = 0;
 $ntuprice = 0;
+
+
+$str = "                        
+	SELECT
+		a.`mat_code`,
+		b.`ART_DESC`,
+		a.`qty_perpack`
+
+	FROM
+		trx_fgpack_req_dt a
+	JOIN
+		mst_article b
+	ON
+		a.`mat_code` = b.`ART_CODE`
+	WHERE
+		fgreq_trxno = '$fgreq_trxno'
+";
+
+$q3 = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+
+
 foreach($q3->getResult() as $row){
 
 	$mat_code = $row->mat_code;
 	$ART_DESC = $row->ART_DESC;
-	$demand_qty = $row->demand_qty;
-	$req_date = $row->req_date;
-	$total_qty    += $demand_qty;
+	$qty_perpack = $row->qty_perpack;
+	$total_qty    += $qty_perpack;
 	
 	
 		if($Y < 226){
@@ -196,7 +182,7 @@ foreach($q3->getResult() as $row){
 				$pdf->Cell(10,5,$box_no,$border,0,'C');
 				$pdf->Cell(25,5,$mat_code,1,0,'C'); 
 				$pdf->Cell(145,5,$ART_DESC,1,0,'C'); 
-				$pdf->Cell(25,5,$demand_qty,$border,0,'C');
+				$pdf->Cell(25,5,$qty_perpack,$border,0,'C');
 				
 		}
 
@@ -246,7 +232,7 @@ foreach($q3->getResult() as $row){
 
 			$pdf->Cell(25,5,$mat_code,1,0,'C'); 
 			$pdf->Cell(145,5,$ART_DESC,1,0,'C'); 
-			$pdf->Cell(25,5,$demand_qty,$border,0,'C');
+			$pdf->Cell(25,5,$qty_perpack,$border,0,'C');
 
 		}//endfor
 		$Y = $Y + 5;

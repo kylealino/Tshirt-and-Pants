@@ -53,8 +53,8 @@ thead.memetable, th.memetable, td.memetable {
 						<th>Remarks</th>
 						<th>Request Date</th>
 						<th>Request Qty</th>
-						<th>Print</th>
-						<th>View Items</th>
+						<!-- <th>Print</th>
+						<th>View Items</th> -->
 					</tr>
 				</thead>
 				<tbody>
@@ -78,13 +78,13 @@ thead.memetable, th.memetable, td.memetable {
 							<td nowrap><?=$row['remarks'];?></td>
 							<td nowrap><?=$row['request_date'];?></td>
 							<td nowrap><?=$row['total_qty'];?></td>
-							<td>
+							<!-- <td>
 								<button onclick="window.open('<?= site_url() ?>rm-req-bom-print?rmap_trxno=<?=$rmap_trxno?>')" class=" btn btn-primary btn-xs"  title="View pdf" ><i class="bi bi-file-pdf bi-sm"></i> BOM Print</button>
 							</td>
 
 							<td nowrap="nowrap">
-								<button title="View items" class="btn btn-dgreen-ol btn-xs rm-req-btn-view-items"  data-rmapno= "<?=$row['rmap_trxno'];?>" value="<?=$txt_mtknr?>"  type="button" ><i class="bi bi-eye-fill"></i> Materials</button>
-							</td>
+								<button title="View items" class="btn btn-dgreen-ol btn-xs rm-req-btn-view-items"  data-rmapno= "<?=$row['rmap_trxno'];?>" value="<?=$txt_mtknr?>"  type="button" disabled><i class="bi bi-eye-fill"></i> Materials</button>
+							</td> -->
 							
 						</tr>
 						<?php 

@@ -126,6 +126,7 @@ $fgreq_trxno = $rw['fgreq_trxno'];
                                             <th nowrap="nowrap">Item Description</th>
                                             <th nowrap="nowrap">Request Qty</th>
                                             <th nowrap="nowrap">Release Qty</th>
+                                            <th nowrap="nowrap">Inventory Qty</th>
                                         </tr>
                                     </thead>
                                     <tbody id="gwpo-recs">
@@ -138,15 +139,20 @@ $fgreq_trxno = $rw['fgreq_trxno'];
                                           a.`item_code`,
                                           a.`item_qty`,
                                           b.`ART_DESC`,
-                                          a.`produce_rmng`
-                                            FROM 
-                                            trx_rmap_req_dt a
-                                            JOIN
-                                            mst_article b
-                                            ON
-                                            a.`item_code` = b.`ART_CODE`
-                                            WHERE 
-                                            a.`rmap_trxno` = '$rmap_trxno' and a.`produce_rmng` != '0'
+                                          a.`produce_rmng`,
+                                          COALESCE(c.`po_qty`, 0) AS minv
+                                        FROM 
+                                        trx_rmap_req_dt a
+                                        JOIN
+                                        mst_article b
+                                        ON
+                                        a.`item_code` = b.`ART_CODE`
+                                        LEFT JOIN
+                                        rm_inv_rcv c
+                                        ON
+                                        a.`item_code` = c.`mat_code`
+                                        WHERE 
+                                        a.`rmap_trxno` = '$rmap_trxno' and a.`produce_rmng` != '0'
 
                                         ";
 
@@ -161,6 +167,7 @@ $fgreq_trxno = $rw['fgreq_trxno'];
                                             <td nowrap="nowrap"><input type="text" id="fabric_desc" class="form-control text-center form-control-sm bg-white" size="30" value="<?=$rdt['ART_DESC'];?>" disabled></td>
                                             <td nowrap="nowrap"><input type="text" id="fabric_qty" class="form-control text-center form-control-sm bg-white" size="10" value="<?=$rdt['item_qty'];?>" disabled></td>
                                             <td nowrap="nowrap"><input type="text" id="fabric_qty" class="form-control text-center form-control-sm bg-white thick-border"size="10" value="<?=$rdt['produce_rmng'];?>"></td>
+                                            <td nowrap="nowrap"><input type="text" id="fabric_qty" class="form-control text-center form-control-sm bg-white "size="10" value="<?=$rdt['minv'];?>"></td>
                                         </tr>
                                         <?php 
                                         } 
@@ -294,8 +301,9 @@ $("#mbtn_mn_Save").click(function(e){
                 var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); 
                 var mreqqty = jQuery(clonedRow).find('input[type=text]').eq(2).val();
                 var mrelease = jQuery(clonedRow).find('input[type=text]').eq(3).val(); 
+                var minv = jQuery(clonedRow).find('input[type=text]').eq(4).val();
 
-                mdata = mitemc + 'x|x' + mrelease + 'x|x' + mreqqty;
+                mdata = mitemc + 'x|x' + mrelease + 'x|x' + mreqqty + 'x|x' + minv;
                 adata1.push(mdata);
             } 
 
