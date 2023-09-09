@@ -240,7 +240,7 @@ $date = DateTime::createFromFormat('Y-m-d H:i:s', $entry_date)->format('Y-m-d');
             </div>
             
             <div class="row gy-2 mb-3">
-              <?php if(!empty($prod_plan_trxno)): ?>
+              <?php if(!empty($tpa_trxno)): ?>
               <div class="col-sm-4">
                 <button id="mbtn_mn_Update" type="submit" class="btn btn-dgreen btn-sm">Update</button>
                 <!-- <button id="mbtn_mn_NTRX" type="button" class="btn btn-primary btn-sm">New Trx</button> -->

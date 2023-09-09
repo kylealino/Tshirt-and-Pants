@@ -40,7 +40,7 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 									$tpa_trxno = $row['tpa_trxno'];
 									$is_processed = $row['is_processed'];
 									$prod_plan_trxno = $row['prod_plan_trxno'];
-									
+									$view = 'me-tp-alloc-vw';
 								?>
 								<tr bgcolor="<?=$bgcolor;?>" <?=$on_mouse;?>>
 									<?php if ($is_processed == 1):?>
@@ -49,7 +49,8 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 									</td>
 									<?php else:?>
 										<td class="text-center" nowrap>
-										<?=anchor('me-tp-alloc-vw/?prod_plan_trxno=' . $prod_plan_trxno, '<i class="bi bi bi-eye"></i> Edit ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
+										<!-- <?=anchor('me-tp-alloc-vw/?prod_plan_trxno=' . $prod_plan_trxno, '<i class="bi bi bi-eye"></i> Edit ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?> -->
+										<button onclick="window.open('<?= site_url().$view ?>?prod_plan_trxno=<?=$prod_plan_trxno?>&tpa_trxno=<?=$tpa_trxno;?>')" class="btn bg-psuccess"> <i class="bi bi-eye"></i> Edit</button>
 									<?php endif;?>
 									</td>
 									<td nowrap><?=$row['tpa_trxno'];?></td>
