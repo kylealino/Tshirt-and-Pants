@@ -425,7 +425,7 @@ class MyRMOutboundModel extends Model
                     }
 
                     $str="
-                    UPDATE `trx_rmap_req_dt` SET `produce_qty` = '$count_fg_success' WHERE `rmap_trxno` = '$rmapno' AND `item_code` = '$fg_code';
+                    UPDATE `trx_rmap_req_dt` SET `produce_qty` = '$count_fg_success', `produce_rmng` = '$count_fg_success' WHERE `rmap_trxno` = '$rmapno' AND `item_code` = '$fg_code';
                     ";
                     $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
                 }

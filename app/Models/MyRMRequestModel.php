@@ -251,13 +251,11 @@ class MyRMRequestModel extends Model
                         `item_code`,
                         `item_qty`,
                         `rmng_qty`,
-                        `produce_rmng`,
                         `item_tamount`
 
                     ) values(
                         '$cseqn',
                         '$cmat_code',
-                        '$nqty',
                         '$nqty',
                         '$nqty',
                         '$mamount'
