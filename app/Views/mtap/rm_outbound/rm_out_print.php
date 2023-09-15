@@ -18,6 +18,7 @@ $mpw_tkn        = $mylibzdb->mpw_tkn();
 $approved_fullname = '';
 
 $rmap_trxno = $request->getVar('rmap_trxno');
+$total_fg = $request->getVar('total_qty');
 
 $str="
 
@@ -128,7 +129,7 @@ $count=1;
 $str="
 	SELECT 
 	a.`rm_code`, 
-	SUM(b.`item_qty` * a.`item_qty`) item_qty,
+	SUM({$total_fg} * a.`item_qty`) item_qty,
 	c.`ART_DESC`,
 	c.`ART_UOM`
 	FROM 

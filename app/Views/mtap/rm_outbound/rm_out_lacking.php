@@ -39,7 +39,7 @@ thead.memetable, th.memetable, td.memetable {
 						<th>RMAP Transaction No.</th>
 						<th>FG Code</th>
 						<th>RM Code</th>
-                        <th>Inventory Remaining</th>
+            <th>Inventory Remaining</th>
 						<th>Lacking Qty</th>
 
 					</tr>
@@ -62,7 +62,7 @@ thead.memetable, th.memetable, td.memetable {
 							<td nowrap><input type="text" name="rmap_trxno" id="rmap_trxno" class="text-center" value="<?=$row['rmap_trxno'];?>"></td>
 							<td nowrap><?=$row['fg_code'];?></td>
 							<td nowrap><?=$row['rm_code'];?></td>
-                            <td nowrap><?=$row['rm_inv'];?></td>
+              <td nowrap><?=$row['rm_inv'];?></td>
 							<td nowrap><?=$row['total_qty'];?></td>
                             
 						</tr>
@@ -93,7 +93,7 @@ $(document).ready(function(){
   });
 	$('#tbl_rmap_lacking').DataTable({
 		           
-       'order':[3,'DESC'],
+       'order':[],
        'columnDefs': [{
            "targets":[0],
            "orderable": false

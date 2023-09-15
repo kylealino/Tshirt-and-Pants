@@ -40,25 +40,13 @@ class MyRMRequestModel extends Model
         $adata1 = $this->request->getVar('adata1');
         $adata2 = $this->request->getVar('adata2');
 
-        if(!empty($active_plnt_id)) {
-            $str = "SELECT `recid` FROM {$this->db_erp}.`mst_plant` WHERE plnt_code = '{$active_plnt_id}' ";
-            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-           
-            if($q->resultID->num_rows == 0) { 
-                echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Please Select Plant!!!.</div>";
-                die();
-            }
 
-            $rw = $q->getRowArray();
-            $plnt_id = $rw['recid'];
-           
-            $q->freeResult();
-        
-            //END BRANCH
-        }
-        else{ 
+        if(empty($active_plnt_id)) {
             echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Please Select Plant!!!.</div>";
             die();
+        }
+        else{ 
+            
         }
 
         if(empty($adata1)) { 
@@ -66,28 +54,27 @@ class MyRMRequestModel extends Model
             die();
         }
 
-        $mfgp_rid = '';
-        $cseqn = '';
+         $cseqn =  $this->mydataz->get_ctr_new_dr('RMAP','',$this->db_erp,'CTRL_GWFGPA');//TRANSACTION NO
 
-        if(!empty($mtkn_mntr)) { 
-            //CHECK IF VALID PO
-             $str = "select aa.recid,aa.rmap_trxno from {$this->db_erp}.trx_rmap_req_hd aa where sha2(concat(aa.recid,'{$mpw_tkn}'),384) = '$mtkn_mntr'";
-             $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-             if($q->resultID->num_rows == 0) {
-                 echo "No Records Found!!!";
-                 die();
-             }
-             $rw = $q->getRowArray();
-             $mfgp_rid = $rw['recid'];
-             $cseqn = $rw['rmap_trxno'];
-             $q->freeResult();
- 
-         }//endif
-         //INSERT
-         else{
-             
-             $cseqn =  $this->mydataz->get_ctr_new_dr('RMAP','',$this->db_erp,'CTRL_GWFGPA');//TRANSACTION NO
-         } //end else
+         $str = "
+         insert into {$this->db_erp}.`trx_rmap_req_hd` (
+            `rmap_trxno`,
+            `plnt_id`,
+            `request_date`,
+            `total_qty`,
+            `remarks`,
+            `total_amount`
+         ) values(
+            '$cseqn',
+            '$active_plnt_id',
+            '$txt_request_date',
+            '$txt_total_qty',
+            '$remarks',
+            '$txt_total_amount'
+         
+         )
+         ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);  
 
          if(count($adata1) > 0) { 
             $ame = array();
@@ -104,200 +91,67 @@ class MyRMRequestModel extends Model
                 $nqty = trim($medata[2]);
                 $mremks = $medata[3];
 
-      
-
-               $cmat_code_plnt_wshe = trim($medata[0]) . $plnt_id ;
-
-                $amatnr = array();
-                if(!empty($cmat_code)) { 
-                    $str = "select aa.recid,aa.ART_CODE from {$this->db_erp}.`mst_article` aa where sha2(concat(aa.recid,'{$mpw_tkn}'),384) = '$mat_mtkn' and ART_CODE = '$cmat_code' ";
-                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                    
-                    if($q->resultID->num_rows == 0) {
-                        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>Error</strong> Invalid Material Data!!!<br/>[$cmat_code]</div>";
-                        die();
-                    }
-                    else{
-                        if($nqty == 0) { 
-                            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>Error</strong> Invalid QTY or Price entries!!!</div>";
-                            die();
-                        }
-                       
-                         $rw = $q->getRowArray();
-                         $mmat_rid = $rw['recid'];
-                         array_push($ame,$cmat_code_plnt_wshe); 
-                         array_push($adatar1,$medata);
-                         array_push($adatar2,$mmat_rid);
-                         $ntqty = ($ntqty + $nqty);
-                    }
-
-                   $q->freeResult();
-                }
+                array_push($adatar1,$medata);
 
             }  //end for 
 
             if(count($adatar1) > 0) { 
-                if(!empty($mtkn_mntr)) {       
-                     $str = "
-                        update {$this->db_erp}.`trx_rmap_req_hd` set 
-                        `noofpack` = '$noofpacks',
-                        `rmks` = '$txt_remk',
-                        `tqty` = '$ntqty',
-                        `tamt` = '$ntamt',
-                        `branch_rid`= '$txt_branch_id'
-                        where recid = '$mfgp_rid' 
-                        ";
-                      $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);  
-                      $this->mylibzdb->user_logs_activity_module($this->db_erp,'GW_FG_PACKING_EDT_REC','',$cseqn,$str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
-                } else {     
-                    $str = "
-                        insert into {$this->db_erp}.`trx_rmap_req_hd` (
-                        `rmap_trxno`,
-                        `plnt_id`,
-                        `request_date`,
-                        `total_qty`,
-                        `remarks`,
-                        `total_amount`
-                        ) values(
-                        '$cseqn',
-                        '$active_plnt_id',
-                        '$txt_request_date',
-                        '$txt_total_qty',
-                        '$remarks',
-                        '$txt_total_amount'
-                        
-                        )
-                        ";
-                      $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);  
-                      $this->mylibzdb->user_logs_activity_module($this->db_erp,'GW_FG_PACKING_ADD_REC','',$cseqn,$str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
-
-
-                    }//endesle
-
+  
                     for($xx = 0; $xx < count($adatar1); $xx++) { 
                     
                         $xdata = $adatar1[$xx];
                         $cmat_code = $xdata[0];
-                        $mat_rid = $adatar2[$xx];
                         $nqty = trim($xdata[2]);
                         $cmtext = trim($xdata[3]);
                         $mamount = trim($xdata[4]);
                         
-                         
-                        if(empty($plnt_id)){
-                            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>Error</strong> Invalid Plant</div>";
-                            die();
-                        }
+                        $str = "
+                        insert into {$this->db_erp}.`trx_rmap_req_dt` ( 
+                            `rmap_trxno`,
+                            `item_code`,
+                            `item_qty`,
+                            `rmng_qty`,
+                            `produce_rmng`,
+                            `item_tamount`
 
-                        if(empty($mtkn_mntr)) {  
-                            $str = "
-                            insert into {$this->db_erp}.`trx_rmap_req_dt` ( 
-                                `rmap_trxno`,
-                                `item_code`,
-                                `item_qty`,
-                                `rmng_qty`,
-                                `produce_rmng`,
-                                `item_tamount`
-      
-                            ) values(
-                                '$cseqn',
-                                '$cmat_code',
-                                '$nqty',
-                                '$nqty',
-                                '$nqty',
-                                '$mamount'
-              
-                            )
-                            ";
-                          $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);  
-                          
-                          $str="
-                            UPDATE `trx_rmap_req_dt` SET WHERE `item_code` = '$cmat_code';
-                          ";
-                          $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);  
-                          $this->mylibzdb->user_logs_activity_module($this->db_erp,'GW_PO_DT_ADD','',$cseqn,$str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
-                        } else { 
-                            if(empty($fgpackdt_rid)) { 
-                                $str = "
-                                insert into {$this->db_erp}.`gw_fg_pack_dt` ( 
-                                    `rmap_trxno`,
-                                    `item_code`,
-                                    `item_qty`,
-                                ) values(
-                                    '$cseqn',
-                                    '$cmat_code',
-                                    '$nqty',
-                                )
-                                ";
-                              $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);  
-                              $this->mylibzdb->user_logs_activity_module($this->db_erp,'GW_PO_DT_ADD','',$cseqn,$str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
-                            } else { // end empty fgpackdt_rid 
-                                $str = "
-                                select recid from {$this->db_erp}.`gw_fg_pack_dt` aa where sha2(concat(aa.recid,'{$mpw_tkn}'),384) = '$fgpackdt_rid'
-                                ";
-                              $qq = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);  
-                                if($qq->resultID->num_rows > 0) {
-                                    $rrw = $qq->getRowArray();
-                                    $fgpack_dtrid = $rrw['recid'];
-                                    
-                                    $str = "
-                                    update {$this->db_erp}.`gw_fg_pack_dt` set 
-                                    `mat_rid` = '$mat_rid',
-                                    `mat_code` = '$cmat_code',
-                                    `qty` = '$nqty',
-                                    `uprice` = '$nprice',
-                                    `plnt_id` = $plnt_id,
-                                    `wshe_id` = $wshe_id,
-                                    `branch_rid`= '$txt_branch_id',
-                                    `tamt` = '$tamt',
-                                    `rems` = '$cmtext' 
-                                    where recid = '$fgpack_dtrid'
-                                    ";
-                                  $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);  
-                                  $this->mylibzdb->user_logs_activity_module($this->db_erp,'GW_PO_DT_UPD','',$cseqn,$str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
-                                }//endif
-                            }  //end else
-                        
-                    }//end else
+                        ) values(
+                            '$cseqn',
+                            '$cmat_code',
+                            '$nqty',
+                            '$nqty',
+                            '$nqty',
+                            '$mamount'
+                        )
+                        ";
+                        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);  
                     
                     
-                }  //end for 
+                }  //end for
                         
-                   
-                    if(empty($mtkn_mntr)) { 
-                        echo "<div class=\"alert alert-success\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Recorded Successfully!!! Packing Series No:{$cseqn} </div>
-                        <script type=\"text/javascript\"> 
-                            function __fg_refresh_data() { 
-                                try { 
-                                    $('#rmap_trxno').val('{$cseqn}');
-                                    
-                                    jQuery('#mbtn_mn_Save').prop('disabled',true);
-                                } catch(err) { 
-                                    var mtxt = 'There was an error on this page.\\n';
-                                    mtxt += 'Error description: ' + err.message;
-                                    mtxt += '\\nClick OK to continue.';
-                                    alert(mtxt);
-                                    return false;
-                                }  //end try 
-                            } 
-                            
-                            __fg_refresh_data();
-                        </script>
-                        ";
-                        die();
-                    } else { 
-                        echo "<div class=\"alert alert-success\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong> Data Changes Successfully RECORDED!!!</div>
-                        ";
-                        die();
-                    }
-            } else { 
-            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>Error</strong> No VALID Item Data!!!.</div>";
-            die();
+            } 
         } //end if 
-        } else { 
-        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>Error</strong> Invalid Item Data!!!.</div>";
+        
+        echo "<div class=\"alert alert-success\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Recorded Successfully!!! Packing Series No:{$cseqn} </div>
+        <script type=\"text/javascript\"> 
+            function __fg_refresh_data() { 
+                try { 
+                    $('#rmap_trxno').val('{$cseqn}');
+                    
+                    jQuery('#mbtn_mn_Save').prop('disabled',true);
+                } catch(err) { 
+                    var mtxt = 'There was an error on this page.\\n';
+                    mtxt += 'Error description: ' + err.message;
+                    mtxt += '\\nClick OK to continue.';
+                    alert(mtxt);
+                    return false;
+                }  //end try 
+            } 
+            
+            __fg_refresh_data();
+        </script>
+        ";
         die();
-        }
+
 
     } //end rm_req_entry_save
 
@@ -450,15 +304,26 @@ class MyRMRequestModel extends Model
        
         $strqry = "
         SELECT 
-          a.`recid`,
-          a.`rmap_trxno`,
-          a.`plnt_id`,
-          a.`request_date`,
-          a.`total_qty`,
-          a.`remarks`
-
+            a.`recid`,
+            a.`rmap_trxno`,
+            a.`plnt_id`,
+            a.`request_date`,
+            a.`total_qty`,
+            a.`remarks`
         FROM
-            {$this->db_erp}.`trx_rmap_req_hd` a
+            `trx_rmap_req_hd` a
+        JOIN
+            `trx_rmap_req_dt` b
+        ON
+            a.`rmap_trxno` = b.`rmap_trxno`
+        JOIN 
+        mst_item_comp2 c 
+        ON 
+        b.item_code = c.fg_code
+        GROUP BY 
+            a.`rmap_trxno`
+        ORDER BY 
+            a.`request_date` DESC
         ";
         
         //var_dump($strqry);

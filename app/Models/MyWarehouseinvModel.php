@@ -26,8 +26,6 @@ class MyWarehouseinvModel extends Model
     );
         // Set default order
         $this->order = array('encd' => 'desc');
-
-
     }
 
     public function view_box_content_recs($npages = 1,$npagelimit = 20,$msearchrec=''){ 
@@ -47,7 +45,13 @@ class MyWarehouseinvModel extends Model
         $str_vwrecs = "AND a.`muser` = '$cuser'";
     
         $str_optn = '';
-
+        if(!empty($msearchrec)){ 
+            $msearchrec = $this->dbx->escapeString($msearchrec);
+            $str_optn = "
+                AND
+                    (rcv.`trx` LIKE '%{$msearchrec}%' OR rcv.`encd` LIKE '%{$msearchrec}%')
+            ";
+        }
 
         $strqry = "
         SELECT
@@ -82,15 +86,11 @@ class MyWarehouseinvModel extends Model
         if($qry->getNumRows() > 0) { 
          $data['rlist'] = $qry->getResultArray();
          $data['txtsearchedrec_rl'] = $msearchrec;
-            $data['recordsTotal'] = 100;
-            $data['recordsFiltered'] = 50;
         } else { 
          $data = array();
          $data['npage_count'] = 1;
          $data['npage_curr'] = 1;
          $data['rlist'] = '';
-        $data['recordsTotal'] = 100;
-        $data['recordsFiltered'] = 10;
          $data['txtsearchedrec_rl'] = $msearchrec;
         }
         return $data;
@@ -122,23 +122,23 @@ class MyWarehouseinvModel extends Model
                     (rcv.`trx` LIKE '%{$msearchrec}%' OR rcv.`encd` LIKE '%{$msearchrec}%')
             ";
         }
-        // IF( rcv.`is_out` = 0,rcv.`qty`,0) qty,
+        //IF( rcv.`is_out` = 0,rcv.`qty`,0) qty,
         $strqry = "
         SELECT
         rcv.`recid`,
-        sha2(concat(rcv.`recid`,'{$mpw_tkn}'),384) txt_mtknr, 
+        sha2(concat(rcv.`recid`,'{$mpw_tkn}'),384) txt_mtknr,
         CASE 
             WHEN rcv.`type` = 'GI'
                 THEN '0'
             ELSE
-                 CASE
+                CASE
                   WHEN 
                   (IFNULL((SELECT done FROM  {$this->db_erp}.`warehouse_shipdoc_hd` WHERE `crpl_code`  = rcv.`SD_NO` ),0)  = 1) 
                      THEN '0'
-                 ELSE
+                ELSE
                       '1'
-                 END 
-            END as qty,   
+            END 
+        END as qty, 
         rcv.`qty`qty_scanned ,
         rcv.`is_out`,
         rcv.`trx`,
@@ -154,8 +154,8 @@ class MyWarehouseinvModel extends Model
         rcv.`total_amount` tamt_scanned,
         '' price,
         rcv.`total_pcs` total_pcs_scanned,
-        sbin.`wshe_bin_name`,
-        grp.`wshe_grp`,
+         sbin.`wshe_bin_name`,
+         grp.`wshe_grp`,
         rcv.`witb_barcde`  barcde,
         rcv.`muser`,
         rcv.`type`,
@@ -185,7 +185,6 @@ class MyWarehouseinvModel extends Model
          $data = array();
          $data['rlist'] = '';
          $data['counts'] = 0;
-
 
         }
         return $data;
@@ -333,18 +332,18 @@ class MyWarehouseinvModel extends Model
             CREATE TABLE IF NOT EXISTS {$tbltemp}
             SELECT 
                 aa.`trx`,
-              aa.`header`,
+                 aa.`header`,
                 CASE 
-                    WHEN aa.`type` = 'GI'
-                       THEN '0'
+                  WHEN aa.`type` = 'GI'
+                     THEN '0'
                 ELSE
-                     CASE
-                      WHEN 
-                      (IFNULL((SELECT done FROM  {$this->db_erp}.`warehouse_shipdoc_hd` WHERE `crpl_code`  = aa.`SD_NO` ),0)  = 1) 
-                         THEN '0'
-                     ELSE
-                          '1'
-                     END 
+                   CASE
+                    WHEN 
+                    (IFNULL((SELECT done FROM  {$this->db_erp}.`warehouse_shipdoc_hd` WHERE `crpl_code`  = aa.`SD_NO` ),0)  = 1) 
+                       THEN '0'
+                   ELSE
+                        '1'
+                   END 
                 END as qty,  
                 art.`ART_CODE` AS `box_item_code`,
                 art.`ART_DESC` AS `box_item_desc`,
@@ -492,6 +491,7 @@ class MyWarehouseinvModel extends Model
               'BOX NO',
               'OUT TYPE',
               'OUT HEADER',
+              'USER',
               'DATE_TIME'
             UNION ALL
             SELECT
@@ -519,6 +519,7 @@ class MyWarehouseinvModel extends Model
               TRIM(IFNULL(REPLACE(REPLACE(`box_no`,'\r',''),'\n',''),'')) `box_no`,
               TRIM(IFNULL(REPLACE(REPLACE(`out_type`,'\r',''),'\n',''),'')) `out_type`,
               TRIM(IFNULL(REPLACE(REPLACE(`out_header`,'\r',''),'\n',''),'')) `out_header`,
+              TRIM(IFNULL(REPLACE(REPLACE(`muser`,'\r',''),'\n',''),'')) `muser`,
               TRIM(IFNULL(REPLACE(REPLACE(`encd`,'\r',''),'\n',''),'')) `encd`
 
             FROM
@@ -876,16 +877,6 @@ class MyWarehouseinvModel extends Model
 
    }
 
-    
-    public function generate_report_summary(){
-     $data = array(
-            'result' => false,
-            'data' => "Ongoing"
-        );
-
-    return $data;
-    }
-
     public function generate_report_out(){
 
         $cuser       = $this->mylibzdb->mysys_user();
@@ -988,13 +979,18 @@ class MyWarehouseinvModel extends Model
             ";
         }
 
-
-        $str_date = '';
+        $str_date  = '';
+        $str_date2 = '';
         if($to_date != '' && $from_date != ''){
             $this->mymelibzsys->checkDaterange($from_date,$to_date);
             $str_date = "
                 {$concat}
                     (DATE(hd.`done_date`) >= DATE('{$from_date}') AND DATE(hd.`done_date`) <= DATE('{$to_date}'))
+                
+            ";
+            $str_date2 = "
+                {$concat}
+                    (DATE(hd.`apprvd_date`) >= DATE('{$from_date}') AND DATE(hd.`apprvd_date`) <= DATE('{$to_date}'))
                 
             ";
 
@@ -1017,116 +1013,183 @@ class MyWarehouseinvModel extends Model
           $str = "DROP TABLE IF EXISTS {$tbltemp}";
           $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
-   
-    $strqry = "
-    CREATE TABLE IF NOT EXISTS {$tbltemp}
-    SELECT
-        aa.`trx`,
-        aa.`header`,
-        aa.`stock_code`,
-        REPLACE(REPLACE(REPLACE(art.`ART_CODE`, ' ', ''), '\t', ''), '\n', '') AS `ART_CODE`,
-        REPLACE(REPLACE(REPLACE(art.`ART_DESC`, ' ', ''), '\t', ''), '\n', '') AS `ART_DESC`,
-        REPLACE(REPLACE(REPLACE(art.`ART_SKU`, ' ', ''), '\t', ''), '\n', '') AS `ART_SKU`,
-        REPLACE(REPLACE(REPLACE(art.`ART_HIERC1`, ' ', ''), '\t', ''), '\n', '') AS `ART_HIERC1`,
-        REPLACE(REPLACE(REPLACE(art.`ART_HIERC2`, ' ', ''), '\t', ''), '\n', '') AS `ART_HIERC2`,
-        REPLACE(REPLACE(REPLACE(art.`ART_HIERC3`, ' ', ''), '\t', ''), '\n', '') AS `ART_HIERC3`,
-        REPLACE(REPLACE(REPLACE(art.`ART_HIERC4`, ' ', ''), '\t', ''), '\n', '') AS `ART_HIERC4`,
-        REPLACE(REPLACE(REPLACE(art.`ART_PRODT`, ' ', ''), '\t', ''), '\n', '') AS `ART_PRODT`,
-        REPLACE(REPLACE(REPLACE(art.`ART_DESC_CODE`, ' ', ''), '\t', ''), '\n', '') AS `ART_DESC_CODE`,
-        aa.`qty` AS `qty`,
-        aa.`convf`,
-        aa.`total_pcs`,
-        (SELECT
-            SUM(artt.`ART_UPRICE`*item.`qty`) AS `total_amount`
-        FROM
-            {$this->db_erp}.`warehouse_shipdoc_item` item
-        JOIN
-            {$this->db_erp}.`warehouse_shipdoc_dt` inv
-        ON
-            item.`wshe_out_id` = inv.`recid`
-        JOIN
-            {$this->db_erp}.`mst_article` artt
-        ON
-            item.`mat_rid` = artt.`recid`
-        WHERE
-            aa.`recid` = inv.`recid`
-        ) AS `total_amount`,
-        CASE
-            WHEN
-                art.`ART_CODE` LIKE '%ASSTD%'
-            THEN
-                (SELECT
-                    SUM(artt.`ART_UPRICE`*item.`qty`) AS `total_amount`
-                FROM
-                    {$this->db_erp}.`warehouse_shipdoc_item` item
-                JOIN
-                    {$this->db_erp}.`warehouse_shipdoc_dt` inv
-                ON
-                    item.`wshe_out_id` = inv.`recid`
-                JOIN
-                    {$this->db_erp}.`mst_article` artt
-                ON
-                    item.`mat_rid` = artt.`recid`
-                WHERE
-                    aa.`recid` = inv.`recid`
-                ) 
-            ELSE
-                art.`ART_UPRICE`
-        END
-        AS `ART_UPRICE`,
-        aa.`wob_barcde` as `barcde`,
-        aa.`box_no`,
-        aa.`is_out`,
-        hd.`done`,
-        IF(hd.`done_date` = '0000-00-00 00:00:00',hd.`done_date`,hd.`done_date`) AS `encd`,
-        b.`plnt_code`,
-        c.`wshe_code`,
-        REPLACE(REPLACE(REPLACE(f.`wshe_grp`, ' ', ''), '\t', ''), '\n', '') AS `wshe_grp`,
-        REPLACE(REPLACE(REPLACE(e.`wshe_bin_name`, ' ', ''), '\t', ''), '\n', '') AS `wshe_bin_name`,
-        REPLACE(REPLACE(REPLACE(aa.`remarks`, ' ', ''), '\t', ''), '\n', '') AS `remarks`,
-        hd.`chk_by`,
-        hd.`me_remk`
-    FROM
-        {$this->db_erp}.`warehouse_shipdoc_dt` aa
-    JOIN
-        {$this->db_erp}.`warehouse_shipdoc_hd` hd
-    ON
-        hd.`crpl_code` = aa.`header`
-    JOIN
-        {$this->db_erp}.`mst_plant` b
-    ON
-        aa.`plnt_id` = b.`recid`
-    JOIN
-        {$this->db_erp}.`mst_wshe` c
-    ON
-        aa.`wshe_id` = c.`recid`    
-    JOIN
-        {$this->db_erp}.`mst_article` art
-    ON
-        aa.`mat_rid` = art.`recid`
-    JOIN
-        {$this->db_erp}.`mst_wshe_bin` e
-    ON
-        aa.`wshe_sbin_id` = e.`recid`
-    JOIN
-        {$this->db_erp}.`mst_wshe_grp` f
-    ON
-        e.`wshegrp_id` = f.`recid` 
-    {$str_opt}
-    AND hd.`done` = 1
-    {$str_cat_one}
-    {$str_cat_one_dt}
-    {$str_cat_two}
-    {$str_cat_three}
-    {$str_rack}
-    {$str_bin}
-    {$str_date}
-    {$str_branch}
-    HAVING aa.`is_out` = 1 {$opt_filter}
-    
-    -- GROUP BY aa.`plnt_id`,aa.`wshe_id`,aa.`wob_barcde`
-         ";
+          $strqry = "
+          CREATE TABLE IF NOT EXISTS {$tbltemp}
+          SELECT
+              aa.`trx`,
+              aa.`header`,
+              aa.`stock_code`,
+              REPLACE(REPLACE(REPLACE(art.`ART_CODE`, ' ', ''), '\t', ''), '\n', '') AS `ART_CODE`,
+              REPLACE(REPLACE(REPLACE(art.`ART_DESC`, ' ', ''), '\t', ''), '\n', '') AS `ART_DESC`,
+              REPLACE(REPLACE(REPLACE(art.`ART_SKU`, ' ', ''), '\t', ''), '\n', '') AS `ART_SKU`,
+              REPLACE(REPLACE(REPLACE(art.`ART_HIERC1`, ' ', ''), '\t', ''), '\n', '') AS `ART_HIERC1`,
+              REPLACE(REPLACE(REPLACE(art.`ART_HIERC2`, ' ', ''), '\t', ''), '\n', '') AS `ART_HIERC2`,
+              REPLACE(REPLACE(REPLACE(art.`ART_HIERC3`, ' ', ''), '\t', ''), '\n', '') AS `ART_HIERC3`,
+              REPLACE(REPLACE(REPLACE(art.`ART_HIERC4`, ' ', ''), '\t', ''), '\n', '') AS `ART_HIERC4`,
+              REPLACE(REPLACE(REPLACE(art.`ART_PRODT`, ' ', ''), '\t', ''), '\n', '') AS `ART_PRODT`,
+              REPLACE(REPLACE(REPLACE(art.`ART_DESC_CODE`, ' ', ''), '\t', ''), '\n', '') AS `ART_DESC_CODE`,
+              aa.`qty` AS `qty`,
+              aa.`convf`,
+              aa.`total_pcs`,
+              (SELECT
+                  SUM(artt.`ART_UPRICE`*item.`qty`) AS `total_amount`
+              FROM
+                  {$this->db_erp}.`warehouse_shipdoc_item` item
+              JOIN
+                  {$this->db_erp}.`warehouse_shipdoc_dt` inv
+              ON
+                  item.`wshe_out_id` = inv.`recid`
+              JOIN
+                  {$this->db_erp}.`mst_article` artt
+              ON
+                  item.`mat_rid` = artt.`recid`
+              WHERE
+                  aa.`recid` = inv.`recid`
+              ) AS `total_amount`,
+              CASE
+                  WHEN
+                      art.`ART_CODE` LIKE '%ASSTD%'
+                  THEN
+                      (SELECT
+                          SUM(artt.`ART_UPRICE`*item.`qty`) AS `total_amount`
+                      FROM
+                          {$this->db_erp}.`warehouse_shipdoc_item` item
+                      JOIN
+                          {$this->db_erp}.`warehouse_shipdoc_dt` inv
+                      ON
+                          item.`wshe_out_id` = inv.`recid`
+                      JOIN
+                          {$this->db_erp}.`mst_article` artt
+                      ON
+                          item.`mat_rid` = artt.`recid`
+                      WHERE
+                          aa.`recid` = inv.`recid`
+                      ) 
+                  ELSE
+                      art.`ART_UPRICE`
+              END
+              AS `ART_UPRICE`,
+              aa.`wob_barcde` as `barcde`,
+              aa.`box_no`,
+              aa.`is_out`,
+              hd.`done`,
+              IF(hd.`done_date` = '0000-00-00 00:00:00',hd.`done_date`,hd.`done_date`) AS `encd`,
+              b.`plnt_code`,
+              c.`wshe_code`,
+              REPLACE(REPLACE(REPLACE(f.`wshe_grp`, ' ', ''), '\t', ''), '\n', '') AS `wshe_grp`,
+              REPLACE(REPLACE(REPLACE(e.`wshe_bin_name`, ' ', ''), '\t', ''), '\n', '') AS `wshe_bin_name`,
+              REPLACE(REPLACE(REPLACE(aa.`remarks`, ' ', ''), '\t', ''), '\n', '') AS `remarks`,
+              hd.`me_remk`
+          FROM
+              {$this->db_erp}.`warehouse_shipdoc_dt` aa
+          JOIN
+              {$this->db_erp}.`warehouse_shipdoc_hd` hd
+          ON
+              hd.`crpl_code` = aa.`header`
+          JOIN
+              {$this->db_erp}.`mst_plant` b
+          ON
+              aa.`plnt_id` = b.`recid`
+          JOIN
+              {$this->db_erp}.`mst_wshe` c
+          ON
+              aa.`wshe_id` = c.`recid`    
+          JOIN
+              {$this->db_erp}.`mst_article` art
+          ON
+              aa.`mat_rid` = art.`recid`
+          JOIN
+              {$this->db_erp}.`mst_wshe_bin` e
+          ON
+              aa.`wshe_sbin_id` = e.`recid`
+          JOIN
+              {$this->db_erp}.`mst_wshe_grp` f
+          ON
+              e.`wshegrp_id` = f.`recid` 
+          {$str_opt}
+          AND hd.`done` = 1
+          {$str_cat_one}
+          {$str_cat_one_dt}
+          {$str_cat_two}
+          {$str_cat_three}
+          {$str_rack}
+          {$str_bin}
+          {$str_date}
+          {$str_branch}
+          HAVING aa.`is_out` = 1 {$opt_filter}
 
+          UNION ALL
+
+           SELECT aa.`trx`, aa.`header`, aa.`stock_code`, REPLACE(REPLACE(REPLACE(art.`ART_CODE`, ' ', ''), ' ', ''), ' ', '') AS `ART_CODE`, 
+           REPLACE(REPLACE(REPLACE(art.`ART_DESC`, ' ', ''), ' ', ''), ' ', '') AS `ART_DESC`, 
+           REPLACE(REPLACE(REPLACE(art.`ART_SKU`, ' ', ''), ' ', ''), ' ', '') AS `ART_SKU`, 
+           REPLACE(REPLACE(REPLACE(art.`ART_HIERC1`, ' ', ''), ' ', ''), ' ', '') AS `ART_HIERC1`, 
+           REPLACE(REPLACE(REPLACE(art.`ART_HIERC2`, ' ', ''), ' ', ''), ' ', '') AS `ART_HIERC2`, 
+           REPLACE(REPLACE(REPLACE(art.`ART_HIERC3`, ' ', ''), ' ', ''), ' ', '') AS `ART_HIERC3`, 
+           REPLACE(REPLACE(REPLACE(art.`ART_HIERC4`, ' ', ''), ' ', ''), ' ', '') AS `ART_HIERC4`, 
+           REPLACE(REPLACE(REPLACE(art.`ART_PRODT`, ' ', ''), ' ', ''), ' ', '') AS `ART_PRODT`, 
+           REPLACE(REPLACE(REPLACE(art.`ART_DESC_CODE`, ' ', ''), ' ', ''), ' ', '') AS `ART_DESC_CODE`, 
+           aa.`qty` AS `qty`, aa.`convf`, aa.`total_pcs`, 
+              (
+               SELECT SUM(artt.`ART_UPRICE`*item.`qty`) AS `total_amount` 
+               FROM 
+                 {$this->db_erp}.`warehouse_inv_rcv_item` item 
+               JOIN 
+                 {$this->db_erp}.`warehouse_gi_dt` inv 
+               ON 
+                  item.`witb_barcde` = inv.`witb_barcde` 
+               JOIN 
+                 {$this->db_erp}.`mst_article` artt 
+               ON 
+                  item.`mat_rid` = artt.`recid` 
+               WHERE aa.`witb_barcde` = inv.`witb_barcde` ) 
+           AS `total_amount`, 
+           
+           CASE WHEN art.`ART_CODE` LIKE '%ASSTD%' 
+               THEN(
+               SELECT 
+                  SUM(artt.`ART_UPRICE`*item.`qty`) AS `total_amount` 
+               FROM 
+                 {$this->db_erp}.`warehouse_inv_rcv_item` item 
+               JOIN 
+                 {$this->db_erp}.`warehouse_gi_dt` inv 
+               ON 
+                  item.`witb_barcde` = inv.`witb_barcde` 
+               JOIN 
+                 {$this->db_erp}.`mst_article` artt 
+               ON 
+                  item.`mat_rid` = artt.`recid`
+               WHERE aa.`witb_barcde` = inv.`witb_barcde`) 
+               ELSE art.`ART_UPRICE` 
+           END AS `ART_UPRICE`,
+            aa.`wob_barcde` AS `barcde`, aa.`box_no`, aa.`is_out`, IF(hd.`is_approved` = 'Y',1,0) as `done`, 
+          hd.`apprvd_date`  AS `encd`,
+          b.`plnt_code`, c.`wshe_code`, 
+          REPLACE(REPLACE(REPLACE(f.`wshe_grp`, ' ', ''), ' ', ''), ' ', '') AS `wshe_grp`, 
+          REPLACE(REPLACE(REPLACE(e.`wshe_bin_name`, ' ', ''), ' ', ''), ' ', '') AS `wshe_bin_name`, 
+          REPLACE(REPLACE(REPLACE(aa.`remarks`, ' ', ''), ' ', ''), ' ', '') AS `remarks`, hd.`remarks` 
+           FROM {$this->db_erp}.`warehouse_gi_dt` aa 
+           JOIN {$this->db_erp}.`warehouse_gi_hd` hd ON hd.`header` = aa.`trx` 
+           JOIN {$this->db_erp}.`mst_plant` b ON aa.`plnt_id` = b.`recid` 
+           JOIN {$this->db_erp}.`mst_wshe` c ON aa.`wshe_id` = c.`recid` 
+           JOIN {$this->db_erp}.`mst_article` art ON aa.`mat_rid` = art.`recid` 
+           JOIN {$this->db_erp}.`mst_wshe_bin` e ON aa.`wshe_sbin_id` = e.`recid` 
+           JOIN {$this->db_erp}.`mst_wshe_grp` f ON e.`wshegrp_id` = f.`recid` 
+           {$str_opt} 
+           AND hd.`is_approved` = 'Y' 
+           {$str_cat_one}
+           {$str_cat_one_dt}
+           {$str_cat_two}
+           {$str_cat_three}
+           {$str_rack}
+           {$str_bin}
+           {$str_date2}
+           {$str_branch}
+           {$opt_filter}
+           -- GROUP BY aa.`plnt_id`,aa.`wshe_id`,aa.`wob_barcde`
+           ";
+
+        
     $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
     /***************** AUDIT LOGS *************************/
@@ -1172,11 +1235,8 @@ class MyWarehouseinvModel extends Model
                       'BIN',
                       'STEXT',
                       'DATETIME',
-                      'CHECK BY',
                       'REMARKS'
-
                     UNION ALL
-                    
                     SELECT
                     TRIM(IFNULL(REPLACE(REPLACE(`trx`,'\r',''),'\n',''),'')) `trx`,
                     TRIM(IFNULL(REPLACE(REPLACE(`header`,'\r',''),'\n',''),'')) `header`,
@@ -1202,9 +1262,7 @@ class MyWarehouseinvModel extends Model
                       TRIM(REPLACE(REPLACE(`wshe_bin_name`,'\r',''),'\n','')) AS `wshe_bin_name`,
                       TRIM(REPLACE(REPLACE(`remarks`,'\r',''),'\n','')) AS `remarks`,
                       TRIM(REPLACE(REPLACE(`encd`,'\r',''),'\n','')) AS `encd`,
-                      TRIM(REPLACE(REPLACE(`chk_by`,'\r',''),'\n','')) AS `chk_by`, 
                       TRIM(REPLACE(REPLACE(`me_remk`,'\r',''),'\n','')) AS `me_remk`
-                      
                     FROM
                     {$tbltemp}
                   ) INV_SUMMARY
@@ -1227,6 +1285,15 @@ class MyWarehouseinvModel extends Model
         echo $chtmljs;
 
    }
+
+    public function generate_report_summary(){
+     $data = array(
+            'result' => false,
+            'data' => "Ongoing"
+        );
+
+    return $data;
+    }
 
 
     public function incoming_items(){
@@ -1426,7 +1493,6 @@ class MyWarehouseinvModel extends Model
       $frm_wshe_grp_id = $this->request->getVar('frm_wshe_grp_id');
       $frm_wshe_sbin_id = $this->request->getVar('frm_wshe_sbin_id');
       $mtkn_whse = $this->request->getVar('mtkn_uid');
-      $str_gbin = "";
 
      //get warehouse id 
      $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
@@ -1434,15 +1500,9 @@ class MyWarehouseinvModel extends Model
      $plntID = $wshedata['plntID'];
      // warehouse end
 
-     if(!empty($frm_wshe_sbin_id)){
-
-        $sbinData  = $this->mymelibzsys->getWhBinDetailsByTkn($frm_wshe_sbin_id);
-        $sbinID    = $sbinData['recid'];
-        $rackgrpID = $sbinData['wshegrp_id'];
-        $str_gbin = "AND a.`wshe_grp_id` = {$rackgrpID} AND a.`wshe_sbin_id` = {$sbinID}";
-     }
-
-
+     $sbinData  = $this->mymelibzsys->getWhBinDetailsByTkn($frm_wshe_sbin_id);
+     $sbinID    = $sbinData['recid'];
+     $rackgrpID = $sbinData['wshegrp_id'];
 
       $str = "
         SELECT
@@ -1483,7 +1543,10 @@ class MyWarehouseinvModel extends Model
           a.`plnt_id` = {$plntID}
         AND
           a.`wshe_id` = {$whID}
-        {$str_gbin}
+        AND
+          a.`wshe_grp_id` = {$rackgrpID}
+        AND
+          a.`wshe_sbin_id` = {$sbinID}
         AND
           (a.`witb_barcde` LIKE '%{$terms}%')
         GROUP BY
@@ -2210,180 +2273,180 @@ public function save_transfer(){
 
         }
 
-
-
-        public function view_ent_itm_recs_v2($start,$len){ 
-            $cuser = $this->mylibzdb->mysys_user();
-            $mpw_tkn = $this->mylibzdb->mpw_tkn();
-            $morder = $this->request->getVar('order');
-            $search = $this->request->getVar('search');
-            $mtkn_whse = $this->request->getVar('mtkn_whse');
-            $msearchrec = $search['value'];  
-            $mwhere = "";
-            $str_order = "";
-       
-            
-
-            $order = $this->order;
-            $str_order = " ORDER BY " .key($order)." ". $order[key($order)];
-
-            if($morder['0']['column'] == 0){
-
-            }
-            else if($morder['0']['column'] > 0){
-            $str_order = " ORDER BY " .$this->column_order[$morder['0']['column']]." ". $morder['0']['dir'];
-
-            }
-
-            //get warehouse id 
-            $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
-            $whID = $wshedata['whID'];
-            $plntID = $wshedata['plntID'];
-            $mwhere = "WHERE rcv.`plnt_id` = '{$plntID}' AND  rcv.`wshe_id` = '{$whID}' "; 
-            // warehouse end
-            
-            //IF USERGROUP IS EQUAL SA THEN ALL DATA WILL VIEW ELSE PER USER
-            $str_vwrecs = "AND a.`muser` = '$cuser'";
+    public function view_ent_itm_recs_v2($start,$len){ 
+        $cuser = $this->mylibzdb->mysys_user();
+        $mpw_tkn = $this->mylibzdb->mpw_tkn();
+        $morder = $this->request->getVar('order');
+        $search = $this->request->getVar('search');
+        $mtkn_whse = $this->request->getVar('mtkn_whse');
+        $msearchrec = $search['value'];  
+        $mwhere = "";
+        $str_order = "";
+    
         
-            $str_optn = '';
-            if(!empty($msearchrec)){ 
-                $msearchrec = $this->dbx->escapeString($msearchrec);
-                $str_optn = $this->mymelibzsys->searchFilter($this->column_search,$msearchrec);
-            }
-            // IF( rcv.`is_out` = 0,rcv.`qty`,0) qty,
-            $strqry = "
-            SELECT
-            rcv.`recid`,
-            sha2(concat(rcv.`recid`,'{$mpw_tkn}'),384) txt_mtknr, 
-            CASE 
-                WHEN rcv.`type` = 'GI'
-                    THEN '0'
-                ELSE
-                     CASE
-                      WHEN 
-                      (IFNULL((SELECT done FROM  {$this->db_erp}.`warehouse_shipdoc_hd` WHERE `crpl_code`  = rcv.`SD_NO` ),0)  = 1) 
-                         THEN '0'
-                     ELSE
-                          '1'
-                     END 
-                END as qty,   
-            rcv.`qty`qty_scanned ,
-            rcv.`is_out`,
-            rcv.`trx`,
-             '' `uprice`,
-            rcv.`remarks`,
-            pl.`plnt_code`,
-            wh.`wshe_code`,
-            rcv.`box_no`,
-            rcv.`stock_code`,
-            art.`ART_CODE`,
-            art.`ART_DESC`,
-            rcv.`convf`,
-            rcv.`total_amount` tamt_scanned,
-            '' price,
-            rcv.`total_pcs` total_pcs_scanned,
-            sbin.`wshe_bin_name`,
-            grp.`wshe_grp`,
-            rcv.`witb_barcde`  barcde,
-            rcv.`muser`,
-            rcv.`type`,
-            rcv.`SD_NO`,
-            rcv.`encd`
-            FROM
-            {$this->db_erp}.`warehouse_inv_rcv` rcv
-            JOIN {$this->db_erp}.`mst_plant` pl ON pl.`recid` = rcv.`plnt_id`
-            JOIN {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = rcv.`wshe_id`
-            JOIN {$this->db_erp}.`mst_article` art ON art.`recid` =  rcv.`mat_rid`
-            JOIN {$this->db_erp}.`mst_wshe_bin` sbin 
-                ON rcv.`wshe_sbin_id` = sbin.`recid` AND rcv.`wshe_grp_id` = sbin.`wshegrp_id` 
-                AND sbin.`plnt_id`  = rcv.`plnt_id` AND sbin.`wshe_id` = rcv.`wshe_id`
-            JOIN {$this->db_erp}.`mst_wshe_grp` grp 
-                ON rcv.`wshe_grp_id` = grp.`recid` 
-                AND grp.`plnt_id`  = rcv.`plnt_id` AND grp.`wshe_id` = rcv.`wshe_id`
-            {$mwhere} {$str_optn}
-            GROUP BY rcv.`witb_barcde` {$str_order} limit {$start},{$len} ";
 
-            $qry = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-            $filertedRows = $this->get_totalFilteredRows($mwhere,$str_optn);
-            $totalRows = $this->get_totalRows($mwhere);
-            if($qry->getNumRows() > 0) { 
-             $data['rlist'] = $qry->getResultArray();
-             $data['counts'] = $qry->getNumRows();
-             $data['filertedRows'] = $filertedRows;
-             $data['totalRows'] = $totalRows;
+        $order = $this->order;
+        $str_order = " ORDER BY " .key($order)." ". $order[key($order)];
 
-            } else { 
-             $data = array();
-             $data['rlist'] = '';
-             $data['counts'] = 0;
-             $data['filertedRows'] = $filertedRows;
-             $data['totalRows'] = $totalRows;
+        if($morder['0']['column'] == 0){
 
-            }
-            return $data;
-        } //endfunc
-
-        public function get_totalRows($mwhere = ''){
-            $strqry = "
-            SELECT
-            rcv.`recid`
-            FROM
-            {$this->db_erp}.`warehouse_inv_rcv` rcv
-            JOIN {$this->db_erp}.`mst_plant` pl ON pl.`recid` = rcv.`plnt_id`
-            JOIN {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = rcv.`wshe_id`
-            JOIN {$this->db_erp}.`mst_article` art ON art.`recid` =  rcv.`mat_rid`
-            JOIN {$this->db_erp}.`mst_wshe_bin` sbin 
-                ON rcv.`wshe_sbin_id` = sbin.`recid` AND rcv.`wshe_grp_id` = sbin.`wshegrp_id` 
-                AND sbin.`plnt_id`  = rcv.`plnt_id` AND sbin.`wshe_id` = rcv.`wshe_id`
-            JOIN {$this->db_erp}.`mst_wshe_grp` grp 
-                ON rcv.`wshe_grp_id` = grp.`recid` 
-                AND grp.`plnt_id`  = rcv.`plnt_id` AND grp.`wshe_id` = rcv.`wshe_id`
-            {$mwhere}
-            GROUP BY rcv.`witb_barcde`";
-
-            $qry = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-
-            if($qry->getNumRows() > 0) { 
-             $data = $qry->getNumRows();
-
-            } else{ 
-             $data = 0;
-            }
-            return $data;
+        }
+        else if($morder['0']['column'] > 0){
+        $str_order = " ORDER BY " .$this->column_order[$morder['0']['column']]." ". $morder['0']['dir'];
 
         }
 
-
-        public function get_totalFilteredRows($mwhere,$str_option){
       
-            $strqry = "
-            SELECT
-            rcv.`recid`
-            FROM
-            {$this->db_erp}.`warehouse_inv_rcv` rcv
-            JOIN {$this->db_erp}.`mst_plant` pl ON pl.`recid` = rcv.`plnt_id`
-            JOIN {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = rcv.`wshe_id`
-            JOIN {$this->db_erp}.`mst_article` art ON art.`recid` =  rcv.`mat_rid`
-            JOIN {$this->db_erp}.`mst_wshe_bin` sbin 
-                ON rcv.`wshe_sbin_id` = sbin.`recid` AND rcv.`wshe_grp_id` = sbin.`wshegrp_id` 
-                AND sbin.`plnt_id`  = rcv.`plnt_id` AND sbin.`wshe_id` = rcv.`wshe_id`
-            JOIN {$this->db_erp}.`mst_wshe_grp` grp 
-                ON rcv.`wshe_grp_id` = grp.`recid` 
-                AND grp.`plnt_id`  = rcv.`plnt_id` AND grp.`wshe_id` = rcv.`wshe_id`
-            {$mwhere} {$str_option}
-            GROUP BY rcv.`witb_barcde`";
 
-            $qry = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+        //get warehouse id 
+        $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
+        $whID = $wshedata['whID'];
+        $plntID = $wshedata['plntID'];
+        $mwhere = "WHERE rcv.`plnt_id` = '{$plntID}' AND  rcv.`wshe_id` = '{$whID}' "; 
+        // warehouse end
+        
+        //IF USERGROUP IS EQUAL SA THEN ALL DATA WILL VIEW ELSE PER USER
+        $str_vwrecs = "AND a.`muser` = '$cuser'";
+    
+        $str_optn = '';
+        if(!empty($msearchrec)){ 
+            $msearchrec = $this->dbx->escapeString($msearchrec);
+            $str_optn = $this->mymelibzsys->searchFilter($this->column_search,$msearchrec);
+        }
+        // IF( rcv.`is_out` = 0,rcv.`qty`,0) qty,
+        $strqry = "
+        SELECT
+        rcv.`recid`,
+        sha2(concat(rcv.`recid`,'{$mpw_tkn}'),384) txt_mtknr, 
+        CASE 
+            WHEN rcv.`type` = 'GI'
+                THEN '0'
+            ELSE
+                 CASE
+                  WHEN 
+                  (IFNULL((SELECT done FROM  {$this->db_erp}.`warehouse_shipdoc_hd` WHERE `crpl_code`  = rcv.`SD_NO` ),0)  = 1) 
+                     THEN '0'
+                 ELSE
+                      '1'
+                 END 
+            END as qty,   
+        rcv.`qty`qty_scanned ,
+        rcv.`is_out`,
+        rcv.`trx`,
+         '' `uprice`,
+        rcv.`remarks`,
+        pl.`plnt_code`,
+        wh.`wshe_code`,
+        rcv.`box_no`,
+        rcv.`stock_code`,
+        art.`ART_CODE`,
+        art.`ART_DESC`,
+        rcv.`convf`,
+        rcv.`total_amount` tamt_scanned,
+        '' price,
+        rcv.`total_pcs` total_pcs_scanned,
+        sbin.`wshe_bin_name`,
+        grp.`wshe_grp`,
+        rcv.`witb_barcde`  barcde,
+        rcv.`muser`,
+        rcv.`type`,
+        rcv.`SD_NO`,
+        rcv.`encd`
+        FROM
+        {$this->db_erp}.`warehouse_inv_rcv` rcv
+        JOIN {$this->db_erp}.`mst_plant` pl ON pl.`recid` = rcv.`plnt_id`
+        JOIN {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = rcv.`wshe_id`
+        JOIN {$this->db_erp}.`mst_article` art ON art.`recid` =  rcv.`mat_rid`
+        JOIN {$this->db_erp}.`mst_wshe_bin` sbin 
+            ON rcv.`wshe_sbin_id` = sbin.`recid` AND rcv.`wshe_grp_id` = sbin.`wshegrp_id` 
+            AND sbin.`plnt_id`  = rcv.`plnt_id` AND sbin.`wshe_id` = rcv.`wshe_id`
+        JOIN {$this->db_erp}.`mst_wshe_grp` grp 
+            ON rcv.`wshe_grp_id` = grp.`recid` 
+            AND grp.`plnt_id`  = rcv.`plnt_id` AND grp.`wshe_id` = rcv.`wshe_id`
+        {$mwhere} {$str_optn}
+        GROUP BY rcv.`witb_barcde` {$str_order} limit {$start},{$len} ";
 
-            if($qry->getNumRows() > 0){ 
+        $qry = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+        $filertedRows = $this->get_totalFilteredRows($mwhere,$str_optn);
+        $totalRows = $this->get_totalRows($mwhere);
+        if($qry->getNumRows() > 0) { 
+         $data['rlist'] = $qry->getResultArray();
+         $data['counts'] = $qry->getNumRows();
+         $data['filertedRows'] = $filertedRows;
+         $data['totalRows'] = $totalRows;
 
-             $data = $qry->getNumRows();
-
-            }else{ 
-             $data = 0;
-            }
-            return $data;
+        } else { 
+         $data = array();
+         $data['rlist'] = '';
+         $data['counts'] = 0;
+         $data['filertedRows'] = $filertedRows;
+         $data['totalRows'] = $totalRows;
 
         }
+        return $data;
+    } //endfunc
+
+    public function get_totalRows($mwhere = ''){
+        $strqry = "
+        SELECT
+        rcv.`recid`
+        FROM
+        {$this->db_erp}.`warehouse_inv_rcv` rcv
+        JOIN {$this->db_erp}.`mst_plant` pl ON pl.`recid` = rcv.`plnt_id`
+        JOIN {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = rcv.`wshe_id`
+        JOIN {$this->db_erp}.`mst_article` art ON art.`recid` =  rcv.`mat_rid`
+        JOIN {$this->db_erp}.`mst_wshe_bin` sbin 
+            ON rcv.`wshe_sbin_id` = sbin.`recid` AND rcv.`wshe_grp_id` = sbin.`wshegrp_id` 
+            AND sbin.`plnt_id`  = rcv.`plnt_id` AND sbin.`wshe_id` = rcv.`wshe_id`
+        JOIN {$this->db_erp}.`mst_wshe_grp` grp 
+            ON rcv.`wshe_grp_id` = grp.`recid` 
+            AND grp.`plnt_id`  = rcv.`plnt_id` AND grp.`wshe_id` = rcv.`wshe_id`
+        {$mwhere}
+        GROUP BY rcv.`witb_barcde`";
+
+        $qry = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        if($qry->getNumRows() > 0) { 
+         $data = $qry->getNumRows();
+
+        } else{ 
+         $data = 0;
+        }
+        return $data;
+
+    }
+
+
+    public function get_totalFilteredRows($mwhere,$str_option){
+    
+        $strqry = "
+        SELECT
+        rcv.`recid`
+        FROM
+        {$this->db_erp}.`warehouse_inv_rcv` rcv
+        JOIN {$this->db_erp}.`mst_plant` pl ON pl.`recid` = rcv.`plnt_id`
+        JOIN {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = rcv.`wshe_id`
+        JOIN {$this->db_erp}.`mst_article` art ON art.`recid` =  rcv.`mat_rid`
+        JOIN {$this->db_erp}.`mst_wshe_bin` sbin 
+            ON rcv.`wshe_sbin_id` = sbin.`recid` AND rcv.`wshe_grp_id` = sbin.`wshegrp_id` 
+            AND sbin.`plnt_id`  = rcv.`plnt_id` AND sbin.`wshe_id` = rcv.`wshe_id`
+        JOIN {$this->db_erp}.`mst_wshe_grp` grp 
+            ON rcv.`wshe_grp_id` = grp.`recid` 
+            AND grp.`plnt_id`  = rcv.`plnt_id` AND grp.`wshe_id` = rcv.`wshe_id`
+        {$mwhere} {$str_option}
+        GROUP BY rcv.`witb_barcde`";
+
+        $qry = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        if($qry->getNumRows() > 0){ 
+
+         $data = $qry->getNumRows();
+
+        }else{ 
+         $data = 0;
+        }
+        return $data;
+
+    }
 
 } //end main MyWarehouseModel

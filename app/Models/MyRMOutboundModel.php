@@ -88,8 +88,6 @@ class MyRMOutboundModel extends Model
             GROUP BY a.rmap_trxno) AS rmtqty
         ON
             d.rmap_trxno = rmtqty.rmap_trxno
-        WHERE
-            d.is_processed = '0'
         
         ";
 
@@ -117,25 +115,22 @@ class MyRMOutboundModel extends Model
         $mpw_tkn = $this->mylibzdb->mpw_tkn();
 
         $strqry = "
-        SELECT
-             
-            d.rmap_trxno,
-            d.plnt_id,
-            d.request_date,
-            rmtqty.overall_sum as total_qty,
-            d.is_processed
-        FROM
-            trx_rmap_req_hd d
+        SELECT 
+            a.`rmap_trxno`,
+            a.`plnt_id`,
+            a.`request_date`,
+            SUM(b.`produce_qty`) total_qty,
+            a.`is_processed`
+        FROM 
+            `trx_rmap_req_hd` a
         JOIN
-            (SELECT a.rmap_trxno, SUM(b.item_qty * a.item_qty) AS overall_sum
-            FROM trx_rmap_req_dt a
-            JOIN mst_item_comp2 b ON a.item_code = b.fg_code
-            JOIN trx_rmap_req_hd d ON a.rmap_trxno = d.rmap_trxno
-            GROUP BY a.rmap_trxno) AS rmtqty
+            `trx_rmap_req_dt` b
         ON
-            d.rmap_trxno = rmtqty.rmap_trxno
-        WHERE
-            d.is_processed = '1'
+            a.`rmap_trxno` = b.`rmap_trxno`
+        WHERE 
+            a.`is_processed` = '1'
+        GROUP BY
+            a.`rmap_trxno`
         
         ";
 
@@ -164,13 +159,16 @@ class MyRMOutboundModel extends Model
 
         $strqry = "
         SELECT
+	        a.`recid`,
             a.`rmap_trxno`,
             a.`fg_code`,
             a.`rm_code`,
             a.`total_qty`,
-            (SELECT po_qty FROM rm_inv_rcv WHERE mat_code = a.`rm_code`) AS rm_inv
+            COALESCE((SELECT po_qty FROM rm_inv_rcv WHERE mat_code = a.`rm_code`), 0.0000) AS rm_inv
         FROM
             `trx_rm_out_lacking` a
+        ORDER BY 
+	        a.`recid` DESC
         
         ";
 
@@ -278,136 +276,163 @@ class MyRMOutboundModel extends Model
         $mpw_tkn = $this->mylibzdb->mpw_tkn();
         $rmapno = $this->request->getVar('rmapno');
         $adata1 = $this->request->getVar('adata1');
-        $count=0;
+        $tbltemp_produce   = $this->db_temp . ".`temp_Produce`";
+        $tbltemp_lacking   = $this->db_temp . ".`temp_Lacking`";
+
         if (empty($adata1)) {
             echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> No Item Data! </div>";
             die();
         }
 
-        //SELECT ITEM CODE FIRST
-        $str="
-        SELECT 
-            item_code
-        FROM 
-            trx_rmap_req_dt
-        WHERE 
-            rmap_trxno = '$rmapno'
+        $str = "
+        CREATE TABLE IF NOT EXISTS {$tbltemp_produce} ( 
+            `recid` int(25) NOT NULL AUTO_INCREMENT,
+            rmap_trxno varchar(35) default '',
+            fg_code varchar(35) default '',
+            rm_code varchar(35) default '',
+            temp_qty int(25) default 0,
+            PRIMARY KEY (`recid`)
+        )
+
         ";
-
-        $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-
-        $item = array();
-        if($qry->getNumRows() > 0){
-            foreach($qry->getResultArray() as $row){
-                $mitemc = $row['item_code'];
-
-                $item_data = $mitemc;
-                array_push($item, $item_data);
-            }
-        }
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
         
-        //SELECT CORRESPONDING RAW MATS
-        for($i = 0; $i < count($item); $i++){
-			$data = explode('x|x', $item[$i]);
-            $mitemc = $data[0];
+        $str = "
+        CREATE TABLE IF NOT EXISTS {$tbltemp_lacking} ( 
+            `recid` int(25) NOT NULL AUTO_INCREMENT,
+            rmap_trxno varchar(35) default '',
+            fg_code varchar(35) default '',
+            rm_code varchar(35) default '',
+            temp_qty int(25) default 0,
+            PRIMARY KEY (`recid`)
+        )
 
-            $str="
-                SELECT COUNT(rm_code) total_rm FROM mst_item_comp2 WHERE fg_code = '$mitemc'
-            ";
-            $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-            $rw = $qry->getRowArray();
-            $orig_rm_count = $rw['total_rm'];
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
-            $str="
-            SELECT
-                b.`rm_code`,
-                (SELECT po_qty FROM rm_inv_rcv WHERE mat_code = b.`rm_code`) AS rm_inv,
-                (b.`item_qty` * a.`item_qty`) item_qty,
-                a.`item_qty` as test_item_qty
+        //KUNIN YUNG MGA FG CODE SA SPECIFIC TRANSACTION NO PARA MAHANAP YUNG CORRESPONDING BOM MATERIALS NIYA
+        $str="
+            SELECT 
+                `item_code`,
+                `item_qty`
+            FROM 
+                `trx_rmap_req_dt` 
+            WHERE 
+            `rmap_trxno` = '$rmapno'
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+        $rw = $q->getResultArray();
+        $count_fg_success = 1;
+        foreach ($rw as $data) {
+            
+            $fg_code = $data['item_code'];
+            $fg_qty = $data['item_qty'];
+            
+            //ETO NAMAN YUNG IKOT NA NAKA DEPENDE KUNG ILAN QTY NG FG
+            for ($i=1; $i <= $fg_qty; $i++) { 
+                
+                //DITO NA KUKUNIN YUNG CORRESPONDING RM PER IKOT NG UNANG FOREACH NG FG CODE
+                $str="
+                SELECT a.`rm_code`,a.`item_qty` AS rm_qty,(SELECT po_qty FROM rm_inv_rcv WHERE mat_code = a.`rm_code`) AS rm_inv FROM `mst_item_comp2` a WHERE a.`fg_code` = '$fg_code'
+                ";
+                $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                $rw = $q->getResultArray();
+                $total_rm = $q->getNumRows();
 
-            FROM
-                trx_rmap_req_dt a
-            JOIN
-                mst_item_comp2 b
-            ON 
-                a.`item_code` = b.`fg_code`
-            WHERE
-                a.`rmap_trxno` = '$rmapno' AND b.`fg_code` = '$mitemc'
-            GROUP BY 
-                b.`rm_code`
-            ";
+                //DELETE KO MUNA YUNG LAMAN NG TEMPORARY TABLE PARA PAG PUMASOK YUNG DELETE DI MADUDUPLICATE
+                $str="
+                    DELETE FROM {$tbltemp_produce} WHERE `rmap_trxno` = '$rmapno';
+                ";
+                $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
-            $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-            $rw = $qry->getResultArray();
+                $str="
+                    DELETE FROM {$tbltemp_lacking} WHERE `rmap_trxno` = '$rmapno';
+                ";
+                $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
-            //CONDITIONAL EVERY CORRESPONDING RM RESULT
-            foreach ($rw as $data) {
-                $rm_code = $data['rm_code'];
-                $rm_inv = $data['rm_inv'];
-                $item_qty = $data['item_qty'];
-                $test_item_qty = $data['test_item_qty'];
+                //ETO NA YUNG LOOPING NG BAWAT RM MATERIAL
+                foreach ($rw as $data) {
+                    $rm_code = $data['rm_code'];
+                    $rm_inv = $data['rm_inv'];
+                    $rm_qty = $data['rm_qty'];
 
-                if ($item_qty <= $rm_inv) {
 
-                    $produced_qty = $item_qty;
-                    $remaining_qty = 0;
-
-                    $str="
-                        UPDATE `rm_inv_rcv` SET `po_qty` = `po_qty` - '$produced_qty' WHERE `mat_code` = '$rm_code'
-                    ";
-                    $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-
-                    $str="
-                        INSERT trx_rm_out_produce(`rmap_trxno`,`rm_code`,`total_qty`,`fg_code`) VALUES ('$rmapno','$rm_code','$produced_qty','$mitemc');
-                    ";
-                    $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-
-                    $count++;
-
-                    //VALIDATE IF THERE IS A RM THAT IS NOT AVAILABLE IN INVENTORY, DECLARED ITEM QTY MUST BE MINUS 1
-                    if ($count != $orig_rm_count) {
-                        if ($test_item_qty == 1) {
-
-                            $total_item = $test_item_qty;
-                        }
-                        else{
-                            $total_item = $test_item_qty -1;
-                        }
-
+                    if($rm_inv >= $rm_qty){
                         $str="
-                        UPDATE trx_rmap_req_dt SET `item_qty` = '$total_item', `rmng_qty` = '$total_item', `produce_rmng` = '$total_item' WHERE `item_code` = '$mitemc' AND `rmap_trxno` = '$rmapno'
+                            INSERT INTO {$tbltemp_produce} (`rmap_trxno`,`fg_code`,`rm_code`,`temp_qty`) VALUES ('$rmapno','$fg_code','$rm_code','$rm_qty');
                         ";
-                        $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-    
-                    }
-                    else{
-                        $total_item = $test_item_qty;
+                        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
+                    }else{
                         $str="
-                        UPDATE trx_rmap_req_dt SET `item_qty` = '$total_item', `rmng_qty` = '$total_item', `produce_rmng` = '$total_item' WHERE `item_code` = '$mitemc' AND `rmap_trxno` = '$rmapno'
+                            INSERT INTO {$tbltemp_lacking} (`rmap_trxno`,`fg_code`,`rm_code`,`temp_qty`) VALUES ('$rmapno','$fg_code','$rm_code','$rm_qty');
                         ";
-                        $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                        $q1 = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
                     }
-                    
-                }else{
-
-                    $produced_qty = $rm_inv;
-
-                    $str="
-                        UPDATE `rm_inv_rcv` SET `po_qty` = `po_qty` - '$produced_qty' WHERE `mat_code` = '$rm_code'
-                    ";
-                    $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-
-                    $str="
-                        INSERT trx_rm_out_lacking(`rmap_trxno`,`rm_code`,`total_qty`,`fg_code`) VALUES ('$rmapno','$rm_code','$item_qty','$mitemc');
-                    ";
-                    $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
                 }
 
-            }  
+                //ETO NAMAN YUNG TOTAL NA BILANG NG MAAVAILABILITY NG RM PER FG CODE
+                //BALI DITO KO BINABANGGA KUNG LAHAT BA NG MATERIALS IS MERON SA INVENTORY BAGO MAGAWA YUNG ISANG FG ITEM
+                $str = "
+                select count(`rm_code`) total_rm_produce from {$tbltemp_produce} WHERE `rmap_trxno` = '$rmapno'
+                ";
+                $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                $rw = $q->getRowArray();
+
+                $total_rm_produce = $rw['total_rm_produce'];
+
+                $str = "
+                    select count(`rm_code`) total_rm_lacking from {$tbltemp_lacking} WHERE `rmap_trxno` = '$rmapno'
+                ";
+                $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                $rw = $q->getRowArray();
+
+                $total_rm_lacking = $rw['total_rm_lacking'];
+
+                //DITO NAMAN NIYA IINSERT SA TAMANG TABLE KAPAG KUMPLETO LAHAT NG MATERIALS
+                if ($total_rm == $total_rm_produce) {
+                    $count_fg_success++;
+                    //IINSERT NIYA DITO YUNG MGA KUMPLETONG MATERIALS
+                    $str="
+                        INSERT INTO trx_rm_out_produce (`rmap_trxno`,`fg_code`,`rm_code`,`total_qty`) SELECT `rmap_trxno`,`fg_code`,`rm_code`,`temp_qty` FROM {$tbltemp_produce} WHERE `rmap_trxno` = '$rmapno';
+                    ";
+                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+                    //KUNIN SA PRODUCE TABLE YUNG MGA RM TSAKA QTY NG RM PARA ETO NA GAGAMITIN PAMBAWAS SA RM INV
+                    //KUMBAGA YUNG MGA KUMPLETO LANG MAKAKAPAG BAWAS
+                    $str="
+                        SELECT `rm_code`,`total_qty` FROM trx_rm_out_produce WHERE `rmap_trxno` = '$rmapno'
+                    ";
+                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                    $rw = $q->getResultArray();
+                    foreach ($rw as $data) {
+                        $rm_code = $data['rm_code'];
+                        $total_qty = $data['total_qty'];
+
+                        //IBABAWAS NIYA SA INVENTORY IN CASE NG KUMPLETO
+                        $str="
+                            UPDATE `rm_inv_rcv`
+                            SET `po_qty` = CASE
+                                WHEN `po_qty` > 0.00000 THEN `po_qty` - '$total_qty'
+                                ELSE `po_qty`
+                            END
+                            WHERE `mat_code` = '$rm_code'
+                        ";
+                        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+                    }
+
+                    $str="
+                    UPDATE `trx_rmap_req_dt` SET `produce_qty` = '$count_fg_success' WHERE `rmap_trxno` = '$rmapno' AND `item_code` = '$fg_code';
+                    ";
+                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                }
+
+            }//FG QTY LOOP
             
-        }
+        }//FG FOREACH LOOP
 
         $str="
             UPDATE trx_rmap_req_hd SET `is_processed` = '1' WHERE `rmap_trxno` = '$rmapno'
@@ -415,7 +440,7 @@ class MyRMOutboundModel extends Model
         $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
         
 
-        echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Processed Successfully!</div>
+        echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Processed Successfully! ['$total_rm'], ['$total_rm_produce'], ['$total_rm_lacking']</div>
         <script type=\"text/javascript\"> 
             function __fg_refresh_data() { 
                 try { 

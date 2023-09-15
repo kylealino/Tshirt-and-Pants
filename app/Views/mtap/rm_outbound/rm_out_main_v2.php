@@ -39,8 +39,11 @@ $str="
 ";
 $q = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 $rw = $q->getRowArray();
-$total_rmap = $rw['total_rmap'];
-
+if($q->getNumRows() > 0) {
+  $total_rmap = $rw['total_rmap'];
+}else{
+  $total_rmap = 0;
+}
 
 $str="
     SELECT 
@@ -56,14 +59,20 @@ $total_for_production = $rw['total'];
 
 $str="
     SELECT 
-    COUNT(`rmap_trxno`) total
+    `rmap_trxno` total
     FROM 
     trx_rm_out_lacking
+    GROUP BY 
+    rmap_trxno
 
 ";
 $q = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 $rw = $q->getRowArray();
-$total_lacking = $rw['total'];
+if($q->getNumRows() > 0) {
+  $total_lacking = $q->getNumRows();
+}else{
+  $total_lacking = 0;
+}
 ?>
 <style>
     
@@ -104,7 +113,7 @@ $total_lacking = $rw['total'];
                                     <div class="card border">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                            <h5 class="card-title text-warning">RMAP REQUEST</h5>
+                                            <h5 class="card-title text-warning">UNPROCESSED RMAP REQUEST</h5>
                                             <p class="card-text">
                                                 Total Count: 
                                                 <span class="total-count display-3"><?php echo $total_rmap; ?></span>

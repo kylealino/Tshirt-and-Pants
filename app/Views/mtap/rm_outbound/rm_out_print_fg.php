@@ -129,7 +129,7 @@ $str="
 	SELECT
 		a.`item_code`,
 		b.`ART_DESC`,
-		a.`item_qty`,
+		a.`produce_qty`,
 		b.`ART_UOM`
 	FROM
 		`trx_rmap_req_dt` a
@@ -143,7 +143,7 @@ $str="
 $q = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 foreach ($q->getResultArray() as $row) {
 	$item_code = $row['item_code'];
-	$item_qty = $row['item_qty'];
+	$produce_qty = $row['produce_qty'];
 	$ART_DESC = $row['ART_DESC'];
 	$ART_UOM = $row['ART_UOM'];
 
@@ -152,7 +152,7 @@ foreach ($q->getResultArray() as $row) {
 	$pdf->Cell(20,4,$count,1,0,'C');
 	$pdf->Cell(35,4,$item_code,1,0,'C');
 	$pdf->Cell(81,4,$ART_DESC,1,0,'C');
-	$pdf->Cell(35,4,$item_qty,1,0,'C');
+	$pdf->Cell(35,4,$produce_qty,1,0,'C');
 	$pdf->Cell(35,4,$ART_UOM,1,0,'C');
 
 	$Y = $Y + 4;

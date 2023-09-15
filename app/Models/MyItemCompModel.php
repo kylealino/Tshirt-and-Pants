@@ -382,21 +382,17 @@ class MyItemCompModel extends Model
 
         $icomp_trxno = $this->request->getVar('icomp_trxno');
         $fg_code = $this->request->getVar('fg_item');
-        $comp_date = $this->request->getVar('comp_date');
         $adata1 = $this->request->getVar('adata1');
-
-        var_dump($adata1);
-        die();
-
-        if (empty($comp_date)) {
-            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error: </strong> Date is required! </div>";
-            die();
-        }
 
         if (empty($fg_code)) {
             echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error: </strong> FG Item is required! </div>";
             die();
         }
+
+        $str="
+            DELETE FROM mst_item_comp2 WHERE `icomp_trxno` = '$icomp_trxno' AND `fg_code` = '$fg_code'
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
         if(count($adata1) > 0) { 
             $ame = array();
@@ -428,55 +424,32 @@ class MyItemCompModel extends Model
                     $muom = $xdata[5];
 
                     $str="
-                    SELECT rm_code FROM mst_item_comp2 WHERE rm_code = '$mitemc' AND icomp_trxno = '$icomp_trxno';
+                    INSERT INTO `mst_item_comp2` (
+                        `icomp_trxno`,
+                        `fg_code`,
+                        `rm_code`,
+                        `item_desc`,
+                        `item_qty`,
+                        `item_cost`,
+                        `item_tcost`,
+                        `item_uom`
+
+                        )
+                        VALUES
+                        (
+                        '$icomp_trxno',
+                        '$fg_code',
+                        '$mitemc',
+                        '$mdesc',
+                        '$mqty',
+                        '$mcost',
+                        '$mtcost',
+                        '$muom'
+                        );
                     ";
                     $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                    $rw = $qry->getResultArray();           
-                    foreach ($rw as $data) {
-                        $rm_code = $data['rm_code'];
-
-                        if ($rm_code == $mitemc) {
-                            $str="
-                            UPDATE mst_item_comp2 SET 
-                            `icomp_trxno` = '$icomp_trxno',
-                            `fg_code` = '$fg_code',
-                            `rm_code` = '$mitemc',
-                            `item_desc` = '$mdesc',
-                            `item_qty` = '$mqty',
-                            `item_cost` = '$mcost',
-                            `item_tcost` = '$mtcost',
-                            `item_uom` = '$muom',
-                            `comp_date` = '$comp_date'
-                            ";
-                        }else{
-                            $str="
-                            INSERT INTO `mst_item_comp2` (
-                                `icomp_trxno`,
-                                `fg_code`,
-                                `rm_code`,
-                                `item_desc`,
-                                `item_qty`,
-                                `item_cost`,
-                                `item_tcost`,
-                                `item_uom`,
-                                `comp_date`
-                                )
-                                VALUES
-                                (
-                                '$icomp_trxno',
-                                '$fg_code',
-                                '$mitemc',
-                                '$mdesc',
-                                '$mqty',
-                                '$mcost',
-                                '$mtcost',
-                                '$muom',
-                                '$comp_date'
-                                );
-                            ";
-                            $qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                        }
-                    }
+                        
+                    
                 } 
                 
             } 

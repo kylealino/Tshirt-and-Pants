@@ -1005,7 +1005,7 @@ class Mysearchdata extends BaseController
 		a.`ART_UOM`,
 		sha2(concat(recid,'{$mpw_tkn}'),384) mtkn_prdltr 
 		FROM
-		 `mst_article` a where a.`ART_PRODT` = 'FG' AND (a.`ART_PRODL` = 'GWEMC' OR a.`ART_PRODL` = 'LSG' or a.`ART_PRODL` = '0300') AND a.`ART_CODE` LIKE '%{$term}%'
+		 `mst_article` a where a.`ART_PRODT` = 'FG' AND (a.`ART_PRODL` = 'TSHIRT' OR a.`ART_PRODL` = 'PANTS') AND a.`ART_CODE` LIKE '%{$term}%'
 		LIMIT 100
 		";
 		

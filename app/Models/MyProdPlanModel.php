@@ -30,28 +30,91 @@ class MyProdPlanModel extends Model
         $cuser = $this->mylibzdb->mysys_user();
         $mpw_tkn = $this->mylibzdb->mpw_tkn();
         $branch_name = $this->request->getVar('branch_name');
+        $firstWord = explode(" ", $branch_name);
+        $branchFirstName = $firstWord[0];
         $date_range = $this->request->getVar('date_range');
         $month_cap = $this->request->getVar('month_cap');
         $str_date_range = "";
+        $tblbranch = "";
 
-        $str="SELECT BRNCH_MBCODE FROM mst_companyBranch WHERE BRNCH_NAME = '$branch_name'";
+        $str="SELECT `BRNCH_MBCODE`,`BRNCH_MBCOLDF` FROM mst_companyBranch WHERE BRNCH_NAME = '$branch_name'";
         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
         $rw = $q->getRowArray();
         $mb_code = $rw['BRNCH_MBCODE'];
-        $tblsalesout = "`trx_{$mb_code}_salesout`";
-        $tblstorebal = "`trx_{$mb_code}_myivty_lb_dtl`";
+        $BRNCH_MBCOLDF = $rw['BRNCH_MBCOLDF'];
+
+        if (!empty($BRNCH_MBCOLDF)) {
+
+            $str="
+                SELECT `BRNCH_MBCODE` FROM mst_companyBranch WHERE BRNCH_CODE = '$BRNCH_MBCOLDF'
+            ";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+            $rw = $q->getRowArray();
+            $BRNCH_MBCODE = $rw['BRNCH_MBCODE'];
+            $tblsalesoutold = "`trx_{$BRNCH_MBCODE}_salesout`";
+
+            $tblsalesout = "`trx_{$mb_code}_salesout`";
+            $tblstorebal = "`trx_{$mb_code}_myivty_lb_dtl`";
+            $tblbrnchsalesout = "`trx_{$branchFirstName}_salesout`";
+
+            $str="
+                CREATE TABLE IF NOT EXISTS {$tblbrnchsalesout}
+                AS
+                SELECT *
+                FROM {$tblsalesout}
+                WHERE 1 = 0;
+            ";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+            $str="
+                INSERT INTO {$tblbrnchsalesout}
+                SELECT * FROM {$tblsalesout}
+            ";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+            $str="
+                INSERT INTO {$tblbrnchsalesout}
+                SELECT * FROM {$tblsalesoutold}
+            ";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        }else{
+
+            $tblsalesout = "`trx_{$mb_code}_salesout`";
+            $tblstorebal = "`trx_{$mb_code}_myivty_lb_dtl`";
+            $tblbrnchsalesout = "`trx_{$branchFirstName}_salesout`";
+
+            $str="
+                CREATE TABLE IF NOT EXISTS {$tblbrnchsalesout}
+                AS
+                SELECT *
+                FROM {$tblsalesout}
+                WHERE 1 = 0;
+            ";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+            $str="
+                INSERT INTO {$tblbrnchsalesout}
+                SELECT * FROM {$tblsalesout}
+            ";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        }
 
         if ($date_range == '2022') {
-            $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+            $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
         }elseif ($date_range == '2021') {
-            $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+            $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
         }elseif ($date_range == '2020') {
-            $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+            $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
         }
+        
+
         if (empty($branch_name)) {
             echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Please select a branch! </div>";
             die();
         }
+
         $type = "";
         $insertSubTag = 0;
         $nrecs_pb     = 0;

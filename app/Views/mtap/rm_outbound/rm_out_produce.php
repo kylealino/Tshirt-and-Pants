@@ -57,6 +57,7 @@ thead.memetable, th.memetable, td.memetable {
 							$on_mouse = " onmouseover=\"this.style.backgroundColor='#97CBFF';\" onmouseout=\"this.style.backgroundColor='" . $bgcolor  . "';\"";	
 							$rmap_trxno = $row['rmap_trxno'];
               $is_processed = $row['is_processed'];
+              $total_qty = $row['total_qty'];
               $rmprint = 'rm-out-print';
               $fgprint = 'fg-out-print';
 							
@@ -77,10 +78,10 @@ thead.memetable, th.memetable, td.memetable {
               </td>
               <?php if($is_processed == '1'):?>
               <td>
-                <button onclick="window.open('<?= site_url().$rmprint ?>?rmap_trxno=<?=$rmap_trxno?>')" class="btn bg-psuccess"> <i class="bi bi-printer"></i> RM Print</button>
+                <button onclick="window.open('<?= site_url().$rmprint ?>?rmap_trxno=<?=$rmap_trxno?>&total_qty=<?=$total_qty?>')" class="btn bg-psuccess"> <i class="bi bi-printer"></i> RM Print</button>
               </td>
               <td>
-                <button onclick="window.open('<?= site_url().$fgprint ?>?rmap_trxno=<?=$rmap_trxno?>')" class="btn bg-psuccess"> <i class="bi bi-printer"></i> FG Print</button>
+                <button onclick="window.open('<?= site_url().$fgprint ?>?rmap_trxno=<?=$rmap_trxno?>&total_qty=<?=$total_qty?>')" class="btn bg-psuccess"> <i class="bi bi-printer"></i> FG Print</button>
               </td>
               <?php endif;?>
 
