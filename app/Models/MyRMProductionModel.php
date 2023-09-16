@@ -38,6 +38,7 @@ class MyRMProductionModel extends Model
         a.`plnt_id`,
         a.`request_date`,
         SUM(b.`item_qty`) item_qty,
+        SUM(b.`produce_qty`) produce_qty,
         SUM(b.`produce_release`) produce_release,
         SUM(b.`produce_rmng`) produce_rmng
         FROM
@@ -160,17 +161,12 @@ class MyRMProductionModel extends Model
                         $mitemc = $xdata[0];
                         $mreqqty = $xdata[1];
                         $mrelease = $xdata[2];
-                        $minv = $xdata[3];
 
                         if ($mrelease > $mreqqty) {
                             echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Release Qty cannot be greater than Request Qty! </div>";
                             die();
                         }
 
-                        if ($mrelease > $minv) {
-                            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks Unavailable! </div>";
-                            die();
-                        }
 
                         
                     $str="

@@ -20,12 +20,14 @@ $txtactive_plnt_id = "";
 $process_date = date('Y-m-d');
 $request_date = '';
 $fgreq_trxno='';
+$produce_qty='';
 
 if(!empty($rmap_trxno)) {
   $str = "
     SELECT
     a.`request_date`,
     SUM(b.`item_qty`) item_qty,
+    SUM(b.`produce_qty`) produce_qty,
     b.`fgreq_trxno`
     FROM
     trx_rmap_req_hd a
@@ -43,6 +45,7 @@ $rw = $q->getRowArray();
 $request_date = $rw['request_date'];
 $item_qty = $rw['item_qty'];
 $fgreq_trxno = $rw['fgreq_trxno'];
+$produce_qty = $rw['produce_qty'];
 }
 
 ?>
@@ -104,7 +107,13 @@ $fgreq_trxno = $rw['fgreq_trxno'];
                                     <div class="col-sm-9">
                                         <input type="text" id="req_qty" name="req_qty" class="form-control form-control-sm" value="<?=$item_qty;?>" readonly/>
                                     </div>
-                                </div> 
+                            </div>
+                            <div class="row gy-2 mb-3">
+                                <label class="col-sm-3 form-label" for="produce_qty">Proceeded Qty.:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="produce_qty" name="produce_qty" class="form-control form-control-sm" value="<?=$produce_qty;?>" readonly/>
+                                    </div>
+                            </div>  
                             <div class="row gy-2 mb-3">
                                 <label class="col-sm-3 form-label" for="release_qty">Release Qty.:</label>
                                 <div class="col-sm-9">
@@ -124,9 +133,9 @@ $fgreq_trxno = $rw['fgreq_trxno'];
                                         <tr>
                                             <th nowrap="nowrap" style="color:red;">Itemcode</th>
                                             <th nowrap="nowrap">Item Description</th>
-                                            <th nowrap="nowrap">Request Qty</th>
-                                            <th nowrap="nowrap">Release Qty</th>
-                                            <th nowrap="nowrap">Inventory Qty</th>
+                                            <th nowrap="nowrap">Request</th>
+                                            <th nowrap="nowrap">Proceeded</th>
+                                            <th nowrap="nowrap">Release</th>
                                         </tr>
                                     </thead>
                                     <tbody id="gwpo-recs">
@@ -138,19 +147,16 @@ $fgreq_trxno = $rw['fgreq_trxno'];
                                         SELECT
                                           a.`item_code`,
                                           a.`item_qty`,
+                                          a.`produce_qty`,
                                           b.`ART_DESC`,
-                                          a.`produce_rmng`,
-                                          COALESCE(c.`po_qty`, 0) AS minv
+                                          a.`produce_rmng`
                                         FROM 
                                         trx_rmap_req_dt a
                                         JOIN
                                         mst_article b
                                         ON
                                         a.`item_code` = b.`ART_CODE`
-                                        LEFT JOIN
-                                        rm_inv_rcv c
-                                        ON
-                                        a.`item_code` = c.`mat_code`
+
                                         WHERE 
                                         a.`rmap_trxno` = '$rmap_trxno' and a.`produce_rmng` != '0'
 
@@ -166,8 +172,9 @@ $fgreq_trxno = $rw['fgreq_trxno'];
                                             <td nowrap="nowrap"><input type="text" id="fabric_code" class="form-control text-center form-control-sm mitemcode bg-white" size="10" value="<?=$rdt['item_code'];?>" disabled></td>
                                             <td nowrap="nowrap"><input type="text" id="fabric_desc" class="form-control text-center form-control-sm bg-white" size="30" value="<?=$rdt['ART_DESC'];?>" disabled></td>
                                             <td nowrap="nowrap"><input type="text" id="fabric_qty" class="form-control text-center form-control-sm bg-white" size="10" value="<?=$rdt['item_qty'];?>" disabled></td>
+                                            <td nowrap="nowrap"><input type="text" id="fabric_qty" class="form-control text-center form-control-sm bg-white" size="10" value="<?=$rdt['produce_qty'];?>" disabled></td>
                                             <td nowrap="nowrap"><input type="text" id="fabric_qty" class="form-control text-center form-control-sm bg-white thick-border"size="10" value="<?=$rdt['produce_rmng'];?>"></td>
-                                            <td nowrap="nowrap"><input type="text" id="fabric_qty" class="form-control text-center form-control-sm bg-white "size="10" value="<?=$rdt['minv'];?>"></td>
+
                                         </tr>
                                         <?php 
                                         } 
@@ -182,7 +189,7 @@ $fgreq_trxno = $rw['fgreq_trxno'];
                         <div class="col-sm-4">
                             <?php if(!empty($rmap_trxno)): ?>
                             <button id="mbtn_mn_Save" type="submit" class="btn btn-dgreen btn-sm">Save</button>
-                            <?=anchor('rm-production', '<i class="bi bi-arrow-repeat"></i>',' class="btn btn-dgreen-ol btn-sm" ');?>
+                            <?=anchor('rm-prod', '<i class="bi bi-arrow-repeat"></i>',' class="btn btn-dgreen-ol btn-sm" ');?>
                             <?php endif?>
                         </div>
                     </div>
@@ -299,11 +306,10 @@ $("#mbtn_mn_Save").click(function(e){
           for(aa = 1; aa < rowCount1; aa++) { 
                 var clonedRow = jQuery('#tbl-rm-recs tr:eq(' + aa + ')').clone(); 
                 var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); 
-                var mreqqty = jQuery(clonedRow).find('input[type=text]').eq(2).val();
-                var mrelease = jQuery(clonedRow).find('input[type=text]').eq(3).val(); 
-                var minv = jQuery(clonedRow).find('input[type=text]').eq(4).val();
+                var mproduce = jQuery(clonedRow).find('input[type=text]').eq(3).val();
+                var mrelease = jQuery(clonedRow).find('input[type=text]').eq(4).val(); 
 
-                mdata = mitemc + 'x|x' + mrelease + 'x|x' + mreqqty + 'x|x' + minv;
+                mdata = mitemc + 'x|x' + mproduce + 'x|x' + mrelease;
                 adata1.push(mdata);
             } 
 

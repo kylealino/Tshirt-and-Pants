@@ -23,9 +23,10 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 									<th>RMAP Transaction No.</th>
 									<th>Plant</th>
 									<th>Request Date</th>
-									<th>Request Qty</th>
-									<th>Produce Release</th>
-                                    <th>Produce Remaining</th>
+									<th>Request</th>
+									<th>Proceeded</th>
+									<th>Produce</th>
+                                    <th>Remaining</th>
                                     <th>Process</th>
                                     <th>Action</th>
 				          	</tr>
@@ -41,18 +42,19 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 									$rmap_trxno = $row['rmap_trxno'];
 									$produce_release = $row['produce_release'];
 									$item_qty = $row['item_qty'];
-
+									$produce_qty = $row['produce_qty'];
 								?>
 								<tr bgcolor="<?=$bgcolor;?>" <?=$on_mouse;?>>
 									<td nowrap><?=$row['rmap_trxno'];?></td>
 									<td nowrap><?=$row['plnt_id'];?></td>
 									<td nowrap><?=$row['request_date'];?></td>
 									<td nowrap><?=$row['item_qty'];?></td>
+									<td nowrap><?=$row['produce_qty'];?></td>
                                     <td nowrap><?=$row['produce_release'];?></td>
                                     <td nowrap><?=$row['produce_rmng'];?></td>
 									
                                     <td nowrap>
-									<?php if($item_qty != $produce_release):?>
+									<?php if($produce_qty != $produce_release):?>
                                         <?=anchor('rm-prod/?rmap_trxno=' . $rmap_trxno, 'PROCESS',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
                                     
 									<?php else:?>
