@@ -121,8 +121,8 @@ class MyWarehouseoutModel extends Model
         FROM
         {$this->db_erp}.`warehouse_shipdoc_hd` sd
         JOIN  {$this->db_erp}.`mst_plant` pl ON pl.`recid` = sd.`frm_plnt_id`
-        JOIN  {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = sd.`frm_wshe_id`
-        WHERE sd.`frm_plnt_id` = '{$plntID}' AND  sd.`frm_wshe_id` = '{$whID}'
+        JOIN  {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = sd.`frm_wshe_id` 
+        WHERE sd.`frm_plnt_id` = '{$plntID}' AND  sd.`frm_wshe_id` = '{$whID}' AND `crpl_code` LIKE '%CWO%'
         GROUP BY sd.`crpl_code` ORDER BY `recid` DESC";
 
         $qry = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);

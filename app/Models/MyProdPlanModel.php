@@ -37,11 +37,15 @@ class MyProdPlanModel extends Model
         $str_date_range = "";
         $tblbranch = "";
 
-        $str="SELECT `BRNCH_MBCODE`,`BRNCH_MBCOLDF` FROM mst_companyBranch WHERE BRNCH_NAME = '$branch_name'";
+
+        $str="SELECT `BRNCH_MBCODE`,`BRNCH_MBCOLDF`,SUBSTRING_INDEX(`BRNCH_NAME`, ' ', 1) AS first_word FROM mst_companyBranch WHERE BRNCH_NAME = '$branch_name'";
         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
         $rw = $q->getRowArray();
         $mb_code = $rw['BRNCH_MBCODE'];
         $BRNCH_MBCOLDF = $rw['BRNCH_MBCOLDF'];
+        $branchFirstName = $rw['first_word'];
+        $tblstorebal = "`trx_{$mb_code}_myivty_lb_dtl`";
+        $tblbrnchsalesout = "`trx_{$mb_code}_salesout`";
 
         if (!empty($BRNCH_MBCOLDF)) {
 
@@ -53,12 +57,17 @@ class MyProdPlanModel extends Model
             $BRNCH_MBCODE = $rw['BRNCH_MBCODE'];
             $tblsalesoutold = "`trx_{$BRNCH_MBCODE}_salesout`";
 
-            $tblsalesout = "`trx_{$mb_code}_salesout`";
-            $tblstorebal = "`trx_{$mb_code}_myivty_lb_dtl`";
-            $tblbrnchsalesout = "`trx_{$branchFirstName}_salesout`";
+            $tblsalesout = "`trx_{$BRNCH_MBCODE}_salesout`";
+            $tblstorebal = "`trx_{$BRNCH_MBCODE}_myivty_lb_dtl`";
+            $tbltempsalesout = "`trx_{$branchFirstName}_salesout`";
 
             $str="
-                CREATE TABLE IF NOT EXISTS {$tblbrnchsalesout}
+                DROP TABLE IF EXISTS {$tblbrnchsalesout};
+            ";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+            $str="
+                CREATE TABLE IF NOT EXISTS {$tbltempsalesout}
                 AS
                 SELECT *
                 FROM {$tblsalesout}
@@ -66,38 +75,26 @@ class MyProdPlanModel extends Model
             ";
             $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
+
             $str="
-                INSERT INTO {$tblbrnchsalesout}
+                INSERT INTO {$tbltempsalesout}
                 SELECT * FROM {$tblsalesout}
             ";
             $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
             $str="
-                INSERT INTO {$tblbrnchsalesout}
-                SELECT * FROM {$tblsalesoutold}
+                INSERT INTO {$tbltempsalesout}
+                SELECT * FROM {$tblbrnchsalesout}
             ";
             $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
-        }else{
-
-            $tblsalesout = "`trx_{$mb_code}_salesout`";
-            $tblstorebal = "`trx_{$mb_code}_myivty_lb_dtl`";
-            $tblbrnchsalesout = "`trx_{$branchFirstName}_salesout`";
-
-            $str="
-                CREATE TABLE IF NOT EXISTS {$tblbrnchsalesout}
-                AS
-                SELECT *
-                FROM {$tblsalesout}
-                WHERE 1 = 0;
-            ";
-            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-
-            $str="
-                INSERT INTO {$tblbrnchsalesout}
-                SELECT * FROM {$tblsalesout}
-            ";
-            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+            if ($date_range == '2022') {
+                $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+            }elseif ($date_range == '2021') {
+                $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+            }elseif ($date_range == '2020') {
+                $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+            }
 
         }
 
@@ -108,8 +105,9 @@ class MyProdPlanModel extends Model
         }elseif ($date_range == '2020') {
             $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
         }
-        
 
+
+    
         if (empty($branch_name)) {
             echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Please select a branch! </div>";
             die();
@@ -484,7 +482,6 @@ class MyProdPlanModel extends Model
         $mpw_tkn = $this->mylibzdb->mpw_tkn();
         $mtkn_etr = $this->request->getVar('mtkn_etr');
 
-
         $strqry = "
         SELECT
           a.`prod_plan_trxno`,
@@ -528,9 +525,6 @@ class MyProdPlanModel extends Model
     public function prod_plan_view_itm_recs($npages = 1,$npagelimit = 20,$msearchrec=''){ 
         $cuser = $this->mylibzdb->mysys_user();
         $mpw_tkn = $this->mylibzdb->mpw_tkn();
-
-
-        
         $pptrxno   = $this->request->getVar('pptrxno');
 
         $str_optn = '';
