@@ -1608,6 +1608,7 @@ class MyFGPackingModel extends Model
                 c.`ART_DESC`,
                 c.`ART_UPRICE`,
                 c.`ART_UCOST`,
+                b.`qty_perpack`,
                 c.`ART_SKU`,
                 c.`ART_UOM` AS UNIT
             FROM

@@ -239,7 +239,7 @@ SELECT
     a.`fg_code`,
     a.`rm_code`,
     a.`item_desc`,
-    a.`item_qty`,
+    (a.`item_qty` * b.`total_pack`) item_qty,
     a.`item_uom`,
     a.`item_tcost`
     FROM
@@ -278,7 +278,7 @@ foreach ($q3->getResult() as $row) {
         $pdf->Cell(25, 5, $fg_code, $border, 0, 'C');
         $pdf->Cell(25, 5, $rm_code, 1, 0, 'C');
         $pdf->Cell(80, 5, $item_desc, 1, 0, 'C');
-        $pdf->Cell(25, 5, $item_qty, 1, 0, 'C');
+        $pdf->Cell(25, 5, number_format($item_qty,2), 1, 0, 'C');
         $pdf->Cell(25, 5, $item_uom, 1, 0, 'C');
         $pdf->Cell(25, 5, $item_tcost, 1, 1, 'C');
             
@@ -322,7 +322,7 @@ foreach ($q3->getResult() as $row) {
         $pdf->Cell(25, 5, $fg_code, $border, 0, 'C');
         $pdf->Cell(25, 5, $rm_code, 1, 0, 'C');
         $pdf->Cell(80, 5, $item_desc, 1, 0, 'C');
-        $pdf->Cell(25, 5, $item_qty, 1, 0, 'C');
+        $pdf->Cell(25, 5, number_format($item_qty,2), 1, 0, 'C');
         $pdf->Cell(25, 5, $item_uom, 1, 0, 'C');
         $pdf->Cell(25, 5, $item_tcost, 1, 1, 'C');;
 

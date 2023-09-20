@@ -56,7 +56,7 @@ $cuserrema = $mylibzdb->mysys_userrema();
 									<td nowrap="nowrap"><?=$row['mat_code'];?></td>
 									<td nowrap="nowrap"><?=$row['ART_DESC'];?></td>
 									<td nowrap="nowrap"><?=$row['ART_UPRICE'];?></td>
-									<td nowrap="nowrap"><?=$row['ART_UCOST'];?></td>
+									<td nowrap="nowrap"><?=$row['qty_perpack'];?></td>
 									<td nowrap="nowrap"><?=$row['ART_SKU'];?></td>
 								</tr>
 								<?php 

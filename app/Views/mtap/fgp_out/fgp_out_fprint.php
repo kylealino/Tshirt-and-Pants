@@ -311,6 +311,7 @@ foreach($q1->getResultArray() as $row){
 			b.`tpa_trxno`,
 			b.`fgreq_trxno`,
 			(b.`qty_perpack` * b.`req_pack`) AS QTY,
+			a.`box_count` box_total_count,
 			c.`ART_UOM` AS UNIT,
 			c.`ART_BARCODE1` AS BARCODE,
 			b.`mat_code` AS STOCK_NUMBER,
@@ -330,8 +331,12 @@ foreach($q1->getResultArray() as $row){
 			mst_article c
 		ON
 			b.`mat_code` = c.`ART_CODE`
+		JOIN
+			warehouse_shipdoc_dt d
+		ON
+			b.`fgreq_trxno` = d.`trx`
 		WHERE
-			a.`tpa_trxno` = '$tpa_trxno' AND b.`fgreq_trxno` = '$fgpr'
+			a.`tpa_trxno` = '$tpa_trxno' AND b.`fgreq_trxno` = '$fgpr' AND d.`is_out` = '1'
 		GROUP BY 
 			b.`mat_code`, b.`fgreq_trxno`
 		ORDER BY 
@@ -355,6 +360,7 @@ foreach($q1->getResultArray() as $row){
 		$UNIT_PRICE = $row['UNIT_PRICE'];
 		$AMOUNT = $row['AMOUNT'];
 		$BOX_QTY2 = $row['BOX_QTY2'];
+		$BOX_TOTAL_COUNT = $row['box_total_count'];
 		$TAMOUNT +=$AMOUNT;
 
 
@@ -377,11 +383,11 @@ foreach($q1->getResultArray() as $row){
 			$pdf->SetFont('Dot','',8);
 			$pdf->Cell(60,5,$DESCRIPTION,1,0,'L');
 			$pdf->SetFont('Dot','',10);
-			$pdf->Cell(11,5,$total_box_qty,$border,0,'C'); 
+			$pdf->Cell(11,5,$BOX_TOTAL_COUNT,$border,0,'C'); 
 			$pdf->Cell(12,5,number_format($QTY_PER_BOX,2),1,0,'C');
 			$pdf->Cell(15,5,$UNIT_PRICE,1,0,'C');
 			$pdf->Cell(15,5,number_format($AMOUNT,2),1,0,'C');
-			$pdf->Cell(11,5,$total_box_qty,$border,0,'C');
+			$pdf->Cell(11,5,$BOX_TOTAL_COUNT,$border,0,'C');
 		}else{
 			$pdf->SetFont('Dot','',10);
 			$pdf->SetXY(5,$Y);
