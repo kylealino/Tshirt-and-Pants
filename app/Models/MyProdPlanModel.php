@@ -16,6 +16,7 @@ class MyProdPlanModel extends Model
         parent::__construct();
         $this->mydbname = model('App\Models\MyDBNamesModel');
         $this->db_erp = $this->mydbname->medb(0);
+        $this->db_erpbrnch = $this->mydbname->medb(2);
         $this->mylibzdb = model('App\Models\MyLibzDBModel');
         $this->mylibzsys = model('App\Models\MyLibzSysModel');
         $this->mymelibzsys = model('App\Models\Mymelibsys_model');
@@ -203,7 +204,7 @@ class MyProdPlanModel extends Model
                 $tbltempsalesout = "`trx_{$branchFirstName}_salesout`";
     
                 $str="
-                    DROP TABLE IF EXISTS {$tblbrnchsalesout};
+                    DROP TABLE IF EXISTS {$tbltempsalesout};
                 ";
                 $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
     
@@ -216,19 +217,19 @@ class MyProdPlanModel extends Model
                 ";
                 $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
                 
+
                 $str="
-                    SHOW TABLES LIKE '$tblbrnchsalesout'
+                    INSERT INTO {$tbltempsalesout}
+                    SELECT * FROM {$tblsalesout} WHERE `SO_ITEMCODE` IN (SELECT `ART_CODE` FROM {$tbltemp})
                 ";
                 $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                $rw= $q->getRowArray();
 
-                if ($rw > 0) {
-                    $str="
-                        INSERT INTO {$tbltempsalesout}
-                        SELECT * FROM {$tblsalesout} WHERE `SO_ITEMCODE` IN (SELECT `ART_CODE` FROM {$tbltemp})
-                    ";
-                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                }
+                $str="
+                    INSERT INTO {$tbltempsalesout}
+                    SELECT * FROM {$tblbrnchsalesout} WHERE `SO_ITEMCODE` IN (SELECT `ART_CODE` FROM {$tbltemp})
+                ";
+                $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                
 
                 if ($date_range == '2022') {
                     $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
@@ -238,34 +239,17 @@ class MyProdPlanModel extends Model
                     $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }
     
-            }
-
-            $str="
-                SHOW TABLES LIKE '$tblbrnchsalesout'
-            ";
-            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-            $rw= $q->getRowArray();
-
-            if ($rw > 0) {
-                if ($date_range == '2022') {
-                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
-                }elseif ($date_range == '2021') {
-                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
-                }elseif ($date_range == '2020') {
-                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
-                }
             }else{
                 if ($date_range == '2022') {
-                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }elseif ($date_range == '2021') {
-                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }elseif ($date_range == '2020') {
-                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }
             }
-    
 
-    
+
             
             //get items
             $str_itm = "SELECT
@@ -295,7 +279,7 @@ class MyProdPlanModel extends Model
                         IF(`MTYPE` = 'PO-SU', `MQTY`, 0) +
                         IF(`MTYPE` = 'PO-OTHERS', `MQTY`, 0)
                     )
-                FROM {$tblstorebal} WHERE `ITEMC` = a.`ART_CODE`
+                FROM {$this->db_erpbrnch}.{$tblstorebal} WHERE `ITEMC` = a.`ART_CODE`
             ) < 0, 0, (
                 SELECT SUM(
                         (CASE
@@ -321,7 +305,7 @@ class MyProdPlanModel extends Model
                         IF(`MTYPE` = 'PO-SU', `MQTY`, 0) +
                         IF(`MTYPE` = 'PO-OTHERS', `MQTY`, 0)
                     )
-                FROM {$tblstorebal} WHERE `ITEMC` = a.`ART_CODE`
+                FROM {$this->db_erpbrnch}.{$tblstorebal} WHERE `ITEMC` = a.`ART_CODE`
             )) AS store_balance,
             IFNULL({$str_date_range}, 0) AS sales,
             (({$str_date_range}/12)*(13/12)) AS cap_target,

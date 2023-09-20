@@ -39,7 +39,7 @@ else{
 								<th>Plant</th>
 								<th>Variance</th>
 								<th>User</th>
-								<th>GR Date</th>
+								<th>Date</th>
 								<th>Upload</th>
 								<th><i class="bi bi-gear-fill"> </i></th>
 							</tr>
