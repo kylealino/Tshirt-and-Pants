@@ -33,7 +33,7 @@ $cuserrema = $mylibzdb->mysys_userrema();
                                  <th nowrap="nowrap">Item Code</th>
                                 <th nowrap="nowrap">Description</th>
                                 <th nowrap="nowrap">Price</th>
-								<th nowrap="nowrap">Cost</th>
+								<th nowrap="nowrap">Qty</th>
 								<th nowrap="nowrap">Per</th>
 							</tr>
 						</thead>

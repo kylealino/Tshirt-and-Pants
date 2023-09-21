@@ -16,10 +16,10 @@ $cuser          = $mylibzdb->mysys_user();
 $mpw_tkn        = $mylibzdb->mpw_tkn();
 
 $mtkn_whout = $request->getVar('mtkn_whout');
-$fgreq_trxno = $request->getVar('fgreq_trxno');
-$tpa_trxno = $request->getVar('tpa_trxno');
 $header = $request->getVar('header');
 $xrecid = 0;
+
+$str="";
 
 //get crpl data
 $str = "
@@ -76,8 +76,8 @@ $str = "
 		{$this->db_erp}.`mst_wshe` w
 	ON
 		b.`frm_wshe_id` = w.`recid`
-	WHERE
-	c.`trx` = '{$fgreq_trxno}'
+	WHERE 
+		c.`header` = '$header'
 ";
 $q = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
@@ -282,34 +282,45 @@ $TAMOUNT = 0;
 $item_num =1;
 $current_fg =1;
 
-//get total box qty
-$str="
-	SELECT barcde FROM fgp_inv_rcv WHERE tpa_trxno = '$tpa_trxno' 
-";
-$q1 = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-$req_pack = $q1->getNumRows();
+
 
 //pang kuha ng dalawang unique
 $str = "
-	SELECT fgreq_trxno FROM fgp_inv_rcv WHERE tpa_trxno = '$tpa_trxno' GROUP BY fgreq_trxno
+	SELECT 
+	a.`fgreq_trxno`,b.`tpa_trxno`,c.`header`
+	FROM 
+	fgp_inv_rcv a 
+	JOIN 
+	trx_fgpack_req_dt b 
+	ON 
+	a.`fgreq_trxno` = b.`fgreq_trxno` 
+	JOIN 
+	warehouse_shipdoc_dt c
+	ON
+	a.`fgreq_trxno` = c.`trx` 
+	WHERE
+	c.`header` = '$header'
+	GROUP BY fgreq_trxno
 ";
 
 $q1 = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 $count_item = $q->getNumRows();
 
-$total_box_qty = $req_pack/$count_item;
 
 $data_rows = array();
 
 //mismong total loop kung ilan yung unique = 2
 foreach($q1->getResultArray() as $row){
-	$fgpr = $row['fgreq_trxno'];
+	$fgreq_trxno = $row['fgreq_trxno'];
+	$tpa_trxno = $row['tpa_trxno'];
 	$count_rever=1;
+
 	$str="
 		SELECT
 			b.`tpa_trxno`,
 			b.`fgreq_trxno`,
 			(b.`qty_perpack` * b.`req_pack`) AS QTY,
+			(SELECT SUM(a.`box_count`) FROM fgp_inv_rcv WHERE stock_code = a.`stock_code` GROUP BY stock_code) total_box_count,
 			c.`ART_UOM` AS UNIT,
 			c.`ART_BARCODE1` AS BARCODE,
 			b.`mat_code` AS STOCK_NUMBER,
@@ -319,6 +330,7 @@ foreach($q1->getResultArray() as $row){
 			c.`ART_UPRICE` AS UNIT_PRICE,
 			((b.`qty_perpack` * b.`req_pack`) * c.`ART_UPRICE`) AS AMOUNT,
 			b.`req_pack` AS BOX_QTY2
+
 		FROM
 			fgp_inv_rcv a
 		JOIN
@@ -330,7 +342,7 @@ foreach($q1->getResultArray() as $row){
 		ON
 			b.`mat_code` = c.`ART_CODE`
 		WHERE
-			a.`tpa_trxno` = '$tpa_trxno' AND b.`fgreq_trxno` = '$fgpr'
+			a.`tpa_trxno` = '$tpa_trxno' AND b.`fgreq_trxno` = '$fgreq_trxno'
 		GROUP BY 
 			b.`mat_code`, b.`fgreq_trxno`
 		ORDER BY 
@@ -355,8 +367,9 @@ foreach($q1->getResultArray() as $row){
 		$UNIT_PRICE = $row['UNIT_PRICE'];
 		$AMOUNT = $row['AMOUNT'];
 		$BOX_QTY2 = $row['BOX_QTY2'];
-		$TAMOUNT +=$AMOUNT;
+		$total_box_count = $row['total_box_count'];
 
+		$TAMOUNT +=$AMOUNT;
 
 		if($item_count == $count_item){
 			$border = 'B,L,R';
@@ -377,11 +390,11 @@ foreach($q1->getResultArray() as $row){
 			$pdf->SetFont('Dot','',8);
 			$pdf->Cell(60,5,$DESCRIPTION,1,0,'L');
 			$pdf->SetFont('Dot','',10);
-			$pdf->Cell(11,5,$total_box_qty,$border,0,'C'); 
+			$pdf->Cell(11,5,$count_total,$border,0,'C'); 
 			$pdf->Cell(12,5,number_format($QTY_PER_BOX,2),1,0,'C');
 			$pdf->Cell(15,5,$UNIT_PRICE,1,0,'C');
 			$pdf->Cell(15,5,number_format($AMOUNT,2),1,0,'C');
-			$pdf->Cell(11,5,$total_box_qty,$border,0,'C');
+			$pdf->Cell(11,5,$count_total,$border,0,'C');
 		}else{
 			$pdf->SetFont('Dot','',10);
 			$pdf->SetXY(5,$Y);
@@ -542,7 +555,7 @@ $total_break_down_loc = $loc_box+$loc_sack+$loc_roll+$loc_bundle+$loc_plastic+$l
 	$pdf->SetXY(5,$Y);
 	$pdf->Cell(16,5,'HELPER\'S NAME: ',0,0,'L');
 	$pdf->SetXY(30,$Y);
-	$pdf->Cell(60,4,$helper_1.' / '.$helper_2,'B',0,'L');
+	$pdf->Cell(60,4,$helper_1.' / '.'$helper_2','B',0,'L');
 
 	$pdf->SetXY(110,$Y);
 	$pdf->Cell(16,5,'REF NO.: ',0,0,'L');
@@ -612,12 +625,12 @@ $total_break_down_loc = $loc_box+$loc_sack+$loc_roll+$loc_bundle+$loc_plastic+$l
 	$pdf->SetFont('Dot','',10);
 	$pdf->Cell(23,4,'LOCAL',1,0,'C');
 	$pdf->Cell(23,4,$loc_box,1,0,'C');
-	$pdf->Cell(23,4,$req_pack,1,0,'C');
+	$pdf->Cell(23,4,'',1,0,'C');
 	$pdf->Cell(23,4,$loc_roll,1,0,'C');
 	$pdf->Cell(23,4,$loc_bundle,1,0,'C');
 	$pdf->Cell(23,4,$loc_plastic,1,0,'C');
 	$pdf->Cell(23,4,$loc_pcs,1,0,'C');
-	$pdf->Cell(23,4,$req_pack,1,0,'C');
+	$pdf->Cell(23,4,'',1,0,'C');
 
 
 	//added
@@ -694,6 +707,6 @@ $total_break_down_loc = $loc_box+$loc_sack+$loc_roll+$loc_bundle+$loc_plastic+$l
 	$pdf->Cell(23,4,$total_bundle,1,0,'C');
 	$pdf->Cell(23,4,$total_plastic,1,0,'C');
 	$pdf->Cell(23,4,$total_pcs_breakdown,1,0,'C');
-	$pdf->Cell(23,4,$req_pack ,1,0,'C');
+	$pdf->Cell(23,4,'' ,1,0,'C');
 
 $pdf->output('','SHIPPING-DOC-'.$crpl_code);

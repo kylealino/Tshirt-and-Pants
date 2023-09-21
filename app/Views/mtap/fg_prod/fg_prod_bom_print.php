@@ -177,7 +177,7 @@ $pdf->SetFont('Dot','',10);
 
 $pdf->SetXY(5,10); 
 $pdf->SetFont('Dot','',15);
-$pdf->Cell(112,5,'GOLDENWING EMPIRE MARKETING CORPORATION',1,1,'L'); 
+$pdf->Cell(112,5,'GOLDENWIN EMPIRE MARKETING CORPORATION',1,1,'L'); 
 
 
 $pdf->SetFont('Arial','B',12);
