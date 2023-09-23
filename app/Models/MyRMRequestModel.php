@@ -24,6 +24,64 @@ class MyRMRequestModel extends Model
         $this->dbx = $this->mylibzdb->dbx;
         $this->request = \Config\Services::request();
     }
+
+    public function rm_req_process_view(){
+        $cuser            = $this->mylibzdb->mysys_user();
+        $mpw_tkn          = $this->mylibzdb->mpw_tkn();
+        $mencd_date       = date("Y-m-d");
+        $rmap_trxno = $this->request->getVar('rmap_trxno');
+        $mtkn_mntr = $this->request->getVar('mtkn_mntr');
+        $active_plnt_id = $this->request->getVar('active_plnt_id');
+        $txt_request_date = $this->request->getVar('txt_request_date');
+        $txt_total_qty = $this->request->getVar('txt_total_qty');
+        $txt_total_amount = $this->request->getVar('txt_total_amount');
+        $remarks = $this->request->getVar('remarks');
+        $adata1 = $this->request->getVar('adata1');
+        $adata2 = $this->request->getVar('adata2');
+
+
+        if(count($adata1) > 0) { 
+            $ame = array();
+            $adatar1 = array();
+            $adatar2 = array();
+            $ntqty = 0;
+            $ntamt = 0;
+
+            for($aa = 0; $aa < count($adata1); $aa++) { 
+                $medata = explode("x|x",$adata1[$aa]);
+                $cmat_code = trim($medata[0]);
+                $mat_mtkn = $adata2[$aa];
+
+                $nqty = trim($medata[2]);
+                $mremks = $medata[3];
+
+                array_push($adatar1,$medata);
+
+            }  //end for 
+
+            if(count($adatar1) > 0) { 
+  
+                for($xx = 0; $xx < count($adatar1); $xx++) { 
+                    
+                    $xdata = $adatar1[$xx];
+                    $cmat_code = $xdata[0];
+                    
+                    $strqry = "
+                        SELECT `ART_CODE`, `ART_DESC`
+                        FROM 
+                        mst_article
+                        WHERE `ART_CODE` = '$cmat_code'
+                    ";
+                    $q = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                }  
+                        
+            } 
+        } 
+
+        $data['rlistP'] = $q->getResultArray();
+        return $data;
+
+    }
     
     public function rm_req_entry_save() {
 

@@ -313,6 +313,7 @@ $routes->post('rm-req-items','Rm_request::rm_req_itm_recs',['filter' => 'myauthu
 $routes->add('rm-req-recs', 'Rm_request::rm_req_recs',['filter' => 'myauthuser']);
 $routes->get('rm-req-bom-print','Rm_request::rm_req_bom_print',['filter' => 'myauthuser']);
 $routes->get('search-rmap-subcon','Rm_request::search_rmap_subcon',['filter' => 'myauthuser']);
+$routes->add('me-rm-req-process', 'Rm_request::rm_req_process',['filter' => 'myauthuser']);
 
 //Alloc entry
 $routes->get('me-tp-alloc-vw','Allocation::index',['filter' => 'myauthuser']);

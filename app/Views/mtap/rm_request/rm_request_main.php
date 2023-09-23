@@ -233,20 +233,18 @@ $remarks = $rw['remarks'];
                 </div>
               </div>
             </div>
-            
             <div class="row gy-2 mb-3">
-              <?php if(!empty($rmap_trxno)): ?>
               <div class="col-sm-4">
-                <button id="mbtn_mn_Save" type="submit" class="btn btn-dgreen btn-sm" disabled>Posted</button>
-                <!-- <button id="mbtn_mn_NTRX" type="button" class="btn btn-primary btn-sm">New Trx</button> -->
+                <button id="mbtn_mn_Process" type="submit" class="btn btn-dgreen btn-sm">Process RM</button>
               </div>
-              <?php else:?>
-              <div class="col-sm-4">
-                <button id="mbtn_mn_Save" type="submit" class="btn btn-dgreen btn-sm">Save</button>
-                <button id="mbtn_mn_NTRX" type="button" class="btn btn-primary btn-sm">New Entry</button>
-              </div>
-              <?php endif;?>
-            </div> <!-- end Save Records -->
+              <div id="rmlist" class="text-center p-2 rounded-3  mt-3 border-dotted bg-light p-4 ">
+                    <?php
+                       // $data = $mytrxfgpack->purch_rec_view(1,20);
+                       // echo view('mtap/trx-fg-packing-order-recs',$data);
+                    ?>
+                </div> 
+    
+            </div>
             <?=form_close();?> <!-- end of ./form -->
             </div> <!-- end card-body -->
           </div>
@@ -695,6 +693,67 @@ $remarks = $rw['remarks'];
       alert(mtxt);
     }  //end try
     return false; 
+  });
+
+  __mysys_apps.mepreloader('mepreloaderme',false);
+
+  $("#mbtn_mn_Process").click(function(e){
+
+    var ajaxRequest;
+
+    var mtkn_mntr = jQuery('#__hmpacktrxnoid').val();
+    var rmap_trxno = jQuery('#rmap_trxno').val();
+    var active_plnt_id = jQuery('#active_plnt_id').val();
+    var txt_request_date = jQuery('#txt_request_date').val();
+    var txt_total_qty = jQuery('#txt_total_qty').val();
+    var remarks = jQuery('#remarks').val();
+    var rowCount1 = jQuery('#tbl-fgpack tr').length - 1;
+    var adata1 = [];
+    var adata2 = [];
+
+    var mdata = '';
+    var ninc = 0;
+
+    for(aa = 1; aa < rowCount1; aa++) { 
+          var clonedRow = jQuery('#tbl-fgpack tr:eq(' + aa + ')').clone(); 
+          var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); //ITEM CODE
+          var mdesc = jQuery(clonedRow).find('input[type=text]').eq(1).val(); //UOM
+          var mqty = jQuery(clonedRow).find('input[type=text]').eq(2).val(); //QTY
+          var mremks = jQuery(clonedRow).find('input[type=text]').eq(3).val(); //STEXT
+          var mamount = jQuery(clonedRow).find('input[type=text]').eq(3).val(); //STEXT
+          var mitemc_tkn = jQuery(clonedRow).find('input[type=hidden]').eq(1).val(); 
+          
+          mdata = mitemc + 'x|x' + mdesc + 'x|x' + mqty + 'x|x' + mremks + 'x|x' + mamount + 'x|x' + mitemc_tkn;
+          adata1.push(mdata);
+          var mdat = jQuery(clonedRow).find('input[type=hidden]').eq(0).val();
+          adata2.push(mdat);
+
+
+      }  //end for
+
+    var mparam = {
+      mtkn_mntr:mtkn_mntr,
+      rmap_trxno:rmap_trxno,
+      remarks:remarks,
+      active_plnt_id: active_plnt_id,
+      txt_request_date:txt_request_date,
+      txt_total_qty: txt_total_qty,
+      adata1: adata1,
+      adata2: adata2
+    };  
+
+    ajaxRequest = jQuery.ajax({
+        url: "<?=site_url();?>me-rm-req-process",
+        type: "post",
+        data: eval(mparam)
+    });
+
+    // Deal with the results of the above ajax call
+    __mysys_apps.mepreloader('mepreloaderme',true);
+      ajaxRequest.done(function(response, textStatus, jqXHR) {
+          jQuery('#rmlist').html(response);
+          __mysys_apps.mepreloader('mepreloaderme',false);
+      });
   });
 
   __mysys_apps.mepreloader('mepreloaderme',false);
