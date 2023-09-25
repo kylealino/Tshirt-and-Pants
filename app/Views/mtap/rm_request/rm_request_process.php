@@ -184,9 +184,11 @@ $("#mbtn_mn_Save").click(function(e){
 			var clonedRow = jQuery('#tbl-process-recs tr:eq(' + aa + ')').clone(); 
 			var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); //ITEM CODE
 			var mdesc = jQuery(clonedRow).find('input[type=text]').eq(1).val(); //UOM
+			var mqty = jQuery(clonedRow).find('input[type=text]').eq(2).val(); //UOM
+			var minv = jQuery(clonedRow).find('input[type=text]').eq(3).val(); //UOM
 
 			
-			mdata = mitemc + 'x|x' + mdesc;
+			mdata = mitemc + 'x|x' + mdesc + 'x|x' + mqty + 'x|x' + minv;
 			adata1.push(mdata);
 
 		}

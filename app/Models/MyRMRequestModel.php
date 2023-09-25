@@ -137,8 +137,57 @@ class MyRMRequestModel extends Model
 
     public function rm_req_process_save(){
         $adata1 = $this->request->getVar('adata1');
-        var_dump($adata1);
+
+        if(count($adata1) > 0) { 
+
+            $adatar1 = array();
+
+            for($aa = 0; $aa < count($adata1); $aa++) { 
+                $medata = explode("x|x",$adata1[$aa]);
+
+                array_push($adatar1,$medata);
+
+            }
+
+            if(count($adatar1) > 0) { 
+  
+                for($xx = 0; $xx < count($adatar1); $xx++) { 
+                    
+                    $xdata = $adatar1[$xx];
+                    $mitemc = $xdata[0];
+                    $mqty = $xdata[2];
+                    $minv = $xdata[3];
+
+                    if ($minv < $mqty) {
+                        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks Unvailable! </div>";
+                        die();
+                    }
+                    
+                }  
+                        
+            } 
+        } 
+
+        echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Recorded Successfully! </div>
+        <script type=\"text/javascript\"> 
+            function __fg_refresh_data() { 
+                try { 
+                    
+                    jQuery('#mbtn_mn_Save').prop('disabled',true);
+                } catch(err) { 
+                    var mtxt = 'There was an error on this page.\\n';
+                    mtxt += 'Error description: ' + err.message;
+                    mtxt += '\\nClick OK to continue.';
+                    alert(mtxt);
+                    return false;
+                }  //end try 
+            } 
+            
+            __fg_refresh_data();
+        </script>
+        ";
         die();
+        
     }
     
     public function rm_req_entry_save() {
