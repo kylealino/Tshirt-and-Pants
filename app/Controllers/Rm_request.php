@@ -55,7 +55,13 @@ class Rm_request extends BaseController
         $data = $this->mytrxrmreq->rm_req_process_view(1,90);
         return view('mtap/rm_request/rm_request_process',$data);
 
-    } //end rm_req_vw
+    } //end rm_req_process
+
+	public function rm_req_process_save() { 
+
+        $this->mytrxrmreq->rm_req_process_save();
+
+    } //end rm_req_process_save
 
 	public function mat_article_fgpo(){
 		$cuser   = $this->mylibzdb->mysys_user();

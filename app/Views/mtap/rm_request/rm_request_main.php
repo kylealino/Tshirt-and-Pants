@@ -66,7 +66,6 @@ $remarks = $rw['remarks'];
                 <h3 class="h4 mb-0"> <i class="bi bi-pencil-square"></i> RMAP Request</h3>
             </div>
           <div class="card-body">
-            <?=form_open('me-fg-packing-save','class="needs-validation" id="myfrms_customer" ');?>
             <div class="row">
               <div class="col-lg-6">
                 <div class="row mb-3">
@@ -79,13 +78,13 @@ $remarks = $rw['remarks'];
                   <div class="row gy-2 mb-3">
                       <label class="col-sm-3 form-label" for="active_plnt_id">Plant:</label>
                       <div class="col-sm-9">
-                          <input type="text" data-id-plant="?=$mtkn_active_plnt_id;?>" id="active_plnt_id" name="active_plnt_id" class="active_plnt_id form-control form-control-sm " value="<?=$plnt_id;?>" required/>
+                          <input type="text" data-id-plant="?=$mtkn_active_plnt_id;?>" id="active_plnt_id" name="active_plnt_id" class="active_plnt_id form-control form-control-sm " value="<?=$plnt_id;?>"/>
                       </div>
                   </div> 
                   <div class="row gy-2 mb-3">
                       <label class="col-sm-3 form-label" for="txt_subcon">Subcon:</label>
                       <div class="col-sm-9">
-                          <input type="text" id="txt_subcon" name="txt_subcon" class="txt_subcon form-control form-control-sm "  required/>
+                          <input type="text" id="txt_subcon" name="txt_subcon" class="txt_subcon form-control form-control-sm " />
                       </div>
                   </div> 
                   <div class="row gy-2 mb-3">
@@ -245,7 +244,6 @@ $remarks = $rw['remarks'];
                 </div> 
     
             </div>
-            <?=form_close();?> <!-- end of ./form -->
             </div> <!-- end card-body -->
           </div>
 
@@ -755,8 +753,6 @@ $remarks = $rw['remarks'];
           __mysys_apps.mepreloader('mepreloaderme',false);
       });
   });
-
-  __mysys_apps.mepreloader('mepreloaderme',false);
 
 $('#anchor-list').on('click',function(){
     $('#anchor-list').addClass('active');

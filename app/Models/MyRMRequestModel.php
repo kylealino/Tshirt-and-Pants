@@ -38,6 +38,26 @@ class MyRMRequestModel extends Model
         $remarks = $this->request->getVar('remarks');
         $adata1 = $this->request->getVar('adata1');
         $adata2 = $this->request->getVar('adata2');
+        $tbltemp   = $this->db_erp . ".`rmap_temp`";
+
+        if (empty($adata1)) {
+            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> No Items Detected! </div>";
+            die();
+        }
+
+        $str="DROP TABLE IF EXISTS {$tbltemp}";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        $str = "
+        CREATE TABLE IF NOT EXISTS {$tbltemp} ( 
+        `recid` int(25) NOT NULL AUTO_INCREMENT,
+        FG_CODE varchar(35) default '',
+        FG_QTY varchar(15) default '',
+        PRIMARY KEY (`recid`)
+        )
+
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
 
         if(count($adata1) > 0) { 
@@ -64,23 +84,61 @@ class MyRMRequestModel extends Model
                 for($xx = 0; $xx < count($adatar1); $xx++) { 
                     
                     $xdata = $adatar1[$xx];
-                    $cmat_code = $xdata[0];
+                    $mat_code = $xdata[0];
+                    $qty = $xdata[2];
+
+                    if (empty($mat_code)) {
+                        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Please process without null rows! </div>";
+                        die();
+                    }
                     
                     $strqry = "
-                        SELECT `ART_CODE`, `ART_DESC`
-                        FROM 
-                        mst_article
-                        WHERE `ART_CODE` = '$cmat_code'
+                        INSERT INTO {$tbltemp}(FG_CODE,FG_QTY) VALUES('$mat_code','$qty');
                     ";
                     $q = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+
                 }  
                         
             } 
         } 
 
-        $data['rlistP'] = $q->getResultArray();
+        $str="
+        SELECT
+        b.`rm_code` RM_CODE,
+        SUM(a.`FG_QTY` * b.`item_qty`) RM_QTY,
+        (SELECT po_qty FROM rm_inv_rcv WHERE mat_code = b.`rm_code`) AS RM_INV,
+        c.`ART_DESC` RM_DESC
+        FROM
+        rmap_temp a
+        JOIN
+        mst_item_comp2 b
+        ON
+        a.`FG_CODE` = b.`fg_code`
+        JOIN
+        mst_article c
+        ON
+        b.`rm_code` = c.`ART_CODE`
+        GROUP BY 
+        b.`rm_code`
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        if($q->getNumRows() > 0) { 
+         $data['rlistP'] = $q->getResultArray();
+         
+        } else { 
+         $data = array();
+         $data['rlistP'] = '';
+        }
         return $data;
 
+    }
+
+    public function rm_req_process_save(){
+        $adata1 = $this->request->getVar('adata1');
+        var_dump($adata1);
+        die();
     }
     
     public function rm_req_entry_save() {
