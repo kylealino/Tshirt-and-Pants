@@ -14,6 +14,10 @@ $mytrxfgpack = model('App\Models\MyFGPackingModel');
 
 $cuser = $mylibzdb->mysys_user();
 $mpw_tkn = $mylibzdb->mpw_tkn();
+$txt_plant = $request->getVar('txt_plant');
+$txt_subcon = $request->getVar('txt_subcon');
+$txt_remarks = $request->getVar('txt_remarks');
+$txt_request_date = $request->getVar('txt_request_date');
 
 ?>
 <style>
@@ -25,6 +29,43 @@ thead.memetable, th.memetable, td.memetable {
   padding: 6px;
 }
 </style>
+	<input type="hidden" name="txt_plant" id="txt_plant" value="<?=$txt_plant;?>">
+	<input type="hidden" name="txt_subcon" id="txt_subcon" value="<?=$txt_subcon;?>">
+	<input type="hidden" name="txt_remarks" id="txt_remarks" value="<?=$txt_remarks;?>">
+	<input type="hidden" name="txt_request_date" id="txt_request_date" value="<?=$txt_request_date;?>">
+	<div class="table-responsive">
+		<div class="col-md-12 col-md-12 col-md-12">
+			<table class="table table-condensed table-hover table-bordered table-sm text-center" id="tbl-process-recs-fg">
+				<thead>
+					<tr>
+						<th>FG CODE</th>
+						<th>FG QTY</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+					if(!empty($rlistP2)):
+						$nn = 1;
+						foreach($rlistP2 as $row): 
+						?>
+						<tr>
+							<td nowrap><input type="text" class="text-center rounded" name="FG_CODE" id="FG_CODE" value="<?=$row['FG_CODE'];?>" readonly></td>
+							<td nowrap><input type="text" class="text-center rounded" name="FG_QTY" id="FG_QTY" value="<?=$row['FG_QTY'];?>" readonly></td>
+						</tr>
+						<?php 
+						$nn++;
+						endforeach;
+					else:
+						?>
+						<tr>
+							<td colspan="18">No data was found.</td>
+						</tr>
+					<?php 
+					endif; ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
 	<div class="table-responsive">
 		<div class="col-md-12 col-md-12 col-md-12">
 			<table class="table table-condensed table-hover table-bordered table-sm text-center" id="tbl-process-recs">
@@ -38,14 +79,14 @@ thead.memetable, th.memetable, td.memetable {
 				</thead>
 				<tbody>
 					<?php 
-					if($rlistP !== ''):
+					if(!empty($rlistP)):
 						$nn = 1;
 						foreach($rlistP as $row): 
 						?>
 						<tr>
 							<td nowrap><input type="text" class="text-center rounded" name="RM_CODE" id="RM_CODE" value="<?=$row['RM_CODE'];?>" readonly></td>
 							<td nowrap><input type="text" class="text-center rounded" name="RM_DESC" id="RM_DESC" value="<?=$row['RM_DESC'];?>" readonly></td>
-							<td nowrap><input type="text" class="text-center rounded" name="RM_QTY" id="RM_QTY" value="<?=number_format($row['RM_QTY'],2);?>" readonly></td>
+							<td nowrap><input type="text" class="text-center rounded" name="RM_QTY" id="RM_QTY" value="<?=$row['RM_QTY'];?>" readonly></td>
 							<td nowrap><input type="text" class="text-center rounded" name="RM_INV" id="RM_INV" value="<?=number_format($row['RM_INV'],2);?>" readonly></td>
 						</tr>
 						<?php 
@@ -67,6 +108,7 @@ thead.memetable, th.memetable, td.memetable {
 	
 	<div class="col-sm-4">
 		<button id="mbtn_mn_Save" type="submit" class="btn btn-dgreen btn-sm">Save</button>
+		<?=anchor('me-rm-req-vw', '<i class="bi bi-arrow-repeat"></i>',' class="btn btn-dgreen-ol btn-sm" ');?>
     </div>
 	<?php
     echo $mylibzsys->memsgbox1('memsgtestent_danger','<i class="bi bi-exclamation-circle"></i> System Alert','...','bg-pdanger');
@@ -167,13 +209,11 @@ try {
 $("#mbtn_mn_Save").click(function(e){
     try { 
 
-          var prod_plan_trxno = jQuery('#prod_plan_trxno').val();
-          var branch_name = jQuery('#branch_name').val();
-          var opt_df = jQuery('#opt_df').val();
-          var txt_request_date = jQuery('#txt_request_date').val();
-          var txt_total_qty = jQuery('#txt_total_qty').val();
-		  var txt_qty_serve = jQuery('#txt_qty_serve').val();
-          var txt_amount_serve = jQuery('#txt_amount_serve').val();
+
+          var txt_plant = jQuery('#txt_plant').val();
+		  var txt_subcon = jQuery('#txt_subcon').val();
+		  var txt_remarks = jQuery('#txt_remarks').val();
+		  var txt_request_date = jQuery('#txt_request_date').val();
 
           var rowCount1 = jQuery('#tbl-process-recs tr').length;
           var adata1 = [];
@@ -194,7 +234,11 @@ $("#mbtn_mn_Save").click(function(e){
 		}
 
 		var mparam = {
-		adata1: adata1
+			txt_plant:txt_plant,
+			txt_subcon:txt_subcon,
+			txt_remarks:txt_remarks,
+			txt_request_date:txt_request_date,
+			adata1: adata1
 		};  
 
 

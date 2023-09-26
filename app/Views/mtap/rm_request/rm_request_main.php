@@ -76,9 +76,9 @@ $remarks = $rw['remarks'];
                       </div>
                   </div> 
                   <div class="row gy-2 mb-3">
-                      <label class="col-sm-3 form-label" for="active_plnt_id">Plant:</label>
+                      <label class="col-sm-3 form-label" for="txt_plant">Plant:</label>
                       <div class="col-sm-9">
-                          <input type="text" data-id-plant="?=$mtkn_active_plnt_id;?>" id="active_plnt_id" name="active_plnt_id" class="active_plnt_id form-control form-control-sm " value="<?=$plnt_id;?>"/>
+                          <input type="text" id="txt_plant" name="txt_plant" class="txt_plant form-control form-control-sm " value="<?=$plnt_id;?>"/>
                       </div>
                   </div> 
                   <div class="row gy-2 mb-3">
@@ -88,9 +88,9 @@ $remarks = $rw['remarks'];
                       </div>
                   </div> 
                   <div class="row gy-2 mb-3">
-                    <label class="col-sm-3 form-label" for="remarks">Remarks:</label>
+                    <label class="col-sm-3 form-label" for="txt_remarks">Remarks:</label>
                     <div class="col-sm-9">
-                    <input type="text" id="remarks" name="remarks" class="form-control form-control-sm" value="<?=$remarks;?>" />
+                    <input type="text" id="txt_remarks" name="txt_remarks" class="form-control form-control-sm" value="<?=$remarks;?>" />
                     </div>
                 </div>
                </div>
@@ -235,12 +235,10 @@ $remarks = $rw['remarks'];
             <div class="row gy-2 mb-3">
               <div class="col-sm-4">
                 <button id="mbtn_mn_Process" type="submit" class="btn btn-dgreen btn-sm">Process RM</button>
+                <?=anchor('me-rm-req-vw', '<i class="bi bi-arrow-repeat"></i>',' class="btn btn-dgreen-ol btn-sm" ');?>
               </div>
               <div id="rmlist" class="text-center p-2 rounded-3  mt-3 border-dotted bg-light p-4 ">
-                    <?php
-                       // $data = $mytrxfgpack->purch_rec_view(1,20);
-                       // echo view('mtap/trx-fg-packing-order-recs',$data);
-                    ?>
+                  <h5><i class="bi bi-info-circle-fill text-dgreen"></i> Bill of Materials will display here upon processing...</h5> 
                 </div> 
     
             </div>
@@ -298,7 +296,7 @@ $remarks = $rw['remarks'];
     });
     
     
-    jQuery('.active_plnt_id')
+    jQuery('.txt_plant')
         // don't navigate away from the field on tab when selecting an item
             .bind( 'keydown', function( event ) {
                 if ( event.keyCode === jQuery.ui.keyCode.TAB &&
@@ -320,8 +318,8 @@ $remarks = $rw['remarks'];
             select: function( event, ui ) {
                 var terms = ui.item.value;
                 
-                jQuery('#active_plnt_id').val(terms);
-                jQuery('#active_plnt_id').attr("data-id-plant",ui.item.mtkn_rid);
+                jQuery('#txt_plant').val(terms);
+                jQuery('#txt_plant').attr("data-id-plant",ui.item.mtkn_rid);
 
                 jQuery(this).autocomplete('search', jQuery.trim(terms));
                 
@@ -355,7 +353,7 @@ $remarks = $rw['remarks'];
             },
             search: function(oEvent, oUi) {
                 var sValue = jQuery(oEvent.target).val();
-                var mtkn_plnt = jQuery('#active_plnt_id').attr("data-id-plant");
+                var mtkn_plnt = jQuery('#txt_plant').attr("data-id-plant");
                 jQuery(this).autocomplete('option', 'source', '<?=site_url();?>get-warehouse-list/?mtkn_plnt=' + mtkn_plnt); 
                 
                
@@ -623,7 +621,7 @@ $remarks = $rw['remarks'];
           //__mysys_apps.mepreloader('mepreloaderme',true);
           var mtkn_mntr = jQuery('#__hmpacktrxnoid').val();
           var rmap_trxno = jQuery('#rmap_trxno').val();
-          var active_plnt_id = jQuery('#active_plnt_id').val();
+          var txt_plant = jQuery('#txt_plant').val();
           var txt_request_date = jQuery('#txt_request_date').val();
           var txt_total_qty = jQuery('#txt_total_qty').val();
           var remarks = jQuery('#remarks').val();
@@ -655,7 +653,7 @@ $remarks = $rw['remarks'];
             mtkn_mntr:mtkn_mntr,
             rmap_trxno:rmap_trxno,
             remarks:remarks,
-            active_plnt_id: active_plnt_id,
+            txt_plant: txt_plant,
             txt_request_date:txt_request_date,
             txt_total_qty: txt_total_qty,
             adata1: adata1,
@@ -701,10 +699,12 @@ $remarks = $rw['remarks'];
 
     var mtkn_mntr = jQuery('#__hmpacktrxnoid').val();
     var rmap_trxno = jQuery('#rmap_trxno').val();
-    var active_plnt_id = jQuery('#active_plnt_id').val();
+    var txt_plant = jQuery('#txt_plant').val();
+    var txt_subcon = jQuery('#txt_subcon').val();
+    var txt_remarks = jQuery('#txt_remarks').val();
     var txt_request_date = jQuery('#txt_request_date').val();
     var txt_total_qty = jQuery('#txt_total_qty').val();
-    var remarks = jQuery('#remarks').val();
+    
     var rowCount1 = jQuery('#tbl-fgpack tr').length - 1;
     var adata1 = [];
     var adata2 = [];
@@ -732,8 +732,9 @@ $remarks = $rw['remarks'];
     var mparam = {
       mtkn_mntr:mtkn_mntr,
       rmap_trxno:rmap_trxno,
-      remarks:remarks,
-      active_plnt_id: active_plnt_id,
+      txt_remarks:txt_remarks,
+      txt_plant: txt_plant,
+      txt_subcon:txt_subcon,
       txt_request_date:txt_request_date,
       txt_total_qty: txt_total_qty,
       adata1: adata1,

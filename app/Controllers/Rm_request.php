@@ -53,7 +53,10 @@ class Rm_request extends BaseController
 	public function rm_req_process() { 
 
         $data = $this->mytrxrmreq->rm_req_process_view(1,90);
-        return view('mtap/rm_request/rm_request_process',$data);
+		return view('mtap/rm_request/rm_request_process', [
+			'rlistP' => $data['data']['rlistP'], 
+			'rlistP2' => $data['data2']['rlistP2'],
+		]);
 
     } //end rm_req_process
 

@@ -31,11 +31,12 @@ class MyRMRequestModel extends Model
         $mencd_date       = date("Y-m-d");
         $rmap_trxno = $this->request->getVar('rmap_trxno');
         $mtkn_mntr = $this->request->getVar('mtkn_mntr');
-        $active_plnt_id = $this->request->getVar('active_plnt_id');
+        $txt_plant = $this->request->getVar('txt_plant');
+        $txt_subcon = $this->request->getVar('txt_subcon');
         $txt_request_date = $this->request->getVar('txt_request_date');
         $txt_total_qty = $this->request->getVar('txt_total_qty');
         $txt_total_amount = $this->request->getVar('txt_total_amount');
-        $remarks = $this->request->getVar('remarks');
+        $txt_remarks = $this->request->getVar('txt_remarks');
         $adata1 = $this->request->getVar('adata1');
         $adata2 = $this->request->getVar('adata2');
         $tbltemp   = $this->db_erp . ".`rmap_temp`";
@@ -131,12 +132,60 @@ class MyRMRequestModel extends Model
          $data = array();
          $data['rlistP'] = '';
         }
-        return $data;
+
+
+        $str="
+            SELECT
+                `FG_CODE` FG_CODE,
+                `FG_QTY` FG_QTY
+            FROM
+                rmap_temp
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        if($q->getNumRows() > 0) { 
+            $data2['rlistP2'] = $q->getResultArray();
+            
+           } else { 
+            $data2 = array();
+            $data2['rlistP2'] = '';
+           }
+
+        return array('data'=> $data,'data2'=>$data2);
 
     }
 
     public function rm_req_process_save(){
+    
         $adata1 = $this->request->getVar('adata1');
+        $txt_plant = $this->request->getVar('txt_plant');
+        $txt_subcon = $this->request->getVar('txt_subcon');
+        $txt_remarks = $this->request->getVar('txt_remarks');
+        $txt_request_date = $this->request->getVar('txt_request_date');
+        $cseqn =  $this->mydataz->get_ctr_new_dr('RMAP','',$this->db_erp,'CTRL_GWFGPA');
+
+        if (empty($txt_plant)) {
+            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Plant is required!</div>";
+            die();
+        }
+        if (empty($txt_subcon)) {
+            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Subcon is required!</div>";
+            die();
+        }
+        $tbltemp   = $this->db_erp . ".`rmap_temp_save`";
+
+        $str="DROP TABLE {$tbltemp}";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        $str = "
+        CREATE TABLE IF NOT EXISTS {$tbltemp} ( 
+        `recid` int(25) NOT NULL AUTO_INCREMENT,
+        RM_CODE varchar(35) default '',
+        RM_QTY int(25),
+        PRIMARY KEY (`recid`)
+        )
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
         if(count($adata1) > 0) { 
 
@@ -156,24 +205,46 @@ class MyRMRequestModel extends Model
                     $xdata = $adatar1[$xx];
                     $mitemc = $xdata[0];
                     $mqty = $xdata[2];
-                    $minv = $xdata[3];
 
-                    if ($minv < $mqty) {
-                        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks Unvailable! </div>";
-                        die();
-                    }
-                    
+                    $strqry = "
+                        INSERT INTO {$tbltemp}(`RM_CODE`,`RM_QTY`) VALUES('$mitemc','$mqty');
+                    ";
+                    $q = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
                 }  
                         
             } 
-        } 
+        }
+        
+        $str="
+            SELECT 
+            a.`RM_CODE`,
+            a.`RM_QTY`,
+            (SELECT po_qty FROM rm_inv_rcv WHERE mat_code = a.`RM_CODE`) AS RM_INV
+            FROM 
+            {$tbltemp} a
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+        $rw = $q->getResultArray();
+        foreach ($rw as $data) {
+            $RM_CODE = $data['RM_CODE'];
+            $RM_QTY = $data['RM_QTY'];
+            $RM_INV = $data['RM_INV'];
+            
+            if ($RM_INV < $RM_QTY) {
+                echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks Unvailable! [$RM_CODE] [$RM_QTY] [$RM_INV] </div>";
+                die();
+            }
+    
+        }
 
         echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Recorded Successfully! </div>
         <script type=\"text/javascript\"> 
             function __fg_refresh_data() { 
                 try { 
-                    
+                    $('#rmap_trxno').val('{$cseqn}');
                     jQuery('#mbtn_mn_Save').prop('disabled',true);
+                    jQuery('#mbtn_mn_Process').prop('disabled',true);
                 } catch(err) { 
                     var mtxt = 'There was an error on this page.\\n';
                     mtxt += 'Error description: ' + err.message;
