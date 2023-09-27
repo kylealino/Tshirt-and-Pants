@@ -18,6 +18,7 @@ $txt_plant = $request->getVar('txt_plant');
 $txt_subcon = $request->getVar('txt_subcon');
 $txt_remarks = $request->getVar('txt_remarks');
 $txt_request_date = $request->getVar('txt_request_date');
+$txt_total_qty = $request->getVar('txt_total_qty');
 
 ?>
 <style>
@@ -33,6 +34,7 @@ thead.memetable, th.memetable, td.memetable {
 	<input type="hidden" name="txt_subcon" id="txt_subcon" value="<?=$txt_subcon;?>">
 	<input type="hidden" name="txt_remarks" id="txt_remarks" value="<?=$txt_remarks;?>">
 	<input type="hidden" name="txt_request_date" id="txt_request_date" value="<?=$txt_request_date;?>">
+	<input type="hidden" name="txt_total_qty" id="txt_total_qty" value="<?=$txt_total_qty;?>">
 	<div class="table-responsive">
 		<div class="col-md-12 col-md-12 col-md-12">
 			<table class="table table-condensed table-hover table-bordered table-sm text-center" id="tbl-process-recs-fg">
@@ -210,26 +212,41 @@ $("#mbtn_mn_Save").click(function(e){
     try { 
 
 
-          var txt_plant = jQuery('#txt_plant').val();
-		  var txt_subcon = jQuery('#txt_subcon').val();
-		  var txt_remarks = jQuery('#txt_remarks').val();
-		  var txt_request_date = jQuery('#txt_request_date').val();
+        var txt_plant = jQuery('#txt_plant').val();
+		var txt_subcon = jQuery('#txt_subcon').val();
+		var txt_remarks = jQuery('#txt_remarks').val();
+		var txt_request_date = jQuery('#txt_request_date').val();
+		var txt_total_qty = jQuery('#txt_total_qty').val();
+        var rowCount1 = jQuery('#tbl-process-recs tr').length;
+		var rowCount2 = jQuery('#tbl-process-recs-fg tr').length;
+        var adata1 = [];
+		var adata2 = [];
+        var mdata1 = '';
+		var mdata2 = '';
+        var ninc = 0;
 
-          var rowCount1 = jQuery('#tbl-process-recs tr').length;
-          var adata1 = [];
-          var mdata = '';
-          var ninc = 0;
+		for(aa = 1; aa < rowCount1; aa++) { 
 
-		  for(aa = 1; aa < rowCount1; aa++) { 
-			var clonedRow = jQuery('#tbl-process-recs tr:eq(' + aa + ')').clone(); 
-			var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); //ITEM CODE
-			var mdesc = jQuery(clonedRow).find('input[type=text]').eq(1).val(); //UOM
-			var mqty = jQuery(clonedRow).find('input[type=text]').eq(2).val(); //UOM
-			var minv = jQuery(clonedRow).find('input[type=text]').eq(3).val(); //UOM
+		var clonedRow = jQuery('#tbl-process-recs tr:eq(' + aa + ')').clone(); 
+		var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); //ITEM CODE
+		var mdesc = jQuery(clonedRow).find('input[type=text]').eq(1).val(); //UOM
+		var mqty = jQuery(clonedRow).find('input[type=text]').eq(2).val(); //UOM
+		var minv = jQuery(clonedRow).find('input[type=text]').eq(3).val(); //UOM
 
-			
-			mdata = mitemc + 'x|x' + mdesc + 'x|x' + mqty + 'x|x' + minv;
-			adata1.push(mdata);
+		
+		mdata1 = mitemc + 'x|x' + mdesc + 'x|x' + mqty + 'x|x' + minv;
+		adata1.push(mdata1);
+
+		}
+
+		for(aa = 1; aa < rowCount2; aa++) { 
+
+		var clonedRow = jQuery('#tbl-process-recs-fg tr:eq(' + aa + ')').clone(); 
+		var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); //ITEM CODE
+		var mqty = jQuery(clonedRow).find('input[type=text]').eq(1).val(); //UOM
+
+		mdata2 = mitemc + 'x|x' + mqty;
+		adata2.push(mdata2);
 
 		}
 
@@ -238,7 +255,9 @@ $("#mbtn_mn_Save").click(function(e){
 			txt_subcon:txt_subcon,
 			txt_remarks:txt_remarks,
 			txt_request_date:txt_request_date,
-			adata1: adata1
+			txt_total_qty:txt_total_qty,
+			adata1: adata1,
+			adata2: adata2
 		};  
 
 

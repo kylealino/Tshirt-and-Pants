@@ -158,10 +158,12 @@ class MyRMRequestModel extends Model
     public function rm_req_process_save(){
     
         $adata1 = $this->request->getVar('adata1');
+        $adata2 = $this->request->getVar('adata2');
         $txt_plant = $this->request->getVar('txt_plant');
         $txt_subcon = $this->request->getVar('txt_subcon');
         $txt_remarks = $this->request->getVar('txt_remarks');
         $txt_request_date = $this->request->getVar('txt_request_date');
+        $txt_total_qty = $this->request->getVar('txt_total_qty');
         $cseqn =  $this->mydataz->get_ctr_new_dr('RMAP','',$this->db_erp,'CTRL_GWFGPA');
 
         if (empty($txt_plant)) {
@@ -181,7 +183,7 @@ class MyRMRequestModel extends Model
         CREATE TABLE IF NOT EXISTS {$tbltemp} ( 
         `recid` int(25) NOT NULL AUTO_INCREMENT,
         RM_CODE varchar(35) default '',
-        RM_QTY int(25),
+        RM_QTY decimal(15,2),
         PRIMARY KEY (`recid`)
         )
         ";
@@ -206,10 +208,10 @@ class MyRMRequestModel extends Model
                     $mitemc = $xdata[0];
                     $mqty = $xdata[2];
 
-                    $strqry = "
+                    $str = "
                         INSERT INTO {$tbltemp}(`RM_CODE`,`RM_QTY`) VALUES('$mitemc','$mqty');
                     ";
-                    $q = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
                 }  
                         
@@ -237,6 +239,77 @@ class MyRMRequestModel extends Model
             }
     
         }
+
+        //SAVING OF RMAP HD
+        $str="
+            INSERT INTO `trx_rmap_hd` (
+                `rmap_trxno`,
+                `plant`,
+                `subcon`,
+                `remarks`,
+                `request_date`,
+                `total_fg_qty`
+            )
+            VALUES
+                (
+                '$cseqn',
+                '$txt_plant',
+                '$txt_subcon',
+                '$txt_remarks',
+                '$txt_request_date',
+                '$txt_total_qty'
+                )
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        if(count($adata2) > 0) { 
+
+            $adatar2 = array();
+
+            for($aa = 0; $aa < count($adata2); $aa++) { 
+                $medata = explode("x|x",$adata2[$aa]);
+
+                array_push($adatar2,$medata);
+
+            }
+
+            if(count($adatar2) > 0) { 
+  
+                for($xx = 0; $xx < count($adatar2); $xx++) { 
+                    
+                    $xdata = $adatar2[$xx];
+                    $mitemc = $xdata[0];
+                    $mqty = $xdata[1];
+
+                    $str = "
+                        INSERT INTO `d_ap2`.`trx_rmap_dt` (
+                            `rmap_trxno`,
+                            `fg_code`,
+                            `fg_qty`
+                        )
+                        VALUES
+                            (
+                            '$cseqn',
+                            '$mitemc',
+                            '$mqty'
+                            );
+                      
+                    ";
+                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+                }  
+                        
+            } 
+        }
+
+        $str="
+            INSERT INTO `trx_rmap_bom`(
+                `rmap_trxno`,
+                `rm_code`,
+                `rm_qty`
+              )SELECT '$cseqn',`RM_CODE`,`RM_QTY` FROM {$tbltemp}
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
         echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Recorded Successfully! </div>
         <script type=\"text/javascript\"> 
@@ -537,27 +610,19 @@ class MyRMRequestModel extends Model
         $mtkn_etr = $this->request->getVar('mtkn_etr');
        
         $strqry = "
-        SELECT 
-            a.`recid`,
-            a.`rmap_trxno`,
-            a.`plnt_id`,
-            a.`request_date`,
-            a.`total_qty`,
-            a.`remarks`
-        FROM
-            `trx_rmap_req_hd` a
-        JOIN
-            `trx_rmap_req_dt` b
-        ON
-            a.`rmap_trxno` = b.`rmap_trxno`
-        JOIN 
-        mst_item_comp2 c 
-        ON 
-        b.item_code = c.fg_code
-        GROUP BY 
-            a.`rmap_trxno`
-        ORDER BY 
-            a.`request_date` DESC
+            SELECT
+                `recid`,
+                `rmap_trxno`,
+                `plant` plnt_id,
+                `remarks`,
+                `request_date`,
+                `total_fg_qty` total_qty
+            FROM
+                `trx_rmap_hd`
+            GROUP BY 
+                `rmap_trxno`
+            ORDER BY 
+                `request_date` DESC
         ";
         
         //var_dump($strqry);
