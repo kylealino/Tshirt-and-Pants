@@ -49,12 +49,16 @@ thead.memetable, th.memetable, td.memetable {
 							
 						</th>
 						<th>RMAP Transaction No.</th>
+						<th>Sub Contractor</th>
 						<th>Plant</th>
 						<th>Remarks</th>
 						<th>Request Date</th>
-						<th>Request Qty</th>
-						<!-- <th>Print</th>
-						<th>View Items</th> -->
+						<th>Total Qty</th>
+						<th><i class="bi bi-check2-circle"></th>
+						<th><i class="bi bi-file-pdf bi-sm"></i></th>
+						<th><i class="bi bi-file-pdf bi-sm"></i></th>
+						<th><i class="bi bi-link"></i></th>
+
 					</tr>
 				</thead>
 				<tbody>
@@ -66,26 +70,51 @@ thead.memetable, th.memetable, td.memetable {
 							$bgcolor = ($nn % 2) ? "#EAEAEA" : "#F2FEFF";
 							$on_mouse = " onmouseover=\"this.style.backgroundColor='#97CBFF';\" onmouseout=\"this.style.backgroundColor='" . $bgcolor  . "';\"";	
 							$rmap_trxno = $row['rmap_trxno'];
-							
+							$is_processed = $row['is_processed'];
 						?>
 						<tr bgcolor="<?=$bgcolor;?>" <?=$on_mouse;?>>
-							<td class="text-center" nowrap>
-								<?=anchor('me-rm-req-vw/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-eye"></i> View ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
-								
-							</td>
+							<?php if($is_processed == 1):?>
+								<td class="text-center" nowrap>
+									<?=anchor('me-rm-req-vw/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-pencil"></i> Edit ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm disabled"');?>
+								</td>
+							<?php else:?>
+								<td class="text-center" nowrap>
+									<?=anchor('me-rm-req-vw/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-pencil"></i> Edit ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
+								</td>
+							<?php endif;?>
 							<td nowrap><?=$row['rmap_trxno'];?></td>
+							<td nowrap><?=$row['subcon'];?></td>
 							<td nowrap><?=$row['plnt_id'];?></td>
 							<td nowrap><?=$row['remarks'];?></td>
 							<td nowrap><?=$row['request_date'];?></td>
 							<td nowrap><?=$row['total_qty'];?></td>
-							<!-- <td>
-								<button onclick="window.open('<?= site_url() ?>rm-req-bom-print?rmap_trxno=<?=$rmap_trxno?>')" class=" btn btn-primary btn-xs"  title="View pdf" ><i class="bi bi-file-pdf bi-sm"></i> BOM Print</button>
-							</td>
-
-							<td nowrap="nowrap">
-								<button title="View items" class="btn btn-dgreen-ol btn-xs rm-req-btn-view-items"  data-rmapno= "<?=$row['rmap_trxno'];?>" value="<?=$txt_mtknr?>"  type="button" disabled><i class="bi bi-eye-fill"></i> Materials</button>
-							</td> -->
-							
+							<?php if($is_processed == 1):?>
+								<td nowrap="nowrap">
+									<button class="btn btn-success btn-xs mbtn_recs_Process disabled"  data-rmapno= "<?=$row['rmap_trxno'];?>" value="<?=$txt_mtknr?>"  type="button"> Process </button>
+								</td> 
+								<td>
+									<button onclick="window.open('<?= site_url() ?>rm-req-rm-print?rmap_trxno=<?=$rmap_trxno?>')" class=" btn btn-primary btn-xs"  title="View pdf" > RM Print </button>
+								</td>
+								<td>
+									<button onclick="window.open('<?= site_url() ?>rm-req-fg-print?rmap_trxno=<?=$rmap_trxno?>')" class=" btn btn-primary btn-xs"  title="View pdf" > FG Print </button>
+								</td>
+								<td nowrap="nowrap">
+									<?=anchor('rm-prod/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-send"></i> ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
+								</td> 
+							<?php else:?>
+								<td nowrap="nowrap">
+									<button class="btn btn-success btn-xs mbtn_recs_Process"  data-rmapno= "<?=$row['rmap_trxno'];?>" value="<?=$txt_mtknr?>"  type="button"> Process </button>
+								</td> 
+								<td>
+									<button onclick="window.open('<?= site_url() ?>rm-req-rm-print?rmap_trxno=<?=$rmap_trxno?>')" class=" btn btn-primary btn-xs disabled"  title="View pdf" > RM Print </button>
+								</td>
+								<td>
+									<button onclick="window.open('<?= site_url() ?>rm-req-fg-print?rmap_trxno=<?=$rmap_trxno?>')" class=" btn btn-primary btn-xs disabled"  title="View pdf" > FG Print </button>
+								</td>
+								<td nowrap="nowrap">
+									<?=anchor('rm-prod/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-send"></i> ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
+								</td> 
+							<?php endif;?>
 						</tr>
 						<?php 
 						$nn++;
@@ -102,7 +131,10 @@ thead.memetable, th.memetable, td.memetable {
 			</table>
 		</div>
 	</div> <!-- end table-reponsive -->
-	
+<?php
+    echo $mylibzsys->memsgbox1('memsgtestent_danger','<i class="bi bi-exclamation-circle"></i> System Alert','...','bg-pdanger');
+    echo $mylibzsys->memsgbox1('memsgtestent','System Alert','...');
+?> 
 <script type="text/javascript"> 
 
 $(document).ready(function(){
@@ -178,6 +210,54 @@ try {
 }  //end try	
 
 });
-	
-	
+
+__mysys_apps.mepreloader('mepreloaderme',false);
+
+
+$('.mbtn_recs_Process').on('click',function(){
+try { 
+	// $('html,body').scrollTop(0);
+	__mysys_apps.mepreloader('mepreloaderme',true);
+
+	var rmapno = jQuery(this).attr('data-rmapno'); 
+
+	var mparam = {
+
+		rmapno:rmapno
+
+	};
+
+	$.ajax({ // default declaration of ajax parameters
+	type: "POST",
+	url: '<?=site_url();?>me-rm-rec-process-save',
+	context: document.body,
+	data: eval(mparam),
+	global: false,
+	cache: false,
+		success: function(data)  { //display html using divID
+			__mysys_apps.mepreloader('mepreloaderme',false);
+			$(this).prop('disabled', false);
+           // $.hideLoading();
+            jQuery('#memsgtestent_bod').html(data);
+            jQuery('#memsgtestent').modal('show');
+
+		return false;
+		},
+		error: function() { // display global error on the menu function
+			alert('error loading page...');
+				__mysys_apps.mepreloader('mepreloaderme',false);
+			return false;
+		}	
+	});	
+} catch(err) {
+	var mtxt = 'There was an error on this page.\n';
+	mtxt += 'Error description: ' + err.message;
+	mtxt += '\nClick OK to continue.';
+	alert(mtxt);
+		__mysys_apps.mepreloader('mepreloaderme',false);
+	return false;
+}  //end try	
+
+});
+
 </script>

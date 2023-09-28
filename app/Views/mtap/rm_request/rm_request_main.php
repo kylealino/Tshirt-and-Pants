@@ -10,25 +10,26 @@ $this->db_erp = $mydbname->medb(0);
 
 $cuser = $mylibzdb->mysys_user();
 $mpw_tkn = $mylibzdb->mpw_tkn();
-$plnt_id = '';
+$plant = '';
 $request_date = date('Y-m-d');
-$total_qty='';
+$total_fg_qty='';
 $rmap_trxno = $request->getVar('rmap_trxno');
 $nporecs = 0;
 $total_amount = '';
 $remarks='';
+$subcon='';
 
 if(!empty($rmap_trxno)) {
 $str = "
     SELECT
-    a.`rmap_trxno`,
-    a.`plnt_id`,
-    a.`request_date`,
-    a.`total_qty`,
-    a.`total_amount`,
-    a.`remarks`
+      a.`plant`,
+      a.`subcon`,
+      a.`remarks`,
+      a.`request_date`,
+      a.`total_fg_qty`,
+      a.`is_processed`
     FROM
-    trx_rmap_req_hd a
+      `trx_rmap_hd` a
     WHERE a.`rmap_trxno` = '$rmap_trxno' 
         ";
 
@@ -36,12 +37,12 @@ $q = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . ch
 $rw = $q->getRowArray();
 //$mtkn_trxno = $rw['mtkn_trxno'];
 
-$rmap_trxno = $rw['rmap_trxno'];
-$plnt_id = $rw['plnt_id'];
-$request_date = $rw['request_date'];
-$total_qty = $rw['total_qty'];
-$total_amount = $rw['total_amount'];
+$plant = $rw['plant'];
+$subcon = $rw['subcon'];
 $remarks = $rw['remarks'];
+$request_date = $rw['request_date'];
+$total_fg_qty = $rw['total_fg_qty'];
+
 
 }
 
@@ -78,13 +79,13 @@ $remarks = $rw['remarks'];
                   <div class="row gy-2 mb-3">
                       <label class="col-sm-3 form-label" for="txt_plant">Plant:</label>
                       <div class="col-sm-9">
-                          <input type="text" id="txt_plant" name="txt_plant" class="txt_plant form-control form-control-sm " value="<?=$plnt_id;?>"/>
+                          <input type="text" id="txt_plant" name="txt_plant" class="txt_plant form-control form-control-sm " value="<?=$plant;?>"/>
                       </div>
                   </div> 
                   <div class="row gy-2 mb-3">
                       <label class="col-sm-3 form-label" for="txt_subcon">Subcon:</label>
                       <div class="col-sm-9">
-                          <input type="text" id="txt_subcon" name="txt_subcon" class="txt_subcon form-control form-control-sm " />
+                          <input type="text" id="txt_subcon" name="txt_subcon" class="txt_subcon form-control form-control-sm " value="<?=$subcon;?>"/>
                       </div>
                   </div> 
                   <div class="row gy-2 mb-3">
@@ -104,21 +105,14 @@ $remarks = $rw['remarks'];
               <div class="row gy-2 mb-3">
                 <label class="col-sm-3 form-label" for="txt_total_qty">Total Qty:</label>
                 <div class="col-sm-9">
-                  <input type="text" id="txt_total_qty" name="txt_total_qty" class="form-control form-control-sm" value="<?=$total_qty;?>" readonly/>
+                  <input type="text" id="txt_total_qty" name="txt_total_qty" class="form-control form-control-sm" value="<?=$total_fg_qty;?>" readonly/>
                 </div>
               </div>
 
               <div class="row gy-2 mb-3">
                 <label class="col-sm-3 form-label" for="txt_total_amount">Total Amount:</label>
                 <div class="col-sm-9">
-                  <input type="text" id="txt_total_amount" name="txt_total_amount" class="form-control form-control-sm" value="<?=$total_amount;?>" readonly/>
-                </div>
-              </div>
-
-              <div class="row gy-2 mb-3">
-                <label class="col-sm-3 form-label" for="txt_total_rm_qty">Total RM Qty:</label>
-                <div class="col-sm-9">
-                  <input type="text" id="txt_total_rm_qty" name="txt_total_rm_qty" class="form-control form-control-sm" readonly/>
+                  <input type="text" id="txt_total_amount" name="txt_total_amount" class="form-control form-control-sm"  readonly/>
                 </div>
               </div>
 
@@ -145,8 +139,6 @@ $remarks = $rw['remarks'];
                         <th nowrap="nowrap">Qty</th>
                         <th nowrap="nowrap">Srp</th>
                         <th nowrap="nowrap">T.Amount</th>
-                        <th nowrap="nowrap">RM Qty</th>
-                        <th nowrap="nowrap">RM Total Qty</th>
                         
                       </tr>
                     </thead>
@@ -156,51 +148,46 @@ $remarks = $rw['remarks'];
                       $nn=1;
 
                       $str = "
-                      SELECT b.`rmap_trxno`, b.`item_code`, c.`ART_DESC`, b.`item_qty`,c.`ART_UPRICE`, b.`item_tamount`
+                      SELECT
+                        a.`fg_code`,
+                        b.`ART_DESC`,
+                        a.`fg_qty`,
+                        b.`ART_UPRICE`
                       FROM
-                      trx_rmap_req_hd a
+                        `trx_rmap_dt` a
                       JOIN
-                      trx_rmap_req_dt b
+                        `mst_article` b
                       ON
-                      a.`rmap_trxno` = b.`rmap_trxno`
-                      JOIN
-                      mst_article c
-                      ON 
-                      b.`item_code` = c.`ART_CODE`
+                        a.`fg_code` = b.`ART_CODE`
                       WHERE
-                      b.`rmap_trxno` = '{$rmap_trxno}'
+                        a.`rmap_trxno` = '$rmap_trxno'
                       ";
-                      //var_dump($str);
-                      //die();
+
                       $q =  $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-                      //var_dump($str);
 
                       $rrec = $q->getResultArray();
                       foreach($rrec as $rdt){
                           $nporecs++;
                         
-                          $item_code = $rdt['item_code'];
+                          $fg_code = $rdt['fg_code'];
                           $ART_DESC = $rdt['ART_DESC'];
-                          $item_qty = $rdt['item_qty'];
+                          $fg_qty = $rdt['fg_qty'];
                           $ART_UPRICE = $rdt['ART_UPRICE'];
-                          $item_tamount = $rdt['item_tamount'];
                             
                       ?>
                       <tr>
                         <td><?=$nporecs;?></td>
                         <td nowrap="nowrap">
-                            <button type="button" class="btn btn-xs btn-danger" style="font-size:15px; padding: 2px 6px 2px 6px; " onclick="$(this).closest('tr').remove();"><i class="bi bi-x"></i></button>
+                            <button type="button" class="btn btn-xs btn-danger" style="font-size:15px; padding: 2px 6px 2px 6px; " onclick="$(this).closest('tr').remove(); javascript:__pack_totals();" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onblur="javascript:__pack_totals();"><i class="bi bi-x"></i></button>
                             <input class="mitemrid" type="hidden" value=""/>
                             <input type="hidden" value=""/>
                         </td>
                         
-                        <td nowrap="nowrap"><input type="text" id="item_code<?=$nporecs;?>" class="form-control form-control-sm mitemcode" size="20" value="<?=$rdt['item_code'];?>" ></td>
-                        <td nowrap="nowrap"><input type="text" id="ART_DESC<?=$nporecs;?>" class="form-control form-control-sm" size="20" value="<?=$rdt['ART_DESC'];?>" readonly="readonly"></td>
-                        <td nowrap="nowrap"><input type="text" id="item_qty<?=$nporecs;?>" size="5" class="form-control form-control-sm" value="<?=$rdt['item_qty'];?>" readonly="readonly" ></td>
-                        <td nowrap="nowrap"><input type="text" id="srp<?=$nporecs;?>" size="5" class="form-control form-control-sm" value="<?=$rdt['ART_UPRICE'];?>"></td>
-                        <td nowrap="nowrap"><input type="text" id="tamount<?=$nporecs;?>" size="5" class="form-control form-control-sm" value="<?=$rdt['item_tamount'];?>"></td>
-                        <td nowrap="nowrap"><input type="text" id="rm_qty<?=$nporecs;?>" size="5" class="form-control form-control-sm"></td>
-                        <td nowrap="nowrap"><input type="text" id="rm_tqty<?=$nporecs;?>" size="5" class="form-control form-control-sm"></td>
+                        <td nowrap="nowrap"><input type="text" id="fg_code<?=$nporecs;?>" class="form-control form-control-sm mitemcode" size="20" value="<?=$rdt['fg_code'];?>" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td>
+                        <td nowrap="nowrap"><input type="text" id="ART_DESC<?=$nporecs;?>" class="form-control form-control-sm" size="20" value="<?=$rdt['ART_DESC'];?>" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td>
+                        <td nowrap="nowrap"><input type="text" id="fg_qty<?=$nporecs;?>" size="5" class="form-control form-control-sm" value="<?=$rdt['fg_qty'];?>" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td>
+                        <td nowrap="nowrap"><input type="text" id="srp<?=$nporecs;?>" size="5" class="form-control form-control-sm" value="<?=$rdt['ART_UPRICE'];?>" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td>
+                        <td nowrap="nowrap"><input type="text" id="tamount<?=$nporecs;?>" size="5" class="form-control form-control-sm" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td>
 
                       </tr>
                       <?php 
@@ -213,19 +200,17 @@ $remarks = $rw['remarks'];
                       <tr style="display: none;">
                         <td></td>
                         <td nowrap="nowrap">
-                          <button type="button" class="btn btn-xs btn-danger" onclick="$(this).closest('tr').remove();"><i class="bi bi-x"></i></button>
+                          <button type="button" class="btn btn-xs btn-danger" onclick="$(this).closest('tr').remove(); javascript:__pack_totals();" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" ><i class="bi bi-x"></i></button>
                           <input class="mitemrid" type="hidden" value=""/>
                           <input type="hidden" value=""/>
                          
                           
                         </td>
-                        <td nowrap="nowrap"><input type="text" class="form-control form-control-sm mitemcode" size="20"></td> <!--0 ITEMC -->
-                        <td nowrap="nowrap"><input type="text" class="form-control form-control-sm" size="20" readonly="readonly"></td> <!--1 DESC -->
-                        <td nowrap="nowrap"><input type="text" size="5" class="form-control form-control-sm" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();"></td> <!--3 QTY -->
-                        <td nowrap="nowrap"><input type="text" size="5" class="form-control form-control-sm" readonly="readonly"></td> 
-                        <td nowrap="nowrap"><input type="text" size="5" class="form-control form-control-sm" readonly="readonly"></td>
-                        <td nowrap="nowrap"><input type="text" size="5" class="form-control form-control-sm" readonly="readonly"></td> 
-                        <td nowrap="nowrap"><input type="text" size="5" class="form-control form-control-sm" readonly="readonly"></td>
+                        <td nowrap="nowrap"><input type="text" class="form-control form-control-sm mitemcode" size="20" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td> <!--0 ITEMC -->
+                        <td nowrap="nowrap"><input type="text" class="form-control form-control-sm" size="20" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td> <!--1 DESC -->
+                        <td nowrap="nowrap"><input type="text" size="5" class="form-control form-control-sm" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td> <!--3 QTY -->
+                        <td nowrap="nowrap"><input type="text" size="5" class="form-control form-control-sm" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td> 
+                        <td nowrap="nowrap"><input type="text" size="5" class="form-control form-control-sm" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" onblur="javascript:__pack_totals();"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -233,10 +218,17 @@ $remarks = $rw['remarks'];
               </div>
             </div>
             <div class="row gy-2 mb-3">
-              <div class="col-sm-4">
-                <button id="mbtn_mn_Process" type="submit" class="btn btn-dgreen btn-sm">Process RM</button>
+              <?php if(!empty($rmap_trxno)):?>
+                <div class="col-sm-4">
+                <button id="mbtn_mn_Process" type="submit" class="btn btn-dgreen btn-sm">Re-Process</button>
                 <?=anchor('me-rm-req-vw', '<i class="bi bi-arrow-repeat"></i>',' class="btn btn-dgreen-ol btn-sm" ');?>
               </div>
+              <?php else:?>
+                <div class="col-sm-4">
+                <button id="mbtn_mn_Process" type="submit" class="btn btn-dgreen btn-sm">Process</button>
+                <?=anchor('me-rm-req-vw', '<i class="bi bi-arrow-repeat"></i>',' class="btn btn-dgreen-ol btn-sm" ');?>
+              </div>
+              <?php endif;?>
               <div id="rmlist" class="text-center p-2 rounded-3  mt-3 border-dotted bg-light p-4 ">
                   <h5><i class="bi bi-info-circle-fill text-dgreen"></i> Bill of Materials will display here upon processing...</h5> 
                 </div> 

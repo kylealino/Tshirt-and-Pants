@@ -19,6 +19,7 @@ $txt_subcon = $request->getVar('txt_subcon');
 $txt_remarks = $request->getVar('txt_remarks');
 $txt_request_date = $request->getVar('txt_request_date');
 $txt_total_qty = $request->getVar('txt_total_qty');
+$rmap_trxno = $request->getVar('rmap_trxno');
 
 ?>
 <style>
@@ -35,6 +36,7 @@ thead.memetable, th.memetable, td.memetable {
 	<input type="hidden" name="txt_remarks" id="txt_remarks" value="<?=$txt_remarks;?>">
 	<input type="hidden" name="txt_request_date" id="txt_request_date" value="<?=$txt_request_date;?>">
 	<input type="hidden" name="txt_total_qty" id="txt_total_qty" value="<?=$txt_total_qty;?>">
+	<input type="hidden" name="rmap_trxno" id="rmap_trxno" value="<?=$rmap_trxno;?>">
 	<div class="table-responsive">
 		<div class="col-md-12 col-md-12 col-md-12">
 			<table class="table table-condensed table-hover table-bordered table-sm text-center" id="tbl-process-recs-fg">
@@ -109,7 +111,12 @@ thead.memetable, th.memetable, td.memetable {
 	</div> <!-- end table-reponsive -->
 	
 	<div class="col-sm-4">
-		<button id="mbtn_mn_Save" type="submit" class="btn btn-dgreen btn-sm">Save</button>
+		<?php if(!empty($rmap_trxno)):?>
+			<button id="mbtn_mn_Update" type="submit" class="btn btn-dgreen btn-sm">Update</button>
+		<?php else:?>
+			<button id="mbtn_mn_Save" type="submit" class="btn btn-dgreen btn-sm">Save</button>
+		<?php endif;?>
+		
 		<?=anchor('me-rm-req-vw', '<i class="bi bi-arrow-repeat"></i>',' class="btn btn-dgreen-ol btn-sm" ');?>
     </div>
 	<?php
@@ -117,96 +124,6 @@ thead.memetable, th.memetable, td.memetable {
     echo $mylibzsys->memsgbox1('memsgtestent','System Alert','...');
     ?> 
 <script type="text/javascript"> 
-
-$('.rm-req-btn-view-items').on('click',function(){
-try { 
-	// $('html,body').scrollTop(0);
-	__mysys_apps.mepreloader('mepreloaderme',true);
-	var mtkn_whse = jQuery('#txt-warehouse').attr('data-id'); 
-	var rmapno = jQuery(this).attr('data-rmapno'); 
-	
-	var mtkn_dt = this.value;
-	$('#anchor-list').removeClass('active');
-	$('#anchor-items').addClass('active');
-
-	var mparam = {
-		mtkn_whse:mtkn_whse,
-		mtkn_dt: mtkn_dt,
-		rmapno:rmapno,
-		mpages:1
-	};
-
-	$.ajax({ // default declaration of ajax parameters
-	type: "POST",
-	url: '<?=site_url();?>rm-req-items',
-	context: document.body,
-	data: eval(mparam),
-	global: false,
-	cache: false,
-		success: function(data)  { //display html using divID
-			__mysys_apps.mepreloader('mepreloaderme',false);
-		$('#packlist').html(data);
-		return false;
-		},
-		error: function() { // display global error on the menu function
-			alert('error loading page...');
-				__mysys_apps.mepreloader('mepreloaderme',false);
-			return false;
-		}	
-	});	
-} catch(err) {
-	var mtxt = 'There was an error on this page.\n';
-	mtxt += 'Error description: ' + err.message;
-	mtxt += '\nClick OK to continue.';
-	alert(mtxt);
-		__mysys_apps.mepreloader('mepreloaderme',false);
-	return false;
-}  //end try	
-
-});
-	
-	
-// $("#mbtn_mn_Save").click(function(e){
-
-// var mtkn_mntr = jQuery('#__hmpacktrxnoid').val();
-// var rmap_trxno = jQuery('#rmap_trxno').val();
-
-// var rowCount1 = jQuery('#tbl-process-recs tr').length;
-// var adata1 = [];
-// var adata2 = [];
-
-// var mdata = '';
-// var ninc = 0;
-
-// for(aa = 1; aa < rowCount1; aa++) { 
-// 	  var clonedRow = jQuery('#tbl-process-recs tr:eq(' + aa + ')').clone(); 
-// 	  var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); //ITEM CODE
-// 	  var mdesc = jQuery(clonedRow).find('input[type=text]').eq(1).val(); //UOM
-
-	  
-// 	  mdata = mitemc + 'x|x' + mdesc;
-// 	  adata1.push(mdata);
-
-//   }
-
-// var mparam = {
-//   adata1: adata1
-// };  
-
-// ajaxRequest = jQuery.ajax({
-// 	url: "<?=site_url();?>me-rm-req-process-save",
-// 	type: "post",
-// 	data: eval(mparam)
-// });
-
-// // Deal with the results of the above ajax call
-// __mysys_apps.mepreloader('mepreloaderme',true);
-//   ajaxRequest.done(function(response, textStatus, jqXHR) {
-// 	  jQuery('#rmlist').html(response);
-// 	  __mysys_apps.mepreloader('mepreloaderme',false);
-//   });
-// });
-
 
 $("#mbtn_mn_Save").click(function(e){
     try { 
@@ -264,6 +181,91 @@ $("#mbtn_mn_Save").click(function(e){
       $.ajax({ 
         type: "POST",
         url: '<?=site_url();?>me-rm-req-process-save',
+        context: document.body,
+        data: eval(mparam),
+        global: false,
+        cache: false,
+        success: function(data)  { 
+            $(this).prop('disabled', false);
+           // $.hideLoading();
+            jQuery('#memsgtestent_bod').html(data);
+            jQuery('#memsgtestent').modal('show');
+            return false;
+        },
+        error: function() {
+          alert('error loading page...');
+         // $.hideLoading();
+          return false;
+        } 
+      });
+
+    } catch(err) {
+      var mtxt = 'There was an error on this page.\n';
+      mtxt += 'Error description: ' + err.message;
+      mtxt += '\nClick OK to continue.';
+      alert(mtxt);
+    }  //end try
+    return false; 
+  });
+
+  $("#mbtn_mn_Update").click(function(e){
+    try { 
+
+
+		var rmap_trxno = jQuery('#rmap_trxno').val();
+        var txt_plant = jQuery('#txt_plant').val();
+		var txt_subcon = jQuery('#txt_subcon').val();
+		var txt_remarks = jQuery('#txt_remarks').val();
+		var txt_request_date = jQuery('#txt_request_date').val();
+		var txt_total_qty = jQuery('#txt_total_qty').val();
+        var rowCount1 = jQuery('#tbl-process-recs tr').length;
+		var rowCount2 = jQuery('#tbl-process-recs-fg tr').length;
+        var adata1 = [];
+		var adata2 = [];
+        var mdata1 = '';
+		var mdata2 = '';
+        var ninc = 0;
+
+		for(aa = 1; aa < rowCount1; aa++) { 
+
+		var clonedRow = jQuery('#tbl-process-recs tr:eq(' + aa + ')').clone(); 
+		var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); //ITEM CODE
+		var mdesc = jQuery(clonedRow).find('input[type=text]').eq(1).val(); //UOM
+		var mqty = jQuery(clonedRow).find('input[type=text]').eq(2).val(); //UOM
+		var minv = jQuery(clonedRow).find('input[type=text]').eq(3).val(); //UOM
+
+		
+		mdata1 = mitemc + 'x|x' + mdesc + 'x|x' + mqty + 'x|x' + minv;
+		adata1.push(mdata1);
+
+		}
+
+		for(aa = 1; aa < rowCount2; aa++) { 
+
+		var clonedRow = jQuery('#tbl-process-recs-fg tr:eq(' + aa + ')').clone(); 
+		var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); //ITEM CODE
+		var mqty = jQuery(clonedRow).find('input[type=text]').eq(1).val(); //UOM
+
+		mdata2 = mitemc + 'x|x' + mqty;
+		adata2.push(mdata2);
+
+		}
+
+		var mparam = {
+			rmap_trxno:rmap_trxno,
+			txt_plant:txt_plant,
+			txt_subcon:txt_subcon,
+			txt_remarks:txt_remarks,
+			txt_request_date:txt_request_date,
+			txt_total_qty:txt_total_qty,
+			adata1: adata1,
+			adata2: adata2
+		};  
+
+
+      $.ajax({ 
+        type: "POST",
+        url: '<?=site_url();?>me-rm-req-process-update',
         context: document.body,
         data: eval(mparam),
         global: false,

@@ -65,6 +65,18 @@ class Rm_request extends BaseController
         $this->mytrxrmreq->rm_req_process_save();
 
     } //end rm_req_process_save
+	
+	public function rm_req_process_update() { 
+
+        $this->mytrxrmreq->rm_req_process_update();
+
+    } //end rm_req_process_update
+
+	public function rm_rec_process_save() { 
+
+        $this->mytrxrmreq->rm_rec_process_save();
+
+    } //end rm_rec_process_save
 
 	public function mat_article_fgpo(){
 		$cuser   = $this->mylibzdb->mysys_user();
@@ -147,12 +159,19 @@ class Rm_request extends BaseController
 
     } //end rm_req_recs
 
-	public function rm_req_bom_print(){
+	public function rm_req_rm_print(){
 	
 		$this->response->setHeader('Content-Type', 'application/pdf');
-		return view('mtap/rm_request/rm_request_bom_print');
+		return view('mtap/rm_request/rm_request_rm_print');
 
-	} //end rm_req_bom_print
+	} //end rm_req_rm_print
+
+	public function rm_req_fg_print(){
+	
+		$this->response->setHeader('Content-Type', 'application/pdf');
+		return view('mtap/rm_request/rm_request_fg_print');
+
+	} //end rm_req_fg_print
 
 	public function search_rmap_subcon(){ 
 

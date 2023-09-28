@@ -18,7 +18,6 @@ $mpw_tkn        = $mylibzdb->mpw_tkn();
 $approved_fullname = '';
 
 $rmap_trxno = $request->getVar('rmap_trxno');
-$total_fg = $request->getVar('total_qty');
 
 $str="
 
@@ -128,34 +127,32 @@ $box_no = 1;
 $count=1;
 $str="
 	SELECT
-	a.`rm_code` rm_code,
-	b.`ART_DESC` ART_DESC,
-	a.`rm_qty` rm_qty,
-	b.`ART_UOM` ART_UOM
+		a.`fg_code`,
+		b.`ART_DESC`,
+		a.`fg_qty`,
+		b.`ART_UOM`
 	FROM
-	`trx_rmap_bom` a
+		`trx_rmap_dt` a
 	JOIN
-	`mst_article` b
-	ON 
-	a.`rm_code` = b.`ART_CODE`
-	WHERE 
-	a.`rmap_trxno` = '$rmap_trxno'
-
+		`mst_article` b
+	ON
+		a.`fg_code` = b.`ART_CODE`
+	WHERE
+		a.`rmap_trxno` = '$rmap_trxno'
 ";
 $q = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-$rw = $q->getResultArray();
-foreach ($rw as $row) {
-	$rm_code = $row['rm_code'];
-	$rm_qty = $row['rm_qty'];
+foreach ($q->getResultArray() as $row) {
+	$fg_code = $row['fg_code'];
+	$fg_qty = $row['fg_qty'];
 	$ART_DESC = $row['ART_DESC'];
 	$ART_UOM = $row['ART_UOM'];
 
 	$pdf->SetFont('Arial','',8);
 	$pdf->SetXY(5,$Y);
 	$pdf->Cell(20,4,$count,1,0,'C');
-	$pdf->Cell(35,4,$rm_code,1,0,'C');
+	$pdf->Cell(35,4,$fg_code,1,0,'C');
 	$pdf->Cell(81,4,$ART_DESC,1,0,'C');
-	$pdf->Cell(35,4,$rm_qty,1,0,'C');
+	$pdf->Cell(35,4,$fg_qty,1,0,'C');
 	$pdf->Cell(35,4,$ART_UOM,1,0,'C');
 
 	$Y = $Y + 4;
@@ -165,13 +162,13 @@ foreach ($rw as $row) {
 //footer page number
 $pdf->SetY(-12);
 $pdf->SetFont('Arial','I',8);
-$pdf->Cell(0,10,'Page '.$pdf->PageNo().'/{nb}'.' of RM: '.$rmap_trxno,0,0,'C');
+$pdf->Cell(0,10,'Page '.$pdf->PageNo().'/{nb}'.' of FG: '.$rmap_trxno,0,0,'C');
 
 //header page number
 $pdf->SetY(0);
 $pdf->SetX(172);
 $pdf->SetFont('Arial','I',8);
-$pdf->Cell(0,10,'Page '.$pdf->PageNo().'/{nb}'.' of RM: '.$rmap_trxno,0,0,'R');
+$pdf->Cell(0,10,'Page '.$pdf->PageNo().'/{nb}'.' of FG: '.$rmap_trxno,0,0,'R');
 
 
-$pdf->output('','RM-'.$rmap_trxno);
+$pdf->output('','FG-'.$rmap_trxno);

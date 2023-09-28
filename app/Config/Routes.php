@@ -311,10 +311,13 @@ $routes->get('get-rm-fg-code-list','Rm_request::mat_article_fgpo',['filter' => '
 $routes->add('me-rm-req-view', 'Rm_request::rm_req_vw',['filter' => 'myauthuser']);
 $routes->post('rm-req-items','Rm_request::rm_req_itm_recs',['filter' => 'myauthuser']);
 $routes->add('rm-req-recs', 'Rm_request::rm_req_recs',['filter' => 'myauthuser']);
-$routes->get('rm-req-bom-print','Rm_request::rm_req_bom_print',['filter' => 'myauthuser']);
 $routes->get('search-rmap-subcon','Rm_request::search_rmap_subcon',['filter' => 'myauthuser']);
 $routes->post('me-rm-req-process', 'Rm_request::rm_req_process',['filter' => 'myauthuser']);
 $routes->post('me-rm-req-process-save', 'Rm_request::rm_req_process_save',['filter' => 'myauthuser']);
+$routes->post('me-rm-rec-process-save', 'Rm_request::rm_rec_process_save',['filter' => 'myauthuser']);
+$routes->post('me-rm-req-process-update', 'Rm_request::rm_req_process_update',['filter' => 'myauthuser']);
+$routes->get('rm-req-rm-print','Rm_request::rm_req_rm_print',['filter' => 'myauthuser']);
+$routes->get('rm-req-fg-print','Rm_request::rm_req_fg_print',['filter' => 'myauthuser']);
 
 //Alloc entry
 $routes->get('me-tp-alloc-vw','Allocation::index',['filter' => 'myauthuser']);

@@ -88,8 +88,8 @@ class MyRMRequestModel extends Model
                     $mat_code = $xdata[0];
                     $qty = $xdata[2];
 
-                    if (empty($mat_code)) {
-                        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Please process without null rows! </div>";
+                    if (empty($mat_code) || empty($qty) || $qty == '0') {
+                        echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Please check for invalid items or quantity! </div>";
                         die();
                     }
                     
@@ -333,6 +333,185 @@ class MyRMRequestModel extends Model
         die();
         
     }
+
+    public function rm_req_process_update(){
+    
+        $rmap_trxno = $this->request->getVar('rmap_trxno');
+        $adata1 = $this->request->getVar('adata1');
+        $adata2 = $this->request->getVar('adata2');
+        $txt_plant = $this->request->getVar('txt_plant');
+        $txt_subcon = $this->request->getVar('txt_subcon');
+        $txt_remarks = $this->request->getVar('txt_remarks');
+        $txt_request_date = $this->request->getVar('txt_request_date');
+        $txt_total_qty = $this->request->getVar('txt_total_qty');
+
+        if (empty($txt_plant)) {
+            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Plant is required!</div>";
+            die();
+        }
+        if (empty($txt_subcon)) {
+            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Subcon is required!</div>";
+            die();
+        }
+        
+        $tbltemp   = $this->db_erp . ".`rmap_temp_save`";
+
+        $str="DROP TABLE {$tbltemp}";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        $str = "
+        CREATE TABLE IF NOT EXISTS {$tbltemp} ( 
+        `recid` int(25) NOT NULL AUTO_INCREMENT,
+        RM_CODE varchar(35) default '',
+        RM_QTY decimal(15,2),
+        PRIMARY KEY (`recid`)
+        )
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        if(count($adata1) > 0) { 
+
+            $adatar1 = array();
+
+            for($aa = 0; $aa < count($adata1); $aa++) { 
+                $medata = explode("x|x",$adata1[$aa]);
+
+                array_push($adatar1,$medata);
+
+            }
+
+            if(count($adatar1) > 0) { 
+  
+                for($xx = 0; $xx < count($adatar1); $xx++) { 
+                    
+                    $xdata = $adatar1[$xx];
+                    $mitemc = $xdata[0];
+                    $mqty = $xdata[2];
+
+                    $str = "
+                        INSERT INTO {$tbltemp}(`RM_CODE`,`RM_QTY`) VALUES('$mitemc','$mqty');
+                    ";
+                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+                }  
+                        
+            } 
+        }
+        
+        $str="
+            SELECT 
+            a.`RM_CODE`,
+            a.`RM_QTY`,
+            (SELECT po_qty FROM rm_inv_rcv WHERE mat_code = a.`RM_CODE`) AS RM_INV
+            FROM 
+            {$tbltemp} a
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+        $rw = $q->getResultArray();
+        foreach ($rw as $data) {
+            $RM_CODE = $data['RM_CODE'];
+            $RM_QTY = $data['RM_QTY'];
+            $RM_INV = $data['RM_INV'];
+            
+            if ($RM_INV < $RM_QTY) {
+                echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Stocks Unvailable! [$RM_CODE] [$RM_QTY] [$RM_INV] </div>";
+                die();
+            }
+    
+        }
+
+        //UPDATING OF RMAP HD
+        $str="
+            UPDATE `trx_rmap_hd` SET `plant` = '$txt_plant', `subcon` = '$txt_subcon', `remarks` = '$txt_remarks', `request_date` = '$txt_request_date',`total_fg_qty` = '$txt_total_qty' WHERE `rmap_trxno` = '$rmap_trxno'
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        //DELETE CURRENT FG RECORDS
+        $str="
+            DELETE FROM `trx_rmap_dt` WHERE `rmap_trxno` = '$rmap_trxno'
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        //INSERT NEW RECORDS OF FG DT
+
+        if(count($adata2) > 0) { 
+
+            $adatar2 = array();
+
+            for($aa = 0; $aa < count($adata2); $aa++) { 
+                $medata = explode("x|x",$adata2[$aa]);
+
+                array_push($adatar2,$medata);
+
+            }
+
+            if(count($adatar2) > 0) { 
+  
+                for($xx = 0; $xx < count($adatar2); $xx++) { 
+                    
+                    $xdata = $adatar2[$xx];
+                    $mitemc = $xdata[0];
+                    $mqty = $xdata[1];
+
+                    $str = "
+                        INSERT INTO `d_ap2`.`trx_rmap_dt` (
+                            `rmap_trxno`,
+                            `fg_code`,
+                            `fg_qty`
+                        )
+                        VALUES
+                            (
+                            '$rmap_trxno',
+                            '$mitemc',
+                            '$mqty'
+                            );
+                      
+                    ";
+                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+                }  
+                        
+            } 
+        }
+
+        //DELETE CURRENT BOM MATERIALS
+        $str="
+            DELETE FROM `trx_rmap_bom` WHERE `rmap_trxno` = '$rmap_trxno'
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        //INSERT NEW BOM MATERIALS
+        $str="
+            INSERT INTO `trx_rmap_bom`(
+                `rmap_trxno`,
+                `rm_code`,
+                `rm_qty`
+              )SELECT '$rmap_trxno',`RM_CODE`,`RM_QTY` FROM {$tbltemp}
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong>Data Updated Successfully! </div>
+        <script type=\"text/javascript\"> 
+            function __fg_refresh_data() { 
+                try { 
+                    $('#rmap_trxno').val('{$rmap_trxno}');
+                    jQuery('#mbtn_mn_Update').prop('disabled',true);
+                    jQuery('#mbtn_mn_Process').prop('disabled',true);
+                } catch(err) { 
+                    var mtxt = 'There was an error on this page.\\n';
+                    mtxt += 'Error description: ' + err.message;
+                    mtxt += '\\nClick OK to continue.';
+                    alert(mtxt);
+                    return false;
+                }  //end try 
+            } 
+            
+            __fg_refresh_data();
+        </script>
+        ";
+        die();
+        
+    }
     
     public function rm_req_entry_save() {
 
@@ -462,6 +641,58 @@ class MyRMRequestModel extends Model
         die();
 
 
+    } //end rm_req_entry_save
+
+    public function rm_rec_process_save() {
+
+        $rmapno = $this->request->getVar('rmapno');
+
+        $str="
+        SELECT
+            `rmap_trxno`,
+            `rm_code`,
+            `rm_qty`
+        FROM
+            `trx_rmap_bom`
+        WHERE
+            `rmap_trxno` = '$rmapno'
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+        $rw = $q->getResultArray();
+        foreach ($rw as $data) {
+            $rm_code = $data['rm_code'];
+            $rm_qty = $data['rm_qty'];
+
+            $str="
+                UPDATE `rm_inv_rcv` SET `po_qty` = `po_qty` - '$rm_qty' WHERE `mat_code` = '$rm_code';
+            ";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        }
+
+        $str="
+            UPDATE `trx_rmap_hd` SET `is_processed` = '1' WHERE `rmap_trxno` = '$rmapno';
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+
+        echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong> Data Processed Successfully! </div>
+        <script type=\"text/javascript\"> 
+            function __fg_refresh_data() { 
+                try { 
+                    jQuery('#mbtn_recs_Process').prop('disabled',true);
+                } catch(err) { 
+                    var mtxt = 'There was an error on this page.\\n';
+                    mtxt += 'Error description: ' + err.message;
+                    mtxt += '\\nClick OK to continue.';
+                    alert(mtxt);
+                    return false;
+                }  //end try 
+            } 
+            
+            __fg_refresh_data();
+        </script>
+        ";
     } //end rm_req_entry_save
 
     public function rm_save(){
@@ -613,10 +844,12 @@ class MyRMRequestModel extends Model
             SELECT
                 `recid`,
                 `rmap_trxno`,
+                `subcon`,
                 `plant` plnt_id,
                 `remarks`,
                 `request_date`,
-                `total_fg_qty` total_qty
+                `total_fg_qty` total_qty,
+                `is_processed`
             FROM
                 `trx_rmap_hd`
             GROUP BY 
