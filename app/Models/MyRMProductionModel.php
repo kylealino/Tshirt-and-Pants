@@ -35,16 +35,15 @@ class MyRMProductionModel extends Model
         $strqry = "
         SELECT 
         a.`rmap_trxno`,
-        a.`plnt_id`,
+        a.`plant`,
         a.`request_date`,
-        SUM(b.`item_qty`) item_qty,
-        SUM(b.`produce_qty`) produce_qty,
-        SUM(b.`produce_release`) produce_release,
-        SUM(b.`produce_rmng`) produce_rmng
+        SUM(b.`fg_qty`) fg_qty,
+        SUM(b.`fg_release`) fg_release,
+        SUM(b.`fg_rmng`) fg_rmng
         FROM
-        trx_rmap_req_hd a
+        trx_rmap_hd a
         JOIN
-        trx_rmap_req_dt b
+        trx_rmap_dt b
         ON
         a.`rmap_trxno` = b.`rmap_trxno`
         GROUP BY a.`rmap_trxno`
@@ -119,7 +118,7 @@ class MyRMProductionModel extends Model
         }
 
         $str="
-        SELECT a.`plnt_id`, b.`recid` FROM trx_rmap_req_hd a JOIN mst_plant b ON a.`plnt_id` = b.`plnt_code` WHERE `rmap_trxno` = '$rmap_trxno'
+        SELECT a.`plant`, b.`recid` FROM trx_rmap_hd a JOIN mst_plant b ON a.`plant` = b.`plnt_code` WHERE `rmap_trxno` = '$rmap_trxno'
         ";
 
         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
@@ -149,7 +148,7 @@ class MyRMProductionModel extends Model
 
 
                 $str="
-                INSERT INTO gw_fg_po_hd (`po_sysctrlno`,`muser`,`encd_date`,`tqty`,`plnt_id`) SELECT '$cseqn', '$cuser', now(),`total_qty`,'$plnt_id' FROM trx_rmap_req_hd WHERE  `rmap_trxno` = '$rmap_trxno'
+                INSERT INTO gw_fg_po_hd (`po_sysctrlno`,`muser`,`encd_date`,`tqty`,`plnt_id`) SELECT '$cseqn', '$cuser', now(),`total_fg_qty`,'$plnt_id' FROM trx_rmap_hd WHERE  `rmap_trxno` = '$rmap_trxno'
                 ";
                 $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
@@ -170,7 +169,7 @@ class MyRMProductionModel extends Model
 
                         
                     $str="
-                        UPDATE trx_rmap_req_dt SET `produce_rmng` = `produce_rmng` - '$mrelease', `produce_release` = `produce_release` + '$mrelease', `fgreq_trxno` = '$cseqn' WHERE `rmap_trxno` = '$rmap_trxno' AND item_code = '$mitemc'
+                        UPDATE trx_rmap_dt SET `fg_rmng` = `fg_rmng` - '$mrelease', `fg_release` = `fg_release` + '$mrelease', `fgreq_trxno` = '$cseqn' WHERE `rmap_trxno` = '$rmap_trxno' AND fg_code = '$mitemc'
                     ";
                     $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
@@ -184,7 +183,7 @@ class MyRMProductionModel extends Model
                 } 
 
                 $str="
-                UPDATE trx_rmap_req_hd SET `fgreq_trxno` = '$cseqn' WHERE `rmap_trxno` = '$rmap_trxno'
+                UPDATE trx_rmap_hd SET `fgreq_trxno` = '$cseqn' WHERE `rmap_trxno` = '$rmap_trxno'
                 ";
                 $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
@@ -232,7 +231,7 @@ class MyRMProductionModel extends Model
                 }  
                
                 $str="
-                INSERT INTO gw_fg_po_hd (`po_sysctrlno`,`muser`,`encd_date`,`tqty`,`plnt_id`) SELECT '$cseqn', '$cuser', now(),`total_qty`,'$plnt_id' FROM trx_rmap_req_hd WHERE  `rmap_trxno` = '$rmap_trxno'
+                INSERT INTO gw_fg_po_hd (`po_sysctrlno`,`muser`,`encd_date`,`tqty`,`plnt_id`) SELECT '$cseqn', '$cuser', now(),`total_fg_qty`,'$plnt_id' FROM trx_rmap_hd WHERE  `rmap_trxno` = '$rmap_trxno'
                 ";
                 $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
@@ -249,8 +248,8 @@ class MyRMProductionModel extends Model
                         }
 
     
-                        $str="
-                        UPDATE trx_rmap_req_dt SET `produce_rmng` = `produce_rmng` - '$mrelease', `produce_release` = `produce_release` + '$mrelease' WHERE `rmap_trxno` = '$rmap_trxno' AND item_code = '$mitemc'
+                    $str="
+                        UPDATE trx_rmap_dt SET `fg_rmng` = `fg_rmng` - '$mrelease', `fg_release` = `fg_release` + '$mrelease' WHERE `rmap_trxno` = '$rmap_trxno' AND fg_code = '$mitemc'
                     ";
                     $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
@@ -264,7 +263,7 @@ class MyRMProductionModel extends Model
                 } 
 
                 $str="
-                UPDATE trx_rmap_req_hd SET `fgreq_trxno` = '$fgreq_trxno' WHERE `rmap_trxno` = '$rmap_trxno'
+                UPDATE trx_rmap_hd SET `fgreq_trxno` = '$fgreq_trxno' WHERE `rmap_trxno` = '$rmap_trxno'
                 ";
                 $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 

@@ -71,6 +71,8 @@ thead.memetable, th.memetable, td.memetable {
 							$on_mouse = " onmouseover=\"this.style.backgroundColor='#97CBFF';\" onmouseout=\"this.style.backgroundColor='" . $bgcolor  . "';\"";	
 							$rmap_trxno = $row['rmap_trxno'];
 							$is_processed = $row['is_processed'];
+							$fg_release = $row['fg_release'];
+							$fg_qty = $row['fg_qty'];
 						?>
 						<tr bgcolor="<?=$bgcolor;?>" <?=$on_mouse;?>>
 							<?php if($is_processed == 1):?>
@@ -98,9 +100,16 @@ thead.memetable, th.memetable, td.memetable {
 								<td>
 									<button onclick="window.open('<?= site_url() ?>rm-req-fg-print?rmap_trxno=<?=$rmap_trxno?>')" class=" btn btn-primary btn-xs"  title="View pdf" > FG Print </button>
 								</td>
-								<td nowrap="nowrap">
-									<?=anchor('rm-prod/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-send"></i> ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
-								</td> 
+								<?php if($fg_qty != $fg_release):?>
+									<td nowrap="nowrap">
+										<?=anchor('rm-prod/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-send"></i> ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm "');?>
+									</td>
+								<?php else:?> 
+									<td nowrap="nowrap">
+										<?=anchor('rm-prod/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-send"></i> ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm disabled"');?>
+									</td>
+								<?php endif;?>	
+
 							<?php else:?>
 								<td nowrap="nowrap">
 									<button class="btn btn-success btn-xs mbtn_recs_Process"  data-rmapno= "<?=$row['rmap_trxno'];?>" value="<?=$txt_mtknr?>"  type="button"> Process </button>
@@ -112,7 +121,7 @@ thead.memetable, th.memetable, td.memetable {
 									<button onclick="window.open('<?= site_url() ?>rm-req-fg-print?rmap_trxno=<?=$rmap_trxno?>')" class=" btn btn-primary btn-xs disabled"  title="View pdf" > FG Print </button>
 								</td>
 								<td nowrap="nowrap">
-									<?=anchor('rm-prod/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-send"></i> ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
+									<?=anchor('rm-prod/?rmap_trxno=' . $rmap_trxno, '<i class="bi bi bi-send"></i> ',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm disabled"');?>
 								</td> 
 							<?php endif;?>
 						</tr>
@@ -213,6 +222,52 @@ try {
 
 __mysys_apps.mepreloader('mepreloaderme',false);
 
+
+$('.mbtn_recs_Process').on('click',function(){
+try { 
+	// $('html,body').scrollTop(0);
+	__mysys_apps.mepreloader('mepreloaderme',true);
+
+	var rmapno = jQuery(this).attr('data-rmapno'); 
+
+	var mparam = {
+
+		rmapno:rmapno
+
+	};
+
+	$.ajax({ // default declaration of ajax parameters
+	type: "POST",
+	url: '<?=site_url();?>me-rm-rec-process-save',
+	context: document.body,
+	data: eval(mparam),
+	global: false,
+	cache: false,
+		success: function(data)  { //display html using divID
+			__mysys_apps.mepreloader('mepreloaderme',false);
+			$(this).prop('disabled', false);
+           // $.hideLoading();
+            jQuery('#memsgtestent_bod').html(data);
+            jQuery('#memsgtestent').modal('show');
+
+		return false;
+		},
+		error: function() { // display global error on the menu function
+			alert('error loading page...');
+				__mysys_apps.mepreloader('mepreloaderme',false);
+			return false;
+		}	
+	});	
+} catch(err) {
+	var mtxt = 'There was an error on this page.\n';
+	mtxt += 'Error description: ' + err.message;
+	mtxt += '\nClick OK to continue.';
+	alert(mtxt);
+		__mysys_apps.mepreloader('mepreloaderme',false);
+	return false;
+}  //end try	
+
+});
 
 $('.mbtn_recs_Process').on('click',function(){
 try { 

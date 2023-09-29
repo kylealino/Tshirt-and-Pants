@@ -285,12 +285,14 @@ class MyRMRequestModel extends Model
                         INSERT INTO `d_ap2`.`trx_rmap_dt` (
                             `rmap_trxno`,
                             `fg_code`,
-                            `fg_qty`
+                            `fg_qty`,
+                            `fg_rmng`
                         )
                         VALUES
                             (
                             '$cseqn',
                             '$mitemc',
+                            '$mqty',
                             '$mqty'
                             );
                       
@@ -457,12 +459,14 @@ class MyRMRequestModel extends Model
                         INSERT INTO `d_ap2`.`trx_rmap_dt` (
                             `rmap_trxno`,
                             `fg_code`,
-                            `fg_qty`
+                            `fg_qty`,
+                            `fg_rmng`
                         )
                         VALUES
                             (
                             '$rmap_trxno',
                             '$mitemc',
+                            '$mqty',
                             '$mqty'
                             );
                       
@@ -841,21 +845,28 @@ class MyRMRequestModel extends Model
         $mtkn_etr = $this->request->getVar('mtkn_etr');
        
         $strqry = "
-            SELECT
-                `recid`,
-                `rmap_trxno`,
-                `subcon`,
-                `plant` plnt_id,
-                `remarks`,
-                `request_date`,
-                `total_fg_qty` total_qty,
-                `is_processed`
-            FROM
-                `trx_rmap_hd`
-            GROUP BY 
-                `rmap_trxno`
-            ORDER BY 
-                `request_date` DESC
+        SELECT
+            a.`recid`,
+            a.`rmap_trxno`,
+            a.`subcon`,
+            a.`plant` plnt_id,
+            a.`remarks`,
+            a.`request_date`,
+            a.`total_fg_qty` total_qty,
+            a.`is_processed`,
+            SUM(b.`fg_qty`) fg_qty,
+            SUM(b.`fg_release`) fg_release,
+            SUM(b.`fg_rmng`) fg_rmng
+        FROM
+            `trx_rmap_hd` a
+        JOIN
+            `trx_rmap_dt` b
+        ON
+            a.`rmap_trxno` = b.`rmap_trxno`
+        GROUP BY 
+            `rmap_trxno`
+        ORDER BY 
+            `request_date` DESC
         ";
         
         //var_dump($strqry);

@@ -415,18 +415,8 @@ $cuserfullname = session()->get('__xsys_myusererpfullname__');
         </a>
         <ul id="maitenance-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="<?=site_url();?>me-item-comp-vw">
-              <i class="bi bi-circle"></i><span>Item Components</span>
-            </a>
-          </li>
-          <li>
             <a href="<?=site_url();?>me-item-comp-vw-2">
-              <i class="bi bi-circle"></i><span>Item Components v2</span>
-            </a>
-          </li>
-          <li>
-            <a href="<?=site_url();?>me-standard-cap">
-              <i class="bi bi-circle"></i><span>Standard Capacity</span>
+              <i class="bi bi-circle"></i><span>Item Components</span>
             </a>
           </li>
         </ul>
@@ -504,16 +494,6 @@ $cuserfullname = session()->get('__xsys_myusererpfullname__');
             </a>
           </li>
           <li>
-            <a href="<?=site_url();?>rm-outbound">
-              <i class="bi bi-circle"></i><span>RM Outbound</span>
-            </a>
-          </li>
-          <li>
-            <a href="<?=site_url();?>rm-outbound-2">
-              <i class="bi bi-circle"></i><span>RM Outbound v2</span>
-            </a>
-          </li>
-          <li>
             <a href="<?=site_url();?>rm-prod">
               <i class="bi bi-circle"></i><span>RM Production</span>
             </a>
@@ -546,27 +526,9 @@ $cuserfullname = session()->get('__xsys_myusererpfullname__');
               <i class="bi bi-circle"></i><span>FG Packed Outgoing</span>
             </a>
           </li>
-          <li>
-            <a href="<?=site_url();?>alex-route">
-              <i class="bi bi-circle"></i><span>GO to alex</span>
-            </a>
-          </li>
         </ul>
       </li> <!-- End Packing Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#masterdata-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-clipboard-data"></i><span>Masterdata</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="masterdata-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="<?=site_url();?>sub-item-masterdata">
-              <i class="bi bi-circle"></i><span>Sub Item Masterdata</span>
-            </a>
-          </li>
-
-        </ul>
-      </li> <!-- End Packing Nav -->
     </ul>
 
   </aside><!-- End Sidebar-->

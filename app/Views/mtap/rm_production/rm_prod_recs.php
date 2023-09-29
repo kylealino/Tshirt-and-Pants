@@ -24,7 +24,6 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 									<th>Plant</th>
 									<th>Request Date</th>
 									<th>Request</th>
-									<th>Proceeded</th>
 									<th>Produce</th>
                                     <th>Remaining</th>
                                     <th>Process</th>
@@ -40,21 +39,19 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 									$bgcolor = ($nn % 2) ? "#EAEAEA" : "#F2FEFF";
 									$on_mouse = " onmouseover=\"this.style.backgroundColor='#97CBFF';\" onmouseout=\"this.style.backgroundColor='" . $bgcolor  . "';\"";	
 									$rmap_trxno = $row['rmap_trxno'];
-									$produce_release = $row['produce_release'];
-									$item_qty = $row['item_qty'];
-									$produce_qty = $row['produce_qty'];
+									$fg_release = $row['fg_release'];
+									$fg_qty = $row['fg_qty'];
 								?>
 								<tr bgcolor="<?=$bgcolor;?>" <?=$on_mouse;?>>
 									<td nowrap><?=$row['rmap_trxno'];?></td>
-									<td nowrap><?=$row['plnt_id'];?></td>
+									<td nowrap><?=$row['plant'];?></td>
 									<td nowrap><?=$row['request_date'];?></td>
-									<td nowrap><?=$row['item_qty'];?></td>
-									<td nowrap><?=$row['produce_qty'];?></td>
-                                    <td nowrap><?=$row['produce_release'];?></td>
-                                    <td nowrap><?=$row['produce_rmng'];?></td>
+									<td nowrap><?=$row['fg_qty'];?></td>
+                                    <td nowrap><?=$row['fg_release'];?></td>
+                                    <td nowrap><?=$row['fg_rmng'];?></td>
 									
                                     <td nowrap>
-									<?php if($produce_qty != $produce_release):?>
+									<?php if($fg_qty != $fg_release):?>
                                         <?=anchor('rm-prod/?rmap_trxno=' . $rmap_trxno, 'PROCESS',' class="btn btn-dgreen p-1 pb-0 mebtnpt1 btn-sm"');?>
                                     
 									<?php else:?>
