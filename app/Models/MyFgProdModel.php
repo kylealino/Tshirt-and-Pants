@@ -360,21 +360,38 @@ class MyFgProdModel extends Model
             FIELDS TERMINATED BY '\t' 
             LINES TERMINATED BY '\r\n'  
             FROM (
-                SELECT 
-                    tpa_trxno,
-                    fgreq_trxno,
-                    stock_code,
-                    barcde,
-                    irb_barcde,
-                    srb_barcde,
-                    witb_barcde,
-                    wob_barcde,
-                    pob_barcde,
-                    dmg_barcde
+                    SELECT
+                    a.`tpa_trxno`,
+                    (SELECT SUM(`qty_perpack`) FROM trx_fgpack_req_dt WHERE fgreq_trxno = c.`fgreq_trxno` GROUP BY fgreq_trxno) total,
+                    c.`fgreq_trxno`,
+                    a.`stock_code`,
+                    d.`branch_name`,
+                    a.`wob_barcde`,
+                    CONCAT(RIGHT(a.`wob_barcde`, 1),'/',c.`req_pack`) last_digit,
+                    (SELECT GROUP_CONCAT(mat_code) FROM trx_fgpack_req_dt WHERE fgreq_trxno = c.`fgreq_trxno`) item_codes,
+                    'W-TAP',
+                    (select sum(dt.`qty_perpack` * mst.`ART_UPRICE`) AS TOTAL FROM trx_fgpack_req_dt dt join mst_article mst ON dt.`mat_code` = mst.`ART_CODE` where dt.`fgreq_trxno` = c.`fgreq_trxno`) AS AMOUNT
                     FROM
-                    fg_prod_barcdng_dt
-                    WHERE
-                    fgreq_trxno = '{$fgreq_trxno}'
+                    fg_prod_barcdng_dt a
+                    JOIN
+                    trx_tpa_dt b
+                    ON
+                    a.`tpa_trxno` = b.`tpa_trxno`
+                    JOIN
+                    trx_fgpack_req_dt c
+                    ON
+                    a.`fgreq_trxno` = c.`fgreq_trxno`
+                    JOIN
+                    trx_tpa_hd d
+                    ON
+                    b.`tpa_trxno` = d.`tpa_trxno`
+                    JOIN
+                    mst_article e 
+                    ON
+                    c.`mat_code` = e.`ART_CODE`
+                    WHERE 
+                    a.`fgreq_trxno` = '{$fgreq_trxno}'
+                    GROUP BY a.`witb_barcde`
 
             ) oa       
 
