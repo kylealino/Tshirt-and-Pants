@@ -22,6 +22,7 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 				          	<tr>
 							  		<th>Edit</th>
                                     <th>View</th>
+									<th>Delete</th>
 									<th>Transaction No.</th>
 									<th>Branch</th>
 									<th>Entry Date</th>
@@ -42,6 +43,9 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 									</td>
                                     <td nowrap="nowrap">
 										<button title="View items" class="btn btn-dgreen-ol btn-xs tpa-btn-view-items"  data-pptrxno= "<?=$row['prod_plan_trxno'];?>"  type="button" ><i class="bi bi-eye-fill"></i> Items</button>
+									</td>
+									<td nowrap="nowrap">
+										<button type="button" class="btn btn-xs btn-danger"><i class="bi bi-x"></i></button>
 									</td>
 									<td nowrap><?=$row['prod_plan_trxno'];?></td>
 									<td nowrap><?=$row['brnch_name'];?></td>
