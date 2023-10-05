@@ -1016,23 +1016,22 @@ class MyRMPurchaseModel extends Model
         $mpw_tkn = $this->mylibzdb->mpw_tkn();
 
         $strqry = "
-        SELECT
-            a.`mat_code` as ART_CODE,
+        SELECT 
+            a.`mat_code`,
             b.`ART_DESC`,
             b.`ART_UOM`,
-            SUM(a.`po_qty`) AS po_qty,
-            SUM(a.`po_rcv_qty`) AS po_rcv_qty,
-            a.`req_qty`,
-            a.`prod_qty`,
-            a.`delivered_qty`,
-            a.`balance_qty`
+            SUM(a.`inbound_qty`) inbound_qty,
+            COALESCE((SELECT SUM(`rm_qty`) FROM trx_rmap_bom WHERE rm_code = a.`mat_code`), 0.0000) demand_qty,
+            COALESCE((SELECT SUM(`rm_qty`) FROM trx_rmap_bom WHERE rm_code = a.`mat_code` AND is_out = '1'), 0.0000) outbound_qty,
+            SUM(a.`po_qty`) balance_qty
         FROM
             rm_inv_rcv a
-            JOIN
+        JOIN
             mst_article b
-            ON
+        ON
             a.`mat_code` = b.`ART_CODE`
-        GROUP BY a.`mat_code`
+        GROUP BY 
+            a.`mat_code`
         ";
              
         $str = "

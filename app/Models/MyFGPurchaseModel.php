@@ -684,13 +684,13 @@ class MyFGPurchaseModel extends Model
 
                         $str = "
                         UPDATE gw_fg_po_dt
-                        SET `rmng_qty` = `rmng_qty` - '{$act_qty}', `rqty` = `rqty` + '{$act_qty}'
+                        SET `rcv_tag` = '1',`rmng_qty` = `rmng_qty` - '{$act_qty}', `rqty` = `rqty` + '{$act_qty}'
                         WHERE `po_sysctrlno` = '$pono' AND mat_code = '$mitemc'
                         ";
                         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
 
                         $strUp = "
-                        UPDATE fg_inv_rcv a SET a.`po_qty` = `po_qty` + '{$act_qty}'  WHERE  a.`mat_code` = '{$mitemc}'
+                        UPDATE fg_inv_rcv a SET a.`po_qty` = `po_qty` + '{$act_qty}', a.`inbound_qty` = a.`inbound_qty` + '{$act_qty}'  WHERE  a.`mat_code` = '{$mitemc}'
                         ";
                         $qq = $this->mylibzdb->myoa_sql_exec($strUp,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
                         
@@ -712,7 +712,7 @@ class MyFGPurchaseModel extends Model
                         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
 
                         $strUp = "
-                        INSERT INTO fg_inv_rcv (`mat_code`, `po_qty`) SELECT a.`mat_code`, '{$act_qty}' FROM gw_fg_po_dt a WHERE a.`po_sysctrlno` = '$pono' and mat_code = '{$mitemc}'
+                        INSERT INTO fg_inv_rcv (`mat_code`, `po_qty`,`inbound_qty`) SELECT a.`mat_code`, '{$act_qty}','{$act_qty}' FROM gw_fg_po_dt a WHERE a.`po_sysctrlno` = '$pono' and mat_code = '{$mitemc}'
                         ";
                         $qq = $this->mylibzdb->myoa_sql_exec($strUp,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
 
@@ -1177,22 +1177,27 @@ class MyFGPurchaseModel extends Model
         
         $strqry = "
         SELECT
-            a.`mat_code` as ART_CODE,
+            a.`mat_code`,
             b.`ART_DESC`,
             b.`ART_UOM`,
-            SUM(a.`po_qty`) AS po_qty,
-            SUM(a.`po_rcv_qty`) AS po_rcv_qty,
-            a.`req_qty`,
-            a.`prod_qty`,
-            a.`delivered_qty`,
-            a.`balance_qty`
+            COALESCE((SELECT SUM(qty) FROM gw_fg_po_dt WHERE mat_code = a.`mat_code` AND rcv_tag = '1' AND po_sysctrlno NOT LIKE '%FGRM%'),0.00000) fgpo_qty,
+            COALESCE((SELECT SUM(qty) FROM gw_fg_po_dt WHERE mat_code = a.`mat_code` AND rcv_tag = '1' AND po_sysctrlno LIKE '%FGRM%'),0.00000) rm_prod_qty,
+            (COALESCE((SELECT SUM(qty) FROM gw_fg_po_dt WHERE mat_code = a.`mat_code` AND rcv_tag = '1' AND po_sysctrlno NOT LIKE '%FGRM%'), 0.00000) +
+                COALESCE((SELECT SUM(qty) FROM gw_fg_po_dt WHERE mat_code = a.`mat_code` AND rcv_tag = '1' AND po_sysctrlno LIKE '%FGRM%'), 0.00000)) AS inbound_qty,
+            (SELECT SUM(qty_serve) FROM prod_plan_dt WHERE mat_code = a.`mat_code`) demand_qty,
+            (SELECT SUM(dt.`qty_perpack`) FROM fgp_inv_rcv a JOIN trx_fgpack_req_dt dt ON a.`fgreq_trxno` = dt.`fgreq_trxno` WHERE dt.`mat_code` = a.`mat_code` GROUP BY dt.`mat_code`) packed_qty,
+            (SELECT SUM(dt.`qty_perpack`) FROM fgp_inv_rcv a JOIN trx_fgpack_req_dt dt ON a.`fgreq_trxno` = dt.`fgreq_trxno` WHERE dt.`mat_code` = a.`mat_code` AND a.`is_out` = '1' GROUP BY dt.`mat_code`) outbound_qty,
+            (((COALESCE((SELECT SUM(qty) FROM gw_fg_po_dt WHERE mat_code = a.`mat_code` AND rcv_tag = '1' AND po_sysctrlno NOT LIKE '%FGRM%'), 0.00000) +
+                COALESCE((SELECT SUM(qty) FROM gw_fg_po_dt WHERE mat_code = a.`mat_code` AND rcv_tag = '1' AND po_sysctrlno LIKE '%FGRM%'), 0.00000))) - (SELECT SUM(dt.`qty_perpack`) FROM fgp_inv_rcv a JOIN trx_fgpack_req_dt dt ON a.`fgreq_trxno` = dt.`fgreq_trxno` WHERE dt.`mat_code` = a.`mat_code` GROUP BY dt.`mat_code`)) balance_qty
         FROM
             fg_inv_rcv a
-            JOIN
+        JOIN
             mst_article b
-            ON
+        ON 
             a.`mat_code` = b.`ART_CODE`
-        GROUP BY a.`mat_code`
+        GROUP BY
+            a.`mat_code`
+        
         ";
              
         $str = "

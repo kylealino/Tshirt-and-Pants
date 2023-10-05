@@ -55,7 +55,7 @@ thead.memetable, th.memetable, td.memetable {
                           <th nowrap="nowrap">RAW MATERIAL PRODUCTION</th>
                           <th nowrap="nowrap">INBOUND</th>
                           <th nowrap="nowrap">DEMAND</th>
-                          <th nowrap="nowrap">FOR PACKING</th>
+                          <th nowrap="nowrap">PACKED</th>
                           <th nowrap="nowrap">OUTBOUND</th>
                           <th nowrap="nowrap">BALANCE</th>
                           </tr>
@@ -72,16 +72,16 @@ thead.memetable, th.memetable, td.memetable {
                               ?>
 
                                 <tr bgcolor="<?=$bgcolor;?>" <?=$on_mouse;?>>
-                                <td nowrap><?=$row['ART_CODE'];?></td>
+                                <td nowrap><?=$row['mat_code'];?></td>
                                 <td nowrap><?=$row['ART_DESC'];?></td>
                                 <td nowrap><?=$row['ART_UOM'];?></td>
-                                <td nowrap><?=$row['balance_qty'];?></td>     
-                                <td nowrap><?=$row['prod_qty'];?></td>    
-                                <td nowrap><?=$row['po_rcv_qty'];?></td>
-                                <td nowrap><?=$row['req_qty'];?></td>
-                                <td nowrap><?=$row['delivered_qty'];?></td> 
+                                <td nowrap><?=$row['fgpo_qty'];?></td>
+                                <td nowrap><?=$row['rm_prod_qty'];?></td>     
+                                <td nowrap><?=$row['inbound_qty'];?></td>    
+                                <td nowrap><?=$row['demand_qty'];?></td>
+                                <td nowrap><?=$row['packed_qty'];?></td> 
+                                <td nowrap><?=$row['outbound_qty'];?></td> 
                                 <td nowrap><?=$row['balance_qty'];?></td> 
-                                <td nowrap><?=$row['po_qty'];?></td> 
                                 </tr>
                               <?php 
                                 

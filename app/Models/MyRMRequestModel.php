@@ -651,34 +651,33 @@ class MyRMRequestModel extends Model
 
         $rmapno = $this->request->getVar('rmapno');
 
-        $str="
-        SELECT
-            `rmap_trxno`,
-            `rm_code`,
-            `rm_qty`
-        FROM
-            `trx_rmap_bom`
-        WHERE
-            `rmap_trxno` = '$rmapno'
-        ";
-        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-        $rw = $q->getResultArray();
-        foreach ($rw as $data) {
-            $rm_code = $data['rm_code'];
-            $rm_qty = $data['rm_qty'];
-
-            $str="
-                UPDATE `rm_inv_rcv` SET `po_qty` = `po_qty` - '$rm_qty' WHERE `mat_code` = '$rm_code';
-            ";
-            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-
-        }
-
-        $str="
+        $str2="
             UPDATE `trx_rmap_hd` SET `is_processed` = '1' WHERE `rmap_trxno` = '$rmapno';
         ";
-        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+        $q2 = $this->mylibzdb->myoa_sql_exec($str2,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
+        $str3 = "
+        UPDATE `rm_inv_rcv` AS target
+            INNER JOIN (
+            SELECT
+                `rm_code`,
+                SUM(`rm_qty`) AS total_rm_qty
+            FROM
+                `trx_rmap_bom`
+            WHERE
+                `rmap_trxno` = '$rmapno' and `is_out` = '0'
+            GROUP BY
+                `rm_code`
+            ) AS source
+            ON target.`mat_code` = source.`rm_code`
+            SET target.`po_qty` = target.`po_qty` - source.`total_rm_qty`
+        ";
+        $q3 = $this->mylibzdb->myoa_sql_exec($str3, 'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__ . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        $str4="
+            UPDATE `trx_rmap_bom` SET `is_out` = '1' WHERE `rmap_trxno` = '$rmapno';
+        ";
+        $q4 = $this->mylibzdb->myoa_sql_exec($str4, 'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__ . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
         echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong> Data Processed Successfully! </div>
         <script type=\"text/javascript\"> 
@@ -697,6 +696,8 @@ class MyRMRequestModel extends Model
             __fg_refresh_data();
         </script>
         ";
+
+
     } //end rm_req_entry_save
 
     public function rm_save(){

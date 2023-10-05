@@ -129,11 +129,11 @@ class MyFgProdModel extends Model
                         die();
                     }
 
-                    $str="
-                    UPDATE fg_inv_rcv SET po_qty = po_qty - '$total_processed' WHERE mat_code = '$mitemc' 
+                    // $str="
+                    // UPDATE fg_inv_rcv SET po_qty = po_qty - '$total_processed' WHERE mat_code = '$mitemc' 
                     
-                    ";
-                    $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+                    // ";
+                    // $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
     
                     $strY = "
                         SELECT `total_pack`,`total_processed` FROM trx_fgpack_req_dt WHERE `fgreq_trxno` = '$fgreq_trxno' 
