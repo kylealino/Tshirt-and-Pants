@@ -22,12 +22,12 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 				          	<tr>
 							  		<th>Edit</th>
                                     <th>View</th>
-									<th>Delete</th>
 									<th>Transaction No.</th>
 									<th>Branch</th>
 									<th>Entry Date</th>
 									<th>QTS</th>
 									<th>Amount</th>
+									<th>Delete</th>
 				          	</tr>
 		            	</thead>
 						<tbody>
@@ -44,14 +44,14 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
                                     <td nowrap="nowrap">
 										<button title="View items" class="btn btn-dgreen-ol btn-xs tpa-btn-view-items"  data-pptrxno= "<?=$row['prod_plan_trxno'];?>"  type="button" ><i class="bi bi-eye-fill"></i> Items</button>
 									</td>
-									<td nowrap="nowrap">
-										<button type="button" class="btn btn-xs btn-danger"><i class="bi bi-x"></i></button>
-									</td>
 									<td nowrap><?=$row['prod_plan_trxno'];?></td>
 									<td nowrap><?=$row['brnch_name'];?></td>
 									<td nowrap><?=$row['entry_date'];?></td>
 									<td nowrap><?=$row['qty_serve'];?></td>
                                     <td nowrap><?=$row['amount_serve'];?></td>
+									<td nowrap="nowrap">
+										<button type="button" class="btn btn-xs btn-danger mbtn_mn_Save" data-prodtrxno= "<?=$prod_plan_trxno;?>" id="mbtn_mn_Save"><i class="bi bi-x"></i></button>
+									</td>
 								</tr>
 								<?php 
 								$nn++;
@@ -71,9 +71,16 @@ $mpw_tkn = $mylibzdb->mpw_tkn();
 		</div>
 	</div>
 </div>
+<?php
+    echo $mylibzsys->memsgbox1('memsgtestent_danger','<i class="bi bi-exclamation-circle"></i> System Alert','...','bg-pdanger');
+    echo $mylibzsys->memypreloader01('mepreloaderme');
+    echo $mylibzsys->memsgbox1('memsgtestent','System Alert','...');
+    ?>  
 
 <script type="text/javascript">
+	
 $(document).ready(function(){
+	__mysys_apps.mepreloader('mepreloaderme',false);
  $.extend(true, $.fn.dataTable.defaults,{
       language: {
           search: ""
@@ -144,5 +151,48 @@ try {
 }  //end try	
 
 });
+
+$('.mbtn_mn_Save').on('click', function () {
+    try {
+        var prodtrxno = jQuery(this).attr('data-prodtrxno');
+
+        // Ask for confirmation
+        var confirmation = confirm('Are you sure you want to delete this item?');
+
+        if (confirmation) {
+            var mparam = {
+                prodtrxno: prodtrxno
+            };
+
+            $.ajax({
+                type: "POST",
+                url: '<?=site_url();?>prod-plan-delete',
+                context: document.body,
+                data: eval(mparam),
+                global: false,
+                cache: false,
+                success: function (data) {
+                    $(this).prop('disabled', false);
+                    // $.hideLoading();
+                    jQuery('#memsgtestent_bod').html(data);
+                    jQuery('#memsgtestent').modal('show');
+                    return false;
+                },
+                error: function () {
+                    alert('error loading page...');
+                    // $.hideLoading();
+                    return false;
+                }
+            });
+        }
+    } catch (err) {
+        var mtxt = 'There was an error on this page.\n';
+        mtxt += 'Error description: ' + err.message;
+        mtxt += '\nClick OK to continue.';
+        alert(mtxt);
+    } // end try
+    return false;
+});
+
 </script>
 

@@ -770,7 +770,7 @@ class MyRMPurchaseModel extends Model
                         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
 
                         $strUp = "
-                        UPDATE rm_inv_rcv a SET a.`po_qty` = `po_qty` + '{$act_qty}'  WHERE  a.`mat_code` = '{$mitemc}'
+                        UPDATE rm_inv_rcv a SET a.`po_qty` = `po_qty` + '{$act_qty}', a.`inbound_qty` = a.`inbound_qty` + '{$act_qty}'  WHERE  a.`mat_code` = '{$mitemc}'
                         ";
                         $qq = $this->mylibzdb->myoa_sql_exec($strUp,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
                         
@@ -786,7 +786,7 @@ class MyRMPurchaseModel extends Model
                         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
 
                         $strUp = "
-                        INSERT INTO rm_inv_rcv (`mat_code`, `po_qty`) SELECT a.`mat_code`, '{$act_qty}' FROM gw_rm_po_dt a WHERE a.`po_sysctrlno` = '$pono' and mat_code = '{$mitemc}'
+                        INSERT INTO rm_inv_rcv (`mat_code`, `po_qty`,`inbound_qty`) SELECT a.`mat_code`, '{$act_qty}','{$act_qty}' FROM gw_rm_po_dt a WHERE a.`po_sysctrlno` = '$pono' and mat_code = '{$mitemc}'
                         ";
                         $qq = $this->mylibzdb->myoa_sql_exec($strUp,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
 

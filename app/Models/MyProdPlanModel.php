@@ -343,6 +343,39 @@ class MyProdPlanModel extends Model
      
     } //end prod_plan_upld
 
+    public function prod_plan_entry_delete(){
+        $prodtrxno = $this->request->getVar('prodtrxno');
+
+        $str="
+            DELETE FROM `prod_plan_hd` WHERE `prod_plan_trxno` = '$prodtrxno'
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        $str="
+            DELETE FROM `prod_plan_dt` WHERE `prod_plan_trxno` = '$prodtrxno'
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        echo "<div class=\"alert alert-success mb-0\" role=\"alert\"><strong>Info.<br/></strong><strong>Success</strong> Data Deleted Successfully!!! </div>
+        <script type=\"text/javascript\"> 
+            function __fg_refresh_data() { 
+                try { 
+                    jQuery('#mbtn_mn_Save').prop('disabled',true);
+                } catch(err) { 
+                    var mtxt = 'There was an error on this page.\\n';
+                    mtxt += 'Error description: ' + err.message;
+                    mtxt += '\\nClick OK to continue.';
+                    alert(mtxt);
+                    return false;
+                }  //end try 
+            } 
+            
+            __fg_refresh_data();
+        </script>
+        ";
+        die();
+    }
+
     public function prod_plan_entry_save() {
 
 

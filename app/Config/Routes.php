@@ -430,6 +430,7 @@ $routes->get('search-prod-plan-branch','Prod_plan::search_prod_plan_branch',['fi
 $routes->post('me-prod-plan-save','Prod_plan::prod_plan_save',['filter' => 'myauthuser']);
 $routes->post('me-prod-plan-view','Prod_plan::prod_plan_vw',['filter' => 'myauthuser']);
 $routes->post('prod-plan-items','Prod_plan::prod_plan_itm_recs',['filter' => 'myauthuser']);
+$routes->post('prod-plan-delete','Prod_plan::prod_plan_delete',['filter' => 'myauthuser']);
 
 //Standard Capacity
 $routes->get('me-standard-cap','Standard_cap::index',['filter' => 'myauthuser']);

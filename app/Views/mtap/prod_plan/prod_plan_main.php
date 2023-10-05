@@ -129,7 +129,6 @@ $defaultDate = date('Y-m-d');
     prod_plan_view_recs(mtkn_whse);
     });
 
-    __mysys_apps.mepreloader('mepreloaderme',false);
     $('#btn-upload-wshe-rcv').click(function(){ 
       try {   
 
@@ -155,7 +154,6 @@ $defaultDate = date('Y-m-d');
         my_data.append('date_range', date_range);
         my_data.append('month_cap', month_cap);
 
-        __mysys_apps.mepreloader('mepreloaderme',true);
         $.ajax({ // default declaration of ajax parameters
           url: '<?=site_url()?>prod-plan-upld',
           method:"POST",

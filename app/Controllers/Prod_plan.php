@@ -56,6 +56,12 @@ class Prod_plan extends BaseController
 
 	} //end	prod_plan_save
 
+	public function prod_plan_delete(){
+
+		$this->myprodplan->prod_plan_entry_delete();
+
+	} //end	prod_plan_delete
+
 	public function prod_plan_vw() { 
 
         $data = $this->myprodplan->prod_plan_rec_view(1,90);
