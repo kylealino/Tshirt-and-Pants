@@ -240,6 +240,8 @@ class MyProdPlanModel extends Model
                 }elseif ($date_range == '2023') {
                     $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }
+
+                $str_prev_month = "(SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE MONTH(SO_DATE) = MONTH(CURDATE() - INTERVAL 1 MONTH) AND YEAR(SO_DATE) = YEAR(CURDATE() - INTERVAL 1 MONTH) AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 
     
             }else{
@@ -252,9 +254,11 @@ class MyProdPlanModel extends Model
                 }elseif ($date_range == '2023') {
                     $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }
+
+                $str_prev_month = "(SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE MONTH(SO_DATE) = MONTH(CURDATE() - INTERVAL 1 MONTH) AND YEAR(SO_DATE) = YEAR(CURDATE() - INTERVAL 1 MONTH) AND `SO_ITEMCODE` = a.`ART_CODE`) ";
             }
 
-            $str_prev_month = "(SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE MONTH(SO_DATE) = MONTH(CURDATE() - INTERVAL 1 MONTH) AND YEAR(SO_DATE) = YEAR(CURDATE() - INTERVAL 1 MONTH) AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+            
 
 
             
