@@ -1187,8 +1187,7 @@ class MyFGPurchaseModel extends Model
             (SELECT SUM(qty_serve) FROM prod_plan_dt WHERE mat_code = a.`mat_code`) demand_qty,
             (SELECT SUM(dt.`qty_perpack`) FROM fgp_inv_rcv a JOIN trx_fgpack_req_dt dt ON a.`fgreq_trxno` = dt.`fgreq_trxno` WHERE dt.`mat_code` = a.`mat_code` GROUP BY dt.`mat_code`) packed_qty,
             (SELECT SUM(dt.`qty_perpack`) FROM fgp_inv_rcv a JOIN trx_fgpack_req_dt dt ON a.`fgreq_trxno` = dt.`fgreq_trxno` WHERE dt.`mat_code` = a.`mat_code` AND a.`is_out` = '1' GROUP BY dt.`mat_code`) outbound_qty,
-            (((COALESCE((SELECT SUM(qty) FROM gw_fg_po_dt WHERE mat_code = a.`mat_code` AND rcv_tag = '1' AND po_sysctrlno NOT LIKE '%FGRM%'), 0.00000) +
-                COALESCE((SELECT SUM(qty) FROM gw_fg_po_dt WHERE mat_code = a.`mat_code` AND rcv_tag = '1' AND po_sysctrlno LIKE '%FGRM%'), 0.00000))) - (SELECT SUM(dt.`qty_perpack`) FROM fgp_inv_rcv a JOIN trx_fgpack_req_dt dt ON a.`fgreq_trxno` = dt.`fgreq_trxno` WHERE dt.`mat_code` = a.`mat_code` GROUP BY dt.`mat_code`)) balance_qty
+            SUM(a.`po_qty`) balance_qty
         FROM
             fg_inv_rcv a
         JOIN
@@ -1197,8 +1196,8 @@ class MyFGPurchaseModel extends Model
             a.`mat_code` = b.`ART_CODE`
         GROUP BY
             a.`mat_code`
-        
         ";
+
              
         $str = "
         select count(*) __nrecs from ({$strqry}) oa

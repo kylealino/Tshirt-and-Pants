@@ -85,6 +85,7 @@ $month_cap = $request->getVar('month_cap');
 				<th nowrap="nowrap" style="color:red;">LACKING/OVER</th>
 				<th nowrap="nowrap" style="color:blue;">QTY TO SERVE</th>
 				<th nowrap="nowrap" style="color:green;">AMOUNT</th>
+				<th nowrap="nowrap" style="color:orange;">LAST MONTH SALES</th>
 			</tr>
 		</thead>
 		<tbody id="tblItems">
@@ -111,6 +112,7 @@ $month_cap = $request->getVar('month_cap');
 					<td nowrap="nowrap"><input type="text" id="LACKING<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" disabled></td>
 					<td nowrap="nowrap"><input type="text" id="QTYTOSERVE<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" disabled></td>
 					<td nowrap="nowrap"><input type="text" id="AMOUNT<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" disabled></td>
+					<td nowrap="nowrap"><input type="text" id="LSALES<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" value="<?=$row['sales_prev_month'];?>" disabled></td>
 		 		</tr>
 			<?php 
 					endforeach;
@@ -277,7 +279,6 @@ function __pack_totals() {
 				var STDRD_CAP_TOTAL = parseFloat(STDRD_CAP);
 				var SRP_TOTAL = parseFloat(SRP);
 				var STORE_BAL_TOTAL = parseFloat(STORE_BAL);
-				var RCV_STOCKS_TOTAL = parseFloat(RCV_STOCKS);
 				var SALES_TOTAL = parseFloat(SALES);
 				var INTRANSIT_TOTAL = parseFloat(INTRANSIT);
 				var FOR_PCKING_TOTAL = parseFloat(FOR_PCKING);
@@ -391,39 +392,44 @@ function __pack_totals() {
 			var total = 0;
 			var amount = 0;
 			var total_amount = 0;
-			var txt_qty_serve = jQuery('#txt_qty_serve').val();
-			var txt_amount_serve = jQuery('#txt_amount_serve').val();
+			var store_bal_zero = 0;
+
+			var month_cap = jQuery('#month_cap').val();
 
 			for(aa = 1; aa < rowCount1 ; aa++) { 
 				var clonedRow = jQuery('#tbl-items-received tr:eq(' + aa + ')').clone(); 
+				var txt_qty_serve = jQuery('#txt_qty_serve').val();
+				var txt_amount_serve = jQuery('#txt_amount_serve').val();
 				var STDRD_CAP = jQuery(clonedRow).find('input[type=text]').eq(2).val();
 				var SRP = jQuery(clonedRow).find('input[type=text]').eq(3).val();
 				var STORE_BAL = jQuery(clonedRow).find('input[type=text]').eq(4).val();
-				var RCV_STOCKS = jQuery(clonedRow).find('input[type=text]').eq(5).val();
-				var SALES = jQuery(clonedRow).find('input[type=text]').eq(6).val();
-				var INTRANSIT = jQuery(clonedRow).find('input[type=text]').eq(7).val();
-				var FOR_PCKING = jQuery(clonedRow).find('input[type=text]').eq(8).val();
-				var LACKING = jQuery(clonedRow).find('input[type=text]').eq(9).attr('id');
-				var QTYTOSERVE = jQuery(clonedRow).find('input[type=text]').eq(10).attr('id');
-				var AMOUNT = jQuery(clonedRow).find('input[type=text]').eq(11).attr('id');
-				
+				var SALES = jQuery(clonedRow).find('input[type=text]').eq(5).val();
+				var INTRANSIT = jQuery(clonedRow).find('input[type=text]').eq(6).val();
+				var FOR_PCKING = jQuery(clonedRow).find('input[type=text]').eq(7).val();
+				var LACKING = jQuery(clonedRow).find('input[type=text]').eq(8).attr('id');
+				var QTYTOSERVE = jQuery(clonedRow).find('input[type=text]').eq(9).attr('id');
+				var AMOUNT = jQuery(clonedRow).find('input[type=text]').eq(10).attr('id');
+				var nSTDRD_CAP = parseFloat(STDRD_CAP);
 				var STDRD_CAP_TOTAL = parseFloat(STDRD_CAP);
 				var SRP_TOTAL = parseFloat(SRP);
 				var STORE_BAL_TOTAL = parseFloat(STORE_BAL);
-				var RCV_STOCKS_TOTAL = parseFloat(RCV_STOCKS);
 				var SALES_TOTAL = parseFloat(SALES);
 				var INTRANSIT_TOTAL = parseFloat(INTRANSIT);
 				var FOR_PCKING_TOTAL = parseFloat(FOR_PCKING);
 				var LACKING_TOTAL = parseFloat(LACKING);
 				var AMOUNT_TOTAL = parseFloat(AMOUNT);
 				var QTYTOSERVE_TOTAL = parseFloat(QTYTOSERVE);
-				
-				total_lacking = ((STORE_BAL_TOTAL + RCV_STOCKS_TOTAL) - SALES_TOTAL + INTRANSIT_TOTAL + FOR_PCKING_TOTAL)-STDRD_CAP;
+
+				total_lacking = (STORE_BAL_TOTAL  + INTRANSIT_TOTAL + FOR_PCKING_TOTAL)-nSTDRD_CAP;
 				total = total + total_lacking;
+
+
+				$('#' + STORE_BAL).val(store_bal_zero);
+				
 
 				$('#' + LACKING).val(total_lacking.toFixed(2));
 				
-				
+			
 				if (total_lacking <= 0 && total_lacking >= -15) {
 					lck = 10 * month_cap;
 				}
@@ -487,7 +493,6 @@ function __pack_totals() {
 				else if(total_lacking >= 0){
 					lck = 0;
 				}
-
 				$('#' + QTYTOSERVE).val(lck);
 				total_lck += lck;
 				amount = (SRP_TOTAL * lck);
@@ -504,7 +509,7 @@ function __pack_totals() {
 			alert(mtxt);
 			$.hideLoading();
 			return false;
-		}         
+		}               
 	}
    
 }

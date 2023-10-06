@@ -33,6 +33,7 @@ $defaultDate = date('Y-m-d');
                         <div class="col-sm-12">
                             <h6 class="card-title p-0">Sales Coverage:</h6>
                             <select id="date_range" class="form-control form-control-sm" name="date_range">
+                                <option value="2023">2023</option>
                                 <option value="2022">2022</option>
                                 <option value="2021">2021</option>
                                 <option value="2020">2020</option>

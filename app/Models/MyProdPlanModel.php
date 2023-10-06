@@ -237,7 +237,10 @@ class MyProdPlanModel extends Model
                     $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }elseif ($date_range == '2020') {
                     $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+                }elseif ($date_range == '2023') {
+                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tbltempsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }
+                
     
             }else{
                 if ($date_range == '2022') {
@@ -246,8 +249,12 @@ class MyProdPlanModel extends Model
                     $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }elseif ($date_range == '2020') {
                     $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
+                }elseif ($date_range == '2023') {
+                    $str_date_range = " (SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE (SO_DATE >= '$date_range-01-01 00:00:00' AND SO_DATE <= '$date_range-12-31 00:00:00') AND `SO_ITEMCODE` = a.`ART_CODE`) ";
                 }
             }
+
+            $str_prev_month = "(SELECT SUM(IF(`SO_QTY` IS NULL, 0, `SO_QTY`)) FROM $tblbrnchsalesout WHERE MONTH(SO_DATE) = MONTH(CURDATE() - INTERVAL 1 MONTH) AND YEAR(SO_DATE) = YEAR(CURDATE() - INTERVAL 1 MONTH) AND `SO_ITEMCODE` = a.`ART_CODE`) ";
 
 
             
@@ -312,7 +319,8 @@ class MyProdPlanModel extends Model
             a.`INTRANSIT`,
             a.`FOR_PCKING`,
             b.`ART_DESC`,
-            b.`ART_UPRICE`
+            b.`ART_UPRICE`,
+            IFNULL({$str_prev_month}, 0) AS sales_prev_month
         FROM
             {$tbltemp} a
         JOIN 
