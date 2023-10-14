@@ -499,13 +499,21 @@ class MyFgpOutgoing extends Model
             `trx`,
             `header`,
             `stock_code`,
-            `wob_barcde`
+            `wob_barcde`,
+            `plnt_id`,
+            `wshe_id`,
+            `encd`,
+            `dr_date`
         )
         SELECT 
         a.`fgreq_trxno`,
         '{$_hd_ctrlno}',
         a.`stock_code`,
-        a.`wob_barcde`
+        a.`wob_barcde`,
+        '{$plntID}',
+        '{$whID}',
+        now(),
+        now()
 
         FROM 
         `fgp_inv_rcv` a
