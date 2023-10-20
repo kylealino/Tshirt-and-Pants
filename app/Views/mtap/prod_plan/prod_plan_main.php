@@ -127,6 +127,7 @@ $defaultDate = date('Y-m-d');
     $('#anchor-list').addClass('active');
     $('#anchor-items').removeClass('active');
     var mtkn_whse = '';
+    
     prod_plan_view_recs(mtkn_whse);
     });
 
@@ -240,11 +241,9 @@ $defaultDate = date('Y-m-d');
             }
         });
 
-        // Deal with the results of the above ajax call
-        __mysys_apps.mepreloader('mepreloaderme',true);
         ajaxRequest.done(function(response, textStatus, jqXHR) {
             jQuery('#prod-vw').html(response);
-            __mysys_apps.mepreloader('mepreloaderme',false);
+
         });
     };
 

@@ -57,11 +57,11 @@ $month_cap = $request->getVar('month_cap');
 		<div class="row gy-2">
 			<label class="col-sm-3 form-label" for="txt_qty_serve">Total Qty to serve:</label>
 			<div class="col-sm-3">
-				<input type="text" id="txt_qty_serve" name="txt_qty_serve" class="form-control form-control-sm" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" readonly/>
+				<input type="text" id="txt_qty_serve" name="txt_qty_serve" class="form-control form-control-sm" readonly/>
 			</div>
 			<label class="col-sm-3 form-label" for="txt_amount_serve">Total Amount to serve:</label>
 			<div class="col-sm-3">
-				<input type="text" id="txt_amount_serve" name="txt_amount_serve" class="form-control form-control-sm" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();" readonly/>
+				<input type="text" id="txt_amount_serve" name="txt_amount_serve" class="form-control form-control-sm" readonly/>
 			</div>
 		</div>
 	</div>
@@ -79,13 +79,16 @@ $month_cap = $request->getVar('month_cap');
 				<th nowrap="nowrap">TARGET</th>
 				<th nowrap="nowrap">SRP</th>
 				<th nowrap="nowrap">STORE BALANCE</th>
-				<th nowrap="nowrap">SALES</th>
+				<th nowrap="nowrap">ANNUAL SALES</th>
+				<th nowrap="nowrap" >LAST MONTH SALES</th>
 				<th nowrap="nowrap">INTRANSIT</th>
 				<th nowrap="nowrap">FOR PACKING</th>
-				<th nowrap="nowrap" style="color:red;">LACKING/OVER</th>
-				<th nowrap="nowrap" style="color:blue;">QTY TO SERVE</th>
-				<th nowrap="nowrap" style="color:green;">AMOUNT</th>
-				<th nowrap="nowrap" style="color:orange;">LAST MONTH SALES</th>
+				<th nowrap="nowrap">LACKING/OVER</th>
+				<th nowrap="nowrap">DEFAULTS QTS</th>
+				<th nowrap="nowrap">REVISED QTS</th>
+				<th nowrap="nowrap">FINAL QTS</th>
+				<th nowrap="nowrap">AMOUNT</th>
+				
 			</tr>
 		</thead>
 		<tbody id="tblItems">
@@ -107,12 +110,14 @@ $month_cap = $request->getVar('month_cap');
 					<td nowrap="nowrap"><input type="text" id="ART_UPRICE<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" value="<?=$row['ART_UPRICE'];?>" disabled></td>
 					<td nowrap="nowrap"><input type="text" id="STORE_BAL<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" value="<?= round($row['store_balance']); ?>" disabled></td>
 					<td nowrap="nowrap"><input type="text" id="SALES<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" value="<?=round($row['sales']);?>" disabled></td>
+					<td nowrap="nowrap"><input type="text" id="LSALES<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" value="<?=$row['sales_prev_month'];?>" disabled></td>
 					<td nowrap="nowrap"><input type="text" id="INTRANSIT<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" value="<?=$row['INTRANSIT'];?>" disabled></td>
 					<td nowrap="nowrap"><input type="text" id="FOR_PCKING<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" value="<?=$row['FOR_PCKING'];?>" disabled></td>
 					<td nowrap="nowrap"><input type="text" id="LACKING<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" disabled></td>
-					<td nowrap="nowrap"><input type="text" id="QTYTOSERVE<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" disabled></td>
+					<td nowrap="nowrap"><input type="text" id="QTYTOSERVE<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" disabled ></td>
+					<td nowrap="nowrap"><input type="text" id="REVISEDQTYTOSERVE<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" value="0" onmouseover="javascript:__pack_totals();" onmouseout="javascript:__pack_totals();" onclick="javascript:__pack_totals();"  style="border: 3px solid #000;"></td>
+					<td nowrap="nowrap"><input type="text" id="FINALQTYTOSERVE<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" disabled></td>
 					<td nowrap="nowrap"><input type="text" id="AMOUNT<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" disabled></td>
-					<td nowrap="nowrap"><input type="text" id="LSALES<?=$nporecs;?>" class="form-control form-control-sm mitemcode bg-white" size="20" value="<?=$row['sales_prev_month'];?>" disabled></td>
 		 		</tr>
 			<?php 
 					endforeach;
@@ -161,6 +166,7 @@ $month_cap = $request->getVar('month_cap');
 	$('#tbl-items-received').DataTable({
 		           
 		searching:false,
+	   'lengthChange': false,
        'order':[],
        'columnDefs': [{
            "targets":[0],
@@ -181,13 +187,7 @@ $month_cap = $request->getVar('month_cap');
 
 	__pack_totals();
 
-	//PARA SA TIMER NG TAMT TOTALS
-	var tid = setInterval(myTamtTimer, 30000);
-	function myTamtTimer() {
-		__pack_totals();
-	// do some stuff...
-	// no need to recall the function (it's an interval, it'll loop forever)
-	}
+
 	jQuery('.meform_date').datepicker({
 		format: 'mm/dd/yyyy',
 		autoclose: true
@@ -241,6 +241,7 @@ $month_cap = $request->getVar('month_cap');
       } //end try
     }); 
 
+
 function __pack_totals() { 
 	var opt_df = jQuery('#opt_df').val();
 
@@ -255,6 +256,8 @@ function __pack_totals() {
 			var total= 0;
 			var lck = 0;
 			var total_lck = 0;
+			var total_serving = 0;
+			var total_tserving = 0;
 			var total = 0;
 			var amount = 0;
 			var total_amount = 0;
@@ -269,12 +272,16 @@ function __pack_totals() {
 				var STDRD_CAP = jQuery(clonedRow).find('input[type=text]').eq(2).val();
 				var SRP = jQuery(clonedRow).find('input[type=text]').eq(3).val();
 				var STORE_BAL = jQuery(clonedRow).find('input[type=text]').eq(4).val();
-				var SALES = jQuery(clonedRow).find('input[type=text]').eq(5).val();
-				var INTRANSIT = jQuery(clonedRow).find('input[type=text]').eq(6).val();
-				var FOR_PCKING = jQuery(clonedRow).find('input[type=text]').eq(7).val();
-				var LACKING = jQuery(clonedRow).find('input[type=text]').eq(8).attr('id');
-				var QTYTOSERVE = jQuery(clonedRow).find('input[type=text]').eq(9).attr('id');
-				var AMOUNT = jQuery(clonedRow).find('input[type=text]').eq(10).attr('id');
+				var SALES = jQuery(clonedRow).find('input[type=text]').eq(6).val();
+				var INTRANSIT = jQuery(clonedRow).find('input[type=text]').eq(7).val();
+				var FOR_PCKING = jQuery(clonedRow).find('input[type=text]').eq(8).val();
+				var LACKING = jQuery(clonedRow).find('input[type=text]').eq(9).attr('id');
+				var QTYTOSERVE = jQuery(clonedRow).find('input[type=text]').eq(10).attr('id');
+				var REVISEDQTYTOSERVE = parseFloat(jQuery(clonedRow).find('input[type=text]').eq(11).val()) || 0;
+				var FINALQTYTOSERVE = jQuery(clonedRow).find('input[type=text]').eq(12).attr('id');
+				var AMOUNT = jQuery(clonedRow).find('input[type=text]').eq(13).attr('id');
+
+
 				var nSTDRD_CAP = parseFloat(STDRD_CAP);
 				var STDRD_CAP_TOTAL = parseFloat(STDRD_CAP);
 				var SRP_TOTAL = parseFloat(SRP);
@@ -284,11 +291,11 @@ function __pack_totals() {
 				var FOR_PCKING_TOTAL = parseFloat(FOR_PCKING);
 				var LACKING_TOTAL = parseFloat(LACKING);
 				var AMOUNT_TOTAL = parseFloat(AMOUNT);
-				var QTYTOSERVE_TOTAL = parseFloat(QTYTOSERVE);
+				var QTYTOSERVE_TOTAL = parseFloat(QTYTOSERVE) || 0;
+				var REVQTYTOSERVE_TOTAL = parseFloat(REVISEDQTYTOSERVE) || 0;
 
 				total_lacking = (STORE_BAL_TOTAL  + INTRANSIT_TOTAL + FOR_PCKING_TOTAL)-nSTDRD_CAP;
 				total = total + total_lacking;
-
 
 				$('#' + STORE_BAL).val(store_bal_zero);
 				
@@ -360,14 +367,24 @@ function __pack_totals() {
 					lck = 0;
 				}
 
+				total_serving = (lck + REVISEDQTYTOSERVE);
+
+				if (REVISEDQTYTOSERVE == 0) {
+					total_serving = (lck + REVISEDQTYTOSERVE);
+					amount = (SRP_TOTAL * lck);
+				}else{
+					total_serving = REVISEDQTYTOSERVE;
+					amount = (SRP_TOTAL * REVISEDQTYTOSERVE);
+				}
 				$('#' + QTYTOSERVE).val(lck);
 				total_lck += lck;
-				amount = (SRP_TOTAL * lck);
 
 				$('#' + AMOUNT).val(amount.toFixed(2));
+				$('#' + FINALQTYTOSERVE).val(total_serving);
+				total_tserving += total_serving
 				total_amount += amount;
 			}
-			$('#txt_qty_serve').val(total_lck);
+			$('#txt_qty_serve').val(total_tserving);
 			$('#txt_amount_serve').val(total_amount.toFixed(2));
 		} catch(err) {
 			var mtxt = 'There was an error on this page.\n';
@@ -389,6 +406,8 @@ function __pack_totals() {
 			var total= 0;
 			var lck = 0;
 			var total_lck = 0;
+			var total_serving = 0;
+			var total_tserving = 0;
 			var total = 0;
 			var amount = 0;
 			var total_amount = 0;
@@ -403,12 +422,16 @@ function __pack_totals() {
 				var STDRD_CAP = jQuery(clonedRow).find('input[type=text]').eq(2).val();
 				var SRP = jQuery(clonedRow).find('input[type=text]').eq(3).val();
 				var STORE_BAL = jQuery(clonedRow).find('input[type=text]').eq(4).val();
-				var SALES = jQuery(clonedRow).find('input[type=text]').eq(5).val();
-				var INTRANSIT = jQuery(clonedRow).find('input[type=text]').eq(6).val();
-				var FOR_PCKING = jQuery(clonedRow).find('input[type=text]').eq(7).val();
-				var LACKING = jQuery(clonedRow).find('input[type=text]').eq(8).attr('id');
-				var QTYTOSERVE = jQuery(clonedRow).find('input[type=text]').eq(9).attr('id');
-				var AMOUNT = jQuery(clonedRow).find('input[type=text]').eq(10).attr('id');
+				var SALES = jQuery(clonedRow).find('input[type=text]').eq(6).val();
+				var INTRANSIT = jQuery(clonedRow).find('input[type=text]').eq(7).val();
+				var FOR_PCKING = jQuery(clonedRow).find('input[type=text]').eq(8).val();
+				var LACKING = jQuery(clonedRow).find('input[type=text]').eq(9).attr('id');
+				var QTYTOSERVE = jQuery(clonedRow).find('input[type=text]').eq(10).attr('id');
+				var REVISEDQTYTOSERVE = parseFloat(jQuery(clonedRow).find('input[type=text]').eq(11).val()) || 0;
+				var FINALQTYTOSERVE = jQuery(clonedRow).find('input[type=text]').eq(12).attr('id');
+				var AMOUNT = jQuery(clonedRow).find('input[type=text]').eq(13).attr('id');
+
+
 				var nSTDRD_CAP = parseFloat(STDRD_CAP);
 				var STDRD_CAP_TOTAL = parseFloat(STDRD_CAP);
 				var SRP_TOTAL = parseFloat(SRP);
@@ -418,18 +441,17 @@ function __pack_totals() {
 				var FOR_PCKING_TOTAL = parseFloat(FOR_PCKING);
 				var LACKING_TOTAL = parseFloat(LACKING);
 				var AMOUNT_TOTAL = parseFloat(AMOUNT);
-				var QTYTOSERVE_TOTAL = parseFloat(QTYTOSERVE);
+				var QTYTOSERVE_TOTAL = parseFloat(QTYTOSERVE) || 0;
+				var REVQTYTOSERVE_TOTAL = parseFloat(REVISEDQTYTOSERVE) || 0;
 
 				total_lacking = (STORE_BAL_TOTAL  + INTRANSIT_TOTAL + FOR_PCKING_TOTAL)-nSTDRD_CAP;
 				total = total + total_lacking;
-
 
 				$('#' + STORE_BAL).val(store_bal_zero);
 				
 
 				$('#' + LACKING).val(total_lacking.toFixed(2));
 				
-			
 				if (total_lacking <= 0 && total_lacking >= -15) {
 					lck = 10 * month_cap;
 				}
@@ -493,14 +515,25 @@ function __pack_totals() {
 				else if(total_lacking >= 0){
 					lck = 0;
 				}
+
+				total_serving = (lck + REVISEDQTYTOSERVE);
+
+				if (REVISEDQTYTOSERVE == 0) {
+					total_serving = (lck + REVISEDQTYTOSERVE);
+					amount = (SRP_TOTAL * lck);
+				}else{
+					total_serving = REVISEDQTYTOSERVE;
+					amount = (SRP_TOTAL * REVISEDQTYTOSERVE);
+				}
 				$('#' + QTYTOSERVE).val(lck);
 				total_lck += lck;
-				amount = (SRP_TOTAL * lck);
 
 				$('#' + AMOUNT).val(amount.toFixed(2));
+				$('#' + FINALQTYTOSERVE).val(total_serving);
+				total_tserving += total_serving
 				total_amount += amount;
 			}
-			$('#txt_qty_serve').val(total_lck);
+			$('#txt_qty_serve').val(total_tserving);
 			$('#txt_amount_serve').val(total_amount.toFixed(2));
 		} catch(err) {
 			var mtxt = 'There was an error on this page.\n';
@@ -632,14 +665,16 @@ jQuery('#branch_name')
                 var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val();
                 var mstdrd = jQuery(clonedRow).find('input[type=text]').eq(2).val();
                 var msbal = jQuery(clonedRow).find('input[type=text]').eq(4).val();
-                var msales = jQuery(clonedRow).find('input[type=text]').eq(5).val();
-                var mtrnst = jQuery(clonedRow).find('input[type=text]').eq(6).val();
-				var mfpckng = jQuery(clonedRow).find('input[type=text]').eq(7).val();
-                var mlck = jQuery(clonedRow).find('input[type=text]').eq(8).val();
-                var mqsrv = jQuery(clonedRow).find('input[type=text]').eq(9).val();
-				var mamt = jQuery(clonedRow).find('input[type=text]').eq(10).val();
+                var msales = jQuery(clonedRow).find('input[type=text]').eq(6).val();
+                var mtrnst = jQuery(clonedRow).find('input[type=text]').eq(7).val();
+				var mfpckng = jQuery(clonedRow).find('input[type=text]').eq(8).val();
+                var mlck = jQuery(clonedRow).find('input[type=text]').eq(9).val();
+                var dqts = jQuery(clonedRow).find('input[type=text]').eq(10).val();
+				var rqts = jQuery(clonedRow).find('input[type=text]').eq(11).val();
+				var fqts = jQuery(clonedRow).find('input[type=text]').eq(12).val();
+				var mamt = jQuery(clonedRow).find('input[type=text]').eq(13).val();
 
-                mdata = mitemc + 'x|x' + mstdrd + 'x|x' + msbal + 'x|x' + msales + 'x|x' + mtrnst + 'x|x' + mfpckng + 'x|x' + mlck + 'x|x' + mqsrv + 'x|x' + mamt;
+                mdata = mitemc + 'x|x' + mstdrd + 'x|x' + msbal + 'x|x' + msales + 'x|x' + mtrnst + 'x|x' + mfpckng + 'x|x' + mlck + 'x|x' + dqts + 'x|x' + rqts + 'x|x' + fqts + 'x|x' + mamt;
                 adata1.push(mdata);
 
 

@@ -461,8 +461,10 @@ class MyProdPlanModel extends Model
                     $mtrnst = $xdata[4];
                     $mfpckng = $xdata[5];
                     $mlck = $xdata[6];
-                    $mqsrv = $xdata[7];
-                    $mamt = $xdata[8];
+                    $dqts = $xdata[7];
+                    $rqts = $xdata[8];
+                    $fqts = $xdata[9];
+                    $mamt = $xdata[10];
 
 
 
@@ -476,6 +478,8 @@ class MyProdPlanModel extends Model
                         `intransit`,
                         `for_packing`,
                         `lacking`,
+                        `qty_default`,
+                        `qty_revised`,
                         `qty_serve`,
                         `amount_serve`
                       )
@@ -489,7 +493,9 @@ class MyProdPlanModel extends Model
                           '$mtrnst',
                           '$mfpckng',
                           '$mlck',
-                          '$mqsrv',
+                          '$dqts',
+                          '$rqts',
+                          '$fqts',
                           '$mamt'
                         );
                     ";

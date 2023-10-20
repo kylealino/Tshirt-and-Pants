@@ -161,7 +161,9 @@ $date = DateTime::createFromFormat('Y-m-d H:i:s', $entry_date)->format('Y-m-d');
                                 <th nowrap="nowrap">Intransit</th>
                                 <th nowrap="nowrap">For Packing</th>
                                 <th nowrap="nowrap">Lacking/Over</th>
-                                <th nowrap="nowrap">Qty To Serve</th>
+                                <th nowrap="nowrap">Default QTS</th>
+                                <th nowrap="nowrap">Revised QTS</th>
+                                <th nowrap="nowrap">Final QTS</th>
                                 <th nowrap="nowrap">Amount</th>
                         
                       </tr>
@@ -182,6 +184,8 @@ $date = DateTime::createFromFormat('Y-m-d H:i:s', $entry_date)->format('Y-m-d');
                       a.`intransit`,
                       a.`for_packing`,
                       a.`lacking`,
+                      a.`qty_default`,
+                      a.`qty_revised`,
                       a.`qty_serve`,
                       a.`amount_serve`
                       FROM
@@ -209,6 +213,8 @@ $date = DateTime::createFromFormat('Y-m-d H:i:s', $entry_date)->format('Y-m-d');
                           $intransit = $rdt['intransit'];
                           $for_packing = $rdt['for_packing'];
                           $lacking = $rdt['lacking'];
+                          $qty_default = $rdt['qty_default'];
+                          $qty_revised = $rdt['qty_revised'];
                           $qty_serve = $rdt['qty_serve'];
                           $amount_serve = $rdt['amount_serve'];
 
@@ -224,6 +230,8 @@ $date = DateTime::createFromFormat('Y-m-d H:i:s', $entry_date)->format('Y-m-d');
                         <td nowrap="nowrap"><input type="text" id="intransit<?=$nporecs;?>" class="form-control text-center form-control-sm bg-white" size="10" value="<?=$rdt['intransit'];?>" disabled></td>
                         <td nowrap="nowrap"><input type="text" id="for_packing<?=$nporecs;?>" class="form-control text-center form-control-sm bg-white" size="10" value="<?=$rdt['for_packing'];?>" disabled></td>
                         <td nowrap="nowrap"><input type="text" id="lacking<?=$nporecs;?>" class="form-control text-center form-control-sm mitemcode bg-white" size="10" value="<?=$rdt['lacking'];?>" disabled></td>
+                        <td nowrap="nowrap"><input type="text" id="qty_default<?=$nporecs;?>" class="form-control text-center form-control-sm bg-white" size="10" value="<?=$rdt['qty_default'];?>" disabled></td>
+                        <td nowrap="nowrap"><input type="text" id="qty_revised<?=$nporecs;?>" class="form-control text-center form-control-sm bg-white" size="10" value="<?=$rdt['qty_revised'];?>" disabled></td>
                         <td nowrap="nowrap"><input type="text" id="qty_serve<?=$nporecs;?>" class="form-control text-center form-control-sm bg-white" size="10" value="<?=$rdt['qty_serve'];?>" disabled></td>
                         <td nowrap="nowrap"><input type="text" id="amount_serve<?=$nporecs;?>" class="form-control text-center form-control-sm bg-white" size="10" value="<?=$rdt['amount_serve'];?>" disabled></td>
 
@@ -622,7 +630,7 @@ $date = DateTime::createFromFormat('Y-m-d H:i:s', $entry_date)->format('Y-m-d');
             var total = 0;
             for(aa = 1; aa < rowCount1; aa++) { 
                 var clonedRow = jQuery('#tbl-fgpack tr:eq(' + aa + ')').clone(); 
-                var qty = jQuery(clonedRow).find('input[type=text]').eq(9).val();
+                var qty = jQuery(clonedRow).find('input[type=text]').eq(11).val();
                 var QTY_TOTAL = parseFloat(qty);
 
                 total = total + QTY_TOTAL;
@@ -702,7 +710,7 @@ $date = DateTime::createFromFormat('Y-m-d H:i:s', $entry_date)->format('Y-m-d');
                 var clonedRow = jQuery('#tbl-fgpack tr:eq(' + aa + ')').clone(); 
                 var mitemc = jQuery(clonedRow).find('input[type=text]').eq(0).val(); //ITEM CODE
                 var mdesc = jQuery(clonedRow).find('input[type=text]').eq(1).val(); //UOM
-                var mdmd = jQuery(clonedRow).find('input[type=text]').eq(9).val(); //QTY
+                var mdmd = jQuery(clonedRow).find('input[type=text]').eq(11).val(); //QTY
                 var mitemc_tkn = jQuery(clonedRow).find('input[type=hidden]').eq(1).val(); 
                
                 mdata = mitemc + 'x|x' + mdesc + 'x|x' + mdmd + 'x|x' + mitemc_tkn;
