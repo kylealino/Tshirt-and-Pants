@@ -2310,6 +2310,20 @@ public function save_transfer(){
             $mwhere = "WHERE rcv.`plnt_id` = '{$plntID}' AND  rcv.`wshe_id` = '{$whID}' "; 
         }
 
+        // $str_item = "";
+        // $str = "select recid from {$this->db_erp}.mst_atricle where ART_CODE like '{$msearchrec}' or ART_DESC like '{$msearchrec}'";
+        // $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+        // if($q->getNumRows() > 0):
+        //     foreach($q->getResultArray() as $rw):
+        //         $str_item .= " rcv.matrid = {$rw->recid} or ";
+        //     endforeach;
+        //     rcv.matrid = 1 or rcv.matrid = 2 or rcv.matrid = 3 or
+        //     rcv.matrid = 1 or rcv.matrid = 2 or rcv.matrid = 3
+        //     $str_item = " and (" . substr($str_item,0,strlen($str_item) - 3) . ")";
+        //     and (rcv.matrid = 1 or rcv.matrid = 2 or rcv.matrid = 3)
+        // endif;
+
+        // $str_optn = $mwhere . $str_item . $str_grp . $str
 
 
         // warehouse end
