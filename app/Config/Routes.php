@@ -74,6 +74,7 @@ $routes->get('/get-recs','Warehouse_rcvng::get_recs',['filter' => 'myauthuser'])
 $routes->get('/warehouse-inv','Warehouse_inv::index',['filter' => 'myauthuser']);
 $routes->get('/warehouse_inv','Warehouse_inv::index',['filter' => 'myauthuser']);
 $routes->post('/warehouse-inv-item-recs','Warehouse_inv::whcdinv_itm_recs',['filter' => 'myauthuser']);
+$routes->post('/warehouse-inv-item-recs-vw','Warehouse_inv::whcdinv_itm_recs_vw',['filter' => 'myauthuser']);
 $routes->post('/warehouse-inv-api','Warehouse_inv::whcdinv_items_api2',['filter' => 'myauthuser']);
 $routes->post('/warehouse-inv-box-content','Warehouse_inv::whcdinv_box_content',['filter' => 'myauthuser']);
 $routes->post('/warehouse-inv-reports','Warehouse_inv::whcdinv_report_show',['filter' => 'myauthuser']);

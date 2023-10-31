@@ -5,9 +5,52 @@
  *  Author      : Arnel Oquien
  *  Date Created: Dec. 02, 2022
  */
+
+$request = \Config\Services::request();
+$mylibzdb = model('App\Models\MyLibzDBModel');
+$mylibzsys = model('App\Models\MyLibzSysModel');
+$mytxtsearchrec = $request->getVar('txtsearchedrec');
+$mymelibsys =  model('App\Models\Mymelibsys_Model');
+$mtkn_whse = $request->getVar('mtkn_whse');
+
+$data = array();
+$mpages = (empty($mylibzsys->oa_nospchar($request->getVar('mpages'))) ? 0 : $mylibzsys->oa_nospchar($request->getVar('mpages')));
+$mpages = ($mpages > 0 ? $mpages : 1);
+$apages = array();
+$mpages = $npage_curr;
+$npage_count = $npage_count;
+for($aa = 1; $aa <= $npage_count; $aa++) {
+	$apages[] = $aa . "xOx" . $aa;
+}
+
 ?>
 
+<style>
+	table.memetable, th.memetable, td.memetable {
+		border: 1px solid #F6F5F4;
+		border-collapse: collapse;
+	}
+	thead.memetable, th.memetable, td.memetable {
+		padding: 6px;
+	}
+</style>
 
+
+<?=form_open('warehouse-inv-item-recs-vw','class="needs-validation-search" id="myfrmsearchrec" ');?>
+
+    <div class="col-md-6 mb-1">
+        <div class="input-group input-group-sm">
+            <label class="input-group-text fw-bold" for="search">Search:</label>
+            <input type="text" id="mytxtsearchrec" class="form-control form-control-sm" name="mytxtsearchrec" placeholder="Search" />
+            <button type="submit" class="btn btn-dgreen btn-sm" style="background-color:#167F92; color:#fff;"><i class="bi bi-search"></i></button>
+        </div>
+    </div>
+<?=form_close();?> <!-- end of ./form -->
+<div class="col-md-8">
+    <?=$mylibzsys->mypagination($npage_curr,$npage_count,'__myredirected_rsearch','');?>
+</div>
+
+<input type="hidden" id="txt-wshe" class="txt-wshe" name="txt-wshe" value="<?=$mtkn_whse;?>"  data-id="">
 <div class="box box-primary">
 	<div class="box-body">
 		<div class="row pt-3">
@@ -39,6 +82,48 @@
 								<th nowrap="nowrap">TRANSACTION NO</th>
 				          	</tr>
 		            	</thead>
+						<tbody>
+							<?php 
+								if($rlist != 0):
+								$nn = 1;
+								foreach($rlist as $row): 
+								
+							?>
+							<tr>
+								<td class="text-center" nowrap>
+									<button class="btn btn-dgreen" data-mtknr="<?=$row['txt_mtknr']?>" onclick="getBoxcontent(this)"><i class="bi bi-box-seam"></i> View</button>
+								</td>
+								<td nowrap><?=$row['stock_code']?></td>
+								<td nowrap><input type="text" id="item_code<?=$nn;?>" class="form-control form-control-sm mitemcode" size="20" value="<?=$row['ART_CODE'];?>"readonly="readonly"></td>
+								<td nowrap><?=$row['ART_DESC']?></td>
+								<td nowrap><?=$row['BOX']?></td>
+								<td nowrap><?=$row['qty']?></td>
+								<td nowrap><?=$row['convf']?></td>
+								<td nowrap><?=$row['total_pcs_scanned']?></td>
+								<td nowrap><?=$row['tamt_scanned']?></td>
+								<td nowrap><?=$row['remarks']?></td>
+								<td nowrap><?=$row['plnt_code']?></td>
+								<td nowrap><?=$row['wshe_code']?></td>
+								<td nowrap><?=$row['wshe_bin_name']?></td>
+								<td nowrap><?=$row['wshe_grp']?></td>
+								<td nowrap><?=$row['barcde']?></td>
+								<td nowrap><?=$row['box_no']?></td>
+								<td nowrap><?=$row['muser']?></td>
+								<td nowrap><?=$row['encd']?></td>
+								<td nowrap><?=$row['type']?></td>
+								<td nowrap><?=$row['SD_NO']?></td>
+								
+							</tr>
+							<?php
+								$nn++;
+								endforeach;
+							else:
+								?>
+								<tr>
+									<td colspan="9">No data was found.</td>
+								</tr>
+							<?php endif; ?>
+						</tbody>
 		          	</table>
 	        	</div>
 	        	<hr>
@@ -49,80 +134,183 @@
 
 <script type="text/javascript">
 
-$(document).ready(function () {	
+function __myredirected_rsearch(mobj) { 
+		try { 
+			__mysys_apps.mepreloader('mepreloaderme',true);
+			var txtsearchedrec = jQuery('#mytxtsearchrec').val();
+			var mtkn_wshe_page = jQuery('#txt-wshe').val();
+			var txt_warehouse = jQuery('#txt-warehouse').attr("data-id");
+		
+            //mytrx_sc/mndt_sc2_recs
+            var mparam = { 
+            	txtsearchedrec: txtsearchedrec,
+				mtkn_wshe_page:mtkn_wshe_page,
+				txt_warehouse:txt_warehouse,
+            	mpages: mobj 
+            };	
+			jQuery.ajax({ // default declaration of ajax parameters
+				type: "POST",
+				url: '<?=site_url();?>warehouse-inv-item-recs-vw',
+				context: document.body,
+				data: eval(mparam),
+				global: false,
+				cache: false,
+				success: function(data)  { //display html using divID
+					__mysys_apps.mepreloader('mepreloaderme',false);
+					$('#mymodoutentrecs').html(data);
+					
+					return false;
+				},
+				error: function() { // display global error on the menu function
+					__mysys_apps.mepreloader('mepreloaderme',false);
+					alert('error loading page...');
+					
+					return false;
+				}	
+			});			
+			
+		} catch(err) {
+			var mtxt = 'There was an error on this page.\n';
+			mtxt += 'Error description: ' + err.message;
+			mtxt += '\nClick OK to continue.';
+			__mysys_apps.mepreloader('mepreloaderme',false);
+			alert(mtxt);
+			return false;
 
+		}  //end try
+	}	
+	
+	jQuery('#mytxtsearchrec').keypress(function(event) { 
+		if(event.which == 13) { 
+			event.preventDefault(); 
+			try { 
+				__mysys_apps.mepreloader('mepreloaderme',true);
+				var txtsearchedrec = jQuery('#mytxtsearchrec').val();
+				var mtkn_wshe_page = jQuery('#txt-wshe').val();
+				var txt_warehouse = jQuery('#txt-warehouse').attr("data-id");
+				var mparam = {
+					txtsearchedrec: txtsearchedrec,
+					mtkn_wshe_page:mtkn_wshe_page,
+					txt_warehouse:txt_warehouse,
+					mpages: 1 
+				};	
 
- $.extend(true, $.fn.dataTable.defaults,{
-      language: {
-          search: ""
-      }
-  });
-
-
-var table_inv = $('#tbl-inv-items-recs').DataTable({
-	// // processing:true,
-	serverSide:true,
-	 processing:true,
-    ajax: {
-          url:  '<?=site_url()?>warehouse-inv-api',
-          type: "POST",
-          data: {mtkn_whse: jQuery('#txt-warehouse').attr("data-id")},
-          dataSrc: 'data',
-
-      },
-
-       columnDefs: [
-		{
-		targets: '_all',
-		className: 'dt-head-center',
-		createdCell:  function (td, cellData, rowData, row, col){
-			$(td).attr('nowrap', 'nowrap'); 
-			if(rowData[5] == 0){ //row 5 is QTY
-				$(td).addClass('p-2');	
-			}
+				jQuery.ajax({ // default declaration of ajax parameters
+					type: "POST",
+					url: '<?=site_url();?>warehouse-inv-item-recs-vw',
+					context: document.body,
+					data: eval(mparam),
+					global: false,
+					cache: false,
+					success: function(data)  { //display html using divID
+						jQuery('#mymodoutentrecs').html(data);
+						__mysys_apps.mepreloader('mepreloaderme',false);
+						return false;
+					},
+					error: function() { // display global error on the menu function
+						__mysys_apps.mepreloader('mepreloaderme',false);
+						alert('error loading page...');
+						return false;
+					}	
+				});	
+			} catch(err) { 
+				var mtxt = 'There was an error on this page.\n';
+				mtxt += 'Error description: ' + err.message;
+				mtxt += '\nClick OK to continue.';
+				__mysys_apps.mepreloader('mepreloaderme',false);
+				alert(mtxt);
+				return false;
+			}  //end try	
 			
 		}
-		},
-		{
-		target: 8,
-		visible: false,
-		searchable: false,
-		},
-		{
-             targets:[0,18,10,11,4,3,5,16],
-             orderable: false
-         },
-   		 ],
-          "initComplete": function(settings, json) {
-    		    __mysys_apps.mepreloader('mepreloaderme',false);
-  			}
+	});	
+	
 
-    });
+	(function () {
+		'use strict'
 
-	$('#tbl-inv-items-recs tbody').on('click', 'button', function () {
-        var data = table_inv.row($(this).parents('tr')).data();
-        getBoxcontent(data[20]);
-    });
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		var forms = document.querySelectorAll('.needs-validation-search')
+		// Loop over them and prevent submission
+		Array.prototype.slice.call(forms)
+		.forEach(function (form) {
+			form.addEventListener('submit', function (event) {
+				if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+				}
+				form.classList.add('was-validated') 
 
-   $('#tbl-inv-items-recs_filter.dataTables_filter [type=search]').each(function () {
-        $(this).attr(`placeholder`, `Search...`);
-        $(this).before('<span class="bi bi-search text-dgreen"></span>');
-    });
-
-  function reload(){
- 	$('#tbl-inv-items-recs').DataTable().ajax.reload();
-	}
-
-});
+				try {
+					event.preventDefault();
+					event.stopPropagation();
 
 
+					//start here
+					try { 
+						__mysys_apps.mepreloader('mepreloaderme',true);
+						var txtsearchedrec = jQuery('#mytxtsearchrec').val();
+						var mtkn_wshe_page = jQuery('#txt-wshe').val();
+						var txt_warehouse = jQuery('#txt-warehouse').attr("data-id");
+						var mparam = {
+							txtsearchedrec: txtsearchedrec,
+							mtkn_wshe_page:mtkn_wshe_page,
+							txt_warehouse:txt_warehouse,
+							mpages: 1 
+						};	
+						
+						jQuery.ajax({ // default declaration of ajax parameters
+							type: "POST",
+							url: '<?=site_url();?>warehouse-inv-item-recs-vw',
+							context: document.body,
+							data: eval(mparam),
+							global: false,
+							cache: false,
+							success: function(data)  { //display html using divID
+								__mysys_apps.mepreloader('mepreloaderme',false);
+								jQuery('#mymodoutentrecs').html(data);
+								
+							},
+							error: function() { // display global error on the menu function
+								__mysys_apps.mepreloader('mepreloaderme',false);
+								alert('error loading page...');
+								
+							}	
+						});			
+						
+					} catch(err) { 
+						__mysys_apps.mepreloader('mepreloaderme',false);
+						var mtxt = 'There was an error on this page.\n';
+						mtxt += 'Error description: ' + err.message;
+						mtxt += '\nClick OK to continue.';
+						alert(mtxt);
+					}  //end try
 
-function getBoxcontent(mtkn_dt){
+					//end here
+
+
+
+				} catch(err) { 
+					__mysys_apps.mepreloader('mepreloaderme',false);
+					var mtxt = 'There was an error on this page.\n';
+					mtxt += 'Error description: ' + err.message;
+					mtxt += '\nClick OK to continue.';
+					alert(mtxt);
+					return false;
+				}  //end try					
+			}, false)
+		})
+	})();	
+
+
+
+function getBoxcontent(button){
 
     	try { 
 
 		var txtsearchedrec = jQuery('#mytxtsearchrec_verify').val();
 		var mtkn_whse      = jQuery('#txt-warehouse').attr("data-id");
+		var mtkn_dt = jQuery(button).data('mtknr');
       	var mparam = {
 	        mtkn_dt: mtkn_dt,
 	        mtkn_whse:mtkn_whse
@@ -159,4 +347,55 @@ function getBoxcontent(mtkn_dt){
     }  //end try
 }
 
+function __my_item_lookup(){
+        jQuery('.mitemcode' ) 
+          // don't navigate away from the field on tab when selecting an item
+          .bind( 'keydown', function( event ) {
+              if ( event.keyCode === jQuery.ui.keyCode.TAB &&
+                      jQuery( this ).data( 'autocomplete' ).menu.active ) {
+                  event.preventDefault();
+              }
+              if( event.keyCode === jQuery.ui.keyCode.TAB ) {
+                  event.preventDefault();
+              }
+          })
+          .autocomplete({
+              minLength: 0,
+              source: '<?= site_url(); ?>get-rm-fg-code-list',
+              focus: function() {
+                  // prevent value inserted on focus
+                  return false;
+              },
+              select: function( event, ui ) {
+                  var terms = ui.item.value;
+                  
+                  jQuery(this).attr('alt', jQuery.trim(ui.item.value));
+                  jQuery(this).attr('title', jQuery.trim(ui.item.value));
+               
+                  this.value = ui.item.value;
+              
+
+                  var clonedRow = jQuery(this).parent().parent().clone();
+                  var indexRow = jQuery(this).parent().parent().index();
+                  var xobjitemrid = jQuery(clonedRow).find('input[type=hidden]').eq(0).attr('id'); //ID
+                  var xobjitemdesc = jQuery(clonedRow).find('input[type=text]').eq(1).attr('id');/*DESC*/
+                  var xobjiteminv = jQuery(clonedRow).find('input[type=text]').eq(3).attr('id');/*DESC*/
+                  
+                  $('#' + xobjitemrid).val(ui.item.mtkn_rid);
+                  $('#' + xobjitemdesc).val(ui.item.ART_DESC);
+                  $('#' + xobjiteminv).val(ui.item.po_qty);
+                  
+                 
+
+                  return false;
+              }
+          })
+          .click(function() { 
+
+              //jQuery(this).keydown(); 
+              var terms = this.value;
+              //jQuery(this).autocomplete('search', '');
+              jQuery(this).autocomplete('search', jQuery.trim(terms));
+          });  
+        }
 </script>

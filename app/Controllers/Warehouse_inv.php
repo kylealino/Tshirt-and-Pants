@@ -90,8 +90,18 @@ class Warehouse_inv extends BaseController
 			die();
 		endif;
 	
-		return view('warehouse_inv/warehouse_inv_itm_recs');
+		$data = $this->mywhrcinv->view_ent_itm_recs_v2(1, 10);
+		return view('warehouse_inv/warehouse_inv_itm_recs', $data);
 	}
+
+	public function  whcdinv_itm_recs_vw(){
+
+		$txtsearchedrec = $this->request->getVar('txtsearchedrec');
+        $mpages = $this->request->getVar('mpages');
+        $mpages = (empty($mpages) ? 0 : $mpages);
+        $data = $this->mywhrcinv->view_ent_itm_recs_v2($mpages, 10, $txtsearchedrec);
+		return view('warehouse_inv/warehouse_inv_itm_recs', $data);
+	} 
 
 	public function whcdinv_items_api(){
 		$result = $this->mydatazua->get_Active_menus($this->db_erp,$this->sysuaid,"myuatrx_id='196'","myua_trx");

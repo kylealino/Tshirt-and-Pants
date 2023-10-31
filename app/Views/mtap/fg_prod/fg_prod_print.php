@@ -27,10 +27,15 @@ $fgreq_trxno = $request->getVar('fgreq_trxno');
 
 $str="
 	SELECT
-		`pack_qty`,
-		`req_date`
+		a.`pack_qty`,
+		a.`req_date`,
+		b.`branch_name`
 	FROM
-		trx_fgpack_req_hd
+		trx_fgpack_req_hd a
+	JOIN
+		trx_tpa_hd b
+	ON
+		a.`tpa_trxno` = b.`tpa_trxno`
 	WHERE
 		fgreq_trxno = '$fgreq_trxno'
 ";
@@ -38,6 +43,7 @@ $q = $mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . ch
 $rw = $q->getRowArray();
 $pack_qty = $rw['pack_qty'];
 $req_date = $rw['req_date'];
+$branch_name = $rw['branch_name'];
 
 $date = date("F j, Y, g:i A");
 
@@ -110,7 +116,11 @@ $pdf->SetFont('Dot','',10);
 $pdf->Cell(44.5,5,$pack_qty,'B',0,'L');  
 $pdf->SetFont('Dot','',10);
 
-
+$pdf->SetXY(150,47);  
+$pdf->SetFont('Dot','',10);
+$pdf->Cell(19.5,5,'Branch:',0,0,'L'); 
+$pdf->SetFont('Dot','',10);
+$pdf->Cell(40.5,5,$branch_name,'B',0,'L');  
 
 
 //ITEMS TH

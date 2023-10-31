@@ -34,6 +34,7 @@ class MyWarehouseinvModel extends Model
 
         $mtkn_whse = $this->request->getVar('mtkn_whse');
         $mtkn_dt   = $this->request->getVar('mtkn_dt');
+
         //get warehouse id 
         $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
         $whID = $wshedata['whID'];
@@ -2273,45 +2274,57 @@ public function save_transfer(){
 
         }
 
-    public function view_ent_itm_recs_v2($start,$len){ 
+    public function view_ent_itm_recs_v2($npages = 1,$npagelimit = 10,$msearchrec=''){ 
         $cuser = $this->mylibzdb->mysys_user();
         $mpw_tkn = $this->mylibzdb->mpw_tkn();
         $morder = $this->request->getVar('order');
         $search = $this->request->getVar('search');
         $mtkn_whse = $this->request->getVar('mtkn_whse');
-        $msearchrec = $search['value'];  
+        $mtkn_wshe_page = $this->request->getVar('mtkn_wshe_page');
+        $txt_warehouse = $this->request->getVar('txt_warehouse');
         $mwhere = "";
         $str_order = "";
-    
-        
 
-        $order = $this->order;
-        $str_order = " ORDER BY " .key($order)." ". $order[key($order)];
-
-        if($morder['0']['column'] == 0){
-
-        }
-        else if($morder['0']['column'] > 0){
-        $str_order = " ORDER BY " .$this->column_order[$morder['0']['column']]." ". $morder['0']['dir'];
-
-        }
-
-      
+        //var_dump($mtkn_whse,'-',$mtkn_wshe_page,'-',$txt_warehouse);
 
         //get warehouse id 
-        $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
-        $whID = $wshedata['whID'];
-        $plntID = $wshedata['plntID'];
-        $mwhere = "WHERE rcv.`plnt_id` = '{$plntID}' AND  rcv.`wshe_id` = '{$whID}' "; 
+        if(empty($mtkn_whse) && !empty($mtkn_wshe_page)) { 
+            $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_wshe_page);
+            $whID = $wshedata['whID'];
+            $plntID = $wshedata['plntID'];
+            $mwhere = "WHERE rcv.`plnt_id` = '{$plntID}' AND  rcv.`wshe_id` = '{$whID}' "; 
+        }elseif(empty($mtkn_whse) && empty($mtkn_wshe_page)){
+            $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($txt_warehouse);
+            $whID = $wshedata['whID'];
+            $plntID = $wshedata['plntID'];
+            $mwhere = "WHERE rcv.`plnt_id` = '{$plntID}' AND  rcv.`wshe_id` = '{$whID}' "; 
+        }elseif(!empty($msearchrec)){
+            $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
+            $whID = $wshedata['whID'];
+            $plntID = $wshedata['plntID'];
+            $mwhere = "WHERE rcv.`plnt_id` = '{$plntID}' AND  rcv.`wshe_id` = '{$whID}' "; 
+        }else{
+            $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
+            $whID = $wshedata['whID'];
+            $plntID = $wshedata['plntID'];
+            $mwhere = "WHERE rcv.`plnt_id` = '{$plntID}' AND  rcv.`wshe_id` = '{$whID}' "; 
+        }
+
+
+
         // warehouse end
         
+            
+        //var_dump($whID,$plntID);
+
         //IF USERGROUP IS EQUAL SA THEN ALL DATA WILL VIEW ELSE PER USER
         $str_vwrecs = "AND a.`muser` = '$cuser'";
     
-        $str_optn = '';
-        if(!empty($msearchrec)){ 
+        $str_optn = "";
+        if(!empty($msearchrec)) { 
             $msearchrec = $this->dbx->escapeString($msearchrec);
-            $str_optn = $this->mymelibzsys->searchFilter($this->column_search,$msearchrec);
+            $str_optn = "AND  
+            (rcv.`witb_barcde` LIKE '%{$msearchrec}%' OR rcv.`stock_code` LIKE '%{$msearchrec}%' OR art.`ART_CODE` LIKE '%{$msearchrec}%' OR rcv.`remarks` LIKE '%{$msearchrec}%' OR grp.`wshe_grp` LIKE '%{$msearchrec}%' OR rcv.`SD_NO` LIKE '%{$msearchrec}%')";
         }
         // IF( rcv.`is_out` = 0,rcv.`qty`,0) qty,
         $strqry = "
@@ -2338,6 +2351,7 @@ public function save_transfer(){
         pl.`plnt_code`,
         wh.`wshe_code`,
         rcv.`box_no`,
+        'BOX' BOX,
         rcv.`stock_code`,
         art.`ART_CODE`,
         art.`ART_DESC`,
@@ -2363,27 +2377,38 @@ public function save_transfer(){
         JOIN {$this->db_erp}.`mst_wshe_grp` grp 
             ON rcv.`wshe_grp_id` = grp.`recid` 
             AND grp.`plnt_id`  = rcv.`plnt_id` AND grp.`wshe_id` = rcv.`wshe_id`
-        {$mwhere} {$str_optn}
-        GROUP BY rcv.`witb_barcde` {$str_order} limit {$start},{$len} ";
+        {$mwhere}{$str_optn}
+        GROUP BY rcv.`witb_barcde`";
 
-        $qry = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-        $filertedRows = $this->get_totalFilteredRows($mwhere,$str_optn);
-        $totalRows = $this->get_totalRows($mwhere);
-        if($qry->getNumRows() > 0) { 
-         $data['rlist'] = $qry->getResultArray();
-         $data['counts'] = $qry->getNumRows();
-         $data['filertedRows'] = $filertedRows;
-         $data['totalRows'] = $totalRows;
-
-        } else { 
-         $data = array();
-         $data['rlist'] = '';
-         $data['counts'] = 0;
-         $data['filertedRows'] = $filertedRows;
-         $data['totalRows'] = $totalRows;
-
-        }
-        return $data;
+        if($cuser == 'arman'):
+            echo $strqry . '<br/>';
+        endif;
+        $str = "
+		select count(*) __nrecs from ({$strqry}) oa
+		";
+		$qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+		$rw = $qry->getRowArray();
+		$npagelimit = ($npagelimit > 0 ? $npagelimit : 30);
+		$nstart = ($npagelimit * ($npages - 1));
+        $nstart = $nstart < 0 ? 0 : $nstart; 
+		
+		
+		$npage_count = ceil(($rw['__nrecs'] + 0) / $npagelimit);
+		$data['npage_count'] = $npage_count;
+		$data['npage_curr'] = $npages;
+		$str = "
+		SELECT * from ({$strqry}) oa limit {$nstart},{$npagelimit} ";
+		$qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+		
+		if($qry->resultID->num_rows > 0) { 
+			$data['rlist'] = $qry->getResultArray();
+		} else { 
+			$data = array();
+			$data['npage_count'] = 1;
+			$data['npage_curr'] = 1;
+			$data['rlist'] = 0;
+		}
+		return $data;
     } //endfunc
 
     public function get_totalRows($mwhere = ''){

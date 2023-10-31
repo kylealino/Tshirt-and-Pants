@@ -1111,6 +1111,7 @@ class MyWarehouseoutModel extends Model
         $cfilelnk = site_url() . 'downloads/me/' . $file_name.'.csv'; 
 
         
+        
         $str = "
         SELECT *
         INTO OUTFILE '{$filepath}'

@@ -180,7 +180,7 @@ $cuserrema = $mylibzdb->mysys_userrema();
 
 __mysys_apps.mepreloader('mepreloaderme',false);
 
-myrcvngcd_view_recs(jQuery('#txt-warehouse').attr("data-id"));
+myrcvngcd_view_recs(jQuery('#txt-warehouse').attr("data-id"));//attr("data-id")
 function myrcvngcd_view_recs(mtkn_whse){ 
     var ajaxRequest;
 
@@ -193,7 +193,7 @@ function myrcvngcd_view_recs(mtkn_whse){
     });
 
       // Deal with the results of the above ajax call
-    __mysys_apps.mepreloader('mepreloaderme',true);
+    __mysys_apps.mepreloader('mepreloaderme',false);
       ajaxRequest.done(function(response, textStatus, jqXHR) {
       jQuery('#mymodoutentrecs').html(response);
           //$.hideLoading();
@@ -429,7 +429,7 @@ function myinv_incoming(mtkn_whse){
               jQuery(this).attr('data-id', jQuery.trim(ui.item.mtkn_rid));
               var wshe_id = ui.item.mtkn_rid;
               jQuery('#txt-warehouse').attr("data-id",wshe_id);
-              myrcvngcd_view_recs(wshe_id);
+              myrcvngcd_view_recs(wshe_id);//wshe_id
              // myinv_incoming(wshe_id);
              // myinv_outbound(wshe_id);
               this.value = ui.item.value; 

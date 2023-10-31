@@ -552,6 +552,7 @@ public function getPlantWarehouse_data_bytkn($mtkn_rid = ''){
 
 //crossdocking only
 public function getCDPlantWarehouse_data_bytkn($mtkn_rid = ''){
+	//sha2(concat(`recid`,'{$mpw_tkn}'),384) ='{$mtkn_rid}' AND
 	$cuser   = $this->mylibzdb->mysys_user();
 	$mpw_tkn = $this->mylibzdb->mpw_tkn();
 	$str = "SELECT `recid` whID,`plnt_id` plntID,`wshe_code`  
