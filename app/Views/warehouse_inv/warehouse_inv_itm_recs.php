@@ -94,7 +94,7 @@ for($aa = 1; $aa <= $npage_count; $aa++) {
 									<button class="btn btn-dgreen" data-mtknr="<?=$row['txt_mtknr']?>" onclick="getBoxcontent(this)"><i class="bi bi-box-seam"></i> View</button>
 								</td>
 								<td nowrap><?=$row['stock_code']?></td>
-								<td nowrap><input type="text" id="item_code<?=$nn;?>" class="form-control form-control-sm mitemcode" size="20" value="<?=$row['ART_CODE'];?>"readonly="readonly"></td>
+								<td nowrap><?=$row['ART_CODE']?></td>
 								<td nowrap><?=$row['ART_DESC']?></td>
 								<td nowrap><?=$row['BOX']?></td>
 								<td nowrap><?=$row['qty']?></td>
