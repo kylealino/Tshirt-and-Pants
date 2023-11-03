@@ -87,9 +87,10 @@ for($aa = 1; $aa <= $npage_count; $aa++) {
 								if($rlist != 0):
 								$nn = 1;
 								foreach($rlist as $row): 
-								
+
 							?>
 							<tr>
+
 								<td class="text-center" nowrap>
 									<button class="btn btn-dgreen" data-mtknr="<?=$row['txt_mtknr']?>" onclick="getBoxcontent(this)"><i class="bi bi-box-seam"></i> View</button>
 								</td>

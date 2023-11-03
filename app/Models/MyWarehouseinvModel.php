@@ -2310,20 +2310,12 @@ public function save_transfer(){
             $mwhere = "WHERE rcv.`plnt_id` = '{$plntID}' AND  rcv.`wshe_id` = '{$whID}' "; 
         }
 
-        // $str_item = "";
-        // $str = "select recid from {$this->db_erp}.mst_atricle where ART_CODE like '{$msearchrec}' or ART_DESC like '{$msearchrec}'";
-        // $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
-        // if($q->getNumRows() > 0):
-        //     foreach($q->getResultArray() as $rw):
-        //         $str_item .= " rcv.matrid = {$rw->recid} or ";
-        //     endforeach;
-        //     rcv.matrid = 1 or rcv.matrid = 2 or rcv.matrid = 3 or
-        //     rcv.matrid = 1 or rcv.matrid = 2 or rcv.matrid = 3
-        //     $str_item = " and (" . substr($str_item,0,strlen($str_item) - 3) . ")";
-        //     and (rcv.matrid = 1 or rcv.matrid = 2 or rcv.matrid = 3)
-        // endif;
 
-        // $str_optn = $mwhere . $str_item . $str_grp . $str
+
+
+
+
+        
 
 
         // warehouse end
@@ -2332,15 +2324,59 @@ public function save_transfer(){
         //var_dump($whID,$plntID);
 
         //IF USERGROUP IS EQUAL SA THEN ALL DATA WILL VIEW ELSE PER USER
-        $str_vwrecs = "AND a.`muser` = '$cuser'";
+        // $str_vwrecs = "AND a.`muser` = '$cuser'";
     
         $str_optn = "";
+        $str_item = "";
+        $str_rcv = "";
+        $str_grp = "";
+        $str_end = "";
         if(!empty($msearchrec)) { 
             $msearchrec = $this->dbx->escapeString($msearchrec);
-            $str_optn = "AND  
-            (rcv.`witb_barcde` LIKE '%{$msearchrec}%' OR rcv.`stock_code` LIKE '%{$msearchrec}%' OR art.`ART_CODE` LIKE '%{$msearchrec}%' OR rcv.`remarks` LIKE '%{$msearchrec}%' OR grp.`wshe_grp` LIKE '%{$msearchrec}%' OR rcv.`SD_NO` LIKE '%{$msearchrec}%')";
+            //warehouse receiving table
+            $str_rcv .= "AND (rcv.`witb_barcde` LIKE '{$msearchrec}%' OR rcv.`stock_code` LIKE '{$msearchrec}%'  OR rcv.`remarks` LIKE '{$msearchrec}%'  OR rcv.`SD_NO` LIKE '{$msearchrec}%'";
+
+            //mst_article table
+            $str = "select recid from {$this->db_erp}.mst_article where ART_CODE LIKE '%{$msearchrec}%'";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+            if($q->getNumRows() > 0):
+                foreach($q->getResultArray() as $rw):
+                    $mat_rid = $rw['recid'];
+                    $str_item .= " rcv.`mat_rid` = {$mat_rid} or ";
+                endforeach;
+                    $str_item = " OR " . substr($str_item,0,strlen($str_item) - 3) . ")";
+
+            endif;
+
+            //mst_wshe_grp table
+            $str = "select recid from {$this->db_erp}.mst_wshe_grp where wshe_grp LIKE '%{$msearchrec}%'";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+            if($q->getNumRows() > 0):
+
+                foreach($q->getResultArray() as $rw):
+                    $grp_id = $rw['recid'];
+                    $str_grp .= " rcv.wshe_grp_id = {$grp_id} or ";
+                endforeach;
+                    $str_grp = " OR " . substr($str_grp,0,strlen($str_grp) - 3) . ")";
+
+            endif;
+
+            if (empty($str_item) && !empty($str_grp)) {
+                $str_item = "";
+            }elseif(!empty($str_item) && empty($str_grp)){
+                $str_grp = "";
+            }elseif(empty($str_item) && empty($str_grp)){
+                $str_grp = "";
+                $str_item = "";
+                $str_end = ")";
+            }
+
+           
         }
+        $str_optn = $mwhere . $str_rcv . $str_item . $str_grp . $str_end;
+        // OR grp.`wshe_grp` LIKE '%{$msearchrec}%'
         // IF( rcv.`is_out` = 0,rcv.`qty`,0) qty,
+        // OR art.`ART_CODE` LIKE '%{$msearchrec}%'
         $strqry = "
         SELECT
         rcv.`recid`,
@@ -2373,30 +2409,37 @@ public function save_transfer(){
         rcv.`total_amount` tamt_scanned,
         '' price,
         rcv.`total_pcs` total_pcs_scanned,
-        sbin.`wshe_bin_name`,
-        grp.`wshe_grp`,
         rcv.`witb_barcde`  barcde,
         rcv.`muser`,
         rcv.`type`,
         rcv.`SD_NO`,
-        rcv.`encd`
+        rcv.`encd`,
+        rcv.`wshe_sbin_id`,
+        rcv.`wshe_grp_id`,
+        rcv.`plnt_id`,
+        rcv.`wshe_id`,
+        (SELECT wshe_bin_name FROM mst_wshe_bin WHERE  recid = rcv.`wshe_sbin_id` ) wshe_bin_name,
+        (SELECT wshe_grp FROM mst_wshe_grp WHERE  recid = rcv.`wshe_grp_id`) wshe_grp
         FROM
         {$this->db_erp}.`warehouse_inv_rcv` rcv
         JOIN {$this->db_erp}.`mst_plant` pl ON pl.`recid` = rcv.`plnt_id`
         JOIN {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = rcv.`wshe_id`
         JOIN {$this->db_erp}.`mst_article` art ON art.`recid` =  rcv.`mat_rid`
-        JOIN {$this->db_erp}.`mst_wshe_bin` sbin 
-            ON rcv.`wshe_sbin_id` = sbin.`recid` AND rcv.`wshe_grp_id` = sbin.`wshegrp_id` 
-            AND sbin.`plnt_id`  = rcv.`plnt_id` AND sbin.`wshe_id` = rcv.`wshe_id`
-        JOIN {$this->db_erp}.`mst_wshe_grp` grp 
-            ON rcv.`wshe_grp_id` = grp.`recid` 
-            AND grp.`plnt_id`  = rcv.`plnt_id` AND grp.`wshe_id` = rcv.`wshe_id`
-        {$mwhere}{$str_optn}
+        {$str_optn}
         GROUP BY rcv.`witb_barcde`";
 
         if($cuser == 'arman'):
             echo $strqry . '<br/>';
         endif;
+
+        // sbin.`wshe_bin_name`,
+        // grp.`wshe_grp`,
+        // JOIN {$this->db_erp}.`mst_wshe_bin` sbin 
+        //     ON rcv.`wshe_sbin_id` = sbin.`recid` AND rcv.`wshe_grp_id` = sbin.`wshegrp_id` 
+        //     AND sbin.`plnt_id`  = rcv.`plnt_id` AND sbin.`wshe_id` = rcv.`wshe_id`
+        // JOIN {$this->db_erp}.`mst_wshe_grp` grp 
+        //     ON rcv.`wshe_grp_id` = grp.`recid` 
+        //     AND grp.`plnt_id`  = rcv.`plnt_id` AND grp.`wshe_id` = rcv.`wshe_id`
         $str = "
 		select count(*) __nrecs from ({$strqry}) oa
 		";
