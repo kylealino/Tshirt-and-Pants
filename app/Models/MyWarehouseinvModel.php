@@ -2331,7 +2331,7 @@ public function save_transfer(){
         $str_rcv = "";
         $str_grp = "";
         $str_end = "";
-        if(!empty($msearchrec)) { 
+        if(!empty($msearchrec) ) { 
             $msearchrec = $this->dbx->escapeString($msearchrec);
             //warehouse receiving table
             $str_rcv .= "AND (rcv.`witb_barcde` LIKE '{$msearchrec}%' OR rcv.`stock_code` LIKE '{$msearchrec}%'  OR rcv.`remarks` LIKE '{$msearchrec}%'  OR rcv.`SD_NO` LIKE '{$msearchrec}%'";
@@ -2349,7 +2349,7 @@ public function save_transfer(){
             endif;
 
             //mst_wshe_grp table
-            $str = "select recid from {$this->db_erp}.mst_wshe_grp where wshe_grp LIKE '%{$msearchrec}%'";
+            $str = "select recid from {$this->db_erp}.mst_wshe_grp where wshe_grp LIKE '{$msearchrec}%'";
             $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
             if($q->getNumRows() > 0):
 
