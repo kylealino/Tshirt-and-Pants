@@ -90,8 +90,6 @@ class MyProdPlanModel extends Model
             )
     
             ";
-    
-    
             $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
     
              //create temp table end

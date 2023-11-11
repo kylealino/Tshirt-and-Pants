@@ -1110,8 +1110,29 @@ class MyWarehouseoutModel extends Model
         $filepath = $mpathdn.$_csv_path.$file_name.'.csv';
         $cfilelnk = site_url() . 'downloads/me/' . $file_name.'.csv'; 
 
+        $tbltemp   = $this->db_erp . ".`sd_out_upld_temp_" . $this->mylibzsys->random_string(15) . "`";
         
-        
+        $str = "
+        CREATE table {$tbltemp} ( 
+        `recid` int(25) NOT NULL AUTO_INCREMENT,
+        LOG_MB_KEYREC varchar(35) default '',
+        LOG_USER varchar(35) default '',
+        PRIMARY KEY (`recid`)
+        )
+
+        ";
+        $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+
+        $str="
+            DELETE FROM {$tbltemp}
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
+
+        $str="
+            INSERT INTO {$tbltemp}(`LOG_MB_KEYREC`,`LOG_USER`) SELECT LOG_MB_KEYREC,LOG_USER FROM ualam WHERE LOG_MODULE = 'DONE_CD_OUT'
+        ";
+        $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
+
         $str = "
         SELECT *
         INTO OUTFILE '{$filepath}'
@@ -1131,13 +1152,15 @@ class MyWarehouseoutModel extends Model
             'WAREHOUSE',
             'BRANCH',
             'CREATED DATETIME',
+            'CREATED BY',
             'POSTED DATETIME',
+            'POSTED BY',
             'CHECK BY',
             'REMARKS'
 
             UNION ALL
             
-            (SELECT a.`crpl_code`, d.`ART_CODE`, d.`ART_DESC`, d.`ART_SKU`, SUM(b.`qty`) AS qty, SUM(b.`convf`) AS convf,SUM(b.`total_pcs`) AS convf,
+            (SELECT g.`LOG_MB_KEYREC`, d.`ART_CODE`, d.`ART_DESC`, d.`ART_SKU`, SUM(b.`qty`) AS qty, SUM(b.`convf`) AS convf,SUM(b.`total_pcs`) AS convf,
             SUM((SELECT SUM(artt.`ART_UPRICE`*item.`qty`) AS `total_amount`
             FROM
             `warehouse_shipdoc_item` item
@@ -1151,7 +1174,7 @@ class MyWarehouseoutModel extends Model
             item.`mat_rid` = artt.`recid`
             WHERE
             b.`recid` = inv.`recid`
-            )) AS total_amount, e.`plnt_code`, f.`wshe_code`,a.`brnch`, a.`date_encd`,a.`done_date`, a.`chk_by`, a.`me_remk`
+            )) AS total_amount, e.`plnt_code`, f.`wshe_code`,a.`brnch`, a.`date_encd`,a.`user`,a.`done_date`,g.`LOG_USER`, a.`chk_by`, a.`me_remk`
             FROM
             warehouse_shipdoc_hd a
             JOIN
@@ -1170,6 +1193,10 @@ class MyWarehouseoutModel extends Model
             mst_wshe f  
             ON
             b.`wshe_id` = f.`recid`
+            JOIN
+            {$tbltemp} g
+            ON
+            a.`crpl_code` = g.`LOG_MB_KEYREC`
             WHERE
             DATE(a.`done_date`) >= '{$fld_report_dtefrom}'
             AND
@@ -1182,7 +1209,7 @@ class MyWarehouseoutModel extends Model
         ";
 
         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
-
+        var_dump($str);    
         $chtmljs .= "
                     <script type=\"text/javascript\">
                         //window.parent.document.getElementById('myscrloading').innerHTML = '';
@@ -1199,7 +1226,7 @@ class MyWarehouseoutModel extends Model
                     </script>
                     
                     ";
-            echo $chtmljs;
+        echo $chtmljs;
         }
 
 
