@@ -2334,7 +2334,7 @@ public function save_transfer(){
         if(!empty($msearchrec) ) { 
             $msearchrec = $this->dbx->escapeString($msearchrec);
             //warehouse receiving table
-            $str_rcv .= "AND (rcv.`witb_barcde` LIKE '{$msearchrec}%' OR rcv.`stock_code` LIKE '{$msearchrec}%'  OR rcv.`remarks` LIKE '{$msearchrec}%'  OR rcv.`SD_NO` LIKE '{$msearchrec}%'";
+            $str_rcv = "AND (rcv.`witb_barcde` LIKE '{$msearchrec}%' OR rcv.`stock_code` LIKE '{$msearchrec}%'  OR rcv.`remarks` LIKE '{$msearchrec}%'  OR rcv.`SD_NO` LIKE '{$msearchrec}%')";
 
             //mst_article table
             $str = "select recid from {$this->db_erp}.mst_article where ART_CODE LIKE '%{$msearchrec}%'";
@@ -2342,20 +2342,20 @@ public function save_transfer(){
             if($q->getNumRows() > 0):
                 foreach($q->getResultArray() as $rw):
                     $mat_rid = $rw['recid'];
-                    $str_item .= " rcv.`mat_rid` = {$mat_rid} or ";
+                    $str_item .= " rcv.`mat_rid` LIKE '{$mat_rid}%' or ";
                 endforeach;
                     $str_item = " OR " . substr($str_item,0,strlen($str_item) - 3) . ")";
 
             endif;
 
             //mst_wshe_grp table
-            $str = "select recid from {$this->db_erp}.mst_wshe_grp where wshe_grp LIKE '{$msearchrec}%'";
+            $str = "select recid from {$this->db_erp}.mst_wshe_grp where wshe_grp LIKE '%{$msearchrec}%'";
             $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
             if($q->getNumRows() > 0):
 
                 foreach($q->getResultArray() as $rw):
                     $grp_id = $rw['recid'];
-                    $str_grp .= " rcv.wshe_grp_id = {$grp_id} or ";
+                    $str_grp .= " rcv.wshe_grp_id LIKE '{$grp_id}%' or ";
                 endforeach;
                     $str_grp = " OR " . substr($str_grp,0,strlen($str_grp) - 3) . ")";
 
@@ -2373,7 +2373,8 @@ public function save_transfer(){
 
            
         }
-        $str_optn = $mwhere . $str_rcv . $str_item . $str_grp . $str_end;
+        //. $str_item . $str_grp . $str_end
+        $str_optn = $mwhere . $str_rcv ;
         // OR grp.`wshe_grp` LIKE '%{$msearchrec}%'
         // IF( rcv.`is_out` = 0,rcv.`qty`,0) qty,
         // OR art.`ART_CODE` LIKE '%{$msearchrec}%'
