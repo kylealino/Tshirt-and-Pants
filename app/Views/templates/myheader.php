@@ -526,6 +526,11 @@ $cuserfullname = session()->get('__xsys_myusererpfullname__');
               <i class="bi bi-circle"></i><span>FG Packed Outgoing</span>
             </a>
           </li>
+          <li>
+            <a href="<?=site_url();?>test-alex">
+              <i class="bi bi-circle"></i><span>Alex page</span>
+            </a>
+          </li>
         </ul>
       </li> <!-- End Packing Nav -->
 

@@ -374,6 +374,11 @@ $routes->post('fgp-rcvng-items','Fgpack_rcvng::wshe_fg_rcvng_itm_recs',['filter'
 $routes->get('fgp-inv','Fgp_inv::index',['filter' => 'myauthuser']);
 $routes->post('fgp-inv-box-content','Fgp_inv::fgpinv_box_content',['filter' => 'myauthuser']);
 
+
+            
+//ALEX CONTROLLER
+$routes->get('test-alex','Alex_Controller::index',['filter' => 'myauthuser']);
+$routes->post('alex-save','Alex_Controller::alex_saving',['filter' => 'myauthuser']);
 //FGP Outgoing
 $routes->get('fgp-out','Fgp_out::index',['filter' => 'myauthuser']);
 $routes->post('fgp-out-recs','Fgp_out::fgp_out_recs',['filter' => 'myauthuser']);
