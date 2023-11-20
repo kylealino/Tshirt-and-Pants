@@ -1109,9 +1109,18 @@ class MyWarehouseoutModel extends Model
         $_csv_path = '/public/downloads/me/';
         $filepath = $mpathdn.$_csv_path.$file_name.'.csv';
         $cfilelnk = site_url() . 'downloads/me/' . $file_name.'.csv'; 
-
         $tbltemp   = $this->db_erp . ".`sd_out_upld_temp_" . $this->mylibzsys->random_string(15) . "`";
-        
+
+        $unposted = $this->request->getVar('txt_unposted');
+        $posted = $this->request->getVar('txt_posted');
+        $whse = $this->request->getVar('txt_warehouse');
+        $branch_name = $this->request->getVar('branch_name');
+
+        if ($unposted == 0 && $posted == 0) {
+            echo "<div class=\"alert alert-danger\" role=\"alert\"><strong>Info.<br/></strong><strong>User Error</strong> Type of SD is required! </div>";
+            die();
+        }
+
         $str = "
         CREATE table {$tbltemp} ( 
         `recid` int(25) NOT NULL AUTO_INCREMENT,
@@ -1132,6 +1141,78 @@ class MyWarehouseoutModel extends Model
             INSERT INTO {$tbltemp}(`LOG_MB_KEYREC`,`LOG_USER`) SELECT LOG_MB_KEYREC,LOG_USER FROM ualam WHERE LOG_MODULE = 'DONE_CD_OUT'
         ";
         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
+
+
+        if((empty($unposted) && empty($posted)) || $unposted == 1){
+            $date="
+            ,'' `LOG_USER`, a.`chk_by`, a.`me_remk`
+            FROM
+            warehouse_shipdoc_hd a
+            JOIN
+            warehouse_shipdoc_dt b
+            ON
+            a.`crpl_code` = b.`header`
+            JOIN
+            mst_article d
+            ON
+            b.`mat_rid` = d.`recid`
+            JOIN 
+            mst_plant e
+            ON
+            b.`plnt_id` = e.`recid`
+            JOIN
+            mst_wshe f  
+            ON
+            b.`wshe_id` = f.`recid`
+            LEFT JOIN
+            {$tbltemp} g
+            ON
+            a.`crpl_code` = g.`LOG_MB_KEYREC`
+            WHERE DATE(a.`date_encd`) >= '{$fld_report_dtefrom}' AND DATE(a.`date_encd`) <= '{$fld_report_dteto}' AND a.`done` = '0'";
+        }elseif($posted == 1){
+            $date="
+            ,g.`LOG_USER`, a.`chk_by`, a.`me_remk`
+            FROM
+            warehouse_shipdoc_hd a
+            JOIN
+            warehouse_shipdoc_dt b
+            ON
+            a.`crpl_code` = b.`header`
+            JOIN
+            mst_article d
+            ON
+            b.`mat_rid` = d.`recid`
+            JOIN 
+            mst_plant e
+            ON
+            b.`plnt_id` = e.`recid`
+            JOIN
+            mst_wshe f  
+            ON
+            b.`wshe_id` = f.`recid`
+            LEFT JOIN
+            {$tbltemp} g
+            ON
+            a.`crpl_code` = g.`LOG_MB_KEYREC`
+            WHERE DATE(a.`done_date`) >= '{$fld_report_dtefrom}' AND DATE(a.`done_date`) <= '{$fld_report_dteto}'";
+        }
+
+        $brnch = "";
+        if (!empty($branch_name)) {
+            $brnch = "AND a.`brnch` = '$branch_name'";
+        }
+
+        $wshe_code = "";
+        if (!empty($whse)) {
+            $str="SELECT recid FROM mst_wshe WHERE wshe_code = '$whse'";
+            $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
+            $rw = $q->getRowArray();
+            $wshe_id = $rw['recid'];
+
+            $wshe_code = "AND a.`frm_wshe_id` ='$wshe_id'";
+        }
+
+        $str_optn = $date . $brnch . $wshe_code;
 
         $str = "
         SELECT *
@@ -1160,7 +1241,7 @@ class MyWarehouseoutModel extends Model
 
             UNION ALL
             
-            (SELECT g.`LOG_MB_KEYREC`, d.`ART_CODE`, d.`ART_DESC`, d.`ART_SKU`, SUM(b.`qty`) AS qty, SUM(b.`convf`) AS convf,SUM(b.`total_pcs`) AS convf,
+            (SELECT a.`crpl_code`, d.`ART_CODE`, d.`ART_DESC`, d.`ART_SKU`, SUM(b.`qty`) AS qty, SUM(b.`convf`) AS convf,SUM(b.`total_pcs`) AS convf,
             SUM((SELECT SUM(artt.`ART_UPRICE`*item.`qty`) AS `total_amount`
             FROM
             `warehouse_shipdoc_item` item
@@ -1174,33 +1255,8 @@ class MyWarehouseoutModel extends Model
             item.`mat_rid` = artt.`recid`
             WHERE
             b.`recid` = inv.`recid`
-            )) AS total_amount, e.`plnt_code`, f.`wshe_code`,a.`brnch`, a.`date_encd`,a.`user`,a.`done_date`,g.`LOG_USER`, a.`chk_by`, a.`me_remk`
-            FROM
-            warehouse_shipdoc_hd a
-            JOIN
-            warehouse_shipdoc_dt b
-            ON
-            a.`crpl_code` = b.`header`
-            JOIN
-            mst_article d
-            ON
-            b.`mat_rid` = d.`recid`
-            JOIN 
-            mst_plant e
-            ON
-            b.`plnt_id` = e.`recid`
-            JOIN
-            mst_wshe f  
-            ON
-            b.`wshe_id` = f.`recid`
-            JOIN
-            {$tbltemp} g
-            ON
-            a.`crpl_code` = g.`LOG_MB_KEYREC`
-            WHERE
-            DATE(a.`done_date`) >= '{$fld_report_dtefrom}'
-            AND
-            DATE(a.`done_date`) <= '{$fld_report_dteto}'
+            )) AS total_amount, e.`plnt_code`, f.`wshe_code`,a.`brnch`, a.`date_encd`,a.`user`,a.`done_date`
+            {$str_optn}
             GROUP BY d.`ART_CODE`, a.`crpl_code`
             ORDER BY a.`done_date` DESC)
             
@@ -1209,7 +1265,7 @@ class MyWarehouseoutModel extends Model
         ";
 
         $q = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__); 
-        var_dump($str);    
+        var_dump($str);
         $chtmljs .= "
                     <script type=\"text/javascript\">
                         //window.parent.document.getElementById('myscrloading').innerHTML = '';

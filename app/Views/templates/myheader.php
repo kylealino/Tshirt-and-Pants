@@ -527,7 +527,7 @@ $cuserfullname = session()->get('__xsys_myusererpfullname__');
             </a>
           </li>
           <li>
-            <a href="<?=site_url();?>test-alex">
+            <a href="<?=site_url();?>me-standard-cap">
               <i class="bi bi-circle"></i><span>Alex page</span>
             </a>
           </li>

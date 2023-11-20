@@ -44,17 +44,17 @@ $txtpout_rson = '';
 			</div> 
 			<div class="col-sm-3">
 				<h6 class="card-title p-0">Warehouse:</h6>
-				<select id="txt-warehouse" class="form-control form-control-sm" name="txt-warehouse">
-					<option value="W1-G1">W1-G1</option>
-					<option value="W1-G2">W1-G2</option>
-					<option value="W2-G3">W2-G3</option>
-					<option value="W2-G4">W2-G4</option>
-					<option value="W11-G5">W11-G5</option>
+				<select id="txt-warehouse" class="form-control form-control-sm">
+					<option value="W1G1">W1-G1</option>
+					<option value="W1G2">W1-G2</option>
+					<option value="W2G3">W2-G3</option>
+					<option value="W2G4">W2-G4</option>
+					<option value="W11G5">W11-G5</option>
 				</select>
 			</div>
 			<div class="col-sm-3">                         
 				<h6 class="card-title p-0">Branch:</h6>
-				<input type="text"  placeholder="Branch Name" id="branch-name" name="branch-name" class="branch-name form-control form-control-sm " required/>
+				<input type="text"  placeholder="Branch Name" id="branch-name" class="branch-name form-control form-control-sm " required/>
 			</div> 
 		</div>
 		<div class="row form-group">
@@ -112,7 +112,7 @@ $txtpout_rson = '';
 				var txt_posted_value = jQuery('#txt-posted').prop('checked');
 				var txt_posted = (txt_posted_value) ? (1) : (0);
 				var txt_warehouse = $('#txt-warehouse').val();
-				var branch_name = $('#branch-name').val();
+				var branch_name = $('.branch-name').val();
                	var fld_report_dteto = $('#fld_report_dteto').val();
 				var fld_report_dtefrom = $('#fld_report_dtefrom').val();
                 
@@ -136,7 +136,7 @@ $txtpout_rson = '';
 					txt_warehouse:txt_warehouse,
 					branch_name:branch_name,
                    	fld_report_dteto: fld_report_dteto,
-					fld_report_dtefrom:fld_report_dtefrom,
+					fld_report_dtefrom:fld_report_dtefrom
                     
                 }
                    __mysys_apps.mepreloader('mepreloaderme',true);
@@ -170,7 +170,7 @@ $txtpout_rson = '';
             return false; 
 		});	
 	
-		jQuery('#branch-name')
+		jQuery('.branch-name')
 		// don't navigate away from the field on tab when selecting an item
 		.bind( 'keydown', function( event ) {
 			if ( event.keyCode === jQuery.ui.keyCode.TAB &&
@@ -194,7 +194,7 @@ $txtpout_rson = '';
 			},
 			select: function( event, ui ) {
 				var terms = ui.item.value;
-				jQuery('#branch-name').val(terms);
+				jQuery('.branch-name').val(terms);
 				jQuery(this).autocomplete('search', jQuery.trim(terms));
 				return false;
 			}

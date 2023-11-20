@@ -41,8 +41,9 @@ for($aa = 1; $aa <= $npage_count; $aa++) {
     <div class="col-md-6 mb-1">
         <div class="input-group input-group-sm">
             <label class="input-group-text fw-bold" for="search">Search:</label>
-            <input type="text" id="mytxtsearchrec" class="form-control form-control-sm" name="mytxtsearchrec" placeholder="Search" />
+            <input type="text" id="mytxtsearchrec" class="form-control form-control-sm" name="mytxtsearchrec" placeholder="Search" value="<?=$mytxtsearchrec;?>"/>
             <button type="submit" class="btn btn-dgreen btn-sm" style="background-color:#167F92; color:#fff;"><i class="bi bi-search"></i></button>
+			<?=anchor('warehouse-inv', 'Reset',' class="btn btn-primary" ');?>
         </div>
     </div>
 <?=form_close();?> <!-- end of ./form -->
