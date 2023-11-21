@@ -124,13 +124,20 @@ class Warehouse_out extends BaseController
 			die();
 		endif;
 
-		$data    = $this->mywhrcdout->view_ent_recs();
-		if($data['response']):
+		$data = $this->mywhrcdout->view_ent_recs(1, 10);
 		return view('warehouse_out/warehouse_out_recs',$data);
-		else:
-		$dta['msg'] = 'No records found!';
-		return view('components/no-records',$dta);
-		endif;
+
+	}
+
+	public function whcdout_ent_recs_vw() 
+	{ 
+
+		$txtsearchedrec = $this->request->getVar('txtsearchedrec');
+		$mpages  = $this->request->getVar('mpages');
+		$mpages  = (empty($mpages) ? 1: $mpages);
+		$data    = $this->mywhrcdout->view_ent_recs($mpages,10,$txtsearchedrec);
+		return view('warehouse_out/warehouse_out_recs',$data);
+
 	}
 
 

@@ -106,6 +106,7 @@ $routes->post('warehouse-barcode-trans-upload-sv','Warehouse_barcde_transfr::whc
 //Warehouse Outgoing
 $routes->get('/warehouse-out','Warehouse_out::index',['filter' => 'myauthuser']);
 $routes->post('/warehouse-out-recs','Warehouse_out::whcdout_ent_recs',['filter' => 'myauthuser']);
+$routes->post('/warehouse-out-recs-vw','Warehouse_out::whcdout_ent_recs_vw',['filter' => 'myauthuser']);
 $routes->post('/warehouse-inv-box-content','Warehouse_out::whcdinv_box_content',['filter' => 'myauthuser']);
 $routes->post('/warehouse-out-upld','Warehouse_out::wshe_out_upld',['filter' => 'myauthuser']);
 $routes->post('/warehouse-out-sv','Warehouse_out::wshe_out_save',['filter' => 'myauthuser']);

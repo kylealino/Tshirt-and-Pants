@@ -88,13 +88,18 @@ for($aa = 1; $aa <= $npage_count; $aa++) {
 								if($rlist != 0):
 								$nn = 1;
 								foreach($rlist as $row): 
-
+								$is_out = $row['is_out'];
 							?>
 							<tr>
-
+								<?php if($is_out == 0):?>
 								<td class="text-center" nowrap>
 									<button class="btn btn-dgreen" data-mtknr="<?=$row['txt_mtknr']?>" onclick="getBoxcontent(this)"><i class="bi bi-box-seam"></i> View</button>
 								</td>
+								<?php else:?>
+								<td class="text-center" nowrap>
+									-
+								</td>
+								<?php endif;?>
 								<td nowrap><?=$row['stock_code']?></td>
 								<td nowrap><?=$row['ART_CODE']?></td>
 								<td nowrap><?=$row['ART_DESC']?></td>

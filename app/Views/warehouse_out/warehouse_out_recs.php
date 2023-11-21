@@ -11,9 +11,45 @@ $cuser   = $mylibzdb->mysys_user();
 $mpw_tkn = $mylibzdb->mpw_tkn();
 $barcodes = '';
 $revert = $mydatazua->get_Active_menus($mydbname->medb(1),$cuser,"myuatrx_id='205'","myua_trx");
+$mytxtsearchrec = $request->getVar('txtsearchedrec');
+$mtkn_whse = $request->getVar('mtkn_whse');
+$data = array();
+$mpages = (empty($mylibzsys->oa_nospchar($request->getVar('mpages'))) ? 0 : $mylibzsys->oa_nospchar($request->getVar('mpages')));
+$mpages = ($mpages > 0 ? $mpages : 1);
+$apages = array();
+$mpages = $npage_curr;
+$npage_count = $npage_count;
+for($aa = 1; $aa <= $npage_count; $aa++) {
+	$apages[] = $aa . "xOx" . $aa;
+}
+
 ?>
 
+<style>
+	table.memetable, th.memetable, td.memetable {
+		border: 1px solid #F6F5F4;
+		border-collapse: collapse;
+	}
+	thead.memetable, th.memetable, td.memetable {
+		padding: 6px;
+	}
+</style>
+?>
 
+<?=form_open('warehouse-out-recs-vw','class="needs-validation-search" id="myfrmsearchrec" ');?>
+
+    <div class="col-md-6 mb-1">
+        <div class="input-group input-group-sm">
+            <label class="input-group-text fw-bold" for="search">Search:</label>
+            <input type="text" id="mytxtsearchrec" class="form-control form-control-sm" name="mytxtsearchrec" placeholder="Search" value="<?=$mytxtsearchrec;?>"/>
+            <button type="submit" class="btn btn-dgreen btn-sm" style="background-color:#167F92; color:#fff;"><i class="bi bi-search"></i></button>
+        </div>
+    </div>
+<?=form_close();?> <!-- end of ./form -->
+<div class="col-md-8">
+    <?=$mylibzsys->mypagination($npage_curr,$npage_count,'__myredirected_vsearch','');?>
+</div>
+<input type="hidden" id="txt-wshe" class="txt-wshe" name="txt-wshe" value="<?=$mtkn_whse;?>"  data-id="">
 <div class="box box-primary">
 	<div class="box-body">
 		<div class="row pt-3">
@@ -111,30 +147,175 @@ $revert = $mydatazua->get_Active_menus($mydbname->medb(1),$cuser,"myuatrx_id='20
 </div>
 
 <script type="text/javascript">
-$(document).ready(function(){
- $.extend(true, $.fn.dataTable.defaults,{
-      language: {
-          search: ""
-      }
-  });
 
-  var tbl_pl_items = $('#tbl-out-recs').DataTable({               
-       'order':[],
-       'columnDefs': [{
-           "targets":[0,6,7,8,9,10,11],
-           "orderable": false
-       },
-       {
-        targets:'_all' ,
-        className: 'dt-head-center'
-   	 }
-       ]
-   });
 
-   $('#tbl-out-recs_filter.dataTables_filter [type=search]').each(function () {
-        $(this).attr(`placeholder`, `Search...`);
-        $(this).before('<span class="bi bi-search text-dgreen"></span>');
-    });
+function __myredirected_vsearch(mobj) { 
+		try { 
+			__mysys_apps.mepreloader('mepreloaderme',true);
+			var txtsearchedrec = jQuery('#mytxtsearchrec').val();
+			var mtkn_wshe_page = jQuery('#txt-wshe').val();
+			var txt_warehouse = jQuery('#txt-warehouse').attr("data-id");
+		
+            //mytrx_sc/mndt_sc2_recs
+            var mparam = { 
+            	txtsearchedrec: txtsearchedrec,
+				mtkn_wshe_page:mtkn_wshe_page,
+				txt_warehouse:txt_warehouse,
+            	mpages: mobj 
+            };	
+			jQuery.ajax({ // default declaration of ajax parameters
+				type: "POST",
+				url: '<?=site_url();?>warehouse-out-recs-vw',
+				context: document.body,
+				data: eval(mparam),
+				global: false,
+				cache: false,
+				success: function(data)  { //display html using divID
+					__mysys_apps.mepreloader('mepreloaderme',false);
+					$('#myoutdrecs').html(data);
+					
+					return false;
+				},
+				error: function() { // display global error on the menu function
+					__mysys_apps.mepreloader('mepreloaderme',false);
+					alert('error loading page...');
+					
+					return false;
+				}	
+			});			
+			
+		} catch(err) {
+			var mtxt = 'There was an error on this page.\n';
+			mtxt += 'Error description: ' + err.message;
+			mtxt += '\nClick OK to continue.';
+			__mysys_apps.mepreloader('mepreloaderme',false);
+			alert(mtxt);
+			return false;
+
+		}  //end try
+	}	
+	
+	jQuery('#mytxtsearchrec').keypress(function(event) { 
+		if(event.which == 13) { 
+			event.preventDefault(); 
+			try { 
+				__mysys_apps.mepreloader('mepreloaderme',true);
+				var txtsearchedrec = jQuery('#mytxtsearchrec').val();
+				var mtkn_wshe_page = jQuery('#txt-wshe').val();
+				var txt_warehouse = jQuery('#txt-warehouse').attr("data-id");
+				var mparam = {
+					txtsearchedrec: txtsearchedrec,
+					mtkn_wshe_page:mtkn_wshe_page,
+					txt_warehouse:txt_warehouse,
+					mpages: 1 
+				};	
+
+				jQuery.ajax({ // default declaration of ajax parameters
+					type: "POST",
+					url: '<?=site_url();?>warehouse-out-recs-vw',
+					context: document.body,
+					data: eval(mparam),
+					global: false,
+					cache: false,
+					success: function(data)  { //display html using divID
+						jQuery('#myoutdrecs').html(data);
+						__mysys_apps.mepreloader('mepreloaderme',false);
+						return false;
+					},
+					error: function() { // display global error on the menu function
+						__mysys_apps.mepreloader('mepreloaderme',false);
+						alert('error loading page...');
+						return false;
+					}	
+				});	
+			} catch(err) { 
+				var mtxt = 'There was an error on this page.\n';
+				mtxt += 'Error description: ' + err.message;
+				mtxt += '\nClick OK to continue.';
+				__mysys_apps.mepreloader('mepreloaderme',false);
+				alert(mtxt);
+				return false;
+			}  //end try	
+			
+		}
+	});	
+	
+
+	(function () {
+		'use strict'
+
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		var forms = document.querySelectorAll('.needs-validation-search')
+		// Loop over them and prevent submission
+		Array.prototype.slice.call(forms)
+		.forEach(function (form) {
+			form.addEventListener('submit', function (event) {
+				if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+				}
+				form.classList.add('was-validated') 
+
+				try {
+					event.preventDefault();
+					event.stopPropagation();
+
+
+					//start here
+					try { 
+						__mysys_apps.mepreloader('mepreloaderme',true);
+						var txtsearchedrec = jQuery('#mytxtsearchrec').val();
+						var mtkn_wshe_page = jQuery('#txt-wshe').val();
+						var txt_warehouse = jQuery('#txt-warehouse').attr("data-id");
+						var mparam = {
+							txtsearchedrec: txtsearchedrec,
+							mtkn_wshe_page:mtkn_wshe_page,
+							txt_warehouse:txt_warehouse,
+							mpages: 1 
+						};	
+						
+						jQuery.ajax({ // default declaration of ajax parameters
+							type: "POST",
+							url: '<?=site_url();?>warehouse-out-recs-vw',
+							context: document.body,
+							data: eval(mparam),
+							global: false,
+							cache: false,
+							success: function(data)  { //display html using divID
+								__mysys_apps.mepreloader('mepreloaderme',false);
+								jQuery('#myoutdrecs').html(data);
+								
+							},
+							error: function() { // display global error on the menu function
+								__mysys_apps.mepreloader('mepreloaderme',false);
+								alert('error loading page...');
+								
+							}	
+						});			
+						
+					} catch(err) { 
+						__mysys_apps.mepreloader('mepreloaderme',false);
+						var mtxt = 'There was an error on this page.\n';
+						mtxt += 'Error description: ' + err.message;
+						mtxt += '\nClick OK to continue.';
+						alert(mtxt);
+					}  //end try
+
+					//end here
+
+
+
+				} catch(err) { 
+					__mysys_apps.mepreloader('mepreloaderme',false);
+					var mtxt = 'There was an error on this page.\n';
+					mtxt += 'Error description: ' + err.message;
+					mtxt += '\nClick OK to continue.';
+					alert(mtxt);
+					return false;
+				}  //end try					
+			}, false)
+		})
+	})();	
 
 function getBoxcontent(mtkn_dt){
 
@@ -278,9 +459,6 @@ $('#btn-pl-sv').on('click',function(){
 	}  //end try
 });
 
-
-
-}); //document ready end
 
 
 $('.btn-backload').on('click',function(){

@@ -90,17 +90,58 @@ class MyWarehouseoutModel extends Model
     } //endfunc
 
 
-    public function view_ent_recs(){ 
+    public function view_ent_recs($npages = 1,$npagelimit = 10,$msearchrec=''){ 
         $cuser = $this->mylibzdb->mysys_user();
         $mpw_tkn = $this->mylibzdb->mpw_tkn();
 
         $mtkn_whse = $this->request->getVar('mtkn_whse');
+        $mtkn_wshe_page = $this->request->getVar('mtkn_wshe_page');
+        $txt_warehouse = $this->request->getVar('txt_warehouse');
+        $txtsearchedrec = $this->request->getVar('txtsearchedrec');
+        $mwhere = "";
+        $str_order = "";
+        $def_crpl = "";
+        $crpl_code = "";
+        $brnch = "";
 
+        var_dump($txtsearchedrec);
         //get warehouse id 
-        $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
-        $whID = $wshedata['whID'];
-        $plntID = $wshedata['plntID'];
-        // warehouse end
+        if(empty($mtkn_whse) && !empty($mtkn_wshe_page)) { 
+            $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_wshe_page);
+            $whID = $wshedata['whID'];
+            $plntID = $wshedata['plntID'];
+            $mwhere = "WHERE (sd.`frm_plnt_id` = '{$plntID}' AND  sd.`frm_wshe_id` = '{$whID}' AND sd.`crpl_code` LIKE '%CWO%') "; 
+        }elseif(empty($mtkn_whse) && empty($mtkn_wshe_page)){
+            $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($txt_warehouse);
+            $whID = $wshedata['whID'];
+            $plntID = $wshedata['plntID'];
+            $mwhere = "WHERE (sd.`frm_plnt_id` = '{$plntID}' AND  sd.`frm_wshe_id` = '{$whID}' AND sd.`crpl_code` LIKE '%CWO%') "; 
+        }elseif(!empty($msearchrec)){
+            $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
+            $whID = $wshedata['whID'];
+            $plntID = $wshedata['plntID'];
+            $mwhere = "WHERE (sd.`frm_plnt_id` = '{$plntID}' AND  sd.`frm_wshe_id` = '{$whID}' AND sd.`crpl_code` LIKE '%CWO%') "; 
+        }else{
+            $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
+            $whID = $wshedata['whID'];
+            $plntID = $wshedata['plntID'];
+            $mwhere = "WHERE (sd.`frm_plnt_id` = '{$plntID}' AND  sd.`frm_wshe_id` = '{$whID}' AND sd.`crpl_code` LIKE '%CWO%') "; 
+        }
+
+        // $wshedata = $this->mymelibzsys->getCDPlantWarehouse_data_bytkn($mtkn_whse);
+        // $whID = $wshedata['whID'];
+        // $plntID = $wshedata['plntID'];
+
+        // $mwhere = "WHERE sd.`frm_plnt_id` = '{$plntID}' AND  sd.`frm_wshe_id` = '{$whID}' "; 
+
+        if(!empty($txtsearchedrec)) { 
+            $txtsearchedrec = $this->dbx->escapeString($txtsearchedrec);
+
+            $crpl_code = " AND sd.`crpl_code` LIKE '%{$txtsearchedrec}%'";
+            $brnch = " OR sd.`brnch` LIKE '%{$txtsearchedrec}%'";
+        }
+
+        $str_optn = $mwhere . $crpl_code . $brnch;
 
 
         //IF USERGROUP IS EQUAL SA THEN ALL DATA WILL VIEW ELSE PER USER
@@ -122,23 +163,42 @@ class MyWarehouseoutModel extends Model
         {$this->db_erp}.`warehouse_shipdoc_hd` sd
         JOIN  {$this->db_erp}.`mst_plant` pl ON pl.`recid` = sd.`frm_plnt_id`
         JOIN  {$this->db_erp}.`mst_wshe` wh ON wh.`recid` = sd.`frm_wshe_id` 
-        WHERE sd.`frm_plnt_id` = '{$plntID}' AND  sd.`frm_wshe_id` = '{$whID}' AND `crpl_code` LIKE '%CWO%'
+        {$str_optn}
         GROUP BY sd.`crpl_code` ORDER BY `recid` DESC";
 
-        $qry = $this->mylibzdb->myoa_sql_exec($strqry,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
 
-        if($qry->getNumRows() > 0) { 
-         $data['rlist'] = $qry->getResultArray();
-         $data['response'] = true;
+        if($cuser == 'arman'):
+            echo $strqry . '<br/>';
+        endif;
 
-        } else { 
-         $data = array();
-         $data['rlist'] = '';
-         $data['response'] = false;
+       
+        $str = "
+		select count(*) __nrecs from ({$strqry}) oa
+		";
+		$qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+		$rw = $qry->getRowArray();
+		$npagelimit = ($npagelimit > 0 ? $npagelimit : 30);
+		$nstart = ($npagelimit * ($npages - 1));
+        $nstart = $nstart < 0 ? 0 : $nstart; 
+		
+		
+		$npage_count = ceil(($rw['__nrecs'] + 0) / $npagelimit);
+		$data['npage_count'] = $npage_count;
+		$data['npage_curr'] = $npages;
+		$str = "
+		SELECT * from ({$strqry}) oa limit {$nstart},{$npagelimit} ";
+		$qry = $this->mylibzdb->myoa_sql_exec($str,'URI: ' . $_SERVER['PHP_SELF'] . chr(13) . chr(10) . 'File: ' . __FILE__  . chr(13) . chr(10) . 'Line Number: ' . __LINE__);
+		
+		if($qry->resultID->num_rows > 0) { 
+			$data['rlist'] = $qry->getResultArray();
+		} else { 
+			$data = array();
+			$data['npage_count'] = 1;
+			$data['npage_curr'] = 1;
+			$data['rlist'] = 0;
 
-
-        }
-        return $data;
+		}
+		return $data;
     } //endfunc
 
 
